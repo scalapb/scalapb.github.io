@@ -34,7 +34,7 @@ option (scalapb.options) = {
 {% endhighlight %}
 
 - `package_name` sets the Scala base package name, if this is not defined,
-then it falls back to `java_package` and then to `package`. 
+then it falls back to `java_package` and then to `package`.
 
 - Setting `flat_package` to true (default is `false`) makes ScalaPB not append
 the protofile base name to the package name.  You can also apply this option
@@ -87,7 +87,7 @@ case class MyMessage(myInt32: Option[Int]) extends ...
 
 ScalaPBs allows you to specify custom base traits to a generated case
 class.  This is useful when you have a few messages that share common fields
-and you would like to be able to access those fields through a single trait. 
+and you would like to be able to access those fields through a single trait.
 
 Example:
 
@@ -169,7 +169,7 @@ object Seconds {
 
 `TypeMapper` takes two function parameters. The first converts from the original type to
 the custom type. The second function converts from the custom type to the
-original type. 
+original type.
 
 In addition to primitive values, you can customize enums and messages as well.
 
@@ -178,6 +178,19 @@ For more examples, see:
 - [`custom_types.proto`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/custom_types.proto)
 - [`PersonId.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/PersonId.scala)
 - [`CustomTypesSpec.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/test/scala/CustomTypesSpec.scala)
+
+# Custom names
+
+Sometimes it may be useful to manually specify the name of a field in the
+generated code.  For example, if you have a field named `hash_code`, then the
+camel-case version of it would be `hashCode`. Since that name would conflict with
+the [`hashCode()` method](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode())
+we inherit from Java, ScalaPB issues an error. You can tell ScalaPB to use an
+alternative name by using the `scala_name` option:
+
+{% highlight proto %}
+optional string hash_code = 1 [(scalapb.field).scala_name = "myHashCode"];
+{% endhighlight %}
 
 # Adding scalapb.proto to your project
 
