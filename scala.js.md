@@ -27,11 +27,20 @@ Add to your library dependencies:
       "com.trueaccord.scalapb" %%% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
     )
 
+Since the ScalaJS compiler depends on an old version of protobuf it is
+recommended to work with a shaded version of ScalaPB's compiler plugin. Have
+this in your `project/scalapb.sbt` file instead of what described in the
+standard installation instructions:
+
+    addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}" exclude ("com.trueaccord.scalapb", "protoc-bridge_2.10"))
+
+    libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin-shaded" % "{{site.data.version.scalapb}}"
+
 ## Demo
 
 Example project: [https://github.com/thesamet/scalapbjs-test](https://github.com/thesamet/scalapbjs-test)
 
-Example project: [https://github.com/thesamet/sbt-protoc/tree/master/examples/scalajs-multiproject](https://github.com/thesamet/sbt-protoc/tree/master/examples/scalajs-multiproject)
+Example with multi-project build: [https://github.com/thesamet/sbt-protoc/tree/master/examples/scalajs-multiproject](https://github.com/thesamet/sbt-protoc/tree/master/examples/scalajs-multiproject)
 
 Live demo: [http://thesamet.github.io/scalapbjs-test/](http://thesamet.github.io/scalapbjs-test/)
 
