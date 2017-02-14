@@ -47,3 +47,21 @@ def fromJson[Proto](value: JValue): Proto
 Finally, in JsonFormat there are two implicit methods that instantiate
 `Reader[Proto]` and `Writer[Proto]`.
 
+## More printing and parsing options
+
+There are a few more options available to customize the format used to print
+and parse JSON. To take advantage of that, instantiate `Printer` and `Parser` and
+call `toJson()` / `fromJson()` as usual.
+
+For example:
+
+{%highlight scala%}
+new com.trueaccord.scalapb.json.Printer(
+  includingDefaultValueFields: Boolean = true,
+  preservingProtoFieldNames: Boolean = true,
+  formattingLongAsNumber: Boolean = true
+).toJson(myProto)
+{%endhighlight%}
+
+See the list of [constructor paramerters here](https://github.com/scalapb/scalapb-json4s/blob/master/src/main/scala/com/trueaccord/scalapb/json/JsonFormat.scala)
+
