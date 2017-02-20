@@ -52,3 +52,18 @@ in the include path that is passed to protoc.
 
 If you are not using sbt (for example, spbc), then you need to make those
 files available on the file system.
+
+## How do I generate Scala code for protos from another jar?
+
+Include the jar as a `protobuf` dependency in your libraryDependencies:
+
+    libraryDependencies += "com.somepackage" %% "that-has-jar" % "1.0" % "protobuf"
+
+This will tell sbt-protoc to extract the protos from that jar into
+`target/scala-2.vv/protobuf-external`. This makes it possible to `import`
+those protos from your local protos. sbt-protoc looks for protocol buffers to
+compile in the directories listed in `PB.protoSources`. There you need to
+add a line like this to your `build.sbt`:
+
+    PB.protoSources in Compile :+= Seq((target)(_ / "protobuf-external").value)
+
