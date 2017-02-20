@@ -5,7 +5,7 @@ layout: page
 
 # ScalaPB in Scala.js
 
-[http://scala-js.org](Scala.js) compiles Scala source code to equivalent
+[Scala.js](http://scala-js.org) compiles Scala source code to equivalent
 Javascript code.  It is possible to use ScalaPB generated case classes and
 lenses in ScalaJS, and even serialize and parse byte arrays.
 
