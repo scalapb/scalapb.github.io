@@ -65,5 +65,12 @@ those protos from your local protos. sbt-protoc looks for protocol buffers to
 compile in the directories listed in `PB.protoSources`. There you need to
 add a line like this to your `build.sbt`:
 
-    PB.protoSources in Compile :+= Seq((target)(_ / "protobuf-external").value)
+    PB.protoSources in Compile += target.value / "protobuf_external"
 
+You may find other protos under `protobuf_external` that you do not wish to
+compile. You can exclude them by adding an `includeFilter`:
+
+    includeFilter in PB.generate := new SimpleFileFilter(
+      (f: File) =>  f.getParent.endsWith("com/thesamet/protos"))
+
+See [full example here](https://github.com/thesamet/sbt-protoc/tree/master/examples/multi-with-external-jar).
