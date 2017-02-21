@@ -58,19 +58,14 @@ are provided inside an `Option`). Google provides standard wrappers to the
 primitive types in
 [wrappers.proto](https://github.com/google/protobuf/blob/master/src/google/protobuf/wrappers.proto).
 
-If `primitive_wrappers` is enabled, then whenever one of the standard wrappers
-is used, it will be mapped to `Option[X]` where `X` is a primitive type. For
-example:
+`primitive_wrappers` is enabled by default for ScalaPB>=0.6.0. Whenever one
+of the standard wrappers is used, it will be mapped to `Option[X]` where `X`
+is a primitive type. For example:
 
 {% highlight proto %}
 syntax = "proto3";
 
-import "scalapb/scalapb.proto";
 import "google/protobuf/wrappers.proto";
-
-option (scalapb.options) = {
-  primitive_wrappers: true
-};
 
 message MyMessage {
   google.protobuf.Int32Value my_int32 = 5;
@@ -82,6 +77,26 @@ would generate
 {% highlight scala %}
 case class MyMessage(myInt32: Option[Int]) extends ...
 {% endhighlight %}
+
+To disable primitive wrappers in a file:
+
+```
+import "scalapb/scalapb.proto";
+option (scalapb.options) = {
+  no_primitive_wrappers: true
+};
+```
+
+In versions of ScalaPB prior to 0.6.0, primitive wrappers had to be turned on
+manually in each file:
+
+```
+import "scalapb/scalapb.proto";
+option (scalapb.options) = {
+  primitive_wrappers: true
+};
+```
+
 
 # Custom base traits
 
@@ -178,6 +193,42 @@ For more examples, see:
 - [`custom_types.proto`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/custom_types.proto)
 - [`PersonId.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/PersonId.scala)
 - [`CustomTypesSpec.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/test/scala/CustomTypesSpec.scala)
+
+# Custom collection types
+
+By default, ScalaPB compiles repeated fields into a `Seq[T]`. When a message
+is parsed from bytes, the default implementation generates a `Vector[T]`,
+which is a subtype of `Seq[T]`.  You can instruct ScalaPB to use a different
+collection type for a file, or just for one repeated field. If both are
+defined then the field-level setting wins.
+
+{% highlight proto %}
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  collection_type: "Set"
+}
+
+message CollTest {
+    // Will generate Set[Int] due to file-level option.
+    repeated int32  rep1 = 1;
+
+    // Will generate an Array[String]
+    repeated string rep2 = 2  [(scalapb.field).collection_type="Array"];
+
+    // Will generate Seq[collection.immutable.Seq]
+    repeated bool rep3 = 3  [
+      (scalapb.field).collection_type="collection.immutable.Seq"];
+}
+{% endhighlight %}
+
+Note: using `Array` is not supported along with Java conversions.
+
+Note: Most Scala collections can be used with this feature. If you are trying
+to implement your own collection type, it may be useful to check `MyVector`,
+the simplest custom collection that is compatible with ScalaPB:
+- https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/MyVector.scala
+- https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/collection_types.proto
 
 # Custom names
 
