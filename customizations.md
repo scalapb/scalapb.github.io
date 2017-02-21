@@ -194,6 +194,31 @@ For more examples, see:
 - [`PersonId.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/PersonId.scala)
 - [`CustomTypesSpec.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/test/scala/CustomTypesSpec.scala)
 
+## Custom types on maps
+
+Since version 0.6.0 it is possible to customize the key and value types of
+maps. Like the custom types described above you will need to have a `TypeMapper`
+for the custom type.
+
+Example:
+
+{% highlight proto %}
+message CustomMaps {
+  // Will generate Map[String, com.trueaccord.pb.Years]
+  map<string, int32> string_to_year = 1 [
+      (scalapb.field).value_type = "com.trueaccord.pb.Years"];
+
+  // Will generate Map[PersonId, Int]
+  map<string, int32> person_to_int = 2 [
+      (scalapb.field).key_type = "com.trueaccord.pb.PersonId"];
+
+  // Will generate Map[PersonId, com.trueaccord.pb.Years]
+  map<string, int32> person_to_year = 3 [
+      (scalapb.field).key_type = "com.trueaccord.pb.PersonId",
+      (scalapb.field).value_type = "com.trueaccord.pb.Years"];
+}
+{% endhighlight %}
+
 # Custom collection types
 
 By default, ScalaPB compiles repeated fields into a `Seq[T]`. When a message
