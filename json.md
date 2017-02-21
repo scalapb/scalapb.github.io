@@ -15,6 +15,10 @@ Make sure that you are using ScalaPB 0.5.x or later.
 In `build.sbt` add a dependency on `scalapb-json4s`:
 
 {%highlight scala%}
+// For ScalaPB 0.6.x:
+libraryDepenencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.2.0"
+
+// For ScalaPB 0.5.x:
 libraryDepenencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.1.6"
 {%endhighlight%}
 
