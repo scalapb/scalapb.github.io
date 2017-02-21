@@ -80,23 +80,22 @@ case class MyMessage(myInt32: Option[Int]) extends ...
 
 To disable primitive wrappers in a file:
 
-```
+{% highlight proto %}
 import "scalapb/scalapb.proto";
 option (scalapb.options) = {
   no_primitive_wrappers: true
 };
-```
+{% endhighlight %}
 
 In versions of ScalaPB prior to 0.6.0, primitive wrappers had to be turned on
 manually in each file:
 
-```
+{% highlight proto %}
 import "scalapb/scalapb.proto";
 option (scalapb.options) = {
   primitive_wrappers: true
 };
-```
-
+{% endhighlight %}
 
 # Custom base traits
 
@@ -218,6 +217,8 @@ message CustomMaps {
       (scalapb.field).value_type = "com.trueaccord.pb.Years"];
 }
 {% endhighlight %}
+
+Example: see `CustomMaps` in [maps.proto](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/maps.proto)
 
 # Custom collection types
 
