@@ -369,6 +369,35 @@ f.getWeather match {
 
 {% endhighlight %}
 
+## ASCII Representation
+
+Each message case-class has `toString` method that returns a string
+representation of the message in an ASCII format. The ASCII format can be
+parsed back by the `fromAscii()` method available on the companion object.
+
+That format is not officially documented, but at least the standard Python,
+Java and C++ implementations of protobuf attempt to generate (and be able to parse)
+compatible ASCII representations. ScalaPB's `toString()` and `fromAscii`
+follow the Java implementation.
+
+The format looks lie this:
+
+{% highlight protobuf %}
+int_field: 17
+string_field: "foo"
+repeated_string_field: "foo"
+repeated_string_field: "bar"
+message_field {
+  field1: "value1"
+  color_enum: BLUE
+}
+{% endhighlight %}
+
+This format can be useful for debugging or for transient data processing, but
+beware of persisting these ASCII representations: unknown fields throw an
+exception, and unlike the binary format, the ASCII format is senstitive to
+renames.
+
 ## Java Conversions
 
 If you are dealing with legacy Java protocol buffer code, while still wanting
@@ -387,7 +416,3 @@ This will result in the following changes:
   `toJavaProto` methods.
 - The companion object for enums will have `fromJavaValue` and
   `toJavaValue` methods.
-- Temporarily: The companion object for each message will have `fromAscii` that uses
-  `com.google.protobuf.TextFormat` to parse a message from ASCII format. Also,
-  toString will format the message in ASCII format. A future version of
-  ScalaPB, will implement this natively.
