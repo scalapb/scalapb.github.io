@@ -9,12 +9,11 @@ layout: page
 Javascript code.  It is possible to use ScalaPB generated case classes and
 lenses in ScalaJS, and even serialize and parse byte arrays.
 
-There are a few things that do not work:
+Limitations:
 
-- The Java protocol buffers are unavailable, and therefore Java conversions do not work.
-
-- Descriptors are unavailable since ScalaPB uses the descriptors
-  implementation provided by Google's Java runtime.
+- The Java protocol buffers are unavailable, and therefore Java conversions
+  and Java descriptors do not work (though Scala descriptors in ScalaPB >=
+  0.6.0 would cover most use cases)
 
 ## Getting Started
 
