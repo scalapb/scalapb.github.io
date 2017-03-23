@@ -23,15 +23,19 @@ Add the following line to your `build.sbt`:
 PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
 )
-
-// If you need scalapb/scalapb.proto or anything from
-// google/protobuf/*.proto
-libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
 {% endhighlight %}
 
 Running the `compile` command in sbt will both generate Scala sources from
 your protos and compile them. If you just want to generate Scala sources for
 your protocol buffers without compiling them, run `protoc-generate`
+
+Additionally, if you need [customizations]({{site.baseurl}}/customizations.html) from
+scalapb/scalapb.proto or anything from `google/protobuf/*.proto`, add the
+following to your `build.sbt`:
+
+{% highlight scala %}
+libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
+{% endhighlight %}
 
 ## Defaults
 
