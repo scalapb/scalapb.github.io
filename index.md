@@ -61,7 +61,7 @@ Add the following line to your `build.sbt`:
       scalapb.gen() -> (sourceManaged in Compile).value
     )
 
-    // If you need scalapb/scalapb.proto or anything from
+    // (optional) If you need scalapb/scalapb.proto or anything from
     // google/protobuf/*.proto
     libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
 
