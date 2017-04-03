@@ -10,7 +10,7 @@ layout: page
 Install ScalaPB as usual. Add the following to your `build.sbt`:
 
     libraryDependencies ++= Seq(
-        "io.grpc" % "grpc-netty" % "1.0.3",
+        "io.grpc" % "grpc-netty" % com.trueaccord.scalapb.compiler.Version.grpcJavaVersion,
         "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
     )
 
