@@ -96,8 +96,9 @@ Blocking call:
 
 Async call:
 
-    val blockingStub = GreeterGrpc.stub(channel)
-    val f: Future[HelloReqpblockingStub.sayHello(request)
+    val stub = GreeterGrpc.stub(channel)
+    val f: Future[HelloReply] = stub.sayHello(request)
+    f onComplete println
 
 ## Writing a server
 
