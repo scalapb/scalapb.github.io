@@ -20,7 +20,7 @@ addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.2")
 In `build.sbt` add a dependency on `sparksql-scalapb`:
 
 {%highlight scala%}
-libraryDepenencies += "com.trueaccord.scalapb" %% "sparksql-scalapb" % "0.1.7"
+libraryDepenencies += "com.trueaccord.scalapb" %% "sparksql-scalapb" % "0.1.8"
 {%endhighlight%}
 
 The running container contains an old version of Google's Protocol Buffers
