@@ -16,7 +16,7 @@ In `build.sbt` add a dependency on `scalapb-json4s`:
 
 {%highlight scala%}
 // For ScalaPB 0.6.x:
-libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.3.0"
+libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.3.2"
 
 // For ScalaPB 0.5.x:
 libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.1.6"
