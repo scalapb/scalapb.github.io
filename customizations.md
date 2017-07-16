@@ -99,6 +99,8 @@ option (scalapb.options) = {
 
 # Custom base traits for messages
 
+Note: this option is available in ScalaPB 0.6.1 and later.
+
 ScalaPBs allows you to specify custom base traits to a generated case
 class.  This is useful when you have a few messages that share common fields
 and you would like to be able to access those fields through a single trait.
