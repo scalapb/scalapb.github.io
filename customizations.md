@@ -173,14 +173,17 @@ enum MyEnum {
 The generated code will look something like this:
 
 {% highlight scala %}
-sealed trait MyEnum extends com.trueaccord.scalapb.GeneratedEnum with example.EnumOptions.EnumBase {
+sealed trait MyEnum extends GeneratedEnum 
+    with example.EnumOptions.EnumBase {
   /* ... */
 }
 
-object MyEnum extends _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[MyEnum] with example.EnumOptions.EnumCompanionBase {
+object MyEnum extends GeneratedEnumCompanion[MyEnum]
+    with example.EnumOptions.EnumCompanionBase {
   case object Unknown extends MyEnum { /* ... */ }
 
-  case object V1 extends MyEnum with example.EnumOptions.ValueMixin { /* ... */ }
+  case object V1 extends MyEnum 
+      with example.EnumOptions.ValueMixin { /* ... */ }
 
   case object V2 extends MyEnum { /* ... */ }
 
