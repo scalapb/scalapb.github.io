@@ -149,7 +149,7 @@ object will extend `MySuperCompanionClass`.
 In a similar fashion to custom base traits for messages, it is possible to
 define custom base traits for enum types, for the companion objects of enum
 types and even for specific values.
- 
+
 For example:
 
 {% highlight proto %}
@@ -177,9 +177,9 @@ sealed trait MyEnum extends com.trueaccord.scalapb.GeneratedEnum with example.En
 
 object MyEnum extends _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[MyEnum] with example.EnumOptions.EnumCompanionBase {
   case object Unknown extends MyEnum { /* ... */ }
-  
+
   case object V1 extends MyEnum with example.EnumOptions.ValueMixin { /* ... */ }
-  
+
   case object V2 extends MyEnum { /* ... */ }
 
   /* ... */
