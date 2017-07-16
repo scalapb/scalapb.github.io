@@ -97,7 +97,7 @@ option (scalapb.options) = {
 };
 {% endhighlight %}
 
-# Custom base traits
+# Custom base traits for messages
 
 ScalaPBs allows you to specify custom base traits to a generated case
 class.  This is useful when you have a few messages that share common fields
@@ -143,6 +143,48 @@ message MyMessage {
 
 Will generate a case class that extends `MySuperClass`, and the companion
 object will extend `MySuperCompanionClass`.
+
+# Custom base traits for enums
+
+In a similar fashion to custom base traits for messages, it is possible to
+define custom base traits for enum types, for the companion objects of enum
+types and even for specific values.
+ 
+For example:
+
+{% highlight proto %}
+syntax = "proto2";
+
+package enum_example;
+
+import "scalapb/scalapb.proto";
+
+enum MyEnum {
+  option (scalapb.enum_options).extends = "example.EnumOptions.EnumBase";
+  option (scalapb.enum_options).companion_extends = "example.EnumOptions.EnumCompanionBase";
+  Unknown = 0;
+  V1 = 1 [(scalapb.enum_value).extends = "example.EnumOptions.ValueMixin"];
+  V2 = 2;
+}
+{% endhighlight %}
+
+The generated code will look something like this:
+
+{% highlight scala %}
+sealed trait MyEnum extends com.trueaccord.scalapb.GeneratedEnum with example.EnumOptions.EnumBase {
+  /* ... */
+}
+
+object MyEnum extends _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[MyEnum] with example.EnumOptions.EnumCompanionBase {
+  case object Unknown extends MyEnum { /* ... */ }
+  
+  case object V1 extends MyEnum with example.EnumOptions.ValueMixin { /* ... */ }
+  
+  case object V2 extends MyEnum { /* ... */ }
+
+  /* ... */
+}
+{% endhighlight %}
 
 # Custom types
 
