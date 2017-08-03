@@ -106,7 +106,7 @@ Implement the service:
 
     private class GreeterImpl extends GreeterGrpc.Greeter {
       override def sayHello(req: HelloRequest) = {
-        val reply = HelloResponse(message = "Hello " + req.name)
+        val reply = HelloReply(message = "Hello " + req.name)
         Future.successful(reply)
       }
     }
