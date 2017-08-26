@@ -316,6 +316,18 @@ alternative name by using the `scala_name` option:
 optional string hash_code = 1 [(scalapb.field).scala_name = "myHashCode"];
 {% endhighlight %}
 
+# Adding annotations
+
+Since ScalaPB 0.6.3, you can add annotations to the generated case classes like this:
+
+{% highlight proto %}
+message BarMessage {
+  option (scalapb.message).annotations = "@mypackage.CustomAnnotation";
+  option (scalapb.message).annotations = "@mypackage.CustomAnnotation1";
+  option (scalapb.message).annotations = "@mypackage.CustomAnnotation2";
+}
+{% endhighlight %}
+
 # Adding scalapb.proto to your project
 
 The easiest way to get `protoc` to find `scalapb/scalapb.proto` when compiling
