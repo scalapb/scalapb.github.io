@@ -26,11 +26,10 @@ Add to your library dependencies:
       "com.trueaccord.scalapb" %%% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
     )
 
-### Shaded compiler plugin (Deprecated)
-
-Prior to ScalaPB 0.6.4, there was a version conflict for protobuf-java. The compilerplugin would bring in a 3.x version, while scalajs plugin depends on a 2.5.x version of protobuf-java. To resolve this issue, a compilerplugin-shaded artifact has been created that contained a shaded version of protobuf-java as well as other dependencies.  From ScalaPB 0.6.4 and onwards, a shaded version of protobuf-java is shipped with the main artifact so compilerplugin-shaded is no longer necessary.
-
-If you are using an older version of ScalaPB, here are the usage instructions for adding compilerplugin-shaded to your project. First, remove the dependency on `compilerplugin`, and instead add this to your `project/scalapb.sbt`:
+Since the ScalaJS compiler depends on an old version of protobuf it is
+recommended to work with the `compilerplugin-shaded` artifact. This artifact contains a shaded version of protobuf-java and other dependencies. Have
+this in your `project/scalapb.sbt` file instead of what described in the
+standard installation instructions:
 
     addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}" exclude ("com.trueaccord.scalapb", "protoc-bridge_2.10"))
 
