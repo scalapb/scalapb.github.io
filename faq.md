@@ -31,7 +31,7 @@ javaSource in PB.protobufConfig := sourceManaged.value
 
 ## How do I use ScalaPB from the command line?
 
-Check out [ScalaPBC]]({{site.baseurl}}/scalapbc.html).
+Check out [ScalaPBC]({{site.baseurl}}/scalapbc.html).
 
 ## How do I use ScalaPB with Maven?
 
