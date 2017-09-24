@@ -27,7 +27,7 @@ Add to your library dependencies:
     )
 
 Since the ScalaJS compiler depends on an old version of protobuf it is
-recommended to work with a shaded version of ScalaPB's compiler plugin. Have
+recommended to work with the `compilerplugin-shaded` artifact. This artifact contains a shaded version of protobuf-java and other dependencies. Have
 this in your `project/scalapb.sbt` file instead of what described in the
 standard installation instructions:
 
