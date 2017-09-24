@@ -1,4 +1,4 @@
----
+-]--
 title: "ScalaPBC: Compiling outside SBT"
 layout: page
 ---
@@ -9,7 +9,7 @@ ScalaPBC is a tool that lets you generate Scala sources from the command line (o
 
 ## Installation
 
-You can download the current release here: [scalapbc-{{site.data.version.scalapb}},zip](https://github.com/scalapb/ScalaPB/releases/download/v{{site.data.version.scalapb}}/scalapbc-{{site.data.version.scalapb}}.zip).
+You can download the current release here: [scalapbc-{{site.data.version.scalapb}}.zip](https://github.com/scalapb/ScalaPB/releases/download/v{{site.data.version.scalapb}}/scalapbc-{{site.data.version.scalapb}}.zip).
 
 Older versions can be found in the [releases page](https://github.com/scalapb/ScalaPB/releases).
 
@@ -37,9 +37,10 @@ To generate Scala code, invoke ScalaPBC like this:
 To generate both Scala code and Java code along with Java conversions:
 
 {%highlight shell%}
-./bin/scalapbc -v340 --scala_out=java_conversions:some/output/directory \
-                     --java_out=some/output/directory \
-                     myproto.proto
+./bin/scalapbc -v340 \
+    --scala_out=java_conversions:some/output/directory \
+    --java_out=some/output/directory \
+    myproto.proto
 {%endhighlight%}
 
 ## Passing generator parameters
@@ -49,7 +50,8 @@ comma-separated list following the `--scala_out=` and separated from the path
 by colon (`:`)
 
 {%highlight shell%}
-./bin/scalapbc -v340 --scala_out=param1,param2:some/output/directory
+./bin/scalapbc -v340 \
+    --scala_out=param1,param2:some/output/directory
 {%endhighlight%}
 
 The supported parameters are: `flat_package`, `java_conversions`, `grpc` and
