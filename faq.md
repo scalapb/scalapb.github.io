@@ -29,6 +29,10 @@ If you generate Java sources, add,
 javaSource in PB.protobufConfig := sourceManaged.value
 {%endhighlight%}
 
+## How do I use ScalaPB from the command line?
+
+Check out [ScalaPBC]]({{site.baseurl}}/scalapbc.html).
+
 ## How do I use ScalaPB with Maven?
 
 ScalaPB can be invoked in your Maven build by calling ScalaPBC, a standalone

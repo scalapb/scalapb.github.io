@@ -16,6 +16,8 @@
   url: /sparksql.html
 - text: JSON
   url: /json.html
+- text: ScalaPBC
+  url: /scalapbc.html
 - text: FAQ
   url: /faq.html
 - text: Migrating
