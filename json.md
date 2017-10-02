@@ -61,9 +61,9 @@ For example:
 
 {%highlight scala%}
 new com.trueaccord.scalapb.json.Printer(
-  includingDefaultValueFields: Boolean = true,
-  preservingProtoFieldNames: Boolean = true,
-  formattingLongAsNumber: Boolean = true
+  includingDefaultValueFields = true,
+  preservingProtoFieldNames = true,
+  formattingLongAsNumber = true
 ).toJson(myProto)
 {%endhighlight%}
 
