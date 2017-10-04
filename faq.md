@@ -41,6 +41,12 @@ Java application that generates code. See an [example project](https://github.co
 The relevant parts are marked with "Add the generated folder as a source" and
 "Compile the proto file(s)".
 
+## How do I get grpc, java conversions, flat packages, etc with Maven?
+
+The example maven project invokes ScalaPBC. To get these ScalaPB features, you need to pass a
+generator parameter to ScalaPBC. See the supported generator parameters and how to use them in 
+[ScalaPBC]({{site.baseurl}}/scalapbc.html) documentation.
+
 ## I am getting "Import was not found or had errors"
 
 If you are using sbt-protoc and importing protos like `scalapb/scalapb.proto`,
