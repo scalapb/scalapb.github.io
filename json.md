@@ -67,5 +67,5 @@ new com.trueaccord.scalapb.json.Printer(
 ).toJson(myProto)
 {%endhighlight%}
 
-See the list of [constructor paramerters here](https://github.com/scalapb/scalapb-json4s/blob/master/src/main/scala/com/trueaccord/scalapb/json/JsonFormat.scala)
+See the list of [constructor paramerters here](https://github.com/scalapb/scalapb-json4s/blob/master/src/main/scala/scalapb/json4s/JsonFormat.scala)
 
