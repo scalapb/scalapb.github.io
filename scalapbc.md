@@ -55,4 +55,4 @@ by colon (`:`)
 {%endhighlight%}
 
 The supported parameters are: `flat_package`, `java_conversions`, `grpc` and
-`single_line_to_string`. Those parameters are described in [SBT settings]({{site.baseurl}}/sbt-settings.html)
+`single_line_to_proto_string`. Those parameters are described in [SBT settings]({{site.baseurl}}/sbt-settings.html)

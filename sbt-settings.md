@@ -92,13 +92,16 @@ scalapb.gen(
   flatPackage: Boolean = false,
   javaConversions: Boolean = false,
   grpc: Boolean = true,
-  singleLineToString: Boolean = false)
+  singleLineToProtoString: Boolean = false)
 {% endhighlight %}
+
+Note that in ScalaPB 0.7, `singleLineToString` has been renamed to 
+`singleLineToProtoString`.
 
 **`flatPackage`**: When true, ScalaPB will not append the protofile base name
 to the package name.
 
-**`singleLineToString`**: By default, ScalaPB generates a `toString()` method
+**`singleLineToProtoString`**: By default, ScalaPB generates a `toString()` method
 that renders the message as a multi-line format (using `TextFormat.printToUnicodeString`).
 Set to true If you would like ScalaPB to generate `toString()` methods that use the single line
 format.
