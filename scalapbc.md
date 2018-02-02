@@ -1,4 +1,4 @@
--]--
+---
 title: "ScalaPBC: Compiling outside SBT"
 layout: page
 ---
