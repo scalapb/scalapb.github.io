@@ -67,5 +67,18 @@ new com.trueaccord.scalapb.json.Printer(
 ).toJson(myProto)
 {%endhighlight%}
 
+Options:
+
+- `includingDefaultValueFields` (default: `false`): should fields
+  that are set to their default value be included in the output.
+- `preservingProtoFileNames` (default: `false`): by default, field names are mapped to 
+  lowerCamelCase and become JSON object keys. Setting this option to `true` would
+  make the parser and the printer use the original field names as specified in the proto
+  file (normally, in snake_case)
+- `formatLongAsNumber` (default: `false`): by default, longs are serialized as
+  strings. To use the numeric representation, set this option to true. Note that
+  due to the way Javascript represents numbers, there is a possibility to lose
+  precision ([more details here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger)).
+
 See the list of [constructor paramerters here](https://github.com/scalapb/scalapb-json4s/blob/master/src/main/scala/scalapb/json4s/JsonFormat.scala)
 
