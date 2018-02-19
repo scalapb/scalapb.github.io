@@ -53,9 +53,13 @@ See all available options in [sbt-protoc documentation](https://github.com/thesa
 
 ## Running on Windows
 
-Generating Scala code on Windows requires Python 2.x to be installed on your
-system.  If Python is not installed on your system, you can [download it from
-here](https://www.python.org/downloads/windows/).
+Before sbt-protoc 0.99.15, generating Scala code on Windows required Python 2.x
+to be installed on your system. If you are using sbt-protoc 0.99.15 or later,
+then things should just work.
+
+If you are using an older version of sbt-protoc and unable to upgrade, then
+you must have Python 2.x installed on your system.  If Python is not installed
+on your system, you can [download it from here](https://www.python.org/downloads/windows/).
 
 If Python.exe can be found in your PATH, then ScalaPB should just work.  If
 not, you can set the location of the Python executable explicitly:
