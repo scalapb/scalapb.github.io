@@ -14,7 +14,7 @@ containing the following line:
 {% highlight scala %}
 addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}")
 
-libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "{{site.data.version.scalapb}}"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "{{site.data.version.scalapb}}"
 {% endhighlight %}
 
 Add the following line to your `build.sbt`:
@@ -34,7 +34,7 @@ scalapb/scalapb.proto or anything from `google/protobuf/*.proto`, add the
 following to your `build.sbt`:
 
 {% highlight scala %}
-libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
+libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
 {% endhighlight %}
 
 ## Defaults

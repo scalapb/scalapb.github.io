@@ -3,6 +3,21 @@ title: "Migrating from earlier versions"
 layout: page
 ---
 
+# Migrating to ScalaPB 0.7.x
+
+From version 0.7.0 and onwards, ScalaPB artifacts are published under the `com.thesamet.scalapb` group id instead of the com.trueaccord.scalapb group id.
+
+In addition, all classes in the `com.trueaccord.scalapb` are moved to the `scalapb` top-level
+package. During 0.7.x, we will keep type aliases and references in the original `com.trueaccord.scalapb`
+location so you may get deprecation warnings, but your code is unlikely to break.
+
+You will need to "sbt clean" and "sbt compile" again, to make sure the old generated classes
+are removed and new ones are generated. The generated code should not yield any deprecation warnings.
+
+Since the artifact name has changed, you will need to make sure all your other ScalaPB
+dependencies, such as `scalapb-json4s` and `sparksql-scalapb`, are updated to 0.7.x. Otherwise,
+they will pull an additional copy of ScalaPB from the old group id name.
+
 # Migrating from sbt-scalapb to sbt-protoc
 
 In `project/scalapb.proto` or `project/plugins.proto`, remove the library

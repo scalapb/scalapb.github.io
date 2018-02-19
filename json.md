@@ -15,17 +15,20 @@ Make sure that you are using ScalaPB 0.5.x or later.
 In `build.sbt` add a dependency on `scalapb-json4s`:
 
 {%highlight scala%}
-// For ScalaPB 0.6.x:
+// For ScalaPB 0.7.x:
+libraryDependencies += "com.thesamet.scalapb" %% "scalapb-json4s" % "0.7.0"
+
+// For ScalaPB 0.6.x (note the different groupId):
 libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.3.2"
 
-// For ScalaPB 0.5.x:
+// For ScalaPB 0.5.x (note the different groupId):
 libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.1.6"
 {%endhighlight%}
 
 In your code, you can now convert to JSON:
 
 {%highlight scala%}
-import com.trueaccord.scalapb.json.JsonFormat
+import scalapb.json.JsonFormat
 
 val r: String = JsonFormat.toJsonString(myProto)
 {%endhighlight%}
@@ -33,7 +36,7 @@ val r: String = JsonFormat.toJsonString(myProto)
 Parse JSON back to a protocol buffer:
 
 {%highlight scala%}
-import com.trueaccord.scalapb.json.JsonFormat
+import scalapb.json.JsonFormat
 
 val proto: MyProto = JsonFormat.fromJsonString[MyProto](
     """{"x": "17"}""")
@@ -60,7 +63,7 @@ call `toJson()` / `fromJson()` as usual.
 For example:
 
 {%highlight scala%}
-new com.trueaccord.scalapb.json.Printer(
+new scalapb.json.Printer(
   includingDefaultValueFields = true,
   preservingProtoFieldNames = true,
   formattingLongAsNumber = true

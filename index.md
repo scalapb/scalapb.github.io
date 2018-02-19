@@ -53,7 +53,7 @@ containing the following line:
 
     addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}")
 
-    libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "{{site.data.version.scalapb}}"
+    libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "{{site.data.version.scalapb}}"
 
 Add the following line to your `build.sbt`:
 
@@ -63,7 +63,7 @@ Add the following line to your `build.sbt`:
 
     // (optional) If you need scalapb/scalapb.proto or anything from
     // google/protobuf/*.proto
-    libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
+    libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
 
 
 ScalaPB looks for protocol buffer files in `src/main/protobuf`, but this can

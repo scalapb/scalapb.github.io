@@ -10,8 +10,8 @@ layout: page
 Install ScalaPB as usual. Add the following to your `build.sbt`:
 
     libraryDependencies ++= Seq(
-        "io.grpc" % "grpc-netty" % com.trueaccord.scalapb.compiler.Version.grpcJavaVersion,
-        "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
+        "io.grpc" % "grpc-netty" % scalapb.compiler.Version.grpcJavaVersion,
+        "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion
     )
 
 ## Creating a service

@@ -20,7 +20,7 @@ addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.2")
 In `build.sbt` add a dependency on `sparksql-scalapb`:
 
 {%highlight scala%}
-libraryDepenencies += "com.trueaccord.scalapb" %% "sparksql-scalapb" % "0.1.8"
+libraryDepenencies += "com.thesamet.scalapb" %% "sparksql-scalapb" % "0.7.0"
 {%endhighlight%}
 
 The running container contains an old version of Google's Protocol Buffers
@@ -46,7 +46,7 @@ val persons: RDD[Person] = ...
 You can convert it to a dataframe and register it as SparkSQL table:
 
 {%highlight scala%}
-import com.trueaccord.scalapb.spark._
+import scalapb.spark._
 sqlContext.protoToDataFrame(persons).registerTempTable("persons")
 {%endhighlight%}
 
@@ -54,7 +54,7 @@ The first import line adds an implicit conversion for SQLContext that supplies
 `protoToDF`. An equivalent alternative you can use is:
 
 {%highlight scala%}
-import com.trueaccord.scalapb.spark._
+import scalapb.spark._
 persons.toDataFrame(sqlContext).registerTempTable("persons")
 {%endhighlight%}
 

@@ -20,10 +20,10 @@ Limitations:
 Add to your library dependencies:
 
     libraryDependencies ++= Seq(
-      "com.trueaccord.scalapb" %%% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion,
+      "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion,
 
       // The following needed only if you include scalapb/scalapb.proto:
-      "com.trueaccord.scalapb" %%% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
+      "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
     )
 
 Since the ScalaJS compiler depends on an old version of protobuf it is
@@ -31,9 +31,9 @@ recommended to work with the `compilerplugin-shaded` artifact. This artifact con
 this in your `project/scalapb.sbt` file instead of what described in the
 standard installation instructions:
 
-    addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}" exclude ("com.trueaccord.scalapb", "protoc-bridge_2.10"))
+    addSbtPlugin("com.thesamet" % "sbt-protoc" % "{{site.data.version.sbt_protoc}}" exclude ("com.thesamet.scalapb", "protoc-bridge_2.10"))
 
-    libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin-shaded" % "{{site.data.version.scalapb}}"
+    libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin-shaded" % "{{site.data.version.scalapb}}"
 
 ## Demo
 

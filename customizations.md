@@ -26,8 +26,8 @@ option (scalapb.options) = {
   package_name: "com.example.myprotos"
   flat_package: true
   single_file: true
-  import: "com.trueaccord.pb.MyType"
-  import: "com.trueaccord.other._"
+  import: "com.thesamet.pb.MyType"
+  import: "com.thesamet.other._"
   preamble: "sealed trait BaseMessage"
   preamble: "sealed trait CommonMessage"
 };
@@ -111,7 +111,7 @@ Example:
 import "scalapb/scalapb.proto";
 
 message CustomerWithPhone {
-  option (scalapb.message).extends = "com.trueaccord.pb.BaseCustomer";
+  option (scalapb.message).extends = "com.thesamet.pb.BaseCustomer";
 
   optional string customer_id = 1;
   optional string name = 2;
@@ -122,7 +122,7 @@ message CustomerWithPhone {
 In your code, define the base trait `DomainEvent` and include any subset of the fields:
 
 {% highlight scala %}
-package com.trueaccord.pb
+package com.thesamet.pb
 
 trait BaseCustomer {
   def customerId: Option[String]
@@ -237,7 +237,7 @@ In addition to primitive values, you can customize enums and messages as well.
 For more examples, see:
 
 - [`custom_types.proto`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/custom_types.proto)
-- [`PersonId.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/PersonId.scala)
+- [`PersonId.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/thesamet/pb/PersonId.scala)
 - [`CustomTypesSpec.scala`](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/test/scala/CustomTypesSpec.scala)
 
 ## Custom types on maps
@@ -250,18 +250,18 @@ Example:
 
 {% highlight proto %}
 message CustomMaps {
-  // Will generate Map[String, com.trueaccord.pb.Years]
+  // Will generate Map[String, com.thesamet.pb.Years]
   map<string, int32> string_to_year = 1 [
-      (scalapb.field).value_type = "com.trueaccord.pb.Years"];
+      (scalapb.field).value_type = "com.thesamet.pb.Years"];
 
   // Will generate Map[PersonId, Int]
   map<string, int32> person_to_int = 2 [
-      (scalapb.field).key_type = "com.trueaccord.pb.PersonId"];
+      (scalapb.field).key_type = "com.thesamet.pb.PersonId"];
 
-  // Will generate Map[PersonId, com.trueaccord.pb.Years]
+  // Will generate Map[PersonId, com.thesamet.pb.Years]
   map<string, int32> person_to_year = 3 [
-      (scalapb.field).key_type = "com.trueaccord.pb.PersonId",
-      (scalapb.field).value_type = "com.trueaccord.pb.Years"];
+      (scalapb.field).key_type = "com.thesamet.pb.PersonId",
+      (scalapb.field).value_type = "com.thesamet.pb.Years"];
 }
 {% endhighlight %}
 
@@ -300,7 +300,7 @@ Note: using `Array` is not supported along with Java conversions.
 Note: Most Scala collections can be used with this feature. If you are trying
 to implement your own collection type, it may be useful to check `MyVector`,
 the simplest custom collection that is compatible with ScalaPB:
-- [MyVector.scala](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/trueaccord/pb/MyVector.scala)
+- [MyVector.scala](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/scala/com/thesamet/pb/MyVector.scala)
 - [collection_types.proto](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/collection_types.proto)
 
 # Custom names
@@ -333,7 +333,7 @@ message BarMessage {
 The easiest way to get `protoc` to find `scalapb/scalapb.proto` when compiling
 through SBT is by adding the following to your `build.sbt`:
 
-    libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion % "protobuf"
+    libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
 
 If you are invoking `protoc` manually, you will need to ensure that the files in
 [`protobuf`](https://github.com/scalapb/ScalaPB/tree/master/protobuf)
