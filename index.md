@@ -78,7 +78,7 @@ For additional configuration options, see
 If you would like to compile protocol buffers into Scala outside SBT, you can
 use spbc (ScalaPB compiler).
 
-The first step, is to [download the latest version](https://github.com/scalapb/ScalaPB/releases/download/v{{site.data.version.scalapb}}/spbc-{{site.data.version.scalapb}}.zip)
+The first step, is to [download the latest version](https://github.com/scalapb/ScalaPB/releases/download/v{{site.data.version.scalapb}}/scalapbc-{{site.data.version.scalapb}}.zip)
 from the [ScalaPB releases page on Github](https://github.com/scalapb/ScalaPB/releases).
 
 Unzip the file, and inside you will find two scripts: `bin/spbc` (and
