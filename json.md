@@ -28,7 +28,7 @@ libraryDependencies += "com.trueaccord.scalapb" %% "scalapb-json4s" % "0.1.6"
 In your code, you can now convert to JSON:
 
 {%highlight scala%}
-import scalapb.json.JsonFormat
+import scalapb.json4s.JsonFormat
 
 val r: String = JsonFormat.toJsonString(myProto)
 {%endhighlight%}
@@ -36,7 +36,7 @@ val r: String = JsonFormat.toJsonString(myProto)
 Parse JSON back to a protocol buffer:
 
 {%highlight scala%}
-import scalapb.json.JsonFormat
+import scalapb.json4s.JsonFormat
 
 val proto: MyProto = JsonFormat.fromJsonString[MyProto](
     """{"x": "17"}""")
@@ -63,7 +63,7 @@ call `toJson()` / `fromJson()` as usual.
 For example:
 
 {%highlight scala%}
-new scalapb.json.Printer(
+new scalapb.json4s.Printer(
   includingDefaultValueFields = true,
   preservingProtoFieldNames = true,
   formattingLongAsNumber = true
