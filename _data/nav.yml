@@ -18,6 +18,8 @@
   url: /json.html
 - text: ScalaPBC
   url: /scalapbc.html
+- text: API Docs
+  url: /api/scalapb/latest/
 - text: FAQ
   url: /faq.html
 - text: Migrating
