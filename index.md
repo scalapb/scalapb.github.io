@@ -109,3 +109,4 @@ a feature? [Report on Github](https://github.com/scalapb/ScalaPB/issues).
 ## Next:
 
 Read about the [Generated Code]({{site.baseurl}}/generated-code.html).
+
