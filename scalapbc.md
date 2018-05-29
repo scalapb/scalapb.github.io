@@ -52,15 +52,15 @@ To generate both Scala code and Java code along with Java conversions:
 If you would like to pass additional options, like `java_conversions`,
 `flat_package`, or `single_line_to_proto_string`, it can be done like this:
 
-    bin/scalapbc my.proto --scala_out=OPT1,OPT2:path/to/output/dir/
+{%highlight shell%}
+bin/scalapbc my.proto --scala_out=OPT1,OPT2:path/to/output/dir/
+{%endhighlight%}
 
-where OPT1,OPT2 is a comma-separated list of options. For example:
-
-    bin/scalapbc my.proto --scala_out=flat_package,java_conversions:.
+where OPT1,OPT2 is a comma-separated list of options, followed by a colon
+(`:`) and then the output directory. For example:
 
 {%highlight shell%}
-./bin/scalapbc -v351 \
-    --scala_out=param1,param2:some/output/directory
+bin/scalapbc my.proto --scala_out=flat_package,java_conversions:protos/src/scala/main/
 {%endhighlight%}
 
 The supported parameters are: `flat_package`, `java_conversions`, `grpc` and
