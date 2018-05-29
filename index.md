@@ -80,6 +80,11 @@ use scalapbc (ScalaPB compiler).
 
 See [ScalaPBC]({{site.baseurl}}/scalapbc.html).
 
+## Running from Maven
+
+Using ScalaPBC, you can get maven to generate the code for you.
+Check out the [ScalaPB Maven example](https://github.com/thesamet/scalapb-maven-example).
+
 ## Questions? Comments?
 
 Feel free to post to our [mailing
