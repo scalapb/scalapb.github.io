@@ -73,32 +73,12 @@ sources from your protos and compile them.
 For additional configuration options, see
 [ScalaPB SBT Settings]({{site.baseurl}}/sbt-settings.html).
 
-## Running Standalone Using spbc
+## Running Standalone Using scalapbc
 
 If you would like to compile protocol buffers into Scala outside SBT, you can
-use spbc (ScalaPB compiler).
+use scalapbc (ScalaPB compiler).
 
-The first step, is to [download the latest version](https://github.com/scalapb/ScalaPB/releases/download/v{{site.data.version.scalapb}}/scalapbc-{{site.data.version.scalapb}}.zip)
-from the [ScalaPB releases page on Github](https://github.com/scalapb/ScalaPB/releases).
-
-Unzip the file, and inside you will find two scripts: `bin/spbc` (and
-`bin/spbc.bat`) that can be used on Unix/Linux/Mac OS X (and Windows,
-respectively).
-
-spbc is used exactly like protoc. In fact, spbc calls protoc, though it passes
-to it a script that serves as the Scala plugin. Here is an example command
-line to invoke it:
-
-    bin/spbc my.proto --scala_out=.
-
-If you would like to pass additional options, like java_conversions,
-flat_package, or single_line_to_proto_string, it can be done like this:
-
-    bin/spbc my.proto --scala_out=OPT1,OPT2:path/to/output/dir/
-
-where OPT1,OPT2 is a comma-separated list of options. For example:
-
-    bin/spbc my.proto --scala_out=flat_package,java_conversions:.
+See [ScalaPBC]({{site.baseurl}}/scalapbc.html).
 
 ## Questions? Comments?
 

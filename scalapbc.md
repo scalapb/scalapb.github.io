@@ -13,15 +13,19 @@ You can download the current release here: [scalapbc-{{site.data.version.scalapb
 
 Older versions can be found in the [releases page](https://github.com/scalapb/ScalaPB/releases).
 
+Unzip the file, and inside you will find two scripts: `bin/scalapbc` (and
+`bin/scalapbc.bat`) that can be used on Unix/Linux/Mac OS X (and Windows,
+respectively).
+
 ## Usage
 
-ScalaPBC is a wrapper around protoc. It actually ships with [multiple
-versions](https://github.com/os72/protoc-jar) of protoc embedded in the jar
-and you can pick the one you want to use by passing the desired version as the
+ScalaPBC is used exactly like protoc. In fact, scalapbc calls protoc.
+It ships with [multiple versions](https://github.com/os72/protoc-jar) of protoc embedded in the
+jar and you can pick the one you want to use by passing the desired version as the
 first command line argument:
 
 {%highlight shell%}
-./bin/scalapbc -v340 [options]
+./bin/scalapbc -v351 [options]
 {%endhighlight%}
 
 {%highlight shell%}
@@ -31,13 +35,13 @@ first command line argument:
 To generate Scala code, invoke ScalaPBC like this:
 
 {%highlight shell%}
-./bin/scalapbc -v340 --scala_out=some/output/directory myproto.proto
+./bin/scalapbc -v351 --scala_out=some/output/directory myproto.proto
 {%endhighlight%}
 
 To generate both Scala code and Java code along with Java conversions:
 
 {%highlight shell%}
-./bin/scalapbc -v340 \
+./bin/scalapbc -v351 \
     --scala_out=java_conversions:some/output/directory \
     --java_out=some/output/directory \
     myproto.proto
@@ -45,12 +49,17 @@ To generate both Scala code and Java code along with Java conversions:
 
 ## Passing generator parameters
 
-It is possible to pass parameters to the ScalaPB code generator as a
-comma-separated list following the `--scala_out=` and separated from the path
-by colon (`:`)
+If you would like to pass additional options, like `java_conversions`,
+`flat_package`, or `single_line_to_proto_string`, it can be done like this:
+
+    bin/scalapbc my.proto --scala_out=OPT1,OPT2:path/to/output/dir/
+
+where OPT1,OPT2 is a comma-separated list of options. For example:
+
+    bin/scalapbc my.proto --scala_out=flat_package,java_conversions:.
 
 {%highlight shell%}
-./bin/scalapbc -v340 \
+./bin/scalapbc -v351 \
     --scala_out=param1,param2:some/output/directory
 {%endhighlight%}
 
