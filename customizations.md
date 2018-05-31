@@ -48,6 +48,12 @@ enums to a single Scala file.
   commonly used to define sealed traits that are extended using
   `(scalapb.message).extends` - see custom base traits below and [this example](https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/sealed_trait.proto).
 
+- The `object_name` option lets you customize the name of the generated class
+  that contains various file-level members such as descriptors and a list of
+  companion objects for the generated messages and enums. This is useful in
+  case you are running into issues where the generated class name conflicts
+  with other things in your project.
+
 # Primitive wrappers
 
 The `primitive_wrappers` option is useful when you want to have optional
