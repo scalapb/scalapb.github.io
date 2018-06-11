@@ -102,3 +102,12 @@ distinction in the wire format between leaving out a message (which is
 represent by `None` or sending one, even if all its fields are unset (or
 assigned default values). If you wish to have `Option[]` around scalar
 types in proto3, you can use this fact to your advantage by using [primitive wrappers]({{site.baseurl}}/customizations.html#primitive-wrappers)
+
+## Why a certain customization is not available as a global generator parameter?
+
+It turns out that global generator parameters that affect source code compatibility are something that we would like to avoid, as it is creating issues that are tricky to resolve. For example, if:
+
+- package A provides proto files and generate source code with one value of a generator parameter,
+- package B is compiled separately with a different value of this generator parameter, and imports protos from package A, as well as its generated classes.
+
+then the code generator for B has no way of knowing that package A has code generated with a different parameter, and that it needs to account for that in the way it references it. This leads to compilation errors in ScalaPB or in user-provided code generators.
