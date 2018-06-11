@@ -84,3 +84,21 @@ compile. You can exclude them by adding an `includeFilter`:
       (f: File) =>  f.getParent.endsWith("com/thesamet/protos"))
 
 See [full example here](https://github.com/thesamet/sbt-protoc/tree/master/examples/multi-with-external-jar).
+
+## How do I represent `Option[T]` in proto3 for scalar fields?
+
+Scalar fields are the various numeric types, `bool`, `string`, `byte` and `enum` -
+everything except of messages. In the proto2 wire format, there is a distinction between
+not setting a value (`None`), or setting it to its default value (`Some(0)` or
+`Some("")`).
+
+In proto3, this distinction has been removed in the wire format. Whenever the value
+of a scalar type is zero, it does not get serialized. Therefore, the parser is not
+able to distinguish between `Some(0)` or `None`. The semantics is that a [zero
+has been received](https://developers.google.com/protocol-buffers/docs/proto3#default).
+
+Optional message types are still wrapped in `Option[]` since there is a
+distinction in the wire format between leaving out a message (which is
+represent by `None` or sending one, even if all its fields are unset (or
+assigned default values). If you wish to have `Option[]` around scalar
+types in proto3, you can use this fact to your advantage by using [primitive wrappers]({{site.baseurl}}/customizations.html#primitive-wrappers)

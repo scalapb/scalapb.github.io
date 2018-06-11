@@ -56,12 +56,10 @@ enums to a single Scala file.
 
 # Primitive wrappers
 
-The `primitive_wrappers` option is useful when you want to have optional
-primitives in Proto 3, for example `Option[Int]`. In proto 3, unlike proto 2,
-primitives are not wrapped in an option by default. The standard technique to
-obtain an optional primitive is to wrap it inside a message (since messages
-are provided inside an `Option`). Google provides standard wrappers to the
-primitive types in
+In proto 3, unlike proto 2, primitives are not wrapped in an option by default.
+The standard technique to obtain an optional primitive is to wrap it inside a
+message (since messages are provided inside an `Option`). Google provides
+standard wrappers to the primitive types in
 [wrappers.proto](https://github.com/google/protobuf/blob/master/src/google/protobuf/wrappers.proto).
 
 `primitive_wrappers` is enabled by default for ScalaPB>=0.6.0. Whenever one

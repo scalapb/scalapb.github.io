@@ -36,6 +36,8 @@ forever" in the [Language
 Guide](https://developers.google.com/protocol-buffers/docs/proto#simple) are
 normal members.
 
+Note that in proto3, scalar (non-message) fields are not wrapped in `Option`,
+
 For example, if your protocol buffer looks like this:
 
 {% highlight protobuf %}
