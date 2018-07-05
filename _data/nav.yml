@@ -8,6 +8,8 @@
   url: /user_defined_options.html
 - text: Customizations
   url: /customizations.html
+- text: Sealed oneofs
+  url: /sealed-oneofs.html
 - text: gRPC
   url: /grpc.html
 - text: Scala.js
