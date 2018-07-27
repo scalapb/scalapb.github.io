@@ -120,3 +120,12 @@ See [example
 code](https://github.com/xuwei-k/grpc-scala-sample/tree/master/grpc-scala/src/main/scala/io/grpc/examples/routeguide) based on the
 [route_guide gRPC example](https://github.com/grpc/grpc-java/blob/63503c2989df6d895c56e22f430f2b934e7a41d3/examples/protos/route_guide.proto).
 
+## grpc-netty issues
+
+In certain situations (for example when you have a fat jar), you may see the
+following exception:
+
+    Exception in thread "main" io.grpc.ManagedChannelProvider$ProviderNotFoundException: No functional server found. Try adding a dependency on the grpc-netty artifact
+
+To work around this issue, create a `NettyServer` explicitly using
+`io.grpc.netty.NettyServerBuilder`.
