@@ -284,7 +284,7 @@ import "scalapb/scalapb.proto";
 
 option (scalapb.options) = {
   collection_type: "Set"
-}
+};
 
 message CollTest {
     // Will generate Set[Int] due to file-level option.
