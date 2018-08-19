@@ -1,5 +1,0 @@
-baseurl: https://scalapb.github.io
-
-gems:
-  - jekyll-redirect-from
-
