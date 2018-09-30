@@ -19,38 +19,44 @@ It ships with <a href="https://github.com/os72/protoc-jar">multiple versions</a>
 jar and you can pick the one you want to use by passing the desired version as the
 first command line argument:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="o">[</span>options]
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>./bin/scalapbc -v351 <span class="o">[</span>options]
+</code></pre>
+</div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v261</span> <span class="o">[</span>options]
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>./bin/scalapbc -v261 <span class="o">[</span>options]
+</code></pre>
+</div>
 
 <p>To generate Scala code, invoke ScalaPBC like this:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="nt">--scala_out</span><span class="o">=</span>some/output/directory myproto.proto
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>./bin/scalapbc -v351 --scala_out<span class="o">=</span>some/output/directory myproto.proto
+</code></pre>
+</div>
 
 <p>To generate both Scala code and Java code along with Java conversions:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="se">\</span>
-    <span class="nt">--scala_out</span><span class="o">=</span>java_conversions:some/output/directory <span class="se">\</span>
-    <span class="nt">--java_out</span><span class="o">=</span>some/output/directory <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>./bin/scalapbc -v351 <span class="se">\</span>
+    --scala_out<span class="o">=</span>java_conversions:some/output/directory <span class="se">\</span>
+    --java_out<span class="o">=</span>some/output/directory <span class="se">\</span>
     myproto.proto
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="passing-generator-parameters">Passing generator parameters</h2>
 
 <p>If you would like to pass additional options, like <code class="highlighter-rouge">java_conversions</code>,
 <code class="highlighter-rouge">flat_package</code>, or <code class="highlighter-rouge">single_line_to_proto_string</code>, it can be done like this:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>OPT1,OPT2:path/to/output/dir/
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/scalapbc my.proto --scala_out<span class="o">=</span>OPT1,OPT2:path/to/output/dir/
+</code></pre>
+</div>
 
 <p>where OPT1,OPT2 is a comma-separated list of options, followed by a colon
 (<code class="highlighter-rouge">:</code>) and then the output directory. For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>flat_package,java_conversions:protos/src/scala/main/
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>bin/scalapbc my.proto --scala_out<span class="o">=</span>flat_package,java_conversions:protos/src/scala/main/
+</code></pre>
+</div>
 
 <p>The supported parameters are: <code class="highlighter-rouge">flat_package</code>, <code class="highlighter-rouge">java_conversions</code>, <code class="highlighter-rouge">grpc</code> and
 <code class="highlighter-rouge">single_line_to_proto_string</code>. Those parameters are described in <a href="/sbt-settings.html">SBT settings</a></p>

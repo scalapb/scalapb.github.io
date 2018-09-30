@@ -4,11 +4,12 @@
 
 <p>Install ScalaPB as usual. Add the following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
+<div class="highlighter-rouge"><pre class="highlight"><code>libraryDependencies ++= Seq(
     "io.grpc" % "grpc-netty" % scalapb.compiler.Version.grpcJavaVersion,
     "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion
 )
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="creating-a-service">Creating a service</h2>
 
@@ -19,17 +20,17 @@ implement the server side.</p>
 <p>For example, if your proto file in <code class="highlighter-rouge">src/main/protobuf/hello.proto</code> looks like
 this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">syntax</span> <span class="p">=</span> <span class="s2">"proto3"</span><span class="p">;</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>syntax = "proto3";
 
-<span class="k">package</span> <span class="n">com</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">protos</span><span class="p">;</span>
+package com.example.protos;
 
-<span class="p">//</span> <span class="n">The</span> <span class="n">greeting</span> <span class="n">service</span> <span class="n">definition</span><span class="p">.</span>
-<span class="n">service</span> <span class="n">Greeter</span> <span class="p">{</span>
-  <span class="p">//</span> <span class="n">Sends</span> <span class="n">a</span> <span class="n">greeting</span>
-  <span class="n">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="n">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
 
-<span class="p">//</span> <span class="n">The</span> <span class="n">request</span> <span class="n">message</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">user</span><span class="s1">'s name.
+// The request message containing the user's name.
 message HelloRequest {
   string name = 1;
 }
@@ -38,11 +39,12 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
-</span></code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The generated code will look like this (simplified and commented):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>object GreeterGrpc {
+<div class="highlighter-rouge"><pre class="highlight"><code>object GreeterGrpc {
 
   // Base trait for an asynchronous client and server.
   trait Greeter extends AbstractService {
@@ -76,41 +78,46 @@ message HelloReply {
   // Creates a new asynchronous client.
   def stub(channel: io.grpc.Channel): GreeterStub = new GreeterStub(channel)
 }
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="using-the-client">Using the client</h2>
 
 <p>Creating a channel:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext(true).build
+<div class="highlighter-rouge"><pre class="highlight"><code>val channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext(true).build
 val request = HelloRequest(name = "World")
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Blocking call:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val blockingStub = GreeterGrpc.blockingStub(channel)
+<div class="highlighter-rouge"><pre class="highlight"><code>val blockingStub = GreeterGrpc.blockingStub(channel)
 val reply: HelloReply = blockingStub.sayHello(request)
 println(reply)
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Async call:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val stub = GreeterGrpc.stub(channel)
+<div class="highlighter-rouge"><pre class="highlight"><code>val stub = GreeterGrpc.stub(channel)
 val f: Future[HelloReply] = stub.sayHello(request)
 f onComplete println
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="writing-a-server">Writing a server</h2>
 
 <p>Implement the service:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private class GreeterImpl extends GreeterGrpc.Greeter {
+<div class="highlighter-rouge"><pre class="highlight"><code>private class GreeterImpl extends GreeterGrpc.Greeter {
   override def sayHello(req: HelloRequest) = {
     val reply = HelloReply(message = "Hello " + req.name)
     Future.successful(reply)
   }
 }
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>See
 <a href="https://github.com/xuwei-k/grpc-scala-sample/blob/master/grpc-scala/src/main/scala/io/grpc/examples/helloworld/HelloWorldServer.scala">complete example server</a> here.</p>
@@ -125,13 +132,12 @@ closely the offical <code class="highlighter-rouge">grpc-java</code> API. Exampl
 <p>In certain situations (for example when you have a fat jar), you may see the
 following exception:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Exception in thread "main" io.grpc.ManagedChannelProvider$ProviderNotFoundException: No functional server found. Try adding a dependency on the grpc-netty artifact
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>Exception in thread "main" io.grpc.ManagedChannelProvider$ProviderNotFoundException: No functional server found. Try adding a dependency on the grpc-netty artifact
+</code></pre>
+</div>
 
 <p>To work around this issue, create a <code class="highlighter-rouge">NettyServer</code> explicitly using
 <code class="highlighter-rouge">io.grpc.netty.NettyServerBuilder</code>.</p>
-
-<p>fooobar</p>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {

@@ -37,18 +37,19 @@ normal members.</p>
 
 <p>For example, if your protocol buffer looks like this:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Person</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Person</span> <span class="p">{</span>
     <span class="k">optional</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">optional</span> <span class="kt">int32</span> <span class="na">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
     <span class="c1">// Address is a message defined somewhere else.
 </span>    <span class="k">repeated</span> <span class="n">Address</span> <span class="na">addresses</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>…then the compiler will generate code that looks like this:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
     <span class="n">name</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
     <span class="n">age</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
     <span class="n">addresses</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Address</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Nil</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">GeneratedMessage</span> <span class="o">{</span>
@@ -63,7 +64,8 @@ normal members.</p>
 
     <span class="c1">// more stuff...
 </span><span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The case class contains various methods for serialization, and the companion
 object contains method for parsing. <a href="https://github.com/scalapb/ScalaPB/blob/master/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala">See the source code for
@@ -76,10 +78,11 @@ to see what methods are available</p>
 <p>Create a new instance of a message by calling the constructor (as you normally
 would for a case class):</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">p1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">()</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">()</span>
 
 <span class="k">val</span> <span class="n">p2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"John"</span><span class="o">))</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>When constructing messages, it is advised to use named arguments
 Person(<strong>name</strong> = x, <strong>age</strong> = y) to ensure your code does not rely on the
@@ -98,19 +101,21 @@ however ScalaPB provides additional methods to make it even easier.</p>
 <p>The first method is using a <code class="highlighter-rouge">withX()</code> method, where <code class="highlighter-rouge">X</code> is a name of a field.
 For example</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">withName</span><span class="o">(</span><span class="s">"John"</span><span class="o">).</span><span class="n">withAge</span><span class="o">(</span><span class="mi">29</span><span class="o">)</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">withName</span><span class="o">(</span><span class="s">"John"</span><span class="o">).</span><span class="n">withAge</span><span class="o">(</span><span class="mi">29</span><span class="o">)</span>
+</code></pre>
+</div>
 
 <p>Note that when using the <code class="highlighter-rouge">withX()</code> method on an optional field, you do not
 need to provide the <code class="highlighter-rouge">Some()</code>.</p>
 
 <p>Another way to update a message is using the <code class="highlighter-rouge">update()</code> method:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
   <span class="k">_</span><span class="o">.</span><span class="n">name</span> <span class="o">:=</span> <span class="s">"John"</span><span class="o">,</span>
   <span class="k">_</span><span class="o">.</span><span class="n">age</span> <span class="o">:=</span> <span class="mi">29</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The <code class="highlighter-rouge">update()</code> method takes “mutations” (like the assignments above), and
 applies them on the object.  Using the <code class="highlighter-rouge">update()</code> method, as we will see
@@ -125,14 +130,15 @@ default value for the field if it is unset (that is, if it is <code class="highl
 
 <p>There are two ways to update an optional field using the <code class="highlighter-rouge">update()</code> method:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
   <span class="c1">// Pass the value directly:
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">name</span> <span class="o">:=</span> <span class="s">"John"</span><span class="o">,</span>
 
   <span class="c1">// Use the optionalX prefix and pass an Option:
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">optionalAge</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="mi">37</span><span class="o">)</span>  <span class="c1">// ...or None
 </span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The first way sets the field with a value, the second way lets you pass an
 <code class="highlighter-rouge">Option[]</code> so it is possible to set the field to <code class="highlighter-rouge">None</code>.</p>
@@ -170,7 +176,7 @@ elements added to the original list.</li>
 
 <p>Using <code class="highlighter-rouge">update()</code> is especially fun with repeated fields:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
   <span class="c1">// Override the addresses
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">addressses</span> <span class="o">:=</span> <span class="n">newListOfAddress</span><span class="o">,</span>
 
@@ -191,14 +197,15 @@ elements added to the original list.</li>
 </span>  <span class="c1">// repeatables - it happens in the nested mutations)
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">city</span><span class="o">.</span><span class="n">modify</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">trim</span><span class="o">))</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="oneof-fields">Oneof Fields</h2>
 
 <p>Oneofs are great when you model a message that has multiple disjoint cases. An
 example use case would be:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Represent a payment by credit card
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="c1">// Represent a payment by credit card
 </span><span class="kd">message</span> <span class="nc">CreditCardPayment</span> <span class="p">{</span>
     <span class="k">optional</span> <span class="kt">string</span> <span class="na">last4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">optional</span> <span class="kt">int32</span> <span class="na">expiration_month</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -223,11 +230,12 @@ example use case would be:</p>
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The compiler will generate code that looks like this:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">CreditCardPayment</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">CreditCardPayment</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">BankTransfer</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Order</span><span class="o">(...,</span> <span class="n">paymentType</span><span class="k">:</span> <span class="kt">Payment.PaymentType</span><span class="o">)</span> <span class="o">{</span>
@@ -258,11 +266,12 @@ example use case would be:</p>
 
     <span class="k">case</span> <span class="k">class</span> <span class="nc">Bank</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">CreditCardPayment</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">PaymentType</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This enables writing coding like this:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">o1</span> <span class="k">=</span> <span class="nc">Order</span><span class="o">()</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">o1</span> <span class="k">=</span> <span class="nc">Order</span><span class="o">()</span>
   <span class="o">.</span><span class="n">withCreditCard</span><span class="o">(</span><span class="nc">CreditCardPayment</span><span class="o">(</span><span class="n">last4</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"4848"</span><span class="o">)))</span>
 
 <span class="c1">// which is equivalent to:
@@ -289,7 +298,8 @@ example use case would be:</p>
 </span><span class="k">val</span> <span class="n">maybeRoutingNumber</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="n">o3</span><span class="o">.</span><span class="n">paymentType</span><span class="o">.</span><span class="n">bank</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span>
     <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">routingNumber</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="enumerations">Enumerations</h2>
 
@@ -299,7 +309,7 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 
 <p>For a definition like:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="n">Weather</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">enum</span> <span class="n">Weather</span> <span class="p">{</span>
     <span class="na">SUNNY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="na">PARTLY_CLOUDY</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="na">RAIN</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -308,11 +318,12 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 <span class="kd">message</span> <span class="nc">Forecast</span> <span class="p">{</span>
     <span class="k">optional</span> <span class="n">Weather</span> <span class="na">weather</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The compiler will generate:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Weather</span> <span class="k">extends</span> <span class="nc">GeneratedEnum</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Weather</span> <span class="k">extends</span> <span class="nc">GeneratedEnum</span> <span class="o">{</span>
     <span class="k">def</span> <span class="n">isSunny</span><span class="k">:</span> <span class="kt">Boolean</span>
     <span class="k">def</span> <span class="n">isPartlyCloudy</span><span class="k">:</span> <span class="kt">Boolean</span>
     <span class="k">def</span> <span class="n">isRain</span><span class="k">:</span> <span class="kt">Boolean</span>
@@ -338,11 +349,12 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Forecast</span><span class="o">(</span><span class="n">weather</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Weather</span><span class="o">])</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>And we can write:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="nc">Forecard</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">weather</span> <span class="o">:=</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">PartlyCloud</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="nc">Forecard</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">weather</span> <span class="o">:=</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">PartlyCloud</span><span class="o">)</span>
 
 <span class="n">assert</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="n">weather</span> <span class="o">==</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Weather</span><span class="o">.</span><span class="nc">PartlyCloudy</span><span class="o">)</span>
 
@@ -357,7 +369,8 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
     <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
 <span class="o">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="ascii-representation">ASCII Representation</h2>
 
@@ -372,7 +385,7 @@ follow the Java implementation.</p>
 
 <p>The format looks lie this:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">int_field</span><span class="o">:</span> <span class="mi">17</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="n">int_field</span><span class="o">:</span> <span class="mi">17</span>
 <span class="n">string_field</span><span class="o">:</span> <span class="s">"foo"</span>
 <span class="n">repeated_string_field</span><span class="o">:</span> <span class="s">"foo"</span>
 <span class="n">repeated_string_field</span><span class="o">:</span> <span class="s">"bar"</span>
@@ -380,7 +393,8 @@ follow the Java implementation.</p>
   <span class="n">field1</span><span class="o">:</span> <span class="s">"value1"</span>
   <span class="n">color_enum</span><span class="o">:</span> <span class="n">BLUE</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This format can be useful for debugging or for transient data processing, but
 beware of persisting these ASCII representations: unknown fields throw an
@@ -394,11 +408,12 @@ to write new code using ScalaPB, it can be useful to generate converters
 to/from the Java protocol buffers. To do this, set <code class="highlighter-rouge">PB.targets in Compile</code>
 like this in your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="nc">PB</span><span class="o">.</span><span class="n">gens</span><span class="o">.</span><span class="n">java</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span><span class="o">,</span>
   <span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">(</span><span class="n">javaConversions</span><span class="k">=</span><span class="kc">true</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This will result in the following changes:</p>
 

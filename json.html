@@ -9,7 +9,7 @@
 
 <p>In <code class="highlighter-rouge">build.sbt</code> add a dependency on <code class="highlighter-rouge">scalapb-json4s</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// For ScalaPB 0.7.x:
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="c1">// For ScalaPB 0.7.x:
 </span><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-json4s"</span> <span class="o">%</span> <span class="s">"0.7.0"</span>
 
 <span class="c1">// For ScalaPB 0.6.x (note the different groupId):
@@ -17,30 +17,34 @@
 
 <span class="c1">// For ScalaPB 0.5.x (note the different groupId):
 </span><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.trueaccord.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-json4s"</span> <span class="o">%</span> <span class="s">"0.1.6"</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>In your code, you can now convert to JSON:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalapb.json4s.JsonFormat</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalapb.json4s.JsonFormat</span>
 
 <span class="k">val</span> <span class="n">r</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="nc">JsonFormat</span><span class="o">.</span><span class="n">toJsonString</span><span class="o">(</span><span class="n">myProto</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Parse JSON back to a protocol buffer:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalapb.json4s.JsonFormat</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalapb.json4s.JsonFormat</span>
 
 <span class="k">val</span> <span class="n">proto</span><span class="k">:</span> <span class="kt">MyProto</span> <span class="o">=</span> <span class="nc">JsonFormat</span><span class="o">.</span><span class="n">fromJsonString</span><span class="o">[</span><span class="kt">MyProto</span><span class="o">](</span>
     <span class="s">"""{"x": "17"}"""</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>There are lower-level functions <code class="highlighter-rouge">toJson()</code> and <code class="highlighter-rouge">fromJson()</code> that convert from
 protos to json4s’s <code class="highlighter-rouge">JValue</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="n">toJson</span><span class="o">(</span><span class="n">m</span><span class="k">:</span> <span class="kt">GeneratedMessage</span><span class="o">)</span><span class="k">:</span> <span class="kt">JObject</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="n">toJson</span><span class="o">(</span><span class="n">m</span><span class="k">:</span> <span class="kt">GeneratedMessage</span><span class="o">)</span><span class="k">:</span> <span class="kt">JObject</span>
 
 <span class="k">def</span> <span class="n">fromJson</span><span class="o">[</span><span class="kt">Proto</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">JValue</span><span class="o">)</span><span class="k">:</span> <span class="kt">Proto</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Finally, in JsonFormat there are two implicit methods that instantiate
 <code class="highlighter-rouge">Reader[Proto]</code> and <code class="highlighter-rouge">Writer[Proto]</code>.</p>
@@ -53,12 +57,13 @@ call <code class="highlighter-rouge">toJson()</code> / <code class="highlighter-
 
 <p>For example:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">scalapb</span><span class="o">.</span><span class="n">json4s</span><span class="o">.</span><span class="nc">Printer</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">scalapb</span><span class="o">.</span><span class="n">json4s</span><span class="o">.</span><span class="nc">Printer</span><span class="o">(</span>
   <span class="n">includingDefaultValueFields</span> <span class="k">=</span> <span class="kc">true</span><span class="o">,</span>
   <span class="n">preservingProtoFieldNames</span> <span class="k">=</span> <span class="kc">true</span><span class="o">,</span>
   <span class="n">formattingLongAsNumber</span> <span class="k">=</span> <span class="kc">true</span>
 <span class="o">).</span><span class="n">toJson</span><span class="o">(</span><span class="n">myProto</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Options:</p>
 

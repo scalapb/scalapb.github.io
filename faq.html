@@ -14,13 +14,15 @@ are considered source directories and the source files are seen twice. To
 eliminate this problem, let’s tell sbt-protobuf to generate the sources into
 the parent directory. Add this to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scalaSource</span> <span class="n">in</span> <span class="nc">PB</span><span class="o">.</span><span class="n">protobufConfig</span> <span class="o">:=</span> <span class="n">sourceManaged</span><span class="o">.</span><span class="n">value</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">scalaSource</span> <span class="n">in</span> <span class="nc">PB</span><span class="o">.</span><span class="n">protobufConfig</span> <span class="o">:=</span> <span class="n">sourceManaged</span><span class="o">.</span><span class="n">value</span>
+</code></pre>
+</div>
 
 <p>If you generate Java sources, add,</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">javaSource</span> <span class="n">in</span> <span class="nc">PB</span><span class="o">.</span><span class="n">protobufConfig</span> <span class="o">:=</span> <span class="n">sourceManaged</span><span class="o">.</span><span class="n">value</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">javaSource</span> <span class="n">in</span> <span class="nc">PB</span><span class="o">.</span><span class="n">protobufConfig</span> <span class="o">:=</span> <span class="n">sourceManaged</span><span class="o">.</span><span class="n">value</span>
+</code></pre>
+</div>
 
 <h2 id="how-do-i-use-scalapb-from-the-command-line">How do I use ScalaPB from the command line?</h2>
 
@@ -47,8 +49,9 @@ or common protocol buffers like <code class="highlighter-rouge">google/protobuf/
 
 <p>Add the following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
+</code></pre>
+</div>
 
 <p>This tells <code class="highlighter-rouge">sbt-protoc</code> to extract protos from this jar (and all its
 dependencies, which includes Google’s common protos), and make them available
@@ -61,8 +64,9 @@ files available on the file system.</p>
 
 <p>Include the jar as a <code class="highlighter-rouge">protobuf</code> dependency in your libraryDependencies:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.somepackage"</span> <span class="o">%%</span> <span class="s">"that-has-jar"</span> <span class="o">%</span> <span class="s">"1.0"</span> <span class="o">%</span> <span class="s">"protobuf"</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.somepackage"</span> <span class="o">%%</span> <span class="s">"that-has-jar"</span> <span class="o">%</span> <span class="s">"1.0"</span> <span class="o">%</span> <span class="s">"protobuf"</span>
+</code></pre>
+</div>
 
 <p>This will tell sbt-protoc to extract the protos from that jar into
 <code class="highlighter-rouge">target/scala-2.vv/protobuf-external</code>. This makes it possible to <code class="highlighter-rouge">import</code>
@@ -70,15 +74,17 @@ those protos from your local protos. sbt-protoc looks for protocol buffers to
 compile in the directories listed in <code class="highlighter-rouge">PB.protoSources</code>. There you need to
 add a line like this to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protoSources</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="s">"protobuf_external"</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protoSources</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="s">"protobuf_external"</span>
+</code></pre>
+</div>
 
 <p>You may find other protos under <code class="highlighter-rouge">protobuf_external</code> that you do not wish to
 compile. You can exclude them by adding an <code class="highlighter-rouge">includeFilter</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>includeFilter in PB.generate := new SimpleFileFilter(
+<div class="highlighter-rouge"><pre class="highlight"><code>includeFilter in PB.generate := new SimpleFileFilter(
   (f: File) =&gt;  f.getParent.endsWith("com/thesamet/protos"))
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>See <a href="https://github.com/thesamet/sbt-protoc/tree/master/examples/multi-with-external-jar">full example here</a>.</p>
 
