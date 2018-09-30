@@ -20,64 +20,64 @@ implement the server side.</p>
 <p>For example, if your proto file in <code class="highlighter-rouge">src/main/protobuf/hello.proto</code> looks like
 this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>syntax = "proto3";
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
 
-package com.example.protos;
+<span class="kn">package</span> <span class="nn">com</span><span class="o">.</span><span class="n">example.protos</span><span class="p">;</span>
 
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-}
+<span class="c1">// The greeting service definition.
+</span><span class="kd">service</span> <span class="n">Greeter</span> <span class="p">{</span>
+  <span class="c1">// Sends a greeting
+</span>  <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloReply</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
+<span class="c1">// The request message containing the user's name.
+</span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
-}
+<span class="c1">// The response message containing the greetings
+</span><span class="kd">message</span> <span class="nc">HelloReply</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
 <p>The generated code will look like this (simplified and commented):</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>object GreeterGrpc {
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">object</span> <span class="nc">GreeterGrpc</span> <span class="o">{</span>
 
-  // Base trait for an asynchronous client and server.
-  trait Greeter extends AbstractService {
-    def serviceCompanion = Greeter
-    def sayHello(request: HelloRequest): Future[HelloReply]
-  }
+  <span class="c1">// Base trait for an asynchronous client and server.
+</span>  <span class="k">trait</span> <span class="nc">Greeter</span> <span class="k">extends</span> <span class="nc">AbstractService</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">serviceCompanion</span> <span class="k">=</span> <span class="nc">Greeter</span>
+    <span class="k">def</span> <span class="n">sayHello</span><span class="o">(</span><span class="n">request</span><span class="k">:</span> <span class="kt">HelloRequest</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">HelloReply</span><span class="o">]</span>
+  <span class="o">}</span>
 
-  object Greeter extend ServiceCompanion[Greeter] {
-      def descriptor = ...
-  }
+  <span class="k">object</span> <span class="nc">Greeter</span> <span class="n">extend</span> <span class="nc">ServiceCompanion</span><span class="o">[</span><span class="kt">Greeter</span><span class="o">]</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="n">descriptor</span> <span class="k">=</span> <span class="o">...</span>
+  <span class="o">}</span>
 
-  // Abstract trait for a blocking client:
-  trait GreeterBlockingClient {
-    def serviceCompanion = Greeter
-    def sayHello(request: HelloRequest): HelloReply
-  }
+  <span class="c1">// Abstract trait for a blocking client:
+</span>  <span class="k">trait</span> <span class="nc">GreeterBlockingClient</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">serviceCompanion</span> <span class="k">=</span> <span class="nc">Greeter</span>
+    <span class="k">def</span> <span class="n">sayHello</span><span class="o">(</span><span class="n">request</span><span class="k">:</span> <span class="kt">HelloRequest</span><span class="o">)</span><span class="k">:</span> <span class="kt">HelloReply</span>
+  <span class="o">}</span>
 
-  // Concrete blocking client:
-  class GreeterBlockingStub(channel, options) extends [...] with GreeterBlockingClient {
-      // omitted
-  }
+  <span class="c1">// Concrete blocking client:
+</span>  <span class="k">class</span> <span class="nc">GreeterBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">,</span> <span class="n">options</span><span class="o">)</span> <span class="k">extends</span> <span class="o">[</span><span class="kt">...</span><span class="o">]</span> <span class="k">with</span> <span class="nc">GreeterBlockingClient</span> <span class="o">{</span>
+      <span class="c1">// omitted
+</span>  <span class="o">}</span>
 
-  // Concrete asynchronous client:
-  class GreeterStub(channel, options) extends io.grpc.stub.AbstractStub[GreeterStub](channel, options) with Greeter {
-      // omitted
-  }
+  <span class="c1">// Concrete asynchronous client:
+</span>  <span class="k">class</span> <span class="nc">GreeterStub</span><span class="o">(</span><span class="n">channel</span><span class="o">,</span> <span class="n">options</span><span class="o">)</span> <span class="k">extends</span> <span class="n">io</span><span class="o">.</span><span class="n">grpc</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="nc">AbstractStub</span><span class="o">[</span><span class="kt">GreeterStub</span><span class="o">](</span><span class="n">channel</span><span class="o">,</span> <span class="n">options</span><span class="o">)</span> <span class="k">with</span> <span class="nc">Greeter</span> <span class="o">{</span>
+      <span class="c1">// omitted
+</span>  <span class="o">}</span>
 
-  // Creates a new blocking client.
-  def blockingStub(channel: io.grpc.Channel): GreeterBlockingStub = new GreeterBlockingStub(channel)
+  <span class="c1">// Creates a new blocking client.
+</span>  <span class="k">def</span> <span class="n">blockingStub</span><span class="o">(</span><span class="n">channel</span><span class="k">:</span> <span class="kt">io.grpc.Channel</span><span class="o">)</span><span class="k">:</span> <span class="kt">GreeterBlockingStub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GreeterBlockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
 
-  // Creates a new asynchronous client.
-  def stub(channel: io.grpc.Channel): GreeterStub = new GreeterStub(channel)
-}
+  <span class="c1">// Creates a new asynchronous client.
+</span>  <span class="k">def</span> <span class="n">stub</span><span class="o">(</span><span class="n">channel</span><span class="k">:</span> <span class="kt">io.grpc.Channel</span><span class="o">)</span><span class="k">:</span> <span class="kt">GreeterStub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GreeterStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 
@@ -85,16 +85,16 @@ message HelloReply {
 
 <p>Creating a channel:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>val channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext(true).build
-val request = HelloRequest(name = "World")
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">channel</span> <span class="k">=</span> <span class="nc">ManagedChannelBuilder</span><span class="o">.</span><span class="n">forAddress</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">).</span><span class="n">usePlaintext</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span><span class="n">build</span>
+<span class="k">val</span> <span class="n">request</span> <span class="k">=</span> <span class="nc">HelloRequest</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="s">"World"</span><span class="o">)</span>
 </code></pre>
 </div>
 
 <p>Blocking call:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>val blockingStub = GreeterGrpc.blockingStub(channel)
-val reply: HelloReply = blockingStub.sayHello(request)
-println(reply)
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">blockingStub</span> <span class="k">=</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="n">blockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">reply</span><span class="k">:</span> <span class="kt">HelloReply</span> <span class="o">=</span> <span class="n">blockingStub</span><span class="o">.</span><span class="n">sayHello</span><span class="o">(</span><span class="n">request</span><span class="o">)</span>
+<span class="n">println</span><span class="o">(</span><span class="n">reply</span><span class="o">)</span>
 </code></pre>
 </div>
 
@@ -110,12 +110,12 @@ f onComplete println
 
 <p>Implement the service:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>private class GreeterImpl extends GreeterGrpc.Greeter {
-  override def sayHello(req: HelloRequest) = {
-    val reply = HelloReply(message = "Hello " + req.name)
-    Future.successful(reply)
-  }
-}
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">private</span> <span class="k">class</span> <span class="nc">GreeterImpl</span> <span class="k">extends</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="nc">Greeter</span> <span class="o">{</span>
+  <span class="k">override</span> <span class="k">def</span> <span class="n">sayHello</span><span class="o">(</span><span class="n">req</span><span class="k">:</span> <span class="kt">HelloRequest</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">reply</span> <span class="k">=</span> <span class="nc">HelloReply</span><span class="o">(</span><span class="n">message</span> <span class="k">=</span> <span class="s">"Hello "</span> <span class="o">+</span> <span class="n">req</span><span class="o">.</span><span class="n">name</span><span class="o">)</span>
+    <span class="nc">Future</span><span class="o">.</span><span class="n">successful</span><span class="o">(</span><span class="n">reply</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 
