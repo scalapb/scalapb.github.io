@@ -13,11 +13,12 @@ not require the full class name.</li>
 customizations. If you do not want to customize the defaults, you can safely
 skip this section.</p>
 
-<h1 id="package-options">Package options</h1>
+<h1 id="file-level-options">File-level options</h1>
 
 <div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 
 <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">scope</span><span class="o">:</span> <span class="n">FILE</span>
   <span class="n">package_name</span><span class="o">:</span> <span class="s">"com.example.myprotos"</span>
   <span class="n">flat_package</span><span class="o">:</span> <span class="kc">true</span>
   <span class="n">single_file</span><span class="o">:</span> <span class="kc">true</span>
@@ -30,6 +31,11 @@ skip this section.</p>
 </div>
 
 <ul>
+  <li>
+    <p><code class="highlighter-rouge">scope</code> controls whether the specified options apply only for this proto
+files or for the entire package. Default is <code class="highlighter-rouge">FILE</code>. See <a href="#package-scoped-options">package-scoped options</a>
+for more details.</p>
+  </li>
   <li>
     <p><code class="highlighter-rouge">package_name</code> sets the Scala base package name, if this is not defined,
 then it falls back to <code class="highlighter-rouge">java_package</code> and then to <code class="highlighter-rouge">package</code>.</p>
@@ -57,6 +63,62 @@ case you are running into issues where the generated class name conflicts
 with other things in your project.</p>
   </li>
 </ul>
+
+<h1 id="package-scoped-options">Package-scoped options</h1>
+
+<p>Note: this option is experimental and is available in ScalaPB 0.8.2 and later.</p>
+
+<p>Sometimes you want to have the same file-level options applied to all
+the proto files in your project.  To accomplish that, add a <code class="highlighter-rouge">package.proto</code>
+file (the name does not matter) next to your proto files that looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import "scalapb/scalapb.proto";
+
+package com.mypackage;
+
+option (scalapb.options) = {
+  scope: PACKAGE
+  flat_package: true
+};
+</code></pre>
+</div>
+
+<p>All the options in this file will be applied to all proto files in the
+package <code class="highlighter-rouge">com.mypackage</code> and its sub-packages.</p>
+
+<p>There is no need to explictly import this file from other protos. If you are
+using <code class="highlighter-rouge">sbt-protoc</code> and the file is in the proto source directory (default is
+<code class="highlighter-rouge">src/main/protobuf</code>) then the file will be found and the options applied. If
+you are invoking protoc in another way, you need to ensure that this
+file is passed to protoc together with the rest of the files.</p>
+
+<p>If you are generating Scala code for proto files that you don’t own, you can
+use this feature to customize code generation by creating a <code class="highlighter-rouge">package.proto</code>
+file for that third-party package and include it within your proto source
+directory.</p>
+
+<p>The following rules are applied when validating package-scoped options:</p>
+
+<ul>
+  <li>At most one file in each package may provide package-scoped options.</li>
+  <li>Sub-packages may override package-scoped options provided by their parent
+packages. The options are merged using the Protocol Buffers <code class="highlighter-rouge">mergeFrom</code>
+semantics. Specifically, this implies that repeated fields such as <code class="highlighter-rouge">import</code> 
+and <code class="highlighter-rouge">preamble</code> are concatenated.</li>
+  <li>Proto files get the most specific package-scoped options for the package
+they are in. File-level options defined in a proto file get merged with the
+package-level options using <code class="highlighter-rouge">mergeFrom</code>.</li>
+  <li>Proto files with package-scoped options must have a <code class="highlighter-rouge">package</code> statement.
+This is to prevent the possibility of options applied globally. Standard
+classes that are shipped with ScalaPB already assume certain options, so
+overriding options globally may lead to compilation errors.</li>
+</ul>
+
+<p>NOTE: If you are shipping a library that includes both protos and Scala generated code, and
+downstream users are expected to import the protos you ship, then you need to import the package
+options proto explicitly from all the proto files that are meant to inherit the options.  The
+reason is that if you don’t do that, then downstream projects would not
+process the proto package file which may lead to compilation errors.</p>
 
 <h1 id="primitive-wrappers">Primitive wrappers</h1>
 
@@ -352,6 +414,7 @@ through SBT is by adding the following to your <code class="highlighter-rouge">b
 <p>If you are invoking <code class="highlighter-rouge">protoc</code> manually, you will need to ensure that the files in
 <a href="https://github.com/scalapb/ScalaPB/tree/master/protobuf"><code class="highlighter-rouge">protobuf</code></a>
 directory are available to your project.</p>
+
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {
