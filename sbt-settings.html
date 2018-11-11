@@ -90,7 +90,10 @@ not, you can set the location of the Python executable explicitly:</p>
   <span class="n">flatPackage</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
   <span class="n">javaConversions</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
   <span class="n">grpc</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
-  <span class="n">singleLineToProtoString</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+  <span class="n">singleLineToProtoString</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+  <span class="n">asciiFormatToString</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
+  <span class="n">lenses</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="o">)</span>
 </code></pre>
 </div>
 
@@ -100,10 +103,19 @@ not, you can set the location of the Python executable explicitly:</p>
 <p><strong><code class="highlighter-rouge">flatPackage</code></strong>: When true, ScalaPB will not append the protofile base name
 to the package name.</p>
 
-<p><strong><code class="highlighter-rouge">singleLineToProtoString</code></strong>: By default, ScalaPB generates a <code class="highlighter-rouge">toString()</code> method
+<p><strong><code class="highlighter-rouge">singleLineToProtoString</code></strong>: By default, ScalaPB generates a <code class="highlighter-rouge">toProtoString()</code> method
 that renders the message as a multi-line format (using <code class="highlighter-rouge">TextFormat.printToUnicodeString</code>).
 Set to true If you would like ScalaPB to generate <code class="highlighter-rouge">toString()</code> methods that use the single line
 format.</p>
+
+<p><strong><code class="highlighter-rouge">asciiFormatToString</code></strong>: Setting this to true, overrides <code class="highlighter-rouge">toString</code> to
+return a standard ASCII representation of the message by calling
+<code class="highlighter-rouge">toProtoString</code>.</p>
+
+<p><strong><code class="highlighter-rouge">lenses</code></strong>: By default, ScalaPB generates lenses for each message for easy
+updating. If you are not using this feature and would like to reduce code size
+or compilation time, you can set this to <code class="highlighter-rouge">false</code> and lenses will not be
+generated.</p>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {

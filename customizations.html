@@ -26,6 +26,7 @@ skip this section.</p>
   <span class="k">import</span><span class="o">:</span> <span class="s">"com.thesamet.other._"</span>
   <span class="n">preamble</span><span class="o">:</span> <span class="s">"sealed trait BaseMessage"</span>
   <span class="n">preamble</span><span class="o">:</span> <span class="s">"sealed trait CommonMessage"</span>
+  <span class="n">lenses</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">};</span>
 </code></pre>
 </div>
@@ -61,6 +62,9 @@ that contains various file-level members such as descriptors and a list of
 companion objects for the generated messages and enums. This is useful in
 case you are running into issues where the generated class name conflicts
 with other things in your project.</p>
+  </li>
+  <li>
+    <p>Setting <code class="highlighter-rouge">lenses</code> to <code class="highlighter-rouge">false</code> inhibits generation of lenses (default is <code class="highlighter-rouge">true</code>).</p>
   </li>
 </ul>
 
