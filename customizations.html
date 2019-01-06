@@ -27,6 +27,7 @@ skip this section.</p>
   <span class="n">preamble</span><span class="o">:</span> <span class="s">"sealed trait BaseMessage"</span>
   <span class="n">preamble</span><span class="o">:</span> <span class="s">"sealed trait CommonMessage"</span>
   <span class="n">lenses</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="n">retain_source_code_info</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">};</span>
 </code></pre>
 </div>
@@ -65,6 +66,14 @@ with other things in your project.</p>
   </li>
   <li>
     <p>Setting <code class="highlighter-rouge">lenses</code> to <code class="highlighter-rouge">false</code> inhibits generation of lenses (default is <code class="highlighter-rouge">true</code>).</p>
+  </li>
+  <li>
+    <p>Setting <code class="highlighter-rouge">retain_source_code_info</code> to true retains information in the descriptor that
+can be used to retrieve source code information from the descriptor at
+runtime (such as comments and source code locations). This option is turned
+off by default to conserve source size and memory at runtime. When this
+option is enabled, use the <code class="highlighter-rouge">location</code> method on various descriptors to
+access source code information.</p>
   </li>
 </ul>
 
