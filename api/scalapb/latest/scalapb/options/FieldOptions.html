@@ -158,7 +158,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">FieldOptions</span><span class="params">(<span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="keyType">keyType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="valueType">valueType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="noBox">noBox: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">FieldOptions</span><span class="params">(<span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="keyType">keyType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="valueType">valueType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="mapType">mapType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="noBox">noBox: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -169,7 +169,10 @@
   to <code>scala.collection.Seq</code>.</p></dd><dt class="param">keyType</dt><dd class="cmt"><p>
   If the field is a map, you can specify custom Scala types for the key
   or value.</p></dd><dt class="param">annotations</dt><dd class="cmt"><p>
-  Custom annotations to add to the field.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
+  Custom annotations to add to the field.</p></dd><dt class="param">mapType</dt><dd class="cmt"><p>
+  Can be specified only if this field is a map. If unspecified,
+  it falls back to the file option named <code>map_type</code> which defaults to
+  <code>scala.collection.immutable.Map</code></p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
   Do not box this value in Option[T]</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
@@ -224,9 +227,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalapb.options.FieldOptions#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(type:Option[String],scalaName:Option[String],collectionType:Option[String],keyType:Option[String],valueType:Option[String],annotations:Seq[String],noBox:Option[Boolean]):scalapb.options.FieldOptions"></a><a id="&lt;init&gt;:FieldOptions"></a>
+      <a id="&lt;init&gt;(type:Option[String],scalaName:Option[String],collectionType:Option[String],keyType:Option[String],valueType:Option[String],annotations:Seq[String],mapType:Option[String],noBox:Option[Boolean]):scalapb.options.FieldOptions"></a><a id="&lt;init&gt;:FieldOptions"></a>
       <span class="permalink">
-      <a href="../../scalapb/options/FieldOptions.html#&lt;init&gt;(type:Option[String],scalaName:Option[String],collectionType:Option[String],keyType:Option[String],valueType:Option[String],annotations:Seq[String],noBox:Option[Boolean]):scalapb.options.FieldOptions" title="Permalink">
+      <a href="../../scalapb/options/FieldOptions.html#&lt;init&gt;(type:Option[String],scalaName:Option[String],collectionType:Option[String],keyType:Option[String],valueType:Option[String],annotations:Seq[String],mapType:Option[String],noBox:Option[Boolean]):scalapb.options.FieldOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -235,7 +238,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">FieldOptions</span><span class="params">(<span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="keyType">keyType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="valueType">valueType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="noBox">noBox: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">None</span></span>)</span>
+        <span class="name">FieldOptions</span><span class="params">(<span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="keyType">keyType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="valueType">valueType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="mapType">mapType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="noBox">noBox: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">None</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">collectionType</dt><dd class="cmt"><p>
@@ -244,7 +247,10 @@
   to <code>scala.collection.Seq</code>.</p></dd><dt class="param">keyType</dt><dd class="cmt"><p>
   If the field is a map, you can specify custom Scala types for the key
   or value.</p></dd><dt class="param">annotations</dt><dd class="cmt"><p>
-  Custom annotations to add to the field.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
+  Custom annotations to add to the field.</p></dd><dt class="param">mapType</dt><dd class="cmt"><p>
+  Can be specified only if this field is a map. If unspecified,
+  it falls back to the file option named <code>map_type</code> which defaults to
+  <code>scala.collection.immutable.Map</code></p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
   Do not box this value in Option[T]</p></dd></dl></div>
     </li></ol>
             </div>
@@ -413,6 +419,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearKeyType</span><span class="result">: <a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.FieldOptions#clearMapType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearMapType:scalapb.options.FieldOptions"></a><a id="clearMapType:FieldOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/FieldOptions.html#clearMapType:scalapb.options.FieldOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearMapType</span><span class="result">: <a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a></span>
       </span>
       
       
@@ -639,6 +661,22 @@
       </span>
       
       
+    </li><li name="scalapb.options.FieldOptions#getMapType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getMapType:String"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/FieldOptions.html#getMapType:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMapType</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.FieldOptions#getNoBox" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="getNoBox:Boolean"></a>
       <span class="permalink">
@@ -732,6 +770,22 @@
       </span>
       <span class="symbol">
         <span class="name">keyType</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.FieldOptions#mapType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mapType:Option[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/FieldOptions.html#mapType:Option[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapType</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
       
@@ -1100,6 +1154,22 @@ the companion object.
       </span>
       <span class="symbol">
         <span class="name">withKeyType</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.FieldOptions#withMapType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withMapType(__v:String):scalapb.options.FieldOptions"></a><a id="withMapType(String):FieldOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/FieldOptions.html#withMapType(__v:String):scalapb.options.FieldOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withMapType</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a></span>
       </span>
       
       

@@ -151,8 +151,8 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.google.protobuf.descriptor">descriptor</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <a class="object" href="" title=""></a>
-                        <a class="trait" href="MethodOptions$$IdempotencyLevel.html" title=""></a>
-                        <a href="MethodOptions$$IdempotencyLevel.html" title="">IdempotencyLevel</a>
+                        <a class="trait" href="MethodOptions$$IdempotencyLevel.html" title="Is this method side-effect-free (or safe in HTTP parlance), or idempotent, or neither? HTTP based RPC implementation may choose GET verb for safe methods, and PUT verb for idempotent methods instead of the default POST."></a>
+                        <a href="MethodOptions$$IdempotencyLevel.html" title="Is this method side-effect-free (or safe in HTTP parlance), or idempotent, or neither? HTTP based RPC implementation may choose GET verb for safe methods, and PUT verb for idempotent methods instead of the default POST.">IdempotencyLevel</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="MethodOptions$$MethodOptionsLens.html" title=""></a>
@@ -779,10 +779,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="MethodOptions$$IdempotencyLevel$$IDEMPOTENT$.html"><span class="name">IDEMPOTENT</span></a><span class="result"> extends <a href="MethodOptions$$IdempotencyLevel.html" class="extype" name="com.google.protobuf.descriptor.MethodOptions.IdempotencyLevel">IdempotencyLevel</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="idempotent, but may have side effects" href="MethodOptions$$IdempotencyLevel$$IDEMPOTENT$.html"><span class="name">IDEMPOTENT</span></a><span class="result"> extends <a href="MethodOptions$$IdempotencyLevel.html" class="extype" name="com.google.protobuf.descriptor.MethodOptions.IdempotencyLevel">IdempotencyLevel</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">idempotent, but may have side effects
+</p><div class="fullcomment"><div class="comment cmt"><p>idempotent, but may have side effects
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -798,10 +800,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="MethodOptions$$IdempotencyLevel$$NO_SIDE_EFFECTS$.html"><span class="name">NO_SIDE_EFFECTS</span></a><span class="result"> extends <a href="MethodOptions$$IdempotencyLevel.html" class="extype" name="com.google.protobuf.descriptor.MethodOptions.IdempotencyLevel">IdempotencyLevel</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="implies idempotent" href="MethodOptions$$IdempotencyLevel$$NO_SIDE_EFFECTS$.html"><span class="name">NO_SIDE_EFFECTS</span></a><span class="result"> extends <a href="MethodOptions$$IdempotencyLevel.html" class="extype" name="com.google.protobuf.descriptor.MethodOptions.IdempotencyLevel">IdempotencyLevel</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">implies idempotent
+</p><div class="fullcomment"><div class="comment cmt"><p>implies idempotent
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>

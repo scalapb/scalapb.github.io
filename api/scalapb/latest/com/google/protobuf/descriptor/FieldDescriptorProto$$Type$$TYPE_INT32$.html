@@ -171,12 +171,12 @@
                         <a href="FieldDescriptorProto$$Type$$TYPE_BOOL$.html" title="">TYPE_BOOL</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html" title="">TYPE_BYTES</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html" title="New in version 2."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html" title="New in version 2.">TYPE_BYTES</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html" title="">TYPE_DOUBLE</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html" title="0 is reserved for errors."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html" title="0 is reserved for errors.">TYPE_DOUBLE</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
                         <a class="object" href="FieldDescriptorProto$$Type$$TYPE_ENUM$.html" title=""></a>
@@ -195,20 +195,20 @@
                         <a href="FieldDescriptorProto$$Type$$TYPE_FLOAT$.html" title="">TYPE_FLOAT</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html" title="">TYPE_GROUP</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html" title="Tag-delimited aggregate."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html" title="Tag-delimited aggregate.">TYPE_GROUP</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">TYPE_INT32</a>
+                        <a class="object" href="" title="Not ZigZag encoded."></a>
+                        <a href="" title="Not ZigZag encoded.">TYPE_INT32</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_INT64$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_INT64$.html" title="">TYPE_INT64</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_INT64$.html" title="Not ZigZag encoded."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_INT64$.html" title="Not ZigZag encoded.">TYPE_INT64</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html" title="">TYPE_MESSAGE</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html" title="Length-delimited aggregate."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html" title="Length-delimited aggregate.">TYPE_MESSAGE</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
                         <a class="object" href="FieldDescriptorProto$$Type$$TYPE_SFIXED32$.html" title=""></a>
@@ -219,12 +219,12 @@
                         <a href="FieldDescriptorProto$$Type$$TYPE_SFIXED64$.html" title="">TYPE_SFIXED64</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html" title="">TYPE_SINT32</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html" title="Uses ZigZag encoding."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html" title="Uses ZigZag encoding.">TYPE_SINT32</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html" title=""></a>
-                        <a href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html" title="">TYPE_SINT64</a>
+                        <a class="object" href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html" title="Uses ZigZag encoding."></a>
+                        <a href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html" title="Uses ZigZag encoding.">TYPE_SINT64</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
                         <a class="object" href="FieldDescriptorProto$$Type$$TYPE_STRING$.html" title=""></a>
@@ -269,7 +269,9 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Annotations</dt><dd>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
+negative values are likely.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">

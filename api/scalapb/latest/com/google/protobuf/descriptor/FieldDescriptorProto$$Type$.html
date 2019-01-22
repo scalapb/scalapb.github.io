@@ -783,10 +783,11 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html"><span class="name">TYPE_BYTES</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="New in version 2." href="FieldDescriptorProto$$Type$$TYPE_BYTES$.html"><span class="name">TYPE_BYTES</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">New in version 2.</p><div class="fullcomment"><div class="comment cmt"><p>New in version 2.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -802,10 +803,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html"><span class="name">TYPE_DOUBLE</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="0 is reserved for errors." href="FieldDescriptorProto$$Type$$TYPE_DOUBLE$.html"><span class="name">TYPE_DOUBLE</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">0 is reserved for errors.</p><div class="fullcomment"><div class="comment cmt"><p>0 is reserved for errors.
+Order is weird for historical reasons.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -897,10 +900,14 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html"><span class="name">TYPE_GROUP</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Tag-delimited aggregate." href="FieldDescriptorProto$$Type$$TYPE_GROUP$.html"><span class="name">TYPE_GROUP</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Tag-delimited aggregate.</p><div class="fullcomment"><div class="comment cmt"><p>Tag-delimited aggregate.
+Group type is deprecated and not supported in proto3. However, Proto3
+implementations should still be able to parse the group wire format and
+treat group fields as unknown fields.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -916,10 +923,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_INT32$.html"><span class="name">TYPE_INT32</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Not ZigZag encoded." href="FieldDescriptorProto$$Type$$TYPE_INT32$.html"><span class="name">TYPE_INT32</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Not ZigZag encoded.</p><div class="fullcomment"><div class="comment cmt"><p>Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
+negative values are likely.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -935,10 +944,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_INT64$.html"><span class="name">TYPE_INT64</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Not ZigZag encoded." href="FieldDescriptorProto$$Type$$TYPE_INT64$.html"><span class="name">TYPE_INT64</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Not ZigZag encoded.</p><div class="fullcomment"><div class="comment cmt"><p>Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT64 if
+negative values are likely.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -954,10 +965,11 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html"><span class="name">TYPE_MESSAGE</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Length-delimited aggregate." href="FieldDescriptorProto$$Type$$TYPE_MESSAGE$.html"><span class="name">TYPE_MESSAGE</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Length-delimited aggregate.</p><div class="fullcomment"><div class="comment cmt"><p>Length-delimited aggregate.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -1011,10 +1023,11 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html"><span class="name">TYPE_SINT32</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Uses ZigZag encoding." href="FieldDescriptorProto$$Type$$TYPE_SINT32$.html"><span class="name">TYPE_SINT32</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Uses ZigZag encoding.</p><div class="fullcomment"><div class="comment cmt"><p>Uses ZigZag encoding.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -1030,10 +1043,11 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html"><span class="name">TYPE_SINT64</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Uses ZigZag encoding." href="FieldDescriptorProto$$Type$$TYPE_SINT64$.html"><span class="name">TYPE_SINT64</span></a><span class="result"> extends <a href="FieldDescriptorProto$$Type.html" class="extype" name="com.google.protobuf.descriptor.FieldDescriptorProto.Type">Type</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Uses ZigZag encoding.</p><div class="fullcomment"><div class="comment cmt"><p>Uses ZigZag encoding.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
