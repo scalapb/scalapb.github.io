@@ -210,33 +210,29 @@ targeted resource are going to be updated. The API is required
 to only change the values of the fields as specified in the mask
 and leave the others untouched. If a resource is passed in to
 describe the updated values, the API ignores the values of all
-fields not covered by the mask.</p><p>If a repeated field is specified for an update operation, the existing
-repeated values in the target resource will be overwritten by the new values.
-Note that a repeated field is only allowed in the last position of a <code>paths</code>
-string.</p><p>If a sub-message is specified in the last position of the field mask for an
-update operation, then the existing sub-message in the target resource is
-overwritten. Given the target message:</p><p>    f {
+fields not covered by the mask.</p><p>If a repeated field is specified for an update operation, new values will
+be appended to the existing repeated field in the target resource. Note that
+a repeated field is only allowed in the last position of a <code>paths</code> string.</p><p>If a sub-message is specified in the last position of the field mask for an
+update operation, then new value will be merged into the existing sub-message
+in the target resource.</p><p>For example, given the target message:</p><p>    f {
       b {
-        d : 1
-        x : 2
+        d: 1
+        x: 2
       }
-      c : 1
+      c: [1]
     }</p><p>And an update message:</p><p>    f {
       b {
-        d : 10
+        d: 10
       }
-    }</p><p>then if the field mask is:</p><p> paths: &quot;f.b&quot;</p><p>then the result will be:</p><p>    f {
+      c: [2]
+    }</p><p>then if the field mask is:</p><p> paths: [&quot;f.b&quot;, &quot;f.c&quot;]</p><p>then the result will be:</p><p>    f {
       b {
-        d : 10
+        d: 10
+        x: 2
       }
-      c : 1
-    }</p><p>However, if the update mask was:</p><p> paths: &quot;f.b.d&quot;</p><p>then the result would be:</p><p>    f {
-      b {
-        d : 10
-        x : 2
-      }
-      c : 1
-    }</p><p>In order to reset a field's value to the default, the field must
+      c: [1, 2]
+    }</p><p>An implementation may provide options to override this default behavior for
+repeated and message fields.</p><p>In order to reset a field's value to the default, the field must
 be in the mask and set to the default value in the provided resource.
 Hence, in order to reset all fields of a resource, provide a default
 instance of the resource and set all fields in the mask, or do
@@ -276,7 +272,9 @@ following message:</p><p>    message SampleMessage {
     }</p><p>Or:</p><p>    mask {
       paths: &quot;sub_message&quot;
     }</p><p>Note that oneof type names (&quot;test_oneof&quot; in this case) cannot be used in
-paths.
+paths.</p><p>## Field Mask Verification</p><p>The implementation of any API method which has a FieldMask type field in the
+request should verify the included field paths, and return an
+<code>INVALID_ARGUMENT</code> error if any path is duplicated or unmappable.
 </p></div><dl class="paramcmts block"><dt class="param">paths</dt><dd class="cmt"><p>
   The set of field mask paths.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -488,8 +486,6 @@ paths.
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
@@ -528,6 +524,28 @@ paths.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/field_mask/FieldMask.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -545,8 +563,6 @@ paths.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.field_mask.FieldMask#getField" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -647,8 +663,6 @@ paths.
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -667,8 +681,6 @@ paths.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.field_mask.FieldMask#paths" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
@@ -941,33 +953,7 @@ the companion object.
 
         <div class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/field_mask/FieldMask.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@Deprecated</span>
-              
-                <span class="name">@deprecated</span>
-              
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
-    </li><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]"></a><a id="getAllFields:Map[FieldDescriptor,scala.Any]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/field_mask/FieldMask.html#getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]" title="Permalink">

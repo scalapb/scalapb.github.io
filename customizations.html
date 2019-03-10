@@ -1,4 +1,4 @@
-<html><head><title>ScalaPB: Customizations</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: Customizations" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: Customizations" /><meta name="twitter:image" content="img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/style.css" /><link rel="stylesheet" href="/css/palette.css" /><link rel="stylesheet" href="/css/codemirror.css" /><link rel="stylesheet" href="/css/custom.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class="">Generated Code</a></li> <li><a href="/customizations.html" class=" active ">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined Options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class="">ScalaPBC</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class="">Migrating</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="scalapb-file-level-options">ScalaPB File-level Options</h1>
+<html><head><title>ScalaPB: Customizations</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: Customizations" /><meta name="title" property="og:title" content="ScalaPB: Customizations" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: Customizations" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/style.css" /><link rel="stylesheet" href="/css/palette.css" /><link rel="stylesheet" href="/css/codemirror.css" /><link rel="stylesheet" href="/css/custom.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class="">Generated Code</a></li> <li><a href="/customizations.html" class=" active ">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined Options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class="">ScalaPBC</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class="">Migrating</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="scalapb-file-level-options">ScalaPB File-level Options</h1>
 
 <p>ScalaPB file-level options lets you</p>
 
@@ -15,7 +15,7 @@ skip this section.</p>
 
 <h1 id="file-level-options">File-level options</h1>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 
 <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">scope</span><span class="o">:</span> <span class="n">FILE</span>
@@ -29,8 +29,7 @@ skip this section.</p>
   <span class="n">lenses</span><span class="o">:</span> <span class="kc">true</span>
   <span class="n">retain_source_code_info</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>
@@ -85,16 +84,15 @@ access source code information.</p>
 the proto files in your project.  To accomplish that, add a <code class="highlighter-rouge">package.proto</code>
 file (the name does not matter) next to your proto files that looks like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import "scalapb/scalapb.proto";
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span> <span class="s2">"scalapb/scalapb.proto"</span><span class="p">;</span>
 
-package com.mypackage;
+<span class="k">package</span> <span class="n">com</span><span class="p">.</span><span class="n">mypackage</span><span class="p">;</span>
 
-option (scalapb.options) = {
-  scope: PACKAGE
-  flat_package: true
-};
-</code></pre>
-</div>
+<span class="n">option</span> <span class="p">(</span><span class="n">scalapb</span><span class="p">.</span><span class="k">options</span><span class="p">)</span> <span class="p">=</span> <span class="p">{</span>
+  <span class="n">scope</span><span class="p">:</span> <span class="k">PACKAGE</span>
+  <span class="n">flat_package</span><span class="p">:</span> <span class="nb">true</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <p>All the options in this file will be applied to all proto files in the
 package <code class="highlighter-rouge">com.mypackage</code> and its sub-packages.</p>
@@ -145,40 +143,36 @@ standard wrappers to the primitive types in
 of the standard wrappers is used, it will be mapped to <code class="highlighter-rouge">Option[X]</code> where <code class="highlighter-rouge">X</code>
 is a primitive type. For example:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="s">"google/protobuf/wrappers.proto"</span><span class="p">;</span>
 
 <span class="kd">message</span> <span class="nc">MyMessage</span> <span class="p">{</span>
   <span class="n">google.protobuf.Int32Value</span> <span class="na">my_int32</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>would generate</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">MyMessage</span><span class="o">(</span><span class="n">myInt32</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">extends</span> <span class="o">...</span>
-</code></pre>
-</div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">MyMessage</span><span class="o">(</span><span class="n">myInt32</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">extends</span> <span class="o">...</span>
+</code></pre></div></div>
 
 <p>To disable primitive wrappers in a file:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">no_primitive_wrappers</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In versions of ScalaPB prior to 0.6.0, primitive wrappers had to be turned on
 manually in each file:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">primitive_wrappers</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="custom-base-traits-for-messages">Custom base traits for messages</h1>
 
@@ -190,7 +184,7 @@ and you would like to be able to access those fields through a single trait.</p>
 
 <p>Example:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 
 <span class="kd">message</span> <span class="nc">CustomerWithPhone</span> <span class="p">{</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">extends</span> <span class="o">=</span> <span class="s">"com.thesamet.pb.BaseCustomer"</span><span class="p">;</span>
@@ -199,32 +193,29 @@ and you would like to be able to access those fields through a single trait.</p>
   <span class="k">optional</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
   <span class="k">optional</span> <span class="kt">string</span> <span class="na">phone</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In your code, define the base trait <code class="highlighter-rouge">DomainEvent</code> and include any subset of the fields:</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">package</span> <span class="nn">com.thesamet.pb</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">com.thesamet.pb</span>
 
 <span class="k">trait</span> <span class="nc">BaseCustomer</span> <span class="o">{</span>
   <span class="k">def</span> <span class="n">customerId</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
   <span class="k">def</span> <span class="n">name</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You can specify any number of base traits for a message.</p>
 
 <p>It is also possible to make the generated companion classes extend a class
 or trait, by using the <code class="highlighter-rouge">companion_extends</code> option. For example:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">MyMessage</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">MyMessage</span> <span class="p">{</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">extends</span> <span class="o">=</span> <span class="s">"MySuperClass"</span><span class="p">;</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">companion_extends</span> <span class="o">=</span> <span class="s">"MySuperCompanionClass"</span><span class="p">;</span>
   <span class="kt">int32</span> <span class="na">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Will generate a case class that extends <code class="highlighter-rouge">MySuperClass</code>, and the companion
 object will extend <code class="highlighter-rouge">MySuperCompanionClass</code>.</p>
@@ -237,7 +228,7 @@ types and even for specific values.</p>
 
 <p>For example:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
 
 <span class="kn">package</span> <span class="nn">enum_example</span><span class="p">;</span>
 
@@ -250,12 +241,11 @@ types and even for specific values.</p>
   <span class="na">V1</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.enum_value</span><span class="p">)</span><span class="o">.</span><span class="na">extends</span> <span class="o">=</span> <span class="s">"example.EnumOptions.ValueMixin"</span><span class="p">];</span>
   <span class="na">V2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The generated code will look something like this:</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">MyEnum</span> <span class="k">extends</span> <span class="nc">GeneratedEnum</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">MyEnum</span> <span class="k">extends</span> <span class="nc">GeneratedEnum</span>
     <span class="k">with</span> <span class="n">example</span><span class="o">.</span><span class="nc">EnumOptions</span><span class="o">.</span><span class="nc">EnumBase</span> <span class="o">{</span>
   <span class="cm">/* ... */</span>
 <span class="o">}</span>
@@ -271,8 +261,7 @@ types and even for specific values.</p>
 
   <span class="cm">/* ... */</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="custom-types">Custom types</h1>
 
@@ -281,17 +270,15 @@ you would like to use type-safe wrappers around primitive values to enforce unit
 correctness. For example, instead of using a raw integer for time fields, you can
 wrap them in a <code class="highlighter-rouge">Seconds</code> class.</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Connection</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Connection</span> <span class="p">{</span>
   <span class="k">optional</span> <span class="kt">int32</span> <span class="na">timeout</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="s">"mydomain.Seconds"</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>We would like to write code like this:</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">c</span> <span class="k">=</span> <span class="nc">Connection</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">timeout</span> <span class="o">:=</span> <span class="nc">Seconds</span><span class="o">(</span><span class="mi">5</span><span class="o">))</span>
-</code></pre>
-</div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">c</span> <span class="k">=</span> <span class="nc">Connection</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">timeout</span> <span class="o">:=</span> <span class="nc">Seconds</span><span class="o">(</span><span class="mi">5</span><span class="o">))</span>
+</code></pre></div></div>
 
 <p>How will ScalaPB know how to convert from the original type (<code class="highlighter-rouge">Integer</code>) to the
 custom type <code class="highlighter-rouge">Seconds</code>? For each custom type you need to define an implicit
@@ -301,15 +288,14 @@ class for your custom type, since the Scala compiler will look for a
 typemapper there by default.  If your typemapper is defined elsewhere, you
 will need to import it manually by using the <code class="highlighter-rouge">import</code> file-level option.</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">package</span> <span class="nn">mydomain</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">mydomain</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Seconds</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">AnyVal</span>
 
 <span class="k">object</span> <span class="nc">Seconds</span> <span class="o">{</span>
   <span class="k">implicit</span> <span class="k">val</span> <span class="n">typeMapper</span> <span class="k">=</span> <span class="nc">TypeMapper</span><span class="o">(</span><span class="nc">Seconds</span><span class="o">.</span><span class="n">apply</span><span class="o">)(</span><span class="k">_</span><span class="o">.</span><span class="n">v</span><span class="o">)</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">TypeMapper</code> takes two function parameters. The first converts from the original type to
 the custom type. The second function converts from the custom type to the
@@ -333,7 +319,7 @@ for the custom type.</p>
 
 <p>Example:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">CustomMaps</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">CustomMaps</span> <span class="p">{</span>
   <span class="c1">// Will generate Map[String, com.thesamet.pb.Years]
 </span>  <span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int32</span><span class="err">&gt;</span> <span class="na">string_to_year</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[</span>
       <span class="p">(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">value_type</span> <span class="o">=</span> <span class="s">"com.thesamet.pb.Years"</span><span class="p">];</span>
@@ -347,8 +333,7 @@ for the custom type.</p>
       <span class="p">(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">key_type</span> <span class="o">=</span> <span class="s">"com.thesamet.pb.PersonId"</span><span class="p">,</span>
       <span class="p">(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">value_type</span> <span class="o">=</span> <span class="s">"com.thesamet.pb.Years"</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Example: see <code class="highlighter-rouge">CustomMaps</code> in <a href="https://github.com/scalapb/ScalaPB/blob/master/e2e/src/main/protobuf/maps.proto">maps.proto</a></p>
 
@@ -373,7 +358,7 @@ option.</p>
 
 <p><code class="highlighter-rouge">map_type</code> was introduced in ScalaPB 0.8.5.</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
 
 <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">collection_type</span><span class="o">:</span> <span class="s">"Set"</span>
@@ -394,8 +379,7 @@ option.</p>
       <span class="p">(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">map_type</span><span class="o">=</span><span class="s">"collection.mutable.Map"</span><span class="p">];</span>
     <span class="p">]</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note on mutable collection: ScalaPB assumes that all data is immutable. For example, the result
 of <code class="highlighter-rouge">serializedSize</code> is cached in a private field. When choosing mutable collections, you must be
@@ -423,30 +407,27 @@ the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#has
 we inherit from Java, ScalaPB issues an error. You can tell ScalaPB to use an
 alternative name by using the <code class="highlighter-rouge">scala_name</code> option:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">optional</span> <span class="kt">string</span> <span class="na">hash_code</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">scala_name</span> <span class="o">=</span> <span class="s">"myHashCode"</span><span class="p">];</span>
-</code></pre>
-</div>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">optional</span> <span class="kt">string</span> <span class="na">hash_code</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">scala_name</span> <span class="o">=</span> <span class="s">"myHashCode"</span><span class="p">];</span>
+</code></pre></div></div>
 
 <h1 id="adding-annotations">Adding annotations</h1>
 
 <p>Since ScalaPB 0.6.3, you can add annotations to the generated case classes like this:</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">BarMessage</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">BarMessage</span> <span class="p">{</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">annotations</span> <span class="o">=</span> <span class="s">"@mypackage.CustomAnnotation"</span><span class="p">;</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">annotations</span> <span class="o">=</span> <span class="s">"@mypackage.CustomAnnotation1"</span><span class="p">;</span>
   <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">annotations</span> <span class="o">=</span> <span class="s">"@mypackage.CustomAnnotation2"</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h1 id="adding-scalapbproto-to-your-project">Adding scalapb.proto to your project</h1>
 
 <p>The easiest way to get <code class="highlighter-rouge">protoc</code> to find <code class="highlighter-rouge">scalapb/scalapb.proto</code> when compiling
 through SBT is by adding the following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
+</code></pre></div></div>
 
 <p>If you are invoking <code class="highlighter-rouge">protoc</code> manually, you will need to ensure that the files in
 <a href="https://github.com/scalapb/ScalaPB/tree/master/protobuf"><code class="highlighter-rouge">protobuf</code></a>

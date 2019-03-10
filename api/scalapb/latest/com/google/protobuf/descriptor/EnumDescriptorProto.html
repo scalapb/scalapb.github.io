@@ -158,6 +158,10 @@
                         <a class="class" href="EnumValueOptions.html" title=""></a>
                         <a href="EnumValueOptions.html" title="">EnumValueOptions</a>
                       </li><li class="current-entities indented4">
+                        <a class="object" href="ExtensionRangeOptions$.html" title=""></a>
+                        <a class="class" href="ExtensionRangeOptions.html" title=""></a>
+                        <a href="ExtensionRangeOptions.html" title="">ExtensionRangeOptions</a>
+                      </li><li class="current-entities indented4">
                         <a class="object" href="FieldDescriptorProto$.html" title=""></a>
                         <a class="class" href="FieldDescriptorProto.html" title="Describes a field within a message."></a>
                         <a href="FieldDescriptorProto.html" title="Describes a field within a message.">FieldDescriptorProto</a>
@@ -242,13 +246,18 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumDescriptorProto</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="value">value: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumValueDescriptorProto.html" class="extype" name="com.google.protobuf.descriptor.EnumValueDescriptorProto">EnumValueDescriptorProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.Option">scala.Option</span>[<a href="EnumOptions.html" class="extype" name="com.google.protobuf.descriptor.EnumOptions">EnumOptions</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/Message.html" class="extype" name="scalapb.Message">scalapb.Message</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a>] with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">EnumDescriptorProto</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="value">value: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumValueDescriptorProto.html" class="extype" name="com.google.protobuf.descriptor.EnumValueDescriptorProto">EnumValueDescriptorProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.Option">scala.Option</span>[<a href="EnumOptions.html" class="extype" name="com.google.protobuf.descriptor.EnumOptions">EnumOptions</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="reservedRange">reservedRange: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="reservedName">reservedName: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/Message.html" class="extype" name="scalapb.Message">scalapb.Message</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a>] with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Describes an enum type.
-</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+</p></div><dl class="paramcmts block"><dt class="param">reservedRange</dt><dd class="cmt"><p>
+  Range of reserved numeric values. Reserved numeric values may not be used
+  by enum values in the same enum declaration. Reserved ranges may not
+  overlap.</p></dd><dt class="param">reservedName</dt><dd class="cmt"><p>
+  Reserved enum value names, which may not be reused. A given name may only
+  be reserved once.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -301,10 +310,10 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.google.protobuf.descriptor.EnumDescriptorProto#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(name:Option[String],value:Seq[com.google.protobuf.descriptor.EnumValueDescriptorProto],options:Option[com.google.protobuf.descriptor.EnumOptions]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="&lt;init&gt;:EnumDescriptorProto"></a>
+              <ol><li name="com.google.protobuf.descriptor.EnumDescriptorProto#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(name:Option[String],value:Seq[com.google.protobuf.descriptor.EnumValueDescriptorProto],options:Option[com.google.protobuf.descriptor.EnumOptions],reservedRange:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange],reservedName:Seq[String]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="&lt;init&gt;:EnumDescriptorProto"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#&lt;init&gt;(name:Option[String],value:Seq[com.google.protobuf.descriptor.EnumValueDescriptorProto],options:Option[com.google.protobuf.descriptor.EnumOptions]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#&lt;init&gt;(name:Option[String],value:Seq[com.google.protobuf.descriptor.EnumValueDescriptorProto],options:Option[com.google.protobuf.descriptor.EnumOptions],reservedRange:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange],reservedName:Seq[String]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -313,10 +322,15 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumDescriptorProto</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="value">value: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumValueDescriptorProto.html" class="extype" name="com.google.protobuf.descriptor.EnumValueDescriptorProto">EnumValueDescriptorProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.Option">scala.Option</span>[<a href="EnumOptions.html" class="extype" name="com.google.protobuf.descriptor.EnumOptions">EnumOptions</a>] = <span class="symbol">None</span></span>)</span>
+        <span class="name">EnumDescriptorProto</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="value">value: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumValueDescriptorProto.html" class="extype" name="com.google.protobuf.descriptor.EnumValueDescriptorProto">EnumValueDescriptorProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.Option">scala.Option</span>[<a href="EnumOptions.html" class="extype" name="com.google.protobuf.descriptor.EnumOptions">EnumOptions</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="reservedRange">reservedRange: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="reservedName">reservedName: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>)</span>
       </span>
       
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">reservedRange</dt><dd class="cmt"><p>
+  Range of reserved numeric values. Reserved numeric values may not be used
+  by enum values in the same enum declaration. Reserved ranges may not
+  overlap.</p></dd><dt class="param">reservedName</dt><dd class="cmt"><p>
+  Reserved enum value names, which may not be reused. A given name may only
+  be reserved once.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -375,6 +389,38 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#addAllReservedName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllReservedName(__vs:TraversableOnce[String]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="addAllReservedName(TraversableOnce[String]):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#addAllReservedName(__vs:TraversableOnce[String]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllReservedName</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#addAllReservedRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllReservedRange(__vs:TraversableOnce[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="addAllReservedRange(TraversableOnce[EnumReservedRange]):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#addAllReservedRange(__vs:TraversableOnce[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllReservedRange</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#addAllValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="addAllValue(__vs:TraversableOnce[com.google.protobuf.descriptor.EnumValueDescriptorProto]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="addAllValue(TraversableOnce[EnumValueDescriptorProto]):EnumDescriptorProto"></a>
       <span class="permalink">
@@ -388,6 +434,38 @@
       </span>
       <span class="symbol">
         <span class="name">addAllValue</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<a href="EnumValueDescriptorProto.html" class="extype" name="com.google.protobuf.descriptor.EnumValueDescriptorProto">EnumValueDescriptorProto</a>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#addReservedName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addReservedName(__vs:String*):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="addReservedName(String*):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#addReservedName(__vs:String*):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addReservedName</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#addReservedRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addReservedRange(__vs:com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange*):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="addReservedRange(EnumReservedRange*):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#addReservedRange(__vs:com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange*):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addReservedRange</span><span class="params">(<span name="__vs">__vs: <a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>*</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
       </span>
       
       
@@ -455,6 +533,38 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#clearReservedName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearReservedName:com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="clearReservedName:EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#clearReservedName:com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearReservedName</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#clearReservedRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearReservedRange:com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="clearReservedRange:EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#clearReservedRange:com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearReservedRange</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#clearValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="clearValue:com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="clearValue:EnumDescriptorProto"></a>
       <span class="permalink">
@@ -488,8 +598,6 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -529,6 +637,28 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -546,8 +676,6 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#getField" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -696,8 +824,6 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -717,8 +843,6 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#options" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="options:Option[com.google.protobuf.descriptor.EnumOptions]"></a><a id="options:scala.Option[EnumOptions]"></a>
@@ -733,6 +857,38 @@
       </span>
       <span class="symbol">
         <span class="name">options</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<a href="EnumOptions.html" class="extype" name="com.google.protobuf.descriptor.EnumOptions">EnumOptions</a>]</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#reservedName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reservedName:Seq[String]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#reservedName:Seq[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reservedName</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#reservedRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reservedRange:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]"></a><a id="reservedRange:Seq[EnumReservedRange]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#reservedRange:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reservedRange</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>]</span>
       </span>
       
       
@@ -966,6 +1122,38 @@ the companion object.
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#withReservedName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withReservedName(__v:Seq[String]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="withReservedName(Seq[String]):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#withReservedName(__v:Seq[String]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withReservedName</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#withReservedRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withReservedRange(__v:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="withReservedRange(Seq[EnumReservedRange]):EnumDescriptorProto"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#withReservedRange(__v:Seq[com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange]):com.google.protobuf.descriptor.EnumDescriptorProto" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withReservedRange</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="EnumDescriptorProto$$EnumReservedRange.html" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto.EnumReservedRange">EnumReservedRange</a>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumDescriptorProto">EnumDescriptorProto</a></span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.EnumDescriptorProto#withValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withValue(__v:Seq[com.google.protobuf.descriptor.EnumValueDescriptorProto]):com.google.protobuf.descriptor.EnumDescriptorProto"></a><a id="withValue(Seq[EnumValueDescriptorProto]):EnumDescriptorProto"></a>
       <span class="permalink">
@@ -1038,33 +1226,7 @@ the companion object.
 
         <div class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@Deprecated</span>
-              
-                <span class="name">@deprecated</span>
-              
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
-    </li><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]"></a><a id="getAllFields:Map[FieldDescriptor,scala.Any]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/descriptor/EnumDescriptorProto.html#getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]" title="Permalink">

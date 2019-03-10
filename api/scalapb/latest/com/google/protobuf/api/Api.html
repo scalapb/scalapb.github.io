@@ -135,20 +135,20 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.google.protobuf">protobuf</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="Api$.html" title=""></a>
-                        <a class="class" href="" title="Api is a light-weight descriptor for a protocol buffer service."></a>
-                        <a href="" title="Api is a light-weight descriptor for a protocol buffer service.">Api</a>
+                        <a class="class" href="" title="Api is a light-weight descriptor for an API Interface."></a>
+                        <a href="" title="Api is a light-weight descriptor for an API Interface.">Api</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="ApiProto$.html" title=""></a>
                         <a href="ApiProto$.html" title="">ApiProto</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Method$.html" title=""></a>
-                        <a class="class" href="Method.html" title="Method represents a method of an api."></a>
-                        <a href="Method.html" title="Method represents a method of an api.">Method</a>
+                        <a class="class" href="Method.html" title="Method represents a method of an API interface."></a>
+                        <a href="Method.html" title="Method represents a method of an API interface.">Method</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Mixin$.html" title=""></a>
-                        <a class="class" href="Mixin.html" title="Declares an API to be included in this API."></a>
-                        <a href="Mixin.html" title="Declares an API to be included in this API.">Mixin</a>
+                        <a class="class" href="Mixin.html" title="Declares an API Interface to be included in this interface."></a>
+                        <a href="Mixin.html" title="Declares an API Interface to be included in this interface.">Mixin</a>
                       </li>
               </ul>
             </div>
@@ -174,24 +174,29 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Api</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="methods">methods: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Method.html" class="extype" name="com.google.protobuf.api.Method">Method</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../type/OptionProto.html" class="extype" name="com.google.protobuf.type.OptionProto">OptionProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="sourceContext">sourceContext: <span class="extype" name="scala.Option">scala.Option</span>[<a href="../source_context/SourceContext.html" class="extype" name="com.google.protobuf.source_context.SourceContext">source_context.SourceContext</a>] = <span class="symbol">None</span></span>, <span name="mixins">mixins: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Mixin.html" class="extype" name="com.google.protobuf.api.Mixin">Mixin</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="syntax">syntax: <a href="../type/Syntax.html" class="extype" name="com.google.protobuf.type.Syntax">type.Syntax</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">com.google.protobuf.`type`.Syntax.SYNTAX_PROTO2</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/Message.html" class="extype" name="scalapb.Message">scalapb.Message</a>[<a href="" class="extype" name="com.google.protobuf.api.Api">Api</a>] with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.api.Api">Api</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Api</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="methods">methods: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Method.html" class="extype" name="com.google.protobuf.api.Method">Method</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../type/OptionProto.html" class="extype" name="com.google.protobuf.type.OptionProto">OptionProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="sourceContext">sourceContext: <span class="extype" name="scala.Option">scala.Option</span>[<a href="../source_context/SourceContext.html" class="extype" name="com.google.protobuf.source_context.SourceContext">source_context.SourceContext</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="mixins">mixins: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Mixin.html" class="extype" name="com.google.protobuf.api.Mixin">Mixin</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="syntax">syntax: <a href="../type/Syntax.html" class="extype" name="com.google.protobuf.type.Syntax">type.Syntax</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">com.google.protobuf.`type`.Syntax.SYNTAX_PROTO2</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/Message.html" class="extype" name="scalapb.Message">scalapb.Message</a>[<a href="" class="extype" name="com.google.protobuf.api.Api">Api</a>] with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.api.Api">Api</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Api is a light-weight descriptor for a protocol buffer service.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Api is a light-weight descriptor for an API Interface.</p><p>Interfaces are also described as &quot;protocol buffer services&quot; in some contexts,
+such as by the &quot;service&quot; keyword in a .proto file, but they are different
+from API Services, which represent a concrete implementation of an interface
+as opposed to simply a description of methods and bindings. They are also
+sometimes simply referred to as &quot;APIs&quot; in other contexts, such as the name of
+this message itself. See https://cloud.google.com/apis/design/glossary for
+detailed terminology.
 </p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>
-  The fully qualified name of this api, including package name
-  followed by the api's simple name.</p></dd><dt class="param">methods</dt><dd class="cmt"><p>
-  The methods of this api, in unspecified order.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
-  Any metadata attached to the API.</p></dd><dt class="param">version</dt><dd class="cmt"><p>
-  A version string for this api. If specified, must have the form
-  <code>major-version.minor-version</code>, as in <code>1.10</code>. If the minor version
-  is omitted, it defaults to zero. If the entire version field is
-  empty, the major version is derived from the package name, as
-  outlined below. If the field is not empty, the version in the
-  package name will be verified to be consistent with what is
-  provided here.
+  The fully qualified name of this interface, including package name
+  followed by the interface's simple name.</p></dd><dt class="param">methods</dt><dd class="cmt"><p>
+  The methods of this interface, in unspecified order.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  Any metadata attached to the interface.</p></dd><dt class="param">version</dt><dd class="cmt"><p>
+  A version string for this interface. If specified, must have the form
+  <code>major-version.minor-version</code>, as in <code>1.10</code>. If the minor version is
+  omitted, it defaults to zero. If the entire version field is empty, the
+  major version is derived from the package name, as outlined below. If the
+  field is not empty, the version in the package name will be verified to be
+  consistent with what is provided here.
   The versioning schema uses [semantic
   versioning](http://semver.org) where the major version number
   indicates a breaking change and the minor version an additive,
@@ -199,13 +204,13 @@
   what to expect from different versions, and should be carefully
   chosen based on the product plan.
   The major version is also reflected in the package name of the
-  API, which must end in <code>v&lt;major-version&gt;</code>, as in
+  interface, which must end in <code>v&lt;major-version&gt;</code>, as in
   <code>google.feature.v1</code>. For major versions 0 and 1, the suffix can
   be omitted. Zero major versions must only be used for
-  experimental, none-GA apis.</p></dd><dt class="param">sourceContext</dt><dd class="cmt"><p>
+  experimental, non-GA interfaces.</p></dd><dt class="param">sourceContext</dt><dd class="cmt"><p>
   Source context for the protocol buffer service represented by this
   message.</p></dd><dt class="param">mixins</dt><dd class="cmt"><p>
-  Included APIs. See [Mixin][].</p></dd><dt class="param">syntax</dt><dd class="cmt"><p>
+  Included interfaces. See [Mixin][].</p></dd><dt class="param">syntax</dt><dd class="cmt"><p>
   The source syntax of the service.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
@@ -271,21 +276,20 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Api</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="methods">methods: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Method.html" class="extype" name="com.google.protobuf.api.Method">Method</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../type/OptionProto.html" class="extype" name="com.google.protobuf.type.OptionProto">OptionProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="sourceContext">sourceContext: <span class="extype" name="scala.Option">scala.Option</span>[<a href="../source_context/SourceContext.html" class="extype" name="com.google.protobuf.source_context.SourceContext">source_context.SourceContext</a>] = <span class="symbol">None</span></span>, <span name="mixins">mixins: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Mixin.html" class="extype" name="com.google.protobuf.api.Mixin">Mixin</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="syntax">syntax: <a href="../type/Syntax.html" class="extype" name="com.google.protobuf.type.Syntax">type.Syntax</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">com.google.protobuf.`type`.Syntax.SYNTAX_PROTO2</a></span>'>...</span></span>)</span>
+        <span class="name">Api</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="methods">methods: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Method.html" class="extype" name="com.google.protobuf.api.Method">Method</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="options">options: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../type/OptionProto.html" class="extype" name="com.google.protobuf.type.OptionProto">OptionProto</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="version">version: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="sourceContext">sourceContext: <span class="extype" name="scala.Option">scala.Option</span>[<a href="../source_context/SourceContext.html" class="extype" name="com.google.protobuf.source_context.SourceContext">source_context.SourceContext</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="mixins">mixins: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="Mixin.html" class="extype" name="com.google.protobuf.api.Mixin">Mixin</a>] = <span class="symbol">_root_.scala.collection.Seq.empty</span></span>, <span name="syntax">syntax: <a href="../type/Syntax.html" class="extype" name="com.google.protobuf.type.Syntax">type.Syntax</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">com.google.protobuf.`type`.Syntax.SYNTAX_PROTO2</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>
-  The fully qualified name of this api, including package name
-  followed by the api's simple name.</p></dd><dt class="param">methods</dt><dd class="cmt"><p>
-  The methods of this api, in unspecified order.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
-  Any metadata attached to the API.</p></dd><dt class="param">version</dt><dd class="cmt"><p>
-  A version string for this api. If specified, must have the form
-  <code>major-version.minor-version</code>, as in <code>1.10</code>. If the minor version
-  is omitted, it defaults to zero. If the entire version field is
-  empty, the major version is derived from the package name, as
-  outlined below. If the field is not empty, the version in the
-  package name will be verified to be consistent with what is
-  provided here.
+  The fully qualified name of this interface, including package name
+  followed by the interface's simple name.</p></dd><dt class="param">methods</dt><dd class="cmt"><p>
+  The methods of this interface, in unspecified order.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  Any metadata attached to the interface.</p></dd><dt class="param">version</dt><dd class="cmt"><p>
+  A version string for this interface. If specified, must have the form
+  <code>major-version.minor-version</code>, as in <code>1.10</code>. If the minor version is
+  omitted, it defaults to zero. If the entire version field is empty, the
+  major version is derived from the package name, as outlined below. If the
+  field is not empty, the version in the package name will be verified to be
+  consistent with what is provided here.
   The versioning schema uses [semantic
   versioning](http://semver.org) where the major version number
   indicates a breaking change and the minor version an additive,
@@ -293,13 +297,13 @@
   what to expect from different versions, and should be carefully
   chosen based on the product plan.
   The major version is also reflected in the package name of the
-  API, which must end in <code>v&lt;major-version&gt;</code>, as in
+  interface, which must end in <code>v&lt;major-version&gt;</code>, as in
   <code>google.feature.v1</code>. For major versions 0 and 1, the suffix can
   be omitted. Zero major versions must only be used for
-  experimental, none-GA apis.</p></dd><dt class="param">sourceContext</dt><dd class="cmt"><p>
+  experimental, non-GA interfaces.</p></dd><dt class="param">sourceContext</dt><dd class="cmt"><p>
   Source context for the protocol buffer service represented by this
   message.</p></dd><dt class="param">mixins</dt><dd class="cmt"><p>
-  Included APIs. See [Mixin][].</p></dd><dt class="param">syntax</dt><dd class="cmt"><p>
+  Included interfaces. See [Mixin][].</p></dd><dt class="param">syntax</dt><dd class="cmt"><p>
   The source syntax of the service.</p></dd></dl></div>
     </li></ol>
             </div>
@@ -553,8 +557,6 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
@@ -593,6 +595,28 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/api/Api.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -610,8 +634,6 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.api.Api#getField" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -776,8 +798,6 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -796,8 +816,6 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.api.Api#options" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
@@ -1214,33 +1232,7 @@ the companion object.
 
         <div class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/api/Api.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@Deprecated</span>
-              
-                <span class="name">@deprecated</span>
-              
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
-    </li><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]"></a><a id="getAllFields:Map[FieldDescriptor,scala.Any]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/api/Api.html#getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]" title="Permalink">

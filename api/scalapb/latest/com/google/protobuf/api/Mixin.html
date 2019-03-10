@@ -135,20 +135,20 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.google.protobuf">protobuf</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="Api$.html" title=""></a>
-                        <a class="class" href="Api.html" title="Api is a light-weight descriptor for a protocol buffer service."></a>
-                        <a href="Api.html" title="Api is a light-weight descriptor for a protocol buffer service.">Api</a>
+                        <a class="class" href="Api.html" title="Api is a light-weight descriptor for an API Interface."></a>
+                        <a href="Api.html" title="Api is a light-weight descriptor for an API Interface.">Api</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="ApiProto$.html" title=""></a>
                         <a href="ApiProto$.html" title="">ApiProto</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Method$.html" title=""></a>
-                        <a class="class" href="Method.html" title="Method represents a method of an api."></a>
-                        <a href="Method.html" title="Method represents a method of an api.">Method</a>
+                        <a class="class" href="Method.html" title="Method represents a method of an API interface."></a>
+                        <a href="Method.html" title="Method represents a method of an API interface.">Method</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Mixin$.html" title=""></a>
-                        <a class="class" href="" title="Declares an API to be included in this API."></a>
-                        <a href="" title="Declares an API to be included in this API.">Mixin</a>
+                        <a class="class" href="" title="Declares an API Interface to be included in this interface."></a>
+                        <a href="" title="Declares an API Interface to be included in this interface.">Mixin</a>
                       </li>
               </ul>
             </div>
@@ -179,15 +179,16 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Declares an API to be included in this API. The including API must
-redeclare all the methods from the included API, but documentation
-and options are inherited as follows:</p><p>- If after comment and whitespace stripping, the documentation
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Declares an API Interface to be included in this interface. The including
+interface must redeclare all the methods from the included interface, but
+documentation and options are inherited as follows:</p><p>- If after comment and whitespace stripping, the documentation
   string of the redeclared method is empty, it will be inherited
   from the original method.</p><p>- Each annotation belonging to the service config (http,
   visibility) which is not set in the redeclared method will be
   inherited.</p><p>- If an http annotation is inherited, the path pattern will be
   modified as follows. Any version prefix will be replaced by the
-  version of the including API plus the [root][] path if specified.</p><p>Example of a simple mixin:</p><p>    package google.acl.v1;
+  version of the including interface plus the [root][] path if
+  specified.</p><p>Example of a simple mixin:</p><p>    package google.acl.v1;
     service AccessControl {
       // Get the underlying ACL object.
       rpc GetAcl(GetAclRequest) returns (Acl) {
@@ -221,7 +222,7 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       ...
     }
 </p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>
-  The fully qualified name of the API which is included.</p></dd><dt class="param">root</dt><dd class="cmt"><p>
+  The fully qualified name of the interface which is included.</p></dd><dt class="param">root</dt><dd class="cmt"><p>
   If non-empty specifies a path under which inherited HTTP paths
   are rooted.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -292,7 +293,7 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>
-  The fully qualified name of the API which is included.</p></dd><dt class="param">root</dt><dd class="cmt"><p>
+  The fully qualified name of the interface which is included.</p></dd><dt class="param">root</dt><dd class="cmt"><p>
   If non-empty specifies a path under which inherited HTTP paths
   are rooted.</p></dd></dl></div>
     </li></ol>
@@ -387,8 +388,6 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
@@ -427,6 +426,28 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/api/Mixin.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -444,8 +465,6 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.api.Mixin#getField" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -562,8 +581,6 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
-              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -582,8 +599,6 @@ relative path under which inherited HTTP paths are placed. Example:</p><p>    ap
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
-              
-                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.api.Mixin#root" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
@@ -872,33 +887,7 @@ the companion object.
 
         <div class="values members">
               <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/api/Mixin.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@Deprecated</span>
-              
-                <span class="name">@deprecated</span>
-              
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
-    </li><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="scalapb.GeneratedMessage#getAllFields" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]"></a><a id="getAllFields:Map[FieldDescriptor,scala.Any]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/api/Mixin.html#getAllFields:Map[com.google.protobuf.Descriptors.FieldDescriptor,Any]" title="Permalink">
