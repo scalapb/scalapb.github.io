@@ -21,8 +21,9 @@ compatibility with the language specification.</p>
   </li>
 </ul>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">newOrder</span> <span class="k">=</span> <span class="n">order</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">creditCard</span><span class="o">.</span><span class="n">expirationYear</span> <span class="o">:=</span> <span class="mi">2015</span><span class="o">)</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">newOrder</span> <span class="k">=</span> <span class="n">order</span><span class="o">.</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">creditCard</span><span class="o">.</span><span class="n">expirationYear</span> <span class="o">:=</span> <span class="mi">2015</span><span class="o">)</span>
+</code></pre>
+</div>
 
 <ul>
   <li>
@@ -63,21 +64,23 @@ that were introduced in Protocol Buffers 2.6.0.</p>
 sbt plugin to your project. Create a file named <code class="highlighter-rouge">project/scalapb.sbt</code>
 containing the following line:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.19")
+<div class="highlighter-rouge"><pre class="highlight"><code>   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.19")
 
    libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.8.2"
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Add the following line to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   PB.targets in Compile := Seq(
+<div class="highlighter-rouge"><pre class="highlight"><code>   PB.targets in Compile := Seq(
      scalapb.gen() -&gt; (sourceManaged in Compile).value
    )
 
    // (optional) If you need scalapb/scalapb.proto or anything from
    // google/protobuf/*.proto
    libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>ScalaPB looks for protocol buffer files in <code class="highlighter-rouge">src/main/protobuf</code>, but this can
 be customized. Running the <code class="highlighter-rouge">compile</code> command in sbt will both generate Scala

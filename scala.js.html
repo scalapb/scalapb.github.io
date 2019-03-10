@@ -16,23 +16,25 @@ and Java descriptors do not work (though Scala descriptors in ScalaPB &gt;=
 
 <p>Add to your library dependencies:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   libraryDependencies ++= Seq(
+<div class="highlighter-rouge"><pre class="highlight"><code>   libraryDependencies ++= Seq(
      "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion,
 
      // The following needed only if you include scalapb/scalapb.proto:
      "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
    )
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Since the ScalaJS compiler depends on an old version of protobuf it is
 recommended to work with the <code class="highlighter-rouge">compilerplugin-shaded</code> artifact. This artifact contains a shaded version of protobuf-java and other dependencies. Have
 this in your <code class="highlighter-rouge">project/scalapb.sbt</code> file instead of what described in the
 standard installation instructions:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.19" exclude ("com.thesamet.scalapb", "protoc-bridge_2.10"))
+<div class="highlighter-rouge"><pre class="highlight"><code>   addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.19" exclude ("com.thesamet.scalapb", "protoc-bridge_2.10"))
 
    libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin-shaded" % "0.8.2"
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="demo">Demo</h2>
 

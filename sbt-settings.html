@@ -6,17 +6,19 @@
 sbt plugin to your project. Create a file named <code class="highlighter-rouge">project/scalapb.sbt</code>
 containing the following line:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">"com.thesamet"</span> <span class="o">%</span> <span class="s">"sbt-protoc"</span> <span class="o">%</span> <span class="s">"0.99.19"</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">addSbtPlugin</span><span class="o">(</span><span class="s">"com.thesamet"</span> <span class="o">%</span> <span class="s">"sbt-protoc"</span> <span class="o">%</span> <span class="s">"0.99.19"</span><span class="o">)</span>
 
 <span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"compilerplugin"</span> <span class="o">%</span> <span class="s">"0.8.2"</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Add the following line to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Running the <code class="highlighter-rouge">compile</code> command in sbt will both generate Scala sources from
 your protos and compile them. If you just want to generate Scala sources for
@@ -26,8 +28,9 @@ your protocol buffers without compiling them, run <code class="highlighter-rouge
 scalapb/scalapb.proto or anything from <code class="highlighter-rouge">google/protobuf/*.proto</code>, add the
 following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-runtime"</span> <span class="o">%</span> <span class="n">scalapb</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="nc">Version</span><span class="o">.</span><span class="n">scalapbVersion</span> <span class="o">%</span> <span class="s">"protobuf"</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-runtime"</span> <span class="o">%</span> <span class="n">scalapb</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="nc">Version</span><span class="o">.</span><span class="n">scalapbVersion</span> <span class="o">%</span> <span class="s">"protobuf"</span>
+</code></pre>
+</div>
 
 <h2 id="defaults">Defaults</h2>
 
@@ -37,8 +40,9 @@ however this is configurable using the <code class="highlighter-rouge">PB.protoS
 <p>By default, <code class="highlighter-rouge">sbt-protoc</code> invokes <code class="highlighter-rouge">protoc</code> 3.0.0 that is shipped with <code class="highlighter-rouge">protoc-jar</code>.
 If you would like to run a different version of <code class="highlighter-rouge">protoc</code>:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protocVersion</span> <span class="o">:=</span> <span class="s">"-v261"</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protocVersion</span> <span class="o">:=</span> <span class="s">"-v261"</span>
+</code></pre>
+</div>
 
 <p>See all available options in <a href="https://github.com/thesamet/sbt-protoc">sbt-protoc documentation</a></p>
 
@@ -55,31 +59,34 @@ on your system, you can <a href="https://www.python.org/downloads/windows/">down
 <p>If Python.exe can be found in your PATH, then ScalaPB should just work.  If
 not, you can set the location of the Python executable explicitly:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">pythonExe</span> <span class="o">:=</span> <span class="s">"C:\\Python27\\Python.exe"</span>
-</code></pre></div></div>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">pythonExe</span> <span class="o">:=</span> <span class="s">"C:\\Python27\\Python.exe"</span>
+</code></pre>
+</div>
 
 <h2 id="java-conversions">Java Conversions</h2>
 
 <p>To enable Java conversions add the following to your build.sbt:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="nc">PB</span><span class="o">.</span><span class="n">gens</span><span class="o">.</span><span class="n">java</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span><span class="o">,</span>
   <span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">(</span><span class="n">javaConversions</span><span class="k">=</span><span class="kc">true</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="grpc">gRPC</h2>
 
 <p>Generating gRPC stubs for services is enabled by default. To disable:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">(</span><span class="n">grpc</span><span class="k">=</span><span class="kc">false</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="additional-options-to-the-generator">Additional options to the generator</h2>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">(</span>
   <span class="n">flatPackage</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
   <span class="n">javaConversions</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span>
   <span class="n">grpc</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
@@ -88,7 +95,8 @@ not, you can set the location of the Python executable explicitly:</p>
   <span class="n">lenses</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
   <span class="n">retainSourceCodeInfo</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">false</span>
 <span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Note that in ScalaPB 0.7, <code class="highlighter-rouge">singleLineToString</code> has been renamed to
 <code class="highlighter-rouge">singleLineToProtoString</code>.</p>

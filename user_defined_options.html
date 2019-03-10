@@ -9,7 +9,7 @@ element in a proto file, and access these annotations at run time.</p>
 
 <p>In <code class="highlighter-rouge">my_opts.proto</code>:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
 
 <span class="kn">package</span> <span class="nn">custom_options</span><span class="p">;</span>
 
@@ -39,11 +39,12 @@ element in a proto file, and access these annotations at run time.</p>
     <span class="k">repeated</span> <span class="n">Tag</span> <span class="na">tags</span> <span class="o">=</span> <span class="mi">50003</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Use the options like this:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
 
 <span class="kn">package</span> <span class="nn">custom_options</span><span class="p">;</span>
 
@@ -58,7 +59,8 @@ element in a proto file, and access these annotations at run time.</p>
 </span>    <span class="k">optional</span> <span class="kt">int32</span> <span class="na">number</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">Wrapper.tags</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="o">:</span> <span class="s">"tag1"</span><span class="p">},</span>
                                <span class="p">(</span><span class="n">Wrapper.tags</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="o">:</span> <span class="s">"tag2"</span><span class="p">}];</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Extensions that are defined at file scope are generated under the descriptor
 proto (usually name <code class="highlighter-rouge">FileNameProto</code>). Otherwise, the extension is defined in
@@ -66,7 +68,7 @@ the companion object of the containing class.</p>
 
 <p>To access the option value of an element, you need to obtain its descriptor:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">assert</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">assert</span><span class="o">(</span>
   <span class="n">my_opts</span><span class="o">.</span><span class="nc">CustomOptionsMyOptsProto</span><span class="o">.</span><span class="n">myFileOption</span><span class="o">.</span><span class="n">get</span><span class="o">(</span>
     <span class="n">use_opts</span><span class="o">.</span><span class="nc">CustomOptionsUseOptsProto</span><span class="o">.</span><span class="n">scalaDescriptor</span><span class="o">.</span><span class="n">getOptions</span><span class="o">)</span> <span class="o">==</span>
       <span class="nc">Some</span><span class="o">(</span><span class="s">"hello!"</span><span class="o">))</span>
@@ -84,12 +86,13 @@ the companion object of the containing class.</p>
     <span class="n">numberField</span><span class="o">.</span><span class="n">getOptions</span><span class="o">)</span> <span class="o">==</span> <span class="nc">Seq</span><span class="o">(</span>
       <span class="n">my_opts</span><span class="o">.</span><span class="nc">Tag</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"tag1"</span><span class="o">)),</span>
       <span class="n">my_opts</span><span class="o">.</span><span class="nc">Tag</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"tag2"</span><span class="o">))))</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>If you prefer to start with the descriptor, you use can the <code class="highlighter-rouge">extension</code>
 method:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">assert</span><span class="o">(</span><span class="n">use_opts</span><span class="o">.</span><span class="nc">CustomOptionsUseOptsProto</span><span class="o">.</span><span class="n">scalaDescriptor</span><span class="o">.</span><span class="n">getOptions</span><span class="o">.</span><span class="n">extension</span><span class="o">(</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="n">assert</span><span class="o">(</span><span class="n">use_opts</span><span class="o">.</span><span class="nc">CustomOptionsUseOptsProto</span><span class="o">.</span><span class="n">scalaDescriptor</span><span class="o">.</span><span class="n">getOptions</span><span class="o">.</span><span class="n">extension</span><span class="o">(</span>
   <span class="n">my_opts</span><span class="o">.</span><span class="nc">CustomOptionsMyOptsProto</span><span class="o">.</span><span class="n">myFileOption</span><span class="o">)</span> <span class="o">==</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"hello!"</span><span class="o">))</span>
 
 <span class="n">assert</span><span class="o">(</span><span class="n">use_opts</span><span class="o">.</span><span class="nc">OneMessage</span><span class="o">.</span><span class="n">scalaDescriptor</span><span class="o">.</span><span class="n">getOptions</span><span class="o">.</span><span class="n">extension</span><span class="o">(</span>
@@ -100,7 +103,8 @@ method:</p>
   <span class="n">my_opts</span><span class="o">.</span><span class="nc">Wrapper</span><span class="o">.</span><span class="n">tags</span><span class="o">)</span> <span class="o">==</span> <span class="nc">Seq</span><span class="o">(</span>
       <span class="n">my_opts</span><span class="o">.</span><span class="nc">Tag</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"tag1"</span><span class="o">)),</span>
       <span class="n">my_opts</span><span class="o">.</span><span class="nc">Tag</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"tag2"</span><span class="o">))))</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="example-code">Example code</h2>
 

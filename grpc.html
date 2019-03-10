@@ -4,11 +4,12 @@
 
 <p>Install ScalaPB as usual. Add the following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
+<div class="highlighter-rouge"><pre class="highlight"><code>libraryDependencies ++= Seq(
     "io.grpc" % "grpc-netty" % scalapb.compiler.Version.grpcJavaVersion,
     "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion
 )
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="creating-a-service">Creating a service</h2>
 
@@ -19,7 +20,7 @@ implement the server side.</p>
 <p>For example, if your proto file in <code class="highlighter-rouge">src/main/protobuf/hello.proto</code> looks like
 this:</p>
 
-<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
 
 <span class="kn">package</span> <span class="nn">com</span><span class="o">.</span><span class="n">example.protos</span><span class="p">;</span>
 
@@ -38,11 +39,12 @@ this:</p>
 </span><span class="kd">message</span> <span class="nc">HelloReply</span> <span class="p">{</span>
   <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The generated code will look like this (simplified and commented):</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">GreeterGrpc</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">object</span> <span class="nc">GreeterGrpc</span> <span class="o">{</span>
 
   <span class="c1">// Base trait for an asynchronous client and server.
 </span>  <span class="k">trait</span> <span class="nc">Greeter</span> <span class="k">extends</span> <span class="nc">AbstractService</span> <span class="o">{</span>
@@ -76,41 +78,46 @@ this:</p>
   <span class="c1">// Creates a new asynchronous client.
 </span>  <span class="k">def</span> <span class="n">stub</span><span class="o">(</span><span class="n">channel</span><span class="k">:</span> <span class="kt">io.grpc.Channel</span><span class="o">)</span><span class="k">:</span> <span class="kt">GreeterStub</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GreeterStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="using-the-client">Using the client</h2>
 
 <p>Creating a channel:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">channel</span> <span class="k">=</span> <span class="nc">ManagedChannelBuilder</span><span class="o">.</span><span class="n">forAddress</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">).</span><span class="n">usePlaintext</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span><span class="n">build</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">channel</span> <span class="k">=</span> <span class="nc">ManagedChannelBuilder</span><span class="o">.</span><span class="n">forAddress</span><span class="o">(</span><span class="n">host</span><span class="o">,</span> <span class="n">port</span><span class="o">).</span><span class="n">usePlaintext</span><span class="o">(</span><span class="kc">true</span><span class="o">).</span><span class="n">build</span>
 <span class="k">val</span> <span class="n">request</span> <span class="k">=</span> <span class="nc">HelloRequest</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="s">"World"</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Blocking call:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">blockingStub</span> <span class="k">=</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="n">blockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">blockingStub</span> <span class="k">=</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="n">blockingStub</span><span class="o">(</span><span class="n">channel</span><span class="o">)</span>
 <span class="k">val</span> <span class="n">reply</span><span class="k">:</span> <span class="kt">HelloReply</span> <span class="o">=</span> <span class="n">blockingStub</span><span class="o">.</span><span class="n">sayHello</span><span class="o">(</span><span class="n">request</span><span class="o">)</span>
 <span class="n">println</span><span class="o">(</span><span class="n">reply</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Async call:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val stub = GreeterGrpc.stub(channel)
+<div class="highlighter-rouge"><pre class="highlight"><code>val stub = GreeterGrpc.stub(channel)
 val f: Future[HelloReply] = stub.sayHello(request)
 f onComplete println
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="writing-a-server">Writing a server</h2>
 
 <p>Implement the service:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">class</span> <span class="nc">GreeterImpl</span> <span class="k">extends</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="nc">Greeter</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">private</span> <span class="k">class</span> <span class="nc">GreeterImpl</span> <span class="k">extends</span> <span class="nc">GreeterGrpc</span><span class="o">.</span><span class="nc">Greeter</span> <span class="o">{</span>
   <span class="k">override</span> <span class="k">def</span> <span class="n">sayHello</span><span class="o">(</span><span class="n">req</span><span class="k">:</span> <span class="kt">HelloRequest</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
     <span class="k">val</span> <span class="n">reply</span> <span class="k">=</span> <span class="nc">HelloReply</span><span class="o">(</span><span class="n">message</span> <span class="k">=</span> <span class="s">"Hello "</span> <span class="o">+</span> <span class="n">req</span><span class="o">.</span><span class="n">name</span><span class="o">)</span>
     <span class="nc">Future</span><span class="o">.</span><span class="n">successful</span><span class="o">(</span><span class="n">reply</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>See
 <a href="https://github.com/xuwei-k/grpc-scala-sample/blob/master/grpc-scala/src/main/scala/io/grpc/examples/helloworld/HelloWorldServer.scala">complete example server</a> here.</p>
@@ -125,8 +132,9 @@ closely the offical <code class="highlighter-rouge">grpc-java</code> API. Exampl
 <p>In certain situations (for example when you have a fat jar), you may see the
 following exception:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Exception in thread "main" io.grpc.ManagedChannelProvider$ProviderNotFoundException: No functional server found. Try adding a dependency on the grpc-netty artifact
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>Exception in thread "main" io.grpc.ManagedChannelProvider$ProviderNotFoundException: No functional server found. Try adding a dependency on the grpc-netty artifact
+</code></pre>
+</div>
 
 <p>To work around this issue, create a <code class="highlighter-rouge">NettyServer</code> explicitly using
 <code class="highlighter-rouge">io.grpc.netty.NettyServerBuilder</code>.</p>
