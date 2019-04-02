@@ -102,6 +102,10 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="scalapb">scalapb</a></dd></dl></div>
     </li><li class="current-entities indented2">
+                        <a class="object" href="CompatLensImplicits$.html" title=""></a>
+                        <a class="trait" href="CompatLensImplicits.html" title=""></a>
+                        <a href="CompatLensImplicits.html" title="">CompatLensImplicits</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="" title=""></a>
                         <a class="trait" href="Lens.html" title=""></a>
                         <a href="Lens.html" title="">Lens</a>
@@ -138,7 +142,7 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Lens</span>
+        <span class="name">Lens</span><span class="result"> extends <a href="CompatLensImplicits.html" class="extype" name="scalapb.lenses.CompatLensImplicits">CompatLensImplicits</a></span>
       </span>
       </h4>
 
@@ -147,7 +151,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="CompatLensImplicits.html" class="extype" name="scalapb.lenses.CompatLensImplicits">CompatLensImplicits</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -173,7 +177,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="scalapb.lenses.Lens"><span>Lens</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="scalapb.lenses.Lens"><span>Lens</span></li><li class="in" name="scalapb.lenses.CompatLensImplicits"><span>CompatLensImplicits</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -227,38 +231,6 @@
       </span>
       
       <p class="shortcomment cmt">Implicit that adds some syntactic sugar if our lens watches an Option[_].</p>
-    </li><li name="scalapb.lenses.Lens.SeqLikeLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SeqLikeLens[U,A,Coll[A]&lt;:scala.collection.SeqLike[A,Coll[A]]]extendsAnyVal"></a><a id="SeqLikeLens[U,A,Coll[A]&lt;:SeqLike[A,Coll[A]]]:SeqLikeLens[U,A,Coll]"></a>
-      <span class="permalink">
-      <a href="../../scalapb/lenses/Lens$.html#SeqLikeLens[U,A,Coll[A]&lt;:scala.collection.SeqLike[A,Coll[A]]]extendsAnyVal" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit final </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="Implicit that adds some syntactic sugar if our lens watches a Seq-like collection." href="Lens$$SeqLikeLens.html"><span class="name">SeqLikeLens</span></a><span class="tparams">[<span name="U">U</span>, <span name="A">A</span>, <span name="Coll">Coll<span class="tparams">[<span name="A">A</span>]</span> &lt;: <span class="extype" name="scala.collection.SeqLike">SeqLike</span>[<span class="extype" name="scalapb.lenses.Lens.SeqLikeLens.Coll.A">A</span>, <span class="extype" name="scalapb.lenses.Lens.SeqLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.Lens.SeqLikeLens.Coll.A">A</span>]]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Implicit that adds some syntactic sugar if our lens watches a Seq-like collection.</p>
-    </li><li name="scalapb.lenses.Lens.SetLikeLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SetLikeLens[U,A,Coll[A]&lt;:scala.collection.SetLike[A,Coll[A]]withSet[A]]extendsAnyVal"></a><a id="SetLikeLens[U,A,Coll[A]&lt;:SetLike[A,Coll[A]]withSet[A]]:SetLikeLens[U,A,Coll]"></a>
-      <span class="permalink">
-      <a href="../../scalapb/lenses/Lens$.html#SetLikeLens[U,A,Coll[A]&lt;:scala.collection.SetLike[A,Coll[A]]withSet[A]]extendsAnyVal" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit final </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="Implicit that adds some syntactic sugar if our lens watches a Set-like collection." href="Lens$$SetLikeLens.html"><span class="name">SetLikeLens</span></a><span class="tparams">[<span name="U">U</span>, <span name="A">A</span>, <span name="Coll">Coll<span class="tparams">[<span name="A">A</span>]</span> &lt;: <span class="extype" name="scala.collection.SetLike">SetLike</span>[<span class="extype" name="scalapb.lenses.Lens.SetLikeLens.Coll.A">A</span>, <span class="extype" name="scalapb.lenses.Lens.SetLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.Lens.SetLikeLens.Coll.A">A</span>]] with <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scalapb.lenses.Lens.SetLikeLens.Coll.A">A</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Implicit that adds some syntactic sugar if our lens watches a Set-like collection.</p>
     </li></ol>
             </div>
 
@@ -315,6 +287,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scalapb.lenses.CompatLensImplicits#SetLikeLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SetLikeLens[U,A,Coll[A]&lt;:scala.collection.SetLike[A,Coll[A]]withSet[A]](lens:scalapb.lenses.Lens[U,Coll[A]]):scalapb.lenses.CompatLensImplicits.SetLikeLens[U,A,Coll]"></a><a id="SetLikeLens[U,A,Coll[A]&lt;:SetLike[A,Coll[A]]withSet[A]](Lens[U,Coll[A]]):SetLikeLens[U,A,Coll]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/lenses/Lens$.html#SetLikeLens[U,A,Coll[A]&lt;:scala.collection.SetLike[A,Coll[A]]withSet[A]](lens:scalapb.lenses.Lens[U,Coll[A]]):scalapb.lenses.CompatLensImplicits.SetLikeLens[U,A,Coll]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SetLikeLens</span><span class="tparams">[<span name="U">U</span>, <span name="A">A</span>, <span name="Coll">Coll<span class="tparams">[<span name="A">A</span>]</span> &lt;: <span class="extype" name="scala.collection.SetLike">SetLike</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll.A">A</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll.A">A</span>]] with <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll.A">A</span>]</span>]</span><span class="params">(<span name="lens">lens: <a href="Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.U">U</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.A">A</span>]]</span>)</span><span class="result">: <a href="CompatLensImplicits$$SetLikeLens.html" class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens">SetLikeLens</a>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.U">U</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.A">A</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.SetLikeLens.Coll">Coll</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="CompatLensImplicits.html" class="extype" name="scalapb.lenses.CompatLensImplicits">CompatLensImplicits</a></dd></dl></div>
     </li><li name="scalapb.lenses.Lens#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="apply[Container,A](getter:Container=&gt;A)(setter:(Container,A)=&gt;Container):scalapb.lenses.Lens[Container,A]"></a><a id="apply[Container,A]((Container)⇒A)((Container,A)⇒Container):Lens[Container,A]"></a>
       <span class="permalink">
@@ -521,6 +509,22 @@
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.lenses.CompatLensImplicits#seqLikeLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="seqLikeLens[U,A,Coll[A]&lt;:scala.collection.SeqLike[A,Coll[A]]](lens:scalapb.lenses.Lens[U,Coll[A]]):scalapb.lenses.CompatLensImplicits.SeqLikeLens[U,A,Coll]"></a><a id="seqLikeLens[U,A,Coll[A]&lt;:SeqLike[A,Coll[A]]](Lens[U,Coll[A]]):SeqLikeLens[U,A,Coll]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/lenses/Lens$.html#seqLikeLens[U,A,Coll[A]&lt;:scala.collection.SeqLike[A,Coll[A]]](lens:scalapb.lenses.Lens[U,Coll[A]]):scalapb.lenses.CompatLensImplicits.SeqLikeLens[U,A,Coll]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">seqLikeLens</span><span class="tparams">[<span name="U">U</span>, <span name="A">A</span>, <span name="Coll">Coll<span class="tparams">[<span name="A">A</span>]</span> &lt;: <span class="extype" name="scala.collection.SeqLike">SeqLike</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.Coll.A">A</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.Coll.A">A</span>]]</span>]</span><span class="params">(<span name="lens">lens: <a href="Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.U">U</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.Coll">Coll</span>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.A">A</span>]]</span>)</span><span class="result">: <a href="CompatLensImplicits$$SeqLikeLens.html" class="extype" name="scalapb.lenses.CompatLensImplicits.SeqLikeLens">SeqLikeLens</a>[<span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.U">U</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.A">A</span>, <span class="extype" name="scalapb.lenses.CompatLensImplicits.seqLikeLens.Coll">Coll</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="CompatLensImplicits.html" class="extype" name="scalapb.lenses.CompatLensImplicits">CompatLensImplicits</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -574,28 +578,6 @@ just a field of it: get() gives the original object, and set() returns the assig
 no matter what the original value was.
 </p></div></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wait():Unit"></a>
-      <span class="permalink">
-      <a href="../../scalapb/lenses/Lens$.html#wait():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
-    </span>)</span>
-              
-        </dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
       <a href="../../scalapb/lenses/Lens$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
@@ -641,6 +623,28 @@ no matter what the original value was.
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../scalapb/lenses/Lens$.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li>
               </ol>
             </div>
@@ -680,7 +684,9 @@ no matter what the original value was.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scalapb.lenses.CompatLensImplicits">
+              <h3>Inherited from <a href="CompatLensImplicits.html" class="extype" name="scalapb.lenses.CompatLensImplicits">CompatLensImplicits</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
