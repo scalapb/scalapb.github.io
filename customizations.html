@@ -229,6 +229,23 @@ or trait, by using the <code class="highlighter-rouge">companion_extends</code> 
 <p>Will generate a case class that extends <code class="highlighter-rouge">MySuperClass</code>, and the companion
 object will extend <code class="highlighter-rouge">MySuperCompanionClass</code>.</p>
 
+<h1 id="custom-base-traits-for-sealed-oneofs">Custom base traits for sealed oneofs</h1>
+
+<p>Note: this option is available in ScalaPB 0.9.0 and later.</p>
+
+<p>Use the following option to define one or more base traits for a generated SealedOneof:</p>
+
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">MyEither</span> <span class="p">{</span>
+  <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">sealed_oneof_extends</span> <span class="o">=</span> <span class="s">"MyBaseTrait"</span><span class="p">;</span>
+
+  <span class="k">oneof</span> <span class="n">sealed_value</span> <span class="p">{</span>
+    <span class="n">Left</span> <span class="na">left</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">Right</span> <span class="na">right</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
 <h1 id="custom-base-traits-for-enums">Custom base traits for enums</h1>
 
 <p>In a similar fashion to custom base traits for messages, it is possible to

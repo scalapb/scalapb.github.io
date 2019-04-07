@@ -158,7 +158,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">MessageOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="companionExtends">companionExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="companionAnnotations">companionAnnotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">MessageOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="companionExtends">companionExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="companionAnnotations">companionAnnotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="sealedOneofExtends">sealedOneofExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -169,7 +169,8 @@
   Custom annotations to add to the generated case class.</p></dd><dt class="param">type</dt><dd class="cmt"><p>
   All instances of this message will be converted to this type. An implicit TypeMapper
   must be present.</p></dd><dt class="param">companionAnnotations</dt><dd class="cmt"><p>
-  Custom annotations to add to the companion object of the generated class.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  Custom annotations to add to the companion object of the generated class.</p></dd><dt class="param">sealedOneofExtends</dt><dd class="cmt"><p>
+  Additional classes and traits to mix in to generated sealed_oneof base trait.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -223,9 +224,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalapb.options.MessageOptions#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],annotations:Seq[String],type:Option[String],companionAnnotations:Seq[String]):scalapb.options.MessageOptions"></a><a id="&lt;init&gt;:MessageOptions"></a>
+      <a id="&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],annotations:Seq[String],type:Option[String],companionAnnotations:Seq[String],sealedOneofExtends:Seq[String]):scalapb.options.MessageOptions"></a><a id="&lt;init&gt;:MessageOptions"></a>
       <span class="permalink">
-      <a href="../../scalapb/options/MessageOptions.html#&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],annotations:Seq[String],type:Option[String],companionAnnotations:Seq[String]):scalapb.options.MessageOptions" title="Permalink">
+      <a href="../../scalapb/options/MessageOptions.html#&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],annotations:Seq[String],type:Option[String],companionAnnotations:Seq[String],sealedOneofExtends:Seq[String]):scalapb.options.MessageOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -234,7 +235,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">MessageOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="companionExtends">companionExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="companionAnnotations">companionAnnotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span>
+        <span class="name">MessageOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="companionExtends">companionExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="annotations">annotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="companionAnnotations">companionAnnotations: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="sealedOneofExtends">sealedOneofExtends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extends</dt><dd class="cmt"><p>
@@ -243,7 +244,8 @@
   Custom annotations to add to the generated case class.</p></dd><dt class="param">type</dt><dd class="cmt"><p>
   All instances of this message will be converted to this type. An implicit TypeMapper
   must be present.</p></dd><dt class="param">companionAnnotations</dt><dd class="cmt"><p>
-  Custom annotations to add to the companion object of the generated class.</p></dd></dl></div>
+  Custom annotations to add to the companion object of the generated class.</p></dd><dt class="param">sealedOneofExtends</dt><dd class="cmt"><p>
+  Additional classes and traits to mix in to generated sealed_oneof base trait.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -366,6 +368,22 @@
       </span>
       
       
+    </li><li name="scalapb.options.MessageOptions#addAllSealedOneofExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllSealedOneofExtends(__vs:Iterable[String]):scalapb.options.MessageOptions"></a><a id="addAllSealedOneofExtends(Iterable[String]):MessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/MessageOptions.html#addAllSealedOneofExtends(__vs:Iterable[String]):scalapb.options.MessageOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllSealedOneofExtends</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.MessageOptions#addAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="addAnnotations(__vs:String*):scalapb.options.MessageOptions"></a><a id="addAnnotations(String*):MessageOptions"></a>
       <span class="permalink">
@@ -427,6 +445,22 @@
       </span>
       <span class="symbol">
         <span class="name">addExtends</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.MessageOptions#addSealedOneofExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addSealedOneofExtends(__vs:String*):scalapb.options.MessageOptions"></a><a id="addSealedOneofExtends(String*):MessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/MessageOptions.html#addSealedOneofExtends(__vs:String*):scalapb.options.MessageOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addSealedOneofExtends</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
       </span>
       
       
@@ -523,6 +557,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearExtends</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.MessageOptions#clearSealedOneofExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearSealedOneofExtends:scalapb.options.MessageOptions"></a><a id="clearSealedOneofExtends:MessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/MessageOptions.html#clearSealedOneofExtends:scalapb.options.MessageOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearSealedOneofExtends</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
       </span>
       
       
@@ -807,6 +857,22 @@
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.options.MessageOptions#sealedOneofExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sealedOneofExtends:Seq[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/MessageOptions.html#sealedOneofExtends:Seq[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sealedOneofExtends</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
     </li><li name="scalapb.options.MessageOptions#serializedSize" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="serializedSize:Int"></a>
       <span class="permalink">
@@ -1066,6 +1132,22 @@ the companion object.
       </span>
       <span class="symbol">
         <span class="name">withExtends</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.MessageOptions#withSealedOneofExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSealedOneofExtends(__v:Seq[String]):scalapb.options.MessageOptions"></a><a id="withSealedOneofExtends(Seq[String]):MessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/MessageOptions.html#withSealedOneofExtends(__v:Seq[String]):scalapb.options.MessageOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSealedOneofExtends</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a></span>
       </span>
       
       
