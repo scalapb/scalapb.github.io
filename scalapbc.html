@@ -62,6 +62,24 @@ first command line argument:</p>
 <code class="highlighter-rouge">single_line_to_proto_string</code>, <code class="highlighter-rouge">no_lenses</code>, <code class="highlighter-rouge">retain_source_code_info</code>.</p>
 
 <p>Those parameters are described in <a href="/sbt-settings.html">SBT settings</a></p>
+
+<h2 id="using-scalapb-as-a-proper-protoc-plugin">Using ScalaPB as a proper protoc plugin</h2>
+
+<p>You may want to use ScalaPB code generator as a standard protoc plugin (rather
+than using scalapbc as a wrapper or the various other solutions we have). From
+version 0.9.0, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.8.4/scalapbc-0.8.4.zip">scalapbc-0.8.4.zip</a> an executable named <code class="highlighter-rouge">bin/protoc-gen-scala</code>. You can use it as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>protoc my.protos --plugin=/path/to/bin/protoc-gen-scala --scala_out=scala
+</code></pre>
+</div>
+
+<p>On Windows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>protoc my.protos --plugin=protoc-gen-scala=/path/to/bin/protoc-gen-scala.bat --scala_out=scala
+</code></pre>
+</div>
+
+<p>For passing parameters to the plugin, see the section above.</p>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {
