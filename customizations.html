@@ -342,6 +342,23 @@ original type.</p>
   <li><a href="https://github.com/scalapb/ScalaPB/blob/master/e2e/src/test/scala/CustomTypesSpec.scala"><code class="highlighter-rouge">CustomTypesSpec.scala</code></a></li>
 </ul>
 
+<p>If you have a TypeMapper that maps a generated type into a type you don’t own
+(such as <code class="highlighter-rouge">String</code>, or a third-party class) then you don’t have access to the
+companion object to define the typemapper in. Instead, you can place the
+typemapper in one of the parent package objects of the generated code. For
+example, if you want to map an enum to a string, and the message containing it
+goes into the <code class="highlighter-rouge">a.b.c</code> package, you can define the type mapper like this:</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="c1">// src/main/scala/a/b/c/package.scala:
+</span><span class="k">package</span> <span class="nn">a.b</span>
+
+<span class="k">package</span> <span class="nn">object</span> <span class="n">c</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">val</span> <span class="n">segmentType</span> <span class="k">=</span>
+    <span class="nc">TypeMapper</span><span class="o">[</span><span class="kt">SegmentType</span>, <span class="kt">String</span><span class="o">](</span><span class="k">_</span><span class="o">.</span><span class="n">name</span><span class="o">)(</span><span class="nc">SegmentType</span><span class="o">.</span><span class="n">fromName</span><span class="o">(</span><span class="k">_</span><span class="o">).</span><span class="n">get</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
 <h2 id="custom-types-on-maps">Custom types on maps</h2>
 
 <p>Since version 0.6.0 it is possible to customize the key and value types of
