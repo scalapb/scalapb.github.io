@@ -298,7 +298,9 @@ you would like to use type-safe wrappers around primitive values to enforce unit
 correctness. For example, instead of using a raw integer for time fields, you can
 wrap them in a <code class="highlighter-rouge">Seconds</code> class.</p>
 
-<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Connection</span> <span class="p">{</span>
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Connection</span> <span class="p">{</span>
   <span class="k">optional</span> <span class="kt">int32</span> <span class="na">timeout</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="s">"mydomain.Seconds"</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre>
