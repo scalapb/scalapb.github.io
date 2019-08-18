@@ -414,12 +414,13 @@ will be of type <code class="highlighter-rouge">MyDuration</code>:</p>
 </span>    <span class="c1">// no_box
 </span>    <span class="n">Duration</span> <span class="na">dd_nobox</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">no_box</span> <span class="o">=</span> <span class="kc">true</span><span class="p">];</span>  <span class="c1">// will become ddNoBox: MyDuration
 </span><span class="p">}</span>
+</code></pre>
+</div>
 
-<span class="n">If</span> <span class="n">you</span> <span class="n">do</span> <span class="n">not</span> <span class="n">want</span> <span class="n">any</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">your</span> <span class="kd">message</span> <span class="nc">to</span> <span class="n">be</span> <span class="n">boxed</span> <span class="p">(</span><span class="n">regardless</span> <span class="n">if</span> <span class="n">it</span>
-<span class="n">has</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">type</span><span class="p">),</span> <span class="n">you</span> <span class="n">can</span> <span class="n">set</span> <span class="err">`</span><span class="n">no_box</span><span class="err">`</span> <span class="n">at</span> <span class="n">the</span> <span class="n">message</span><span class="o">-</span><span class="n">level</span><span class="o">:</span>
+<p>If you do not want any instance of your message to be boxed (regardless if it
+has a custom type), you can set <code class="highlighter-rouge">no_box</code> at the message-level:</p>
 
-<span class="err">```</span><span class="n">protobuf</span>
-<span class="c1">// duration_nobox.proto
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="c1">// duration_nobox.proto
 </span><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
 
 <span class="kn">package</span> <span class="nn">mytypes</span><span class="p">;</span>
