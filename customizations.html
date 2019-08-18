@@ -361,6 +361,83 @@ goes into the <code class="highlighter-rouge">a.b.c</code> package, you can defi
 </code></pre>
 </div>
 
+<h1 id="message-level-custom-type-and-boxing">Message-level custom type and boxing</h1>
+
+<p>In the previous section you saw how to customize the type generated for a
+specific field. ScalaPB also lets you specify a custom type at the message
+level. When <code class="highlighter-rouge">type</code> is set at the message level, that type is used for all the
+fields that use that message. This eliminates the need to specify <code class="highlighter-rouge">type</code> on each field
+of this type.</p>
+
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="c1">// duration.proto
+</span><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">mytypes</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Duration</span> <span class="p">{</span>
+    <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="s">"mytypes.MyDurationType"</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>In a Scala file define an implicit mapper:</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">package</span> <span class="nn">mytypes</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">MyDuration</span><span class="o">(</span><span class="n">seconds</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">MyDurationType</span> <span class="o">{</span>
+    <span class="k">implicit</span> <span class="k">val</span> <span class="n">tm</span> <span class="k">=</span> <span class="nc">TypeMapper</span><span class="o">[</span><span class="kt">duration.Duration</span>, <span class="kt">MyDuration</span><span class="o">]</span>
+        <span class="o">(</span><span class="nc">MyDuration</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">seconds</span><span class="o">))(</span><span class="n">duration</span><span class="o">.</span><span class="nc">Duration</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">seconds</span><span class="o">))</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Now, each time you reference <code class="highlighter-rouge">Duration</code> in a proto file, the generated field in Scala code
+will be of type <code class="highlighter-rouge">MyDuration</code>:</p>
+
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">mytypes</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<span class="k">import</span> <span class="s">"duration.proto"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Usage</span> <span class="p">{</span>
+    <span class="n">Duration</span> <span class="na">dd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>           <span class="c1">// will become dd: Option[MyDuration]
+</span>    <span class="k">repeated</span> <span class="n">Duration</span> <span class="na">ds</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// will become ds: Seq[MyDuration]
+</span>
+    <span class="c1">// You can eliminate the boxing of an optional field in an Option by using
+</span>    <span class="c1">// no_box
+</span>    <span class="n">Duration</span> <span class="na">dd_nobox</span> <span class="o">=</span> <span class="mi">3</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">no_box</span> <span class="o">=</span> <span class="kc">true</span><span class="p">];</span>  <span class="c1">// will become ddNoBox: MyDuration
+</span><span class="p">}</span>
+
+<span class="n">If</span> <span class="n">you</span> <span class="n">do</span> <span class="n">not</span> <span class="n">want</span> <span class="n">any</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">your</span> <span class="kd">message</span> <span class="nc">to</span> <span class="n">be</span> <span class="n">boxed</span> <span class="p">(</span><span class="n">regardless</span> <span class="n">if</span> <span class="n">it</span>
+<span class="n">has</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">type</span><span class="p">),</span> <span class="n">you</span> <span class="n">can</span> <span class="n">set</span> <span class="err">`</span><span class="n">no_box</span><span class="err">`</span> <span class="n">at</span> <span class="n">the</span> <span class="n">message</span><span class="o">-</span><span class="n">level</span><span class="o">:</span>
+
+<span class="err">```</span><span class="n">protobuf</span>
+<span class="c1">// duration_nobox.proto
+</span><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">mytypes</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Duration</span> <span class="p">{</span>
+    <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="s">"mytypes.MyDurationType"</span><span class="p">;</span>
+    <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">no_box</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>  <span class="c1">// do not wrap in Option
+</span>    <span class="kt">int32</span> <span class="na">seconds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Then when this message is used, it will not be wrapped in an <code class="highlighter-rouge">Option</code>. If
+<code class="highlighter-rouge">no_box</code> is specified at the field level, it overrides the value specified at
+the message level.</p>
+
 <h2 id="custom-types-on-maps">Custom types on maps</h2>
 
 <p>Since version 0.6.0 it is possible to customize the key and value types of
