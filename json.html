@@ -102,7 +102,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@3b04aca0 size=2&gt;
+//       &lt;ByteString@6a69f371 size=2&gt;
 //     )
 //   )
 // )
@@ -110,13 +110,13 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="k">val</span> <span class="n">typeRegistry</span> <span class="k">=</span> <span class="nc">TypeRegistry</span><span class="o">().</span><span class="n">addMessage</span><span class="o">[</span><span class="kt">MyMessage</span><span class="o">]</span>
 <span class="c1">// typeRegistry: TypeRegistry = TypeRegistry(
 //   Map(
-//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@69a43da9
+//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@5695550
 //   ),
 //   Set()
 // )
 </span>
 <span class="k">val</span> <span class="n">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Printer</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// printer: Printer = scalapb.json4s.Printer@321ad3b6
+<span class="c1">// printer: Printer = scalapb.json4s.Printer@50c32016
 </span>
 <span class="n">printer</span><span class="o">.</span><span class="n">print</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
 <span class="c1">// res0: String = "{\"myAny\":{\"@type\":\"type.googleapis.com/com.thesamet.docs.MyMessage\",\"x\":17}}"
@@ -126,7 +126,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <p>Conversely, you can start from a JSON and parse it back to a <code class="highlighter-rouge">MyContainer</code> that contains an <code class="highlighter-rouge">Any</code> field:</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">parser</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Parser</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// parser: Parser = scalapb.json4s.Parser@284016f0
+<span class="c1">// parser: Parser = scalapb.json4s.Parser@121e0647
 </span>
 <span class="n">parser</span><span class="o">.</span><span class="n">fromJsonString</span><span class="o">[</span><span class="kt">MyContainer</span><span class="o">](</span><span class="s">"""
   {
@@ -139,7 +139,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@4977cd26 size=2&gt;
+//       &lt;ByteString@83a9ce7 size=2&gt;
 //     )
 //   )
 // )
