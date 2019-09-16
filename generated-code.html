@@ -330,14 +330,14 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">Weather</span> <span class="k">extends</span> <span class="nc">GeneratedEnumCompanion</span><span class="o">[</span><span class="kt">Weather</span><span class="o">]</span> <span class="o">{</span>
-    <span class="k">case</span> <span class="k">object</span> <span class="nc">Sunny</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">SUNNY</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span>
         <span class="k">val</span> <span class="n">value</span> <span class="k">=</span> <span class="mi">1</span>
         <span class="k">val</span> <span class="n">name</span> <span class="k">=</span> <span class="s">"SUNNY"</span>
     <span class="o">}</span>
 
     <span class="c1">// Similarly for the other enum values...
-</span>    <span class="k">case</span> <span class="k">object</span> <span class="nc">PartlyCloudy</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-    <span class="k">case</span> <span class="k">object</span> <span class="nc">Rain</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</span>    <span class="k">case</span> <span class="k">object</span> <span class="nc">PARTLY_CLOUDY</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">RAIN</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 
     <span class="c1">// In ScalaPB &gt;= 0.5.x, this captures unknown value that are received
 </span>    <span class="c1">// from the wire format.  Earlier versions throw a MatchError when
@@ -345,7 +345,7 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 </span>    <span class="k">case</span> <span class="k">class</span> <span class="nc">Unrecognized</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 
     <span class="c1">// And a list of all possible values:
-</span>    <span class="k">lazy</span> <span class="k">val</span> <span class="n">values</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span><span class="nc">Sunny</span><span class="o">,</span> <span class="nc">PartlyCloudy</span><span class="o">,</span> <span class="nc">Rain</span><span class="o">)</span>
+</span>    <span class="k">lazy</span> <span class="k">val</span> <span class="n">values</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span><span class="nc">SUNNY</span><span class="o">,</span> <span class="nc">PARTLY_CLOUDY</span><span class="o">,</span> <span class="nc">RAIN</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Forecast</span><span class="o">(</span><span class="n">weather</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Weather</span><span class="o">])</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
@@ -354,9 +354,9 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 
 <p>And we can write:</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="nc">Forecard</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">weather</span> <span class="o">:=</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">PartlyCloud</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="nc">Forecast</span><span class="o">().</span><span class="n">update</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">weather</span> <span class="o">:=</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">PARTLY_CLOUDY</span><span class="o">)</span>
 
-<span class="n">assert</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="n">weather</span> <span class="o">==</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Weather</span><span class="o">.</span><span class="nc">PartlyCloudy</span><span class="o">)</span>
+<span class="n">assert</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="n">weather</span> <span class="o">==</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Weather</span><span class="o">.</span><span class="nc">PARTLY_CLOUDY</span><span class="o">)</span>
 
 <span class="k">if</span> <span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="n">getWeather</span><span class="o">.</span><span class="n">isRain</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// take an umbrella
@@ -364,8 +364,8 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 
 <span class="c1">// Pattern matching:
 </span><span class="n">f</span><span class="o">.</span><span class="n">getWeather</span> <span class="k">match</span> <span class="o">{</span>
-    <span class="k">case</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">Rain</span> <span class="k">=&gt;</span>
-    <span class="k">case</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">Sunny</span> <span class="k">=&gt;</span>
+    <span class="k">case</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">RAIN</span> <span class="k">=&gt;</span>
+    <span class="k">case</span> <span class="nc">Weather</span><span class="o">.</span><span class="nc">SUNNY</span> <span class="k">=&gt;</span>
     <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
 <span class="o">}</span>
 
