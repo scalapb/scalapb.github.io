@@ -178,16 +178,16 @@ elements added to the original list.</li>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="n">update</span><span class="o">(</span>
   <span class="c1">// Override the addresses
-</span>  <span class="k">_</span><span class="o">.</span><span class="n">addressses</span> <span class="o">:=</span> <span class="n">newListOfAddress</span><span class="o">,</span>
+</span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span> <span class="o">:=</span> <span class="n">newListOfAddress</span><span class="o">,</span>
 
   <span class="c1">// Add one address:
-</span>  <span class="k">_</span><span class="o">.</span><span class="n">addressses</span> <span class="o">:+=</span> <span class="n">address1</span><span class="o">,</span>
+</span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span> <span class="o">:+=</span> <span class="n">address1</span><span class="o">,</span>
 
   <span class="c1">// Add a list of addresses:
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span> <span class="o">:++=</span> <span class="nc">Seq</span><span class="o">(</span><span class="n">address1</span><span class="o">,</span> <span class="n">address2</span><span class="o">),</span>
 
   <span class="c1">// Modify an address in the list by index!
-</span>  <span class="k">_</span><span class="o">.</span><span class="n">addressses</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="n">street</span> <span class="o">:=</span> <span class="s">"Townsend St."</span><span class="o">,</span>
+</span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="n">street</span> <span class="o">:=</span> <span class="s">"Townsend St."</span><span class="o">,</span>
 
   <span class="c1">// Modify all addresses:
 </span>  <span class="k">_</span><span class="o">.</span><span class="n">addresses</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">city</span> <span class="o">:=</span> <span class="s">"San Francisco"</span><span class="o">),</span>
