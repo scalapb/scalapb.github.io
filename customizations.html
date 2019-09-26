@@ -29,6 +29,7 @@ skip this section.</p>
   <span class="n">lenses</span><span class="o">:</span> <span class="kc">true</span>
   <span class="n">retain_source_code_info</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">no_default_values_in_constructor</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="n">preserve_unknown_fields</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">};</span>
 </code></pre>
 </div>
@@ -80,6 +81,11 @@ access source code information.</p>
     <p>By default, all non-required fields have default values in the constructor of the generated
 case classes. When setting <code class="highlighter-rouge">no_default_values_in_constructor</code> to <code class="highlighter-rouge">true</code> no
 default values will be generated for all fields.</p>
+  </li>
+  <li>
+    <p>By default, during deserialization only known fields are retained.
+When setting <code class="highlighter-rouge">preserve_unknown_fields</code> to <code class="highlighter-rouge">true</code>, all generated messages in this file will preserve unknown fields.
+This is default behaviour in java for Proto3 messages since 3.5.0.</p>
   </li>
 </ul>
 

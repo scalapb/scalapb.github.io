@@ -41,8 +41,12 @@ normal members.</p>
     <span class="k">optional</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">optional</span> <span class="kt">int32</span> <span class="na">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
-    <span class="c1">// Address is a message defined somewhere else.
-</span>    <span class="k">repeated</span> <span class="n">Address</span> <span class="na">addresses</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">Address</span> <span class="na">addresses</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Address</span> <span class="p">{</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">street</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">city</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -64,7 +68,9 @@ normal members.</p>
 
     <span class="c1">// more stuff...
 </span><span class="o">}</span>
-</code></pre>
+
+<span class="c1">// similar stuff for Address...
+</span></code></pre>
 </div>
 
 <p>The case class contains various methods for serialization, and the companion
