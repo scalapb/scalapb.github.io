@@ -82,10 +82,10 @@ generate mappings between the ScalaPB generated types to SparkSQL primitives.</p
 
 <p>Then in <code class="highlighter-rouge">build.sbt</code>, call the UDT generator:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>PB.targets in Compile := Seq(
-  scalapb.gen() -&gt; (sourceManaged in Compile).value,
-  scalapb.UdtGenerator -&gt; (sourceManaged in Compile).value
-)
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="n">scalapb</span><span class="o">.</span><span class="n">gen</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span><span class="o">,</span>
+  <span class="n">scalapb</span><span class="o">.</span><span class="nc">UdtGenerator</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="n">value</span>
+<span class="o">)</span>
 </code></pre>
 </div>
 

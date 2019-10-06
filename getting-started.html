@@ -1,0 +1,102 @@
+<html><head><title>ScalaPB: Getting Started</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: Getting Started" /><meta name="title" property="og:title" content="ScalaPB: Getting Started" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: Getting Started" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/style.css" /><link rel="stylesheet" href="/css/palette.css" /><link rel="stylesheet" href="/css/codemirror.css" /><link rel="stylesheet" href="/css/custom.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class="">Generated Code</a></li> <li><a href="/customizations.html" class="">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined Options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class="">ScalaPBC</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class="">Migrating</a></li> <li><a href="/contact.html" class="">Contact Us</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="protocol-buffer-basics-scala">Protocol Buffer Basics: Scala</h1>
+
+<p>This tutorial provides a basic Java programmer’s introduction to working with protocol buffers. By walking through creating a simple example application, it shows you how to</p>
+
+<ul>
+  <li>
+    <p>Define message formats in a .proto file.</p>
+  </li>
+  <li>
+    <p>Use SBT to generate Scala case classes from proto files.</p>
+  </li>
+  <li>
+    <p>Use ScalaPB API to write and read messages.</p>
+  </li>
+</ul>
+
+<p>This isn’t a comprehensive guide to using protocol buffers in Scala. For more detailed reference information, see the <a href="https://developers.google.com/protocol-buffers/docs/proto">Protocol Buffer Language Guide</a>, the <a href="/generated-code.html">Generated Code page</a>.
+), and the <a href="https://developers.google.com/protocol-buffers/docs/encoding">Encoding Reference</a>.</p>
+
+<h1 id="why-use-protocol-buffers">Why Use Protocol Buffers?￼</h1>
+
+<p>The example we’re going to use is a very simple “address book” application that can read and write people’s contact details to and from a file. Each person in the address book has a name, an ID, an email address, and a contact phone number.</p>
+
+<p>How do you serialize and retrieve structured data like this? There are a few ways to solve this problem:</p>
+
+<ul>
+  <li>Use Java Serialization. This is the default approach since it’s built into the language, but it has a host of well-known problems (see Effective Java, by Josh Bloch pp. 213), and also doesn’t work very well if you need to share data with applications written in C++ or Python.</li>
+  <li>You can invent an ad-hoc way to encode the data items into a single string – such as encoding 4 ints as “12:3:-23:67”. This is a simple and flexible approach, although it does require writing one-off encoding and parsing code, and the parsing imposes a small run-time cost. This works best for encoding very simple data.</li>
+  <li>Serialize the data to XML (or JSON). This approach can be very attractive since XML and JSON are (sort of) human readable and there are binding libraries for lots of languages. This can be a good choice if you want to share data with other applications/projects. However, XML is notoriously space intensive, and encoding/decoding it can impose a huge performance penalty on applications. Also, navigating an XML DOM tree is considerably more complicated than navigating simple fields in a class normally would be.</li>
+</ul>
+
+<p>Protocol buffers are the flexible, efficient, automated solution to solve exactly this problem. With protocol buffers, you write a <code class="highlighter-rouge">.proto</code> description of the data structure you wish to store. From that, the protocol buffer compiler creates a case class that implements automatic encoding and parsing of the protocol buffer data with an efficient binary format. Importantly, the protocol buffer format supports the idea of extending the format over time in such a way that the code can still read data encoded with the old format.</p>
+
+<h1 id="where-to-find-the-example-code">Where to Find the Example Code￼</h1>
+
+<p>The example code is included in the source code zip files, under the `src/main/scala/examples/” directory. <a href="https://github.com/scalapb/ScalaPB/releases">Download it here</a>.</p>
+
+<h1 id="defining-your-protocol-format">Defining Your Protocol Format</h1>
+
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
+
+<span class="kn">package</span> <span class="nn">tutorial</span><span class="p">;</span>
+
+<span class="k">option</span> <span class="na">java_package</span> <span class="o">=</span> <span class="s">"com.example.tutorial"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Person</span> <span class="p">{</span>
+  <span class="k">required</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">required</span> <span class="kt">int32</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">email</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+  <span class="kd">enum</span> <span class="n">PhoneType</span> <span class="p">{</span>
+    <span class="na">MOBILE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">HOME</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">WORK</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">message</span> <span class="nc">PhoneNumber</span> <span class="p">{</span>
+    <span class="k">required</span> <span class="kt">string</span> <span class="na">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="n">PhoneType</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">[</span><span class="k">default</span> <span class="o">=</span> <span class="n">HOME</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">repeated</span> <span class="n">PhoneNumber</span> <span class="na">phones</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AddressBook</span> <span class="p">{</span>
+  <span class="k">repeated</span> <span class="n">Person</span> <span class="na">people</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Let’s go through each part of the file and see what it does.</p>
+
+<p>The <code class="highlighter-rouge">.proto</code> file starts with a package declaration, which helps to prevent naming conflicts between different projects. In Scala, the package name followed by the file name is used as the Scala package unless you have either explicitly specified a java_package, as we have here, or specified a <a href="/customizations.html">scala package option</a>. Even if you do provide a <code class="highlighter-rouge">java_package</code>, you should still define a normal package as well to avoid name collisions in the Protocol Buffers name space as well as in other languages.</p>
+
+<p>After the package declaration, you can see the <code class="highlighter-rouge">java_package</code> option. This option was originally introduced for the Java code generator, however ScalaPB concatenates to that the proto file name to determine the Scala package name. This prevents namespace collisions in projects that have both Scala and Java generated code.</p>
+
+<p>Next, you have your message definitions. A message is just an aggregate containing a set of typed fields. Many standard simple data types are available as field types, including <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">int32</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">double</code>, and <code class="highlighter-rouge">string</code>. You can also add further structure to your messages by using other message types as field types – in the above example the <code class="highlighter-rouge">Person</code> message contains <code class="highlighter-rouge">PhoneNumber</code> messages, while the <code class="highlighter-rouge">AddressBook</code> message contains <code class="highlighter-rouge">Person</code> messages. You can even define message types nested inside other messages – as you can see, the <code class="highlighter-rouge">PhoneNumber</code> type is defined inside <code class="highlighter-rouge">Person</code>. You can also define <code class="highlighter-rouge">enum</code> types if you want one of your fields to have one of a predefined list of values – here you want to specify that a phone number can be one of <code class="highlighter-rouge">MOBILE</code>, <code class="highlighter-rouge">HOME</code>, or <code class="highlighter-rouge">WORK</code>.</p>
+
+<p>The <code class="highlighter-rouge">" = 1"</code>, <code class="highlighter-rouge">" = 2"</code> markers on each element identify the unique “tag” that field uses in the binary encoding. Tag numbers 1-15 require one less byte to encode than higher numbers, so as an optimization you can decide to use those tags for the commonly used or repeated elements, leaving tags 16 and higher for less-commonly used optional elements. Each element in a repeated field requires re-encoding the tag number, so repeated fields are particularly good candidates for this optimization.</p>
+
+<p>Each field must be annotated with one of the following modifiers:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">required</code>: a value for the field must be provided when constructing a message case class. Parsing a message that misses a required field will throw an <code class="highlighter-rouge">InvalidProtocolBufferException</code>. Other than this, a required field behaves exactly like an optional field.</li>
+  <li><code class="highlighter-rouge">optional</code>: the field may or may not be set. If an optional field value isn’t set, a default value is used. For simple types, you can specify your own default value, as we’ve done for the phone number type in the example. Otherwise, a system default is used: zero for numeric types, the empty string for strings, false for bools. For embedded messages, the default value is always the “default instance” or “prototype” of the message, which has none of its fields set. Calling the accessor to get the value of an optional (or required) field which has not been explicitly set always returns that field’s default value. In proto2, optional fields are represented as <code class="highlighter-rouge">Option[]</code>. In proto3, optional primitives are not wrapped in <code class="highlighter-rouge">Option[]</code>, but messages are.
+<code class="highlighter-rouge">repeated</code>: the field may be repeated any number of times (including zero). The order of the repeated values will be preserved in the protocol buffer. Think of repeated fields as dynamically sized arrays. They are represented in Scala as <code class="highlighter-rouge">Seq</code>s.</li>
+</ul>
+
+<blockquote>
+  <p><em>Required Is Forever</em>. You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field – old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead. Some engineers at Google have come to the conclusion that using required does more harm than good; they prefer to use only optional and repeated. However, this view is not universal.</p>
+</blockquote>
+
+<p>You’ll find a complete guide to writing <code class="highlighter-rouge">.proto</code> files – including all the possible field types – in the <a href="https://developers.google.com/protocol-buffers/docs/proto">Protocol Buffer Language Guide</a>. Don’t go looking for facilities similar to class inheritance, though – protocol buffers don’t do that.</p>
+
+<blockquote>
+  <p>This document, “Protocol Buffer Basics: Scala” is a modification of <a href="https://developers.google.com/protocol-buffers/docs/javatutorial">“Protocol Buffer Basics: Java”</a>, which is a work created and <a href="https://developers.google.com/terms/site-policies">shared by Google</a>  and used according to terms described in the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 Attribution License</a>.</p>
+</blockquote>
+
+</section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
+hljs.initHighlighting();
+              </script><script>((window.gitter = {}).chat = {}).options = {
+room: 'trueaccord/ScalaPB'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
