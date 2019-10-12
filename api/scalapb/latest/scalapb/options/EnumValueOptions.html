@@ -158,13 +158,14 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumValueOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">EnumValueOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../Message.html" class="extype" name="scalapb.Message">Message</a>[<a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a>] with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extends</dt><dd class="cmt"><p>
-  Additional classes and traits to mix in to an individual enum value.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  Additional classes and traits to mix in to an individual enum value.</p></dd><dt class="param">scalaName</dt><dd class="cmt"><p>
+  Name in Scala to use for this enum value.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -218,9 +219,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalapb.options.EnumValueOptions#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(extends:Seq[String]):scalapb.options.EnumValueOptions"></a><a id="&lt;init&gt;:EnumValueOptions"></a>
+      <a id="&lt;init&gt;(extends:Seq[String],scalaName:Option[String]):scalapb.options.EnumValueOptions"></a><a id="&lt;init&gt;:EnumValueOptions"></a>
       <span class="permalink">
-      <a href="../../scalapb/options/EnumValueOptions.html#&lt;init&gt;(extends:Seq[String]):scalapb.options.EnumValueOptions" title="Permalink">
+      <a href="../../scalapb/options/EnumValueOptions.html#&lt;init&gt;(extends:Seq[String],scalaName:Option[String]):scalapb.options.EnumValueOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -229,11 +230,12 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumValueOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>)</span>
+        <span class="name">EnumValueOptions</span><span class="params">(<span name="extends">extends: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.Seq.empty</span></span>, <span name="scalaName">scalaName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extends</dt><dd class="cmt"><p>
-  Additional classes and traits to mix in to an individual enum value.</p></dd></dl></div>
+  Additional classes and traits to mix in to an individual enum value.</p></dd><dt class="param">scalaName</dt><dd class="cmt"><p>
+  Name in Scala to use for this enum value.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -353,6 +355,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearExtends</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumValueOptions#clearScalaName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearScalaName:scalapb.options.EnumValueOptions"></a><a id="clearScalaName:EnumValueOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumValueOptions.html#clearScalaName:scalapb.options.EnumValueOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearScalaName</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a></span>
       </span>
       
       
@@ -483,6 +501,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a> → <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></dd></dl></div>
+    </li><li name="scalapb.options.EnumValueOptions#getScalaName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getScalaName:String"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumValueOptions.html#getScalaName:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getScalaName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -573,6 +607,22 @@
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.options.EnumValueOptions#scalaName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="scalaName:Option[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumValueOptions.html#scalaName:Option[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaName</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumValueOptions#serializedSize" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="serializedSize:Int"></a>
       <span class="permalink">
@@ -768,6 +818,22 @@ the companion object.
       </span>
       <span class="symbol">
         <span class="name">withExtends</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumValueOptions#withScalaName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withScalaName(__v:String):scalapb.options.EnumValueOptions"></a><a id="withScalaName(String):EnumValueOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumValueOptions.html#withScalaName(__v:String):scalapb.options.EnumValueOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withScalaName</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumValueOptions">EnumValueOptions</a></span>
       </span>
       
       

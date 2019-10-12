@@ -4,7 +4,7 @@
 
 <h2 id="installation">Installation</h2>
 
-<p>You can download the current release here: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.9.1/scalapbc-0.9.1.zip">scalapbc-0.9.1.zip</a>.</p>
+<p>You can download the current release here: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.9.3/scalapbc-0.9.3.zip">scalapbc-0.9.3.zip</a>.</p>
 
 <p>Older versions can be found in the <a href="https://github.com/scalapb/ScalaPB/releases">releases page</a>.</p>
 
@@ -42,6 +42,10 @@ first command line argument:</p>
 </code></pre>
 </div>
 
+<blockquote>
+  <p>The generated code depends on <code class="highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
+</blockquote>
+
 <h2 id="passing-generator-parameters">Passing generator parameters</h2>
 
 <p>If you would like to pass additional options, like <code class="highlighter-rouge">java_conversions</code>,
@@ -66,8 +70,18 @@ first command line argument:</p>
 <h2 id="using-scalapb-as-a-proper-protoc-plugin">Using ScalaPB as a proper protoc plugin</h2>
 
 <p>You may want to use ScalaPB code generator as a standard protoc plugin (rather
-than using scalapbc as a wrapper or the various other solutions we have). From
-version 0.9.0, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.9.1/scalapbc-0.9.1.zip">scalapbc-0.9.1.zip</a> an executable named <code class="highlighter-rouge">bin/protoc-gen-scala</code>. You can use it as follows:</p>
+than using scalapbc as a wrapper or through SBT).</p>
+
+<p>For Linux and Mac OS X, you can download a native executable version of the plugin for Scala from our <a href="https://github.com/scalapb/ScalaPB/releases">release page</a>:</p>
+
+<ul>
+  <li>For Linux: <a href="https://github.com/scalapb/ScalaPB/releases/download/v{site.data.version.scalapb}/protoc-gen-scala-{site.data.version.scalapb}-linux-x86_64.zip">protoc-gen-scala-{site.data.version.scalapb}-linux-x86_64.zip</a></li>
+  <li>For OS X: <a href="https://github.com/scalapb/ScalaPB/releases/download/v{site.data.version.scalapb}/protoc-gen-scala-{site.data.version.scalapb}-osx-x86_64.zip">protoc-gen-scala-{site.data.version.scalapb}-osx-x86_64.zip</a></li>
+</ul>
+
+<p>Those zip files contain native executables of the plugin for the respective operating system built using GraalVM. If you are using another operating system (such as Windows), or prefer to use a JVM based plugin implementation, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.9.3/scalapbc-0.9.3.zip">scalapbc-0.9.3.zip</a> an executable named <code class="highlighter-rouge">bin/protoc-gen-scala</code> which requires a JVM to run (a JVM needs to be available on the path, or through the <code class="highlighter-rouge">JAVA_HOME</code> environment variable)</p>
+
+<p>To generate code:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>protoc my.protos --plugin=/path/to/bin/protoc-gen-scala --scala_out=scala
 </code></pre>
@@ -80,6 +94,15 @@ version 0.9.0, you will find in <a href="https://github.com/scalapb/ScalaPB/rele
 </div>
 
 <p>For passing parameters to the plugin, see the section above.</p>
+
+<blockquote>
+  <p>Note that the standalone plugin provided in <code class="highlighter-rouge">scalapbc</code> needs to be able to find a JVM in the path or through <code class="highlighter-rouge">JAVA_HOME</code> environment variable. If you encounter unexpected errors, try to execute the plugin directly from the command line, and the output printed may be useful for further debugging.</p>
+</blockquote>
+
+<blockquote>
+  <p>The generated code depends on <code class="highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
+</blockquote>
+
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {

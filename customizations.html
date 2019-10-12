@@ -28,8 +28,9 @@ skip this section.</p>
   <span class="n">preamble</span><span class="o">:</span> <span class="s">"sealed trait CommonMessage"</span>
   <span class="n">lenses</span><span class="o">:</span> <span class="kc">true</span>
   <span class="n">retain_source_code_info</span><span class="o">:</span> <span class="kc">false</span>
-  <span class="n">no_default_values_in_constructor</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="n">no_default_values_in_constructor</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">preserve_unknown_fields</span><span class="o">:</span> <span class="kc">false</span>
+  <span class="n">enum_value_naming</span><span class="o">:</span> <span class="n">CAMEL_CASE</span>
 <span class="p">};</span>
 </code></pre>
 </div>
@@ -81,6 +82,10 @@ access source code information.</p>
     <p>By default, all non-required fields have default values in the constructor of the generated
 case classes. When setting <code class="highlighter-rouge">no_default_values_in_constructor</code> to <code class="highlighter-rouge">true</code> no
 default values will be generated for all fields.</p>
+  </li>
+  <li>
+    <p>Typically, enum values appear in UPPER_CASE in proto files, and ScalaPB generates case objects
+with exactly the same name in Scala. If you would like ScalaPB to transform the names into CamelCase, set <code class="highlighter-rouge">enum_value_naming</code> to <code class="highlighter-rouge">CAMEL_CASE</code>.</p>
   </li>
   <li>
     <p>By default, during deserialization only known fields are retained.
@@ -553,6 +558,15 @@ we inherit from Java, ScalaPB issues an error. You can tell ScalaPB to use an
 alternative name by using the <code class="highlighter-rouge">scala_name</code> option:</p>
 
 <div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="k">optional</span> <span class="kt">string</span> <span class="na">hash_code</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.field</span><span class="p">)</span><span class="o">.</span><span class="na">scala_name</span> <span class="o">=</span> <span class="s">"myHashCode"</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<p>It is also possible to customize the Scala name of an enum value:</p>
+
+<div class="language-protobuf highlighter-rouge"><pre class="highlight"><code><span class="kd">enum</span> <span class="n">MyEnum</span> <span class="p">{</span>
+  <span class="na">DEFAULT</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="na">FOO</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">[(</span><span class="n">scalapb.enum_value</span><span class="p">)</span><span class="o">.</span><span class="na">scala_name</span> <span class="o">=</span> <span class="s">"Bar"</span><span class="p">];</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 

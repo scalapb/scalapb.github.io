@@ -128,7 +128,7 @@ types in proto3, you can use this fact to your advantage by using <a href="/cust
 <p>In your <code class="highlighter-rouge">build.gradle</code> the <code class="highlighter-rouge">protobuf</code> section should look like this:</p>
 
 <div class="language-gradle highlighter-rouge"><pre class="highlight"><code><span class="n">ext</span> <span class="o">{</span>
-  <span class="n">scalapbVersion</span> <span class="o">=</span> <span class="s1">'0.9.1'</span>
+  <span class="n">scalapbVersion</span> <span class="o">=</span> <span class="s1">'0.9.3'</span>
 <span class="o">}</span>
 
 <span class="k">dependencies</span> <span class="o">{</span>
@@ -142,8 +142,8 @@ types in proto3, you can use this fact to your advantage by using <a href="/cust
   <span class="n">plugins</span> <span class="o">{</span>
     <span class="n">scalapb</span> <span class="o">{</span>
       <span class="n">artifact</span> <span class="o">=</span> <span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">gradle</span><span class="o">.</span><span class="na">nativeplatform</span><span class="o">.</span><span class="na">platform</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">DefaultNativePlatform</span><span class="o">.</span><span class="na">getCurrentOperatingSystem</span><span class="o">().</span><span class="na">isWindows</span><span class="o">())</span> <span class="o">?</span>
-          <span class="s2">"com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:windows@bat"</span> <span class="o">:</span>
-          <span class="s2">"com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:unix@sh"</span>
+          <span class="s2">"com.thesamet.scalapb:protoc-gen-scala:${scalapbVersion}:windows@bat"</span> <span class="o">:</span>
+          <span class="s2">"com.thesamet.scalapb:protoc-gen-scala:${scalapbVersion}:unix@sh"</span>
     <span class="o">}</span>
   <span class="o">}</span>
 
