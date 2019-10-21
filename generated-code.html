@@ -56,7 +56,7 @@ normal members.</p>
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
     <span class="n">name</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
     <span class="n">age</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
-    <span class="n">addresses</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Address</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Nil</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">GeneratedMessage</span> <span class="o">{</span>
+    <span class="n">addresses</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Address</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Nil</span><span class="o">,</span> <span class="o">...)</span> <span class="k">extends</span> <span class="nc">GeneratedMessage</span> <span class="o">{</span>
 
     <span class="k">def</span> <span class="n">toByteArray</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 

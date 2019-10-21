@@ -90,7 +90,9 @@ with exactly the same name in Scala. If you would like ScalaPB to transform the 
   <li>
     <p>By default, during deserialization only known fields are retained.
 When setting <code class="highlighter-rouge">preserve_unknown_fields</code> to <code class="highlighter-rouge">true</code>, all generated messages in this file will preserve unknown fields.
-This is default behaviour in java for Proto3 messages since 3.5.0.</p>
+This is default behaviour in java for Proto3 messages since 3.5.0.
+In ScalaPB 0.10.0: the default of this field became <code class="highlighter-rouge">true</code> for consistency
+with Java.</p>
   </li>
 </ul>
 
