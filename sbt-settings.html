@@ -37,10 +37,10 @@ following to your <code class="highlighter-rouge">build.sbt</code>:</p>
 <p>The plugin assumes your <code class="highlighter-rouge">proto</code> files are under <code class="highlighter-rouge">src/main/protobuf</code>,
 however this is configurable using the <code class="highlighter-rouge">PB.protoSources in Compile</code> setting.</p>
 
-<p>By default, <code class="highlighter-rouge">sbt-protoc</code> invokes <code class="highlighter-rouge">protoc</code> 3.0.0 that is shipped with <code class="highlighter-rouge">protoc-jar</code>.
+<p>By default, <code class="highlighter-rouge">sbt-protoc</code> invokes <code class="highlighter-rouge">protoc</code> 3.x that is shipped with <code class="highlighter-rouge">protoc-jar</code>.
 If you would like to run a different version of <code class="highlighter-rouge">protoc</code>:</p>
 
-<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protocVersion</span> <span class="o">:=</span> <span class="s">"-v261"</span>
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="nc">PB</span><span class="o">.</span><span class="n">protocVersion</span> <span class="o">:=</span> <span class="s">"-v3.10.0"</span>
 </code></pre>
 </div>
 
