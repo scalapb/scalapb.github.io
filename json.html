@@ -79,7 +79,7 @@ call <code class="highlighter-rouge">toJson()</code> / <code class="highlighter-
 <ul>
   <li><code class="highlighter-rouge">includingDefaultValueFields</code> (default: <code class="highlighter-rouge">false</code>): should fields
 that are set to their default value be included in the output.</li>
-  <li><code class="highlighter-rouge">preservingProtoFileNames</code> (default: <code class="highlighter-rouge">false</code>): by default, field names are mapped to
+  <li><code class="highlighter-rouge">preservingProtoFieldNames</code> (default: <code class="highlighter-rouge">false</code>): by default, field names are mapped to
 lowerCamelCase and become JSON object keys. Setting this option to <code class="highlighter-rouge">true</code> would
 make the parser and the printer use the original field names as specified in the proto
 file (normally, in snake_case)</li>
@@ -111,7 +111,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@51e47c1c size=2&gt;
+//       &lt;ByteString@4f2bcae4 size=2&gt;
 //     )
 //   ),
 //   UnknownFieldSet(Map())
@@ -120,13 +120,13 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="k">val</span> <span class="n">typeRegistry</span> <span class="k">=</span> <span class="nc">TypeRegistry</span><span class="o">().</span><span class="n">addMessage</span><span class="o">[</span><span class="kt">MyMessage</span><span class="o">]</span>
 <span class="c1">// typeRegistry: TypeRegistry = TypeRegistry(
 //   Map(
-//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@7525531f
+//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@68c3b6b3
 //   ),
 //   Set()
 // )
 </span>
 <span class="k">val</span> <span class="n">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Printer</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// printer: Printer = scalapb.json4s.Printer@3664c93c
+<span class="c1">// printer: Printer = scalapb.json4s.Printer@41290f11
 </span>
 <span class="n">printer</span><span class="o">.</span><span class="n">print</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
 <span class="c1">// res0: String = "{\"myAny\":{\"@type\":\"type.googleapis.com/com.thesamet.docs.MyMessage\",\"x\":17}}"
@@ -136,7 +136,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <p>Conversely, you can start from a JSON and parse it back to a <code class="highlighter-rouge">MyContainer</code> that contains an <code class="highlighter-rouge">Any</code> field:</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">parser</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Parser</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// parser: Parser = scalapb.json4s.Parser@6a003c2
+<span class="c1">// parser: Parser = scalapb.json4s.Parser@6f165299
 </span>
 <span class="n">parser</span><span class="o">.</span><span class="n">fromJsonString</span><span class="o">[</span><span class="kt">MyContainer</span><span class="o">](</span><span class="s">"""
   {
@@ -149,7 +149,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@59c215a2 size=2&gt;
+//       &lt;ByteString@1a9507e6 size=2&gt;
 //     )
 //   ),
 //   UnknownFieldSet(Map())
