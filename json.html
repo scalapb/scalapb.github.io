@@ -111,7 +111,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@4f2bcae4 size=2&gt;
+//       &lt;ByteString@4a7a8abf size=2&gt;
 //     )
 //   ),
 //   UnknownFieldSet(Map())
@@ -120,13 +120,13 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="k">val</span> <span class="n">typeRegistry</span> <span class="k">=</span> <span class="nc">TypeRegistry</span><span class="o">().</span><span class="n">addMessage</span><span class="o">[</span><span class="kt">MyMessage</span><span class="o">]</span>
 <span class="c1">// typeRegistry: TypeRegistry = TypeRegistry(
 //   Map(
-//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@68c3b6b3
+//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@6233c56f
 //   ),
 //   Set()
 // )
 </span>
 <span class="k">val</span> <span class="n">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Printer</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// printer: Printer = scalapb.json4s.Printer@41290f11
+<span class="c1">// printer: Printer = scalapb.json4s.Printer@34651947
 </span>
 <span class="n">printer</span><span class="o">.</span><span class="n">print</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
 <span class="c1">// res0: String = "{\"myAny\":{\"@type\":\"type.googleapis.com/com.thesamet.docs.MyMessage\",\"x\":17}}"
@@ -136,7 +136,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <p>Conversely, you can start from a JSON and parse it back to a <code class="highlighter-rouge">MyContainer</code> that contains an <code class="highlighter-rouge">Any</code> field:</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">parser</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Parser</span><span class="o">().</span><span class="n">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// parser: Parser = scalapb.json4s.Parser@6f165299
+<span class="c1">// parser: Parser = scalapb.json4s.Parser@49be74d9
 </span>
 <span class="n">parser</span><span class="o">.</span><span class="n">fromJsonString</span><span class="o">[</span><span class="kt">MyContainer</span><span class="o">](</span><span class="s">"""
   {
@@ -149,7 +149,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 //   Some(
 //     Any(
 //       "type.googleapis.com/com.thesamet.docs.MyMessage",
-//       &lt;ByteString@1a9507e6 size=2&gt;
+//       &lt;ByteString@35dad83c size=2&gt;
 //     )
 //   ),
 //   UnknownFieldSet(Map())
@@ -160,4 +160,4 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/protobuf.min.js"></script><script>hljs.configure({languages:['scala','java','bash','protobuf']});
 hljs.initHighlighting();
               </script><script>((window.gitter = {}).chat = {}).options = {
-room: 'trueaccord/ScalaPB'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
+room: 'ScalaPB/community'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
