@@ -39,6 +39,7 @@ skip this section.</p>
   <span class="n">no_default_values_in_constructor</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">preserve_unknown_fields</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">enum_value_naming</span><span class="o">:</span> <span class="n">CAMEL_CASE</span>
+  <span class="n">enum_strip_prefix</span><span class="o">:</span> <span class="kc">false</span> 
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -93,6 +94,13 @@ default values will be generated for all fields.</p>
   <li>
     <p>Typically, enum values appear in UPPER_CASE in proto files, and ScalaPB generates case objects
 with exactly the same name in Scala. If you would like ScalaPB to transform the names into CamelCase, set <code class="highlighter-rouge">enum_value_naming</code> to <code class="highlighter-rouge">CAMEL_CASE</code>.</p>
+  </li>
+  <li>
+    <p>It is a common practice in protobufs to prefix each enum value name with the name of the enum. 
+For example, an enum name <code class="highlighter-rouge">Size</code> may have values named <code class="highlighter-rouge">SIZE_SMALL</code> and <code class="highlighter-rouge">SIZE_LARGE</code>. When you set <code class="highlighter-rouge">enum_strip_prefix</code> 
+to <code class="highlighter-rouge">true</code>, ScalaPB will strip the enum’s name from each value name, and they would become <code class="highlighter-rouge">SMALL</code> and <code class="highlighter-rouge">LARGE</code>. 
+Then the name can be transformed to camel-case according to <code class="highlighter-rouge">enum_value_naming</code>. Note that the prefix that is removed 
+is the all-caps version of the enum name followed by an underscore.</p>
   </li>
   <li>
     <p>By default, during deserialization only known fields are retained.
