@@ -215,7 +215,82 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="scalapb.options.ScalaPbOptions.EnumValueNaming" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="scalapb.options.ScalaPbOptions.AuxEnumOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuxEnumOptionsextendsGeneratedMessagewithUpdatable[scalapb.options.ScalaPbOptions.AuxEnumOptions]withProductwithSerializable"></a><a id="AuxEnumOptions:AuxEnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxEnumOptions.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="AuxEnumOptions enables you to set enum-level options through package-scoped options." href="ScalaPbOptions$$AuxEnumOptions.html"><span class="name">AuxEnumOptions</span></a><span class="params">(<span name="target">target: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="options">options: <span class="extype" name="scala.Option">Option</span>[<a href="EnumOptions.html" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ScalaPbOptions$$AuxEnumOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxEnumOptions">AuxEnumOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">AuxEnumOptions enables you to set enum-level options through package-scoped options.</p><div class="fullcomment"><div class="comment cmt"><p>AuxEnumOptions enables you to set enum-level options through package-scoped options.
+This is useful when you can't add a dependency on scalapb.proto from the proto file that
+defines the enum.
+</p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
+  The fully-qualified name of the enum in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  Options to apply to the enum. If there are any options defined on the target message
+  they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scalapb.options.ScalaPbOptions.AuxFieldOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuxFieldOptionsextendsGeneratedMessagewithUpdatable[scalapb.options.ScalaPbOptions.AuxFieldOptions]withProductwithSerializable"></a><a id="AuxFieldOptions:AuxFieldOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxFieldOptions.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="AuxFieldOptions enables you to set field-level options through package-scoped options." href="ScalaPbOptions$$AuxFieldOptions.html"><span class="name">AuxFieldOptions</span></a><span class="params">(<span name="target">target: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="options">options: <span class="extype" name="scala.Option">Option</span>[<a href="FieldOptions.html" class="extype" name="scalapb.options.FieldOptions">FieldOptions</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ScalaPbOptions$$AuxFieldOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxFieldOptions">AuxFieldOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">AuxFieldOptions enables you to set field-level options through package-scoped options.</p><div class="fullcomment"><div class="comment cmt"><p>AuxFieldOptions enables you to set field-level options through package-scoped options.
+This is useful when you can't add a dependency on scalapb.proto from the proto file that
+defines the field.
+</p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
+  The fully-qualified name of the field in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  Options to apply to the field. If there are any options defined on the target message
+  they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scalapb.options.ScalaPbOptions.AuxMessageOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AuxMessageOptionsextendsGeneratedMessagewithUpdatable[scalapb.options.ScalaPbOptions.AuxMessageOptions]withProductwithSerializable"></a><a id="AuxMessageOptions:AuxMessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxMessageOptions.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="AuxMessageOptions enables you to set message-level options through package-scoped options." href="ScalaPbOptions$$AuxMessageOptions.html"><span class="name">AuxMessageOptions</span></a><span class="params">(<span name="target">target: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_root_.scala.None</span></span>, <span name="options">options: <span class="extype" name="scala.Option">Option</span>[<a href="MessageOptions.html" class="extype" name="scalapb.options.MessageOptions">MessageOptions</a>] = <span class="symbol">_root_.scala.None</span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ScalaPbOptions$$AuxMessageOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxMessageOptions">AuxMessageOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">AuxMessageOptions enables you to set message-level options through package-scoped options.</p><div class="fullcomment"><div class="comment cmt"><p>AuxMessageOptions enables you to set message-level options through package-scoped options.
+This is useful when you can't add a dependency on scalapb.proto from the proto file that
+defines the message.
+</p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
+  The fully-qualified name of the message in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  Options to apply to the message. If there are any options defined on the target message
+  they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scalapb.options.ScalaPbOptions.EnumValueNaming" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="EnumValueNamingextendsGeneratedEnum"></a><a id="EnumValueNaming:EnumValueNaming"></a>
       <span class="permalink">
       <a href="../../scalapb/options/ScalaPbOptions$$EnumValueNaming.html" title="Permalink">
@@ -337,6 +412,70 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scalapb.options.ScalaPbOptions#AUX_ENUM_OPTIONS_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AUX_ENUM_OPTIONS_FIELD_NUMBER:Int(20)"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$.html#AUX_ENUM_OPTIONS_FIELD_NUMBER:Int(20)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AUX_ENUM_OPTIONS_FIELD_NUMBER</span><span class="result">: Int(20)</span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.ScalaPbOptions#AUX_FIELD_OPTIONS_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AUX_FIELD_OPTIONS_FIELD_NUMBER:Int(19)"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$.html#AUX_FIELD_OPTIONS_FIELD_NUMBER:Int(19)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AUX_FIELD_OPTIONS_FIELD_NUMBER</span><span class="result">: Int(19)</span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.ScalaPbOptions#AUX_MESSAGE_OPTIONS_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AUX_MESSAGE_OPTIONS_FIELD_NUMBER:Int(18)"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$.html#AUX_MESSAGE_OPTIONS_FIELD_NUMBER:Int(18)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AUX_MESSAGE_OPTIONS_FIELD_NUMBER</span><span class="result">: Int(18)</span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.ScalaPbOptions#BYTES_TYPE_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BYTES_TYPE_FIELD_NUMBER:Int(21)"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$.html#BYTES_TYPE_FIELD_NUMBER:Int(21)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BYTES_TYPE_FIELD_NUMBER</span><span class="result">: Int(21)</span>
+      </span>
+      
+      
     </li><li name="scalapb.options.ScalaPbOptions#COLLECTION_TYPE_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="COLLECTION_TYPE_FIELD_NUMBER:Int(8)"></a>
       <span class="permalink">
@@ -992,9 +1131,9 @@
               
         </dd></dl></div>
     </li><li name="scalapb.options.ScalaPbOptions#of" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="of(packageName:Option[String],flatPackage:Option[Boolean],import:Seq[String],preamble:Seq[String],singleFile:Option[Boolean],noPrimitiveWrappers:Option[Boolean],primitiveWrappers:Option[Boolean],collectionType:Option[String],preserveUnknownFields:Option[Boolean],objectName:Option[String],scope:Option[scalapb.options.ScalaPbOptions.OptionsScope],lenses:Option[Boolean],retainSourceCodeInfo:Option[Boolean],mapType:Option[String],noDefaultValuesInConstructor:Option[Boolean],enumValueNaming:Option[scalapb.options.ScalaPbOptions.EnumValueNaming],enumStripPrefix:Option[Boolean],testOnlyNoJavaConversions:Option[Boolean],unknownFields:scalapb.UnknownFieldSet):scalapb.options.ScalaPbOptions"></a><a id="of(Option[String],Option[Boolean],Seq[String],Seq[String],Option[Boolean],Option[Boolean],Option[Boolean],Option[String],Option[Boolean],Option[String],Option[OptionsScope],Option[Boolean],Option[Boolean],Option[String],Option[Boolean],Option[EnumValueNaming],Option[Boolean],Option[Boolean],UnknownFieldSet):ScalaPbOptions"></a>
+      <a id="of(packageName:Option[String],flatPackage:Option[Boolean],import:Seq[String],preamble:Seq[String],singleFile:Option[Boolean],noPrimitiveWrappers:Option[Boolean],primitiveWrappers:Option[Boolean],collectionType:Option[String],preserveUnknownFields:Option[Boolean],objectName:Option[String],scope:Option[scalapb.options.ScalaPbOptions.OptionsScope],lenses:Option[Boolean],retainSourceCodeInfo:Option[Boolean],mapType:Option[String],noDefaultValuesInConstructor:Option[Boolean],enumValueNaming:Option[scalapb.options.ScalaPbOptions.EnumValueNaming],enumStripPrefix:Option[Boolean],auxMessageOptions:Seq[scalapb.options.ScalaPbOptions.AuxMessageOptions],auxFieldOptions:Seq[scalapb.options.ScalaPbOptions.AuxFieldOptions],auxEnumOptions:Seq[scalapb.options.ScalaPbOptions.AuxEnumOptions],bytesType:Option[String],testOnlyNoJavaConversions:Option[Boolean],unknownFields:scalapb.UnknownFieldSet):scalapb.options.ScalaPbOptions"></a><a id="of(Option[String],Option[Boolean],Seq[String],Seq[String],Option[Boolean],Option[Boolean],Option[Boolean],Option[String],Option[Boolean],Option[String],Option[OptionsScope],Option[Boolean],Option[Boolean],Option[String],Option[Boolean],Option[EnumValueNaming],Option[Boolean],Seq[AuxMessageOptions],Seq[AuxFieldOptions],Seq[AuxEnumOptions],Option[String],Option[Boolean],UnknownFieldSet):ScalaPbOptions"></a>
       <span class="permalink">
-      <a href="../../scalapb/options/ScalaPbOptions$.html#of(packageName:Option[String],flatPackage:Option[Boolean],import:Seq[String],preamble:Seq[String],singleFile:Option[Boolean],noPrimitiveWrappers:Option[Boolean],primitiveWrappers:Option[Boolean],collectionType:Option[String],preserveUnknownFields:Option[Boolean],objectName:Option[String],scope:Option[scalapb.options.ScalaPbOptions.OptionsScope],lenses:Option[Boolean],retainSourceCodeInfo:Option[Boolean],mapType:Option[String],noDefaultValuesInConstructor:Option[Boolean],enumValueNaming:Option[scalapb.options.ScalaPbOptions.EnumValueNaming],enumStripPrefix:Option[Boolean],testOnlyNoJavaConversions:Option[Boolean],unknownFields:scalapb.UnknownFieldSet):scalapb.options.ScalaPbOptions" title="Permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$.html#of(packageName:Option[String],flatPackage:Option[Boolean],import:Seq[String],preamble:Seq[String],singleFile:Option[Boolean],noPrimitiveWrappers:Option[Boolean],primitiveWrappers:Option[Boolean],collectionType:Option[String],preserveUnknownFields:Option[Boolean],objectName:Option[String],scope:Option[scalapb.options.ScalaPbOptions.OptionsScope],lenses:Option[Boolean],retainSourceCodeInfo:Option[Boolean],mapType:Option[String],noDefaultValuesInConstructor:Option[Boolean],enumValueNaming:Option[scalapb.options.ScalaPbOptions.EnumValueNaming],enumStripPrefix:Option[Boolean],auxMessageOptions:Seq[scalapb.options.ScalaPbOptions.AuxMessageOptions],auxFieldOptions:Seq[scalapb.options.ScalaPbOptions.AuxFieldOptions],auxEnumOptions:Seq[scalapb.options.ScalaPbOptions.AuxEnumOptions],bytesType:Option[String],testOnlyNoJavaConversions:Option[Boolean],unknownFields:scalapb.UnknownFieldSet):scalapb.options.ScalaPbOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1003,7 +1142,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="packageName">packageName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="flatPackage">flatPackage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="import">import: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="preamble">preamble: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="singleFile">singleFile: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="noPrimitiveWrappers">noPrimitiveWrappers: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="primitiveWrappers">primitiveWrappers: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="preserveUnknownFields">preserveUnknownFields: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="objectName">objectName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="scope">scope: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaPbOptions$$OptionsScope.html" class="extype" name="scalapb.options.ScalaPbOptions.OptionsScope">OptionsScope</a>]</span>, <span name="lenses">lenses: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="retainSourceCodeInfo">retainSourceCodeInfo: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="mapType">mapType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="noDefaultValuesInConstructor">noDefaultValuesInConstructor: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="enumValueNaming">enumValueNaming: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaPbOptions$$EnumValueNaming.html" class="extype" name="scalapb.options.ScalaPbOptions.EnumValueNaming">EnumValueNaming</a>]</span>, <span name="enumStripPrefix">enumStripPrefix: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="testOnlyNoJavaConversions">testOnlyNoJavaConversions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a></span>)</span><span class="result">: <a href="ScalaPbOptions.html" class="extype" name="scalapb.options.ScalaPbOptions">ScalaPbOptions</a></span>
+        <span class="name">of</span><span class="params">(<span name="packageName">packageName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="flatPackage">flatPackage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="import">import: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="preamble">preamble: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="singleFile">singleFile: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="noPrimitiveWrappers">noPrimitiveWrappers: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="primitiveWrappers">primitiveWrappers: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="collectionType">collectionType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="preserveUnknownFields">preserveUnknownFields: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="objectName">objectName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="scope">scope: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaPbOptions$$OptionsScope.html" class="extype" name="scalapb.options.ScalaPbOptions.OptionsScope">OptionsScope</a>]</span>, <span name="lenses">lenses: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="retainSourceCodeInfo">retainSourceCodeInfo: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="mapType">mapType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="noDefaultValuesInConstructor">noDefaultValuesInConstructor: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="enumValueNaming">enumValueNaming: <span class="extype" name="scala.Option">Option</span>[<a href="ScalaPbOptions$$EnumValueNaming.html" class="extype" name="scalapb.options.ScalaPbOptions.EnumValueNaming">EnumValueNaming</a>]</span>, <span name="enumStripPrefix">enumStripPrefix: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="auxMessageOptions">auxMessageOptions: <span class="extype" name="scala.Seq">Seq</span>[<a href="ScalaPbOptions$$AuxMessageOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxMessageOptions">AuxMessageOptions</a>]</span>, <span name="auxFieldOptions">auxFieldOptions: <span class="extype" name="scala.Seq">Seq</span>[<a href="ScalaPbOptions$$AuxFieldOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxFieldOptions">AuxFieldOptions</a>]</span>, <span name="auxEnumOptions">auxEnumOptions: <span class="extype" name="scala.Seq">Seq</span>[<a href="ScalaPbOptions$$AuxEnumOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxEnumOptions">AuxEnumOptions</a>]</span>, <span name="bytesType">bytesType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="testOnlyNoJavaConversions">testOnlyNoJavaConversions: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a></span>)</span><span class="result">: <a href="ScalaPbOptions.html" class="extype" name="scalapb.options.ScalaPbOptions">ScalaPbOptions</a></span>
       </span>
       
       
@@ -1267,6 +1406,54 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.options.ScalaPbOptions.AuxEnumOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AuxEnumOptions"></a><a id="AuxEnumOptions:AuxEnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxEnumOptions$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ScalaPbOptions$$AuxEnumOptions$.html"><span class="name">AuxEnumOptions</span></a><span class="result"> extends <a href="../GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="ScalaPbOptions$$AuxEnumOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxEnumOptions">AuxEnumOptions</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.ScalaPbOptions.AuxFieldOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AuxFieldOptions"></a><a id="AuxFieldOptions:AuxFieldOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxFieldOptions$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ScalaPbOptions$$AuxFieldOptions$.html"><span class="name">AuxFieldOptions</span></a><span class="result"> extends <a href="../GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="ScalaPbOptions$$AuxFieldOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxFieldOptions">AuxFieldOptions</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.ScalaPbOptions.AuxMessageOptions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AuxMessageOptions"></a><a id="AuxMessageOptions:AuxMessageOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/ScalaPbOptions$$AuxMessageOptions$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ScalaPbOptions$$AuxMessageOptions$.html"><span class="name">AuxMessageOptions</span></a><span class="result"> extends <a href="../GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="ScalaPbOptions$$AuxMessageOptions.html" class="extype" name="scalapb.options.ScalaPbOptions.AuxMessageOptions">AuxMessageOptions</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.ScalaPbOptions.EnumValueNaming" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="EnumValueNaming"></a><a id="EnumValueNaming:EnumValueNaming"></a>
       <span class="permalink">

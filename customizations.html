@@ -39,7 +39,8 @@ skip this section.</p>
   <span class="n">no_default_values_in_constructor</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">preserve_unknown_fields</span><span class="o">:</span> <span class="kc">false</span>
   <span class="n">enum_value_naming</span><span class="o">:</span> <span class="n">CAMEL_CASE</span>
-  <span class="n">enum_strip_prefix</span><span class="o">:</span> <span class="kc">false</span> 
+  <span class="n">enum_strip_prefix</span><span class="o">:</span> <span class="kc">false</span>
+  <span class="n">bytes_type</span><span class="o">:</span> <span class="s">"scodec.bits.ByteVector"</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -96,10 +97,10 @@ default values will be generated for all fields.</p>
 with exactly the same name in Scala. If you would like ScalaPB to transform the names into CamelCase, set <code class="highlighter-rouge">enum_value_naming</code> to <code class="highlighter-rouge">CAMEL_CASE</code>.</p>
   </li>
   <li>
-    <p>It is a common practice in protobufs to prefix each enum value name with the name of the enum. 
-For example, an enum name <code class="highlighter-rouge">Size</code> may have values named <code class="highlighter-rouge">SIZE_SMALL</code> and <code class="highlighter-rouge">SIZE_LARGE</code>. When you set <code class="highlighter-rouge">enum_strip_prefix</code> 
-to <code class="highlighter-rouge">true</code>, ScalaPB will strip the enum’s name from each value name, and they would become <code class="highlighter-rouge">SMALL</code> and <code class="highlighter-rouge">LARGE</code>. 
-Then the name can be transformed to camel-case according to <code class="highlighter-rouge">enum_value_naming</code>. Note that the prefix that is removed 
+    <p>It is a common practice in protobufs to prefix each enum value name with the name of the enum.
+For example, an enum name <code class="highlighter-rouge">Size</code> may have values named <code class="highlighter-rouge">SIZE_SMALL</code> and <code class="highlighter-rouge">SIZE_LARGE</code>. When you set <code class="highlighter-rouge">enum_strip_prefix</code>
+to <code class="highlighter-rouge">true</code>, ScalaPB will strip the enum’s name from each value name, and they would become <code class="highlighter-rouge">SMALL</code> and <code class="highlighter-rouge">LARGE</code>.
+Then the name can be transformed to camel-case according to <code class="highlighter-rouge">enum_value_naming</code>. Note that the prefix that is removed
 is the all-caps version of the enum name followed by an underscore.</p>
   </li>
   <li>
@@ -108,6 +109,14 @@ When setting <code class="highlighter-rouge">preserve_unknown_fields</code> to <
 This is default behaviour in java for Proto3 messages since 3.5.0.
 In ScalaPB 0.10.0: the default of this field became <code class="highlighter-rouge">true</code> for consistency
 with Java.</p>
+  </li>
+  <li>
+    <p>Use <code class="highlighter-rouge">bytes_type</code> to customize the Scala type used for the <code class="highlighter-rouge">bytes</code> field
+type. You will need to have an implicit
+<code class="highlighter-rouge">TypeMapper[com.google.protobuf.ByteString, YourType]</code> instance so ScalaPb
+can convert back and forth to the type of your choice. That implicit will be
+found if it is defined under <code class="highlighter-rouge">YourType</code> companion object, or on a package
+object that matches the generated code (or any of its parent packages).</p>
   </li>
 </ul>
 
@@ -165,6 +174,48 @@ downstream users are expected to import the protos you ship, then you need to im
 options proto explicitly from all the proto files that are meant to inherit the options.  The
 reason is that if you don’t do that, then downstream projects would not
 process the proto package file which may lead to compilation errors.</p>
+
+<h1 id="auxiliary-options">Auxiliary options</h1>
+
+<p>In some situations, you may want to set some options in a proto file, but without
+modifying the original proto file or adding anything ScalaPB-specific to it. To accomplish
+that, you can define auxiliary options under package-scoped options.</p>
+
+<p>For example, if you are given this proto file:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nn">a</span><span class="o">.</span><span class="n">b.c</span><span class="p">;</span>
+<span class="kd">message</span> <span class="nc">Foo</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">hello</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can add a file <code class="highlighter-rouge">package.proto</code> with the following content:</p>
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nn">a</span><span class="o">.</span><span class="n">b.c</span><span class="p">;</span>
+<span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+<span class="k">option</span> <span class="p">(</span><span class="n">scalapb.options</span><span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">scope</span><span class="o">:</span> <span class="n">PACKAGE</span>
+    <span class="n">aux_message_options</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="n">target</span><span class="o">:</span> <span class="s">"a.b.c.Foo"</span>
+            <span class="n">options</span><span class="o">:</span> <span class="p">{</span>
+                <span class="n">extends</span><span class="o">:</span> <span class="s">"com.myexample.SomeTrait"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+    <span class="n">aux_field_options</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="n">target</span><span class="o">:</span> <span class="s">"a.b.c.Foo.hello"</span>
+            <span class="n">options</span><span class="o">:</span> <span class="p">{</span>
+                <span class="n">scala_name</span><span class="o">:</span> <span class="s">"goodbye"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>The list <code class="highlighter-rouge">aux_message_options</code> contains options targeted at different messages define under the same proto package of the package-scoped options. The <code class="highlighter-rouge">target</code> name needs to be fully-qualified message name in the protobuf namespace. Similar to <code class="highlighter-rouge">aux_message_options</code>, we also have <code class="highlighter-rouge">aux_enum_options</code> and <code class="highlighter-rouge">aux_field_options</code>. See <a href="https://github.com/scalapb/ScalaPB/tree/master/e2e/src/main/protobuf/scoped">example usage here</a>.</p>
 
 <h1 id="primitive-wrappers">Primitive wrappers</h1>
 
