@@ -23,14 +23,10 @@ respectively).</p>
 <h2 id="usage">Usage</h2>
 
 <p>ScalaPBC is used exactly like protoc. In fact, scalapbc calls protoc.
-It ships with <a href="https://github.com/os72/protoc-jar">multiple versions</a> of protoc embedded in the
-jar and you can pick the one you want to use by passing the desired version as the
+It ships with <a href="https://github.com/os72/protoc-jar">multiple versions</a> of protoc embedded in the jar and you can pick the one you want to use by passing the desired version as the
 first command line argument:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="o">[</span>options]
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v261</span> <span class="o">[</span>options]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.11.1 <span class="o">[</span>options]
 </code></pre></div></div>
 
 <p>To generate Scala code, invoke ScalaPBC like this:</p>
@@ -64,10 +60,9 @@ first command line argument:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>flat_package,java_conversions:protos/src/scala/main/
 </code></pre></div></div>
 
-<p>The supported parameters are: <code class="highlighter-rouge">flat_package</code>, <code class="highlighter-rouge">java_conversions</code>, <code class="highlighter-rouge">grpc</code> and
-<code class="highlighter-rouge">single_line_to_proto_string</code>, <code class="highlighter-rouge">no_lenses</code>, <code class="highlighter-rouge">retain_source_code_info</code>.</p>
+<p>The supported parameters are: <code class="highlighter-rouge">flat_package</code>, <code class="highlighter-rouge">java_conversions</code>, <code class="highlighter-rouge">grpc</code> and <code class="highlighter-rouge">single_line_to_proto_string</code>, <code class="highlighter-rouge">no_lenses</code>, <code class="highlighter-rouge">retain_source_code_info</code>.</p>
 
-<p>Those parameters are described in <a href="/sbt-settings.html">SBT settings</a></p>
+<p>Those parameters are described in <a href="/sbt-settings.html#additional-options-to-the-generator">SBT settings</a></p>
 
 <h2 id="using-scalapb-as-a-proper-protoc-plugin">Using ScalaPB as a proper protoc plugin</h2>
 
