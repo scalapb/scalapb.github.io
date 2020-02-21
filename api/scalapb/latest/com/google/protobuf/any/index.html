@@ -425,10 +425,9 @@ of utility functions or additional generated methods of the Any type.</p><p>Exam
 'type.googleapis.com/full.type.name' as the type URL and the unpack
 methods only use the fully qualified type name after the last '/'
 in the type URL, for example &quot;foo.bar.com/x/y.z&quot; will yield type
-name &quot;y.z&quot;.</p><p>JSON</p><h6>
-The JSON representation of an <code>Any</code> value uses the regular
+name &quot;y.z&quot;.</p><p>JSON</p><p>The JSON representation of an <code>Any</code> value uses the regular
 representation of the deserialized, embedded message, with an
-additional field <code>&#64;type</code> which contains the type URL. Example:</h6><p>    package google.profile;
+additional field <code>&#64;type</code> which contains the type URL. Example:</p><p>    package google.profile;
     message Person {
       string first_name = 1;
       string last_name = 2;
