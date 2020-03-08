@@ -31,12 +31,12 @@ first command line argument:</p>
 
 <p>To generate Scala code, invoke ScalaPBC like this:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="nt">--scala_out</span><span class="o">=</span>some/output/directory myproto.proto
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.5.1 <span class="nt">--scala_out</span><span class="o">=</span>some/output/directory myproto.proto
 </code></pre></div></div>
 
 <p>To generate both Scala code and Java code along with Java conversions:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v351</span> <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.5.1 <span class="se">\</span>
     <span class="nt">--scala_out</span><span class="o">=</span>java_conversions:some/output/directory <span class="se">\</span>
     <span class="nt">--java_out</span><span class="o">=</span>some/output/directory <span class="se">\</span>
     myproto.proto
@@ -64,6 +64,20 @@ first command line argument:</p>
 
 <p>Those parameters are described in <a href="/sbt-settings.html#additional-options-to-the-generator">SBT settings</a></p>
 
+<h2 id="loading-additional-generators-from-maven">Loading additional generators from Maven</h2>
+
+<p>ScalaPBC (starting version 0.10.1) can fetch generators from Maven using
+Coursier:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=io.grpc:protoc-gen-grpc-java:1.27.2:default,classifier=linux-x86_64,ext=exe,type=jar -- e2e/src/main/protobuf/service.proto --grpc-java_out=/tmp/zvv -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
+</code></pre></div></div>
+
+<p>or:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=com.thesamet.scalapb.zio-grpc:protoc-gen-zio:0.1.0:default,classifier=unix,ext=sh,type=jar -- e2e/src/main/protobuf/service.proto --zio_out=/tmp/zvv -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
+</code></pre></div></div>
+
+<p>bin/scalapbc –plugin-artifact=io.grpc:grpc-java:</p>
 <h2 id="using-scalapb-as-a-proper-protoc-plugin">Using ScalaPB as a proper protoc plugin</h2>
 
 <p>You may want to use ScalaPB code generator as a standard protoc plugin (rather
