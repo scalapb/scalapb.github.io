@@ -65,21 +65,29 @@ files available on the file system.</p>
 
 <h2 id="how-do-i-generate-scala-code-for-protos-from-another-jar">How do I generate Scala code for protos from another jar?</h2>
 
-<p>Include the jar as a <code class="highlighter-rouge">protobuf</code> dependency in your libraryDependencies:</p>
+<p>For some proto packages, we may already provide pre-compiled generated code in
+ <a href="https://github.com/scalapb/common-protos">ScalaPB’s Common Protos project</a>.
+ If what you are looking for is not there, consider adding it by following the
+ instructions on the project’s page.</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.somepackage"</span> <span class="o">%%</span> <span class="s">"that-has-jar"</span> <span class="o">%</span> <span class="s">"1.0"</span> <span class="o">%</span> <span class="s">"protobuf"</span>
+<p>To build it yourself using SBT: include the jar as a <code class="highlighter-rouge">protobuf</code> dependency in your libraryDependencies:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.somepackage"</span> <span class="o">%%</span> <span class="s">"that-has-jar"</span> <span class="o">%</span> <span class="s">"1.0"</span> <span class="o">%</span> <span class="s">"protobuf-src"</span> <span class="nf">transitive</span><span class="o">()</span>
 </code></pre></div></div>
 
 <p>This will tell sbt-protoc to extract the protos from that jar into
-<code class="highlighter-rouge">target/scala-2.vv/protobuf-external</code>. This makes it possible to <code class="highlighter-rouge">import</code>
-those protos from your local protos. sbt-protoc looks for protocol buffers to
-compile in the directories listed in <code class="highlighter-rouge">PB.protoSources</code>. There you need to
-add a line like this to your <code class="highlighter-rouge">build.sbt</code>:</p>
+<code class="highlighter-rouge">target/scala-2.vv/protobuf_external_src</code> and add them both to the import
+search path and the set of sources to generate code for (<code class="highlighter-rouge">PB.protoSources</code>).</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">protoSources</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">+=</span> <span class="nv">target</span><span class="o">.</span><span class="py">value</span> <span class="o">/</span> <span class="s">"protobuf_external"</span>
-</code></pre></div></div>
+<p>The <code class="highlighter-rouge">intransitive</code> modifier makes it not unpack the dependencies of this
+library to the same directory since you may not want to generate classes for them
+as well. Many common libraries depend on <code class="highlighter-rouge">protobuf-java</code>, and generated
+classes for them are already shipped with ScalaPB’s <code class="highlighter-rouge">scalapb-runtime</code>. When
+using <code class="highlighter-rouge">intransitive()</code>, you should ensure all the dependencies are provided,
+either as <code class="highlighter-rouge">protobuf-src</code> or <code class="highlighter-rouge">protobuf</code> (depending if you want to compile them
+or just import them).</p>
 
-<p>You may find other protos under <code class="highlighter-rouge">protobuf_external</code> that you do not wish to
+<p>You may find other protos under <code class="highlighter-rouge">protobuf_external_src</code> that you do not wish to
 compile. You can exclude them by adding an <code class="highlighter-rouge">includeFilter</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>includeFilter in PB.generate := new SimpleFileFilter(
