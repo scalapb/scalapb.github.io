@@ -54,7 +54,7 @@ Add this to your build.sbt:</p>
   <span class="o">.</span><span class="py">appName</span><span class="o">(</span><span class="s">"ScalaPB Demo"</span><span class="o">)</span>
   <span class="o">.</span><span class="py">master</span><span class="o">(</span><span class="s">"local[2]"</span><span class="o">)</span>
   <span class="o">.</span><span class="py">getOrCreate</span><span class="o">()</span>
-<span class="c1">// spark: SparkSession = org.apache.spark.sql.SparkSession@2a463a2d</span>
+<span class="c1">// spark: SparkSession = org.apache.spark.sql.SparkSession@5bbea0bc</span>
 </code></pre></div></div>
 
 <p><em>IMPORTANT</em>: Ensure you do not import <code class="highlighter-rouge">spark.implicits._</code> to avoid ambiguity between ScalaPB provided encoders and Spark’s default encoders. You may want to import <code class="highlighter-rouge">StringToColumn</code> to convert <code class="highlighter-rouge">$"col name"</code> into a <code class="highlighter-rouge">Column</code>. Add an import <code class="highlighter-rouge">scaslapb.spark.Implicits</code> to add ScalaPB’s encoders for protocol buffers into the implicit search scope:</p>
@@ -200,11 +200,23 @@ Add this to your build.sbt:</p>
 <span class="c1">// binaryDF: DataFrame = [value: binary]</span>
 
 <span class="k">val</span> <span class="nv">parsePersons</span> <span class="k">=</span> <span class="nv">ProtoSQL</span><span class="o">.</span><span class="py">udf</span> <span class="o">{</span> <span class="n">bytes</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nv">Person</span><span class="o">.</span><span class="py">parseFrom</span><span class="o">(</span><span class="n">bytes</span><span class="o">)</span> <span class="o">}</span>
-<span class="c1">// parsePersons: org.apache.spark.sql.Column =&gt; org.apache.spark.sql.Column = scalapb.spark.Udfs$$Lambda$13645/0x0000000804cc6840@7ed8eeac</span>
+<span class="c1">// parsePersons: org.apache.spark.sql.Column =&gt; org.apache.spark.sql.Column = scalapb.spark.Udfs$$Lambda$13630/0x0000000804cc4040@63d4146c</span>
 
 <span class="nv">binaryDF</span><span class="o">.</span><span class="py">withColumn</span><span class="o">(</span><span class="s">"person"</span><span class="o">,</span> <span class="nf">parsePersons</span><span class="o">(</span><span class="n">$</span><span class="s">"value"</span><span class="o">))</span>
 <span class="c1">// res7: DataFrame = [value: binary, person: struct&lt;name: string, age: int ... 1 more field&gt;]</span>
 </code></pre></div></div>
+
+<h2 id="primitive-wrappers">Primitive wrappers</h2>
+
+<p>In ProtoSQL 0.9.x and 0.10.x, primitive wrappers are represented in Spark as structs
+witha single field named <code class="highlighter-rouge">value</code>. A better representation in Spark would be a
+nullable field of the primitive type. The better representation will be the
+default in 0.11.x. To enable this representation today, replace the usages of
+<code class="highlighter-rouge">scalapb.spark.ProtoSQL</code> with <code class="highlighter-rouge">scalapb.spark.ProtoSQL.withPrimitiveWrappers</code>.
+Instead of importing <code class="highlighter-rouge">scalapb.spark.Implicits._</code>, import
+<code class="highlighter-rouge">scalapb.spark.ProtoSQL.implicits._</code></p>
+
+<p>See example in <a href="https://github.com/scalapb/sparksql-scalapb/blob/80f3162b69313d57f95d3dcbfee865809873567a/sparksql-scalapb/src/test/scala/WrappersSpec.scala#L42-L59">WrappersSpec</a>.</p>
 
 <h2 id="datasets-and-none-is-not-a-term">Datasets and <code class="highlighter-rouge">&lt;none&gt; is not a term</code></h2>
 
