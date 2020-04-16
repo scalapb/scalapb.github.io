@@ -131,6 +131,19 @@ types in proto3, you can use this fact to your advantage by using <a href="/cust
 
 <p>Easy! Check out <a href="https://github.com/scalapb/scalapb-plugin-template.g8">giter8 template for writing new code generators</a>.</p>
 
+<h1 id="how-do-i-mark-a-generated-case-class-private">How do I mark a generated case class private?</h1>
+
+<p>Easy! See this example:</p>
+
+<div class="language-proto highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto3"</span><span class="p">;</span>
+<span class="k">import</span> <span class="s">"scalapb/scalapb.proto"</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">MyPrivateMessage</span> <span class="p">{</span>
+    <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">annotations</span> <span class="o">=</span> <span class="s">"private[com.mypkg]"</span><span class="p">;</span>
+    <span class="k">option</span> <span class="p">(</span><span class="n">scalapb.message</span><span class="p">)</span><span class="o">.</span><span class="na">companion_annotations</span> <span class="o">=</span> <span class="s">"private[com.mypkg]"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h2 id="how-do-i-use-scalapb-with-gradle">How do I use ScalaPB with Gradle?</h2>
 
 <p>You can use ScalaPB with the official <a href="https://github.com/google/protobuf-gradle-plugin">Protobuf Plugin for Gradle</a>.</p>
