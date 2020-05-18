@@ -20,7 +20,7 @@ ga('send', 'pageview');
 <p>Add the following line to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
-  <span class="nv">scalapb</span><span class="o">.</span><span class="py">gen</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span>
+  <span class="nv">scalapb</span><span class="o">.</span><span class="py">gen</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span> <span class="o">/</span> <span class="s">"scalapb"</span>
 <span class="o">)</span>
 </code></pre></div></div>
 

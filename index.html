@@ -72,7 +72,7 @@ libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.10.1"
 <p>Add the following line to your <code class="highlighter-rouge">build.sbt</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PB.targets in Compile := Seq(
-  scalapb.gen() -&gt; (sourceManaged in Compile).value
+  scalapb.gen() -&gt; (sourceManaged in Compile).value / "scalapb"
 )
 
 // (optional) If you need scalapb/scalapb.proto or anything from
