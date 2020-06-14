@@ -114,7 +114,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="c1">//   Some(</span>
 <span class="c1">//     Any(</span>
 <span class="c1">//       "type.googleapis.com/com.thesamet.docs.MyMessage",</span>
-<span class="c1">//       &lt;ByteString@54c5e3c8 size=2 contents="\b\021"&gt;,</span>
+<span class="c1">//       &lt;ByteString@6484f2c6 size=2 contents="\b\021"&gt;,</span>
 <span class="c1">//       UnknownFieldSet(Map())</span>
 <span class="c1">//     )</span>
 <span class="c1">//   ),</span>
@@ -124,13 +124,13 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="k">val</span> <span class="nv">typeRegistry</span> <span class="k">=</span> <span class="nc">TypeRegistry</span><span class="o">().</span><span class="py">addMessage</span><span class="o">[</span><span class="kt">MyMessage</span><span class="o">]</span>
 <span class="c1">// typeRegistry: TypeRegistry = TypeRegistry(</span>
 <span class="c1">//   Map(</span>
-<span class="c1">//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@2ac43bcd</span>
+<span class="c1">//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@3a419f9b</span>
 <span class="c1">//   ),</span>
 <span class="c1">//   Set()</span>
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Printer</span><span class="o">().</span><span class="py">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// printer: Printer = scalapb.json4s.Printer@7f0ec792</span>
+<span class="c1">// printer: Printer = scalapb.json4s.Printer@15b69280</span>
 
 <span class="nv">printer</span><span class="o">.</span><span class="py">print</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
 <span class="c1">// res0: String = "{\"myAny\":{\"@type\":\"type.googleapis.com/com.thesamet.docs.MyMessage\",\"x\":17}}"</span>
@@ -139,7 +139,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <p>Conversely, you can start from a JSON and parse it back to a <code class="language-plaintext highlighter-rouge">MyContainer</code> that contains an <code class="language-plaintext highlighter-rouge">Any</code> field:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">parser</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Parser</span><span class="o">().</span><span class="py">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// parser: Parser = scalapb.json4s.Parser@4552a04b</span>
+<span class="c1">// parser: Parser = scalapb.json4s.Parser@3864399f</span>
 
 <span class="nv">parser</span><span class="o">.</span><span class="py">fromJsonString</span><span class="o">[</span><span class="kt">MyContainer</span><span class="o">](</span><span class="s">"""
   {
@@ -152,7 +152,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="c1">//   Some(</span>
 <span class="c1">//     Any(</span>
 <span class="c1">//       "type.googleapis.com/com.thesamet.docs.MyMessage",</span>
-<span class="c1">//       &lt;ByteString@4ec3e17f size=2 contents="\b\021"&gt;,</span>
+<span class="c1">//       &lt;ByteString@eefc44f size=2 contents="\b\021"&gt;,</span>
 <span class="c1">//       UnknownFieldSet(Map())</span>
 <span class="c1">//     )</span>
 <span class="c1">//   ),</span>
