@@ -41,7 +41,7 @@ ga('send', 'pageview');
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Note that the name of the oneof name is <code class="highlighter-rouge">sealed_value</code>. This is what makes ScalaPB treat <code class="highlighter-rouge">Expr</code> as a sealed oneof and generate code similar to the following:</p>
+<p>Note that the name of the oneof name is <code class="language-plaintext highlighter-rouge">sealed_value</code>. This is what makes ScalaPB treat <code class="language-plaintext highlighter-rouge">Expr</code> as a sealed oneof and generate code similar to the following:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Expr</span> <span class="o">{</span>
     <span class="k">def</span> <span class="nf">isEmpty</span><span class="k">:</span> <span class="kt">Boolean</span>
@@ -66,18 +66,18 @@ ga('send', 'pageview');
 <span class="k">case</span> <span class="k">class</span> <span class="nc">ExprMessage</span><span class="o">(</span><span class="n">sealedValue</span><span class="k">:</span> <span class="kt">ExprMessage.SealedValue</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>The above Scala representation of the protocol buffer is much nicer to work with than the default oneof representation, as there are no wrapper types around each individual case of the oneof. Also note that optional fields of type <code class="highlighter-rouge">Expr</code> are not boxed inside an <code class="highlighter-rouge">Option</code> since we have <code class="highlighter-rouge">Expr.Empty</code> that represents the empty case.</p>
+<p>The above Scala representation of the protocol buffer is much nicer to work with than the default oneof representation, as there are no wrapper types around each individual case of the oneof. Also note that optional fields of type <code class="language-plaintext highlighter-rouge">Expr</code> are not boxed inside an <code class="language-plaintext highlighter-rouge">Option</code> since we have <code class="language-plaintext highlighter-rouge">Expr.Empty</code> that represents the empty case.</p>
 
 <h1 id="sealed-oneof-rules">Sealed oneof rules</h1>
 
-<p>A sealed oneof is detected when a message (denoted below as the <em>containing message</em>) contains a oneof named <code class="highlighter-rouge">sealed_value</code>. The code generator checks the following rules for each sealed oneof. If any of these rules fail, then the code generator aborts.</p>
+<p>A sealed oneof is detected when a message (denoted below as the <em>containing message</em>) contains a oneof named <code class="language-plaintext highlighter-rouge">sealed_value</code>. The code generator checks the following rules for each sealed oneof. If any of these rules fail, then the code generator aborts.</p>
 
 <ol>
   <li>
-    <p>The oneof named <code class="highlighter-rouge">sealed_value</code> must be the only oneof in the containing message.</p>
+    <p>The oneof named <code class="language-plaintext highlighter-rouge">sealed_value</code> must be the only oneof in the containing message.</p>
   </li>
   <li>
-    <p>No additional fields (except those inside <code class="highlighter-rouge">sealed_values</code>) may be defined inside the containing message.</p>
+    <p>No additional fields (except those inside <code class="language-plaintext highlighter-rouge">sealed_values</code>) may be defined inside the containing message.</p>
   </li>
   <li>
     <p>No nested messages or enums are allowed to be defined in the containing message.</p>
@@ -97,12 +97,12 @@ ga('send', 'pageview');
 
 <p>Some of the rules above are inherently required (for example, that the message types need to be distinct). Other rules, such as the one requesting that all involved messages need to be top-level, were added to make the implementation simpler. That particular rule helps ensuring that all the cases can be generated into a single Scala source file without changing too much the existing way the code generator works. It is possible that some of the rules will change over time, though most likely they are only going to become less restrictive so existing code does not break.</p>
 
-<p>Currently, sealed oneofs are implemented as a custom type defined over the old-style container message. This implementation detail is exposed through <code class="highlighter-rouge">asMessage</code> which returns the underlying message representing the sealed oneof.  It is possible that in a future version, sealed oneofs would have a direct implementation, and therefore <code class="highlighter-rouge">asMessage</code> and its return type should be considered an experimental API.</p>
+<p>Currently, sealed oneofs are implemented as a custom type defined over the old-style container message. This implementation detail is exposed through <code class="language-plaintext highlighter-rouge">asMessage</code> which returns the underlying message representing the sealed oneof.  It is possible that in a future version, sealed oneofs would have a direct implementation, and therefore <code class="language-plaintext highlighter-rouge">asMessage</code> and its return type should be considered an experimental API.</p>
 
 <h1 id="optional-sealed-oneof">Optional sealed oneof</h1>
 
 <p>This is a variant of <em>Sealed oneof</em>, where the optionality is expressed differently.
-The <code class="highlighter-rouge">Empty</code> case is not generated, but instead the sealed trait is put in other classes as <code class="highlighter-rouge">Option[_]</code>, not directly.
+The <code class="language-plaintext highlighter-rouge">Empty</code> case is not generated, but instead the sealed trait is put in other classes as <code class="language-plaintext highlighter-rouge">Option[_]</code>, not directly.
 To create an optional sealed oneof, name the oneof sealed_value_optional as in the example below:</p>
 
 <div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Expr</span> <span class="p">{</span>

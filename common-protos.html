@@ -10,13 +10,13 @@ ga('send', 'pageview');
 
 <p>This page lists packages that contain compiled ScalaPB classes for common third-party protobuf libraries.</p>
 
-<p>Each of these packages require you to add two library dependencies in your <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>Each of these packages require you to add two library dependencies in your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <ul>
   <li>
-    <p>The depenendcy with the <code class="highlighter-rouge">"protobuf"</code> unpacks the protos from the jar. This
+    <p>The depenendcy with the <code class="language-plaintext highlighter-rouge">"protobuf"</code> unpacks the protos from the jar. This
 allows the protos in your own project to “import” the third-party protos
-(without this, protoc would fail with an error like: <code class="highlighter-rouge">"Import was not found or had errors"</code>)</p>
+(without this, protoc would fail with an error like: <code class="language-plaintext highlighter-rouge">"Import was not found or had errors"</code>)</p>
   </li>
   <li>
     <p>The generated code for your protos, may reference types that are defined in
@@ -26,7 +26,7 @@ dependency.</p>
   </li>
 </ul>
 
-<p>If you don’t have any proto files that import the common protos, then you can omit the <code class="highlighter-rouge">"protobuf"</code> dependency.</p>
+<p>If you don’t have any proto files that import the common protos, then you can omit the <code class="language-plaintext highlighter-rouge">"protobuf"</code> dependency.</p>
 
 <h1 id="adding-new-packages">Adding new packages</h1>
 

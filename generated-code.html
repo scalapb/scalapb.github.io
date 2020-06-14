@@ -19,14 +19,14 @@ compilation performance.</p>
 <p>The Scala package of the generated files will be determined as follows:</p>
 
 <ul>
-  <li>If the <code class="highlighter-rouge">java_package</code> option is defined, then the Scala package will be
-<code class="highlighter-rouge">java_package.base_name</code> where <code class="highlighter-rouge">base_name</code> is the name of the proto file
-without the <code class="highlighter-rouge">.proto</code> extension.</li>
-  <li>If the <code class="highlighter-rouge">java_package</code> is undefined, but the file specifies a package name
-via the <code class="highlighter-rouge">package</code> keyword then the Scala package will be
-<code class="highlighter-rouge">package.base_name</code>.</li>
-  <li>If neither <code class="highlighter-rouge">java_package</code> nor <code class="highlighter-rouge">package</code> are specified, the Scala package
-will be just <code class="highlighter-rouge">base_name</code>.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">java_package</code> option is defined, then the Scala package will be
+<code class="language-plaintext highlighter-rouge">java_package.base_name</code> where <code class="language-plaintext highlighter-rouge">base_name</code> is the name of the proto file
+without the <code class="language-plaintext highlighter-rouge">.proto</code> extension.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">java_package</code> is undefined, but the file specifies a package name
+via the <code class="language-plaintext highlighter-rouge">package</code> keyword then the Scala package will be
+<code class="language-plaintext highlighter-rouge">package.base_name</code>.</li>
+  <li>If neither <code class="language-plaintext highlighter-rouge">java_package</code> nor <code class="language-plaintext highlighter-rouge">package</code> are specified, the Scala package
+will be just <code class="language-plaintext highlighter-rouge">base_name</code>.</li>
 </ul>
 
 <p>From version 0.4.2, there is a way to customize the package name by using
@@ -35,13 +35,13 @@ will be just <code class="highlighter-rouge">base_name</code>.</li>
 <h2 id="messages">Messages</h2>
 
 <p>Each message corresponds to a final case class and a companion object.
-Optional fields are wrapped in an <code class="highlighter-rouge">Option[]</code>, repeated fields are given as
-<code class="highlighter-rouge">Seq[]</code>, and required fields (which you should not use, see “Required is
+Optional fields are wrapped in an <code class="language-plaintext highlighter-rouge">Option[]</code>, repeated fields are given as
+<code class="language-plaintext highlighter-rouge">Seq[]</code>, and required fields (which you should not use, see “Required is
 forever” in the <a href="https://developers.google.com/protocol-buffers/docs/proto#simple">Language
 Guide</a> are
 normal members.</p>
 
-<p>Note that in proto3, scalar (non-message) fields are not wrapped in <code class="highlighter-rouge">Option</code>,</p>
+<p>Note that in proto3, scalar (non-message) fields are not wrapped in <code class="language-plaintext highlighter-rouge">Option</code>,</p>
 
 <p>For example, if your protocol buffer looks like this:</p>
 
@@ -81,8 +81,8 @@ normal members.</p>
 
 <p>The case class contains various methods for serialization, and the companion
 object contains method for parsing. <a href="https://github.com/scalapb/ScalaPB/blob/master/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala">See the source code for
-<code class="highlighter-rouge">GeneratedMessage</code> and
-<code class="highlighter-rouge">GeneratedMessageCompanion</code></a>
+<code class="language-plaintext highlighter-rouge">GeneratedMessage</code> and
+<code class="language-plaintext highlighter-rouge">GeneratedMessageCompanion</code></a>
 to see what methods are available</p>
 
 <h3 id="building-new-messages">Building New Messages</h3>
@@ -106,19 +106,19 @@ changed. Messages are thread-safe: you can access the same message instance
 from multiple threads.</p>
 
 <p>When you want to modify a message, simply create a new one based on the
-original. You can use the <code class="highlighter-rouge">copy()</code> method Scala provides for all case classes,
+original. You can use the <code class="language-plaintext highlighter-rouge">copy()</code> method Scala provides for all case classes,
 however ScalaPB provides additional methods to make it even easier.</p>
 
-<p>The first method is using a <code class="highlighter-rouge">withX()</code> method, where <code class="highlighter-rouge">X</code> is a name of a field.
+<p>The first method is using a <code class="language-plaintext highlighter-rouge">withX()</code> method, where <code class="language-plaintext highlighter-rouge">X</code> is a name of a field.
 For example</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">withName</span><span class="o">(</span><span class="s">"John"</span><span class="o">).</span><span class="py">withAge</span><span class="o">(</span><span class="mi">29</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>Note that when using the <code class="highlighter-rouge">withX()</code> method on an optional field, you do not
-need to provide the <code class="highlighter-rouge">Some()</code>.</p>
+<p>Note that when using the <code class="language-plaintext highlighter-rouge">withX()</code> method on an optional field, you do not
+need to provide the <code class="language-plaintext highlighter-rouge">Some()</code>.</p>
 
-<p>Another way to update a message is using the <code class="highlighter-rouge">update()</code> method:</p>
+<p>Another way to update a message is using the <code class="language-plaintext highlighter-rouge">update()</code> method:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
   <span class="nv">_</span><span class="o">.</span><span class="py">name</span> <span class="o">:=</span> <span class="s">"John"</span><span class="o">,</span>
@@ -126,18 +126,18 @@ need to provide the <code class="highlighter-rouge">Some()</code>.</p>
 <span class="o">)</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">update()</code> method takes “mutations” (like the assignments above), and
-applies them on the object.  Using the <code class="highlighter-rouge">update()</code> method, as we will see
+<p>The <code class="language-plaintext highlighter-rouge">update()</code> method takes “mutations” (like the assignments above), and
+applies them on the object.  Using the <code class="language-plaintext highlighter-rouge">update()</code> method, as we will see
 below, usually results in a more concise code, especially when your fields are
 message types.</p>
 
 <h2 id="optional-fields">Optional Fields</h2>
 
-<p>Optional fields are wrapped inside an <code class="highlighter-rouge">Option</code>.  The compiler will generate a
-<code class="highlighter-rouge">getX()</code> method that will return the option’s value if it is set, or a
-default value for the field if it is unset (that is, if it is <code class="highlighter-rouge">None</code>)</p>
+<p>Optional fields are wrapped inside an <code class="language-plaintext highlighter-rouge">Option</code>.  The compiler will generate a
+<code class="language-plaintext highlighter-rouge">getX()</code> method that will return the option’s value if it is set, or a
+default value for the field if it is unset (that is, if it is <code class="language-plaintext highlighter-rouge">None</code>)</p>
 
-<p>There are two ways to update an optional field using the <code class="highlighter-rouge">update()</code> method:</p>
+<p>There are two ways to update an optional field using the <code class="language-plaintext highlighter-rouge">update()</code> method:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
   <span class="c1">// Pass the value directly:</span>
@@ -149,11 +149,11 @@ default value for the field if it is unset (that is, if it is <code class="highl
 </code></pre></div></div>
 
 <p>The first way sets the field with a value, the second way lets you pass an
-<code class="highlighter-rouge">Option[]</code> so it is possible to set the field to <code class="highlighter-rouge">None</code>.</p>
+<code class="language-plaintext highlighter-rouge">Option[]</code> so it is possible to set the field to <code class="language-plaintext highlighter-rouge">None</code>.</p>
 
-<p>For each optional field <code class="highlighter-rouge">X</code>, the compiler also generates a <code class="highlighter-rouge">clearX()</code> method
+<p>For each optional field <code class="language-plaintext highlighter-rouge">X</code>, the compiler also generates a <code class="language-plaintext highlighter-rouge">clearX()</code> method
 that returns a new instance of the message which is identical to the original
-one except that the field is assigned the value <code class="highlighter-rouge">None</code>.</p>
+one except that the field is assigned the value <code class="language-plaintext highlighter-rouge">None</code>.</p>
 
 <h2 id="required-fields">Required Fields</h2>
 
@@ -162,27 +162,27 @@ must specify them when you instantiate a new message. Differences from
 optional fields:</p>
 
 <ul>
-  <li>The value of the field is not wrapped inside an <code class="highlighter-rouge">Option</code>.</li>
-  <li>There is no <code class="highlighter-rouge">getX</code> method (you can always use <code class="highlighter-rouge">.x</code>)</li>
-  <li>There is no <code class="highlighter-rouge">clearX</code> method (since that will result in an invalid message)</li>
-  <li>There is no <code class="highlighter-rouge">_.optionalX</code> lens for the <code class="highlighter-rouge">update()</code> method.</li>
+  <li>The value of the field is not wrapped inside an <code class="language-plaintext highlighter-rouge">Option</code>.</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">getX</code> method (you can always use <code class="language-plaintext highlighter-rouge">.x</code>)</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">clearX</code> method (since that will result in an invalid message)</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">_.optionalX</code> lens for the <code class="language-plaintext highlighter-rouge">update()</code> method.</li>
 </ul>
 
 <h2 id="repeated-fields">Repeated Fields</h2>
 
-<p>Repeated fields are provided as a <code class="highlighter-rouge">Seq[T]</code>. The compiler will generate the
+<p>Repeated fields are provided as a <code class="language-plaintext highlighter-rouge">Seq[T]</code>. The compiler will generate the
 following methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">addFoo(f1, [f2, f3, ...]: Foo)</code>: returns a copy with the given elements added to the
+  <li><code class="language-plaintext highlighter-rouge">addFoo(f1, [f2, f3, ...]: Foo)</code>: returns a copy with the given elements added to the
 original list.</li>
-  <li><code class="highlighter-rouge">addAllFoo(fs: Seq[Foo])</code>: returns a copy with the given sequence of
+  <li><code class="language-plaintext highlighter-rouge">addAllFoo(fs: Seq[Foo])</code>: returns a copy with the given sequence of
 elements added to the original list.</li>
-  <li><code class="highlighter-rouge">withX(otherList)</code>: replace the sequence with another.</li>
-  <li><code class="highlighter-rouge">clearX</code>: replace with the sequence with an empty one.</li>
+  <li><code class="language-plaintext highlighter-rouge">withX(otherList)</code>: replace the sequence with another.</li>
+  <li><code class="language-plaintext highlighter-rouge">clearX</code>: replace with the sequence with an empty one.</li>
 </ul>
 
-<p>Using <code class="highlighter-rouge">update()</code> is especially fun with repeated fields:</p>
+<p>Using <code class="language-plaintext highlighter-rouge">update()</code> is especially fun with repeated fields:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
   <span class="c1">// Override the addresses</span>
@@ -307,7 +307,7 @@ example use case would be:</p>
 
 <h2 id="enumerations">Enumerations</h2>
 
-<p>Enumerations are implemented using sealed traits that extend <code class="highlighter-rouge">GeneratedEnum</code>.
+<p>Enumerations are implemented using sealed traits that extend <code class="language-plaintext highlighter-rouge">GeneratedEnum</code>.
 This approach, rather than using Scala’s standard Enumeration type, allows
 getting a warning from the Scala compiler when a pattern match is incomplete.</p>
 
@@ -375,13 +375,13 @@ getting a warning from the Scala compiler when a pattern match is incomplete.</p
 
 <h2 id="ascii-representation">ASCII Representation</h2>
 
-<p>Each message case-class has <code class="highlighter-rouge">toProtoString</code> method that returns a string
+<p>Each message case-class has <code class="language-plaintext highlighter-rouge">toProtoString</code> method that returns a string
 representation of the message in an ASCII format. The ASCII format can be
-parsed back by the <code class="highlighter-rouge">fromAscii()</code> method available on the companion object.</p>
+parsed back by the <code class="language-plaintext highlighter-rouge">fromAscii()</code> method available on the companion object.</p>
 
 <p>That format is not officially documented, but at least the standard Python,
 Java and C++ implementations of protobuf attempt to generate (and be able to parse)
-compatible ASCII representations. ScalaPB’s <code class="highlighter-rouge">toString()</code> and <code class="highlighter-rouge">fromAscii</code>
+compatible ASCII representations. ScalaPB’s <code class="language-plaintext highlighter-rouge">toString()</code> and <code class="language-plaintext highlighter-rouge">fromAscii</code>
 follow the Java implementation.</p>
 
 <p>The format looks like this:</p>
@@ -405,8 +405,8 @@ renames.</p>
 
 <p>If you are dealing with legacy Java protocol buffer code, while still wanting
 to write new code using ScalaPB, it can be useful to generate converters
-to/from the Java protocol buffers. To do this, set <code class="highlighter-rouge">PB.targets in Compile</code>
-like this in your <code class="highlighter-rouge">build.sbt</code>:</p>
+to/from the Java protocol buffers. To do this, set <code class="language-plaintext highlighter-rouge">PB.targets in Compile</code>
+like this in your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="nv">PB</span><span class="o">.</span><span class="py">gens</span><span class="o">.</span><span class="py">java</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span><span class="o">,</span>
@@ -417,10 +417,10 @@ like this in your <code class="highlighter-rouge">build.sbt</code>:</p>
 <p>This will result in the following changes:</p>
 
 <ul>
-  <li>The companion object for each message will have <code class="highlighter-rouge">fromJavaProto</code> and
-<code class="highlighter-rouge">toJavaProto</code> methods.</li>
-  <li>The companion object for enums will have <code class="highlighter-rouge">fromJavaValue</code> and
-<code class="highlighter-rouge">toJavaValue</code> methods.</li>
+  <li>The companion object for each message will have <code class="language-plaintext highlighter-rouge">fromJavaProto</code> and
+<code class="language-plaintext highlighter-rouge">toJavaProto</code> methods.</li>
+  <li>The companion object for enums will have <code class="language-plaintext highlighter-rouge">fromJavaValue</code> and
+<code class="language-plaintext highlighter-rouge">toJavaValue</code> methods.</li>
 </ul>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/protobuf.min.js"></script><script>
 // For all code blocks, copy the language from the containing div

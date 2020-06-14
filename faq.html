@@ -16,11 +16,11 @@ ga('send', 'pageview');
 in the installation instruction.</p>
 
 <p>sbt-protobuf which sbt-scalapb relies on defaults to generating the case
-classes in <code class="highlighter-rouge">target/src_managed/compiled_protobuf/</code>.  This leads to a situation
-where both <code class="highlighter-rouge">target/src_managed/compiled_protobuf/</code> and its parent, <code class="highlighter-rouge">target/src_managed/</code>,
+classes in <code class="language-plaintext highlighter-rouge">target/src_managed/compiled_protobuf/</code>.  This leads to a situation
+where both <code class="language-plaintext highlighter-rouge">target/src_managed/compiled_protobuf/</code> and its parent, <code class="language-plaintext highlighter-rouge">target/src_managed/</code>,
 are considered source directories and the source files are seen twice. To
 eliminate this problem, let’s tell sbt-protobuf to generate the sources into
-the parent directory. Add this to your <code class="highlighter-rouge">build.sbt</code>:</p>
+the parent directory. Add this to your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scalaSource</span> <span class="n">in</span> <span class="nv">PB</span><span class="o">.</span><span class="py">protobufConfig</span> <span class="o">:=</span> <span class="nv">sourceManaged</span><span class="o">.</span><span class="py">value</span>
 </code></pre></div></div>
@@ -48,15 +48,15 @@ generator parameter to ScalaPBC. See the supported generator parameters and how 
 
 <h2 id="i-am-getting-import-was-not-found-or-had-errors">I am getting “Import was not found or had errors”</h2>
 
-<p>If you are using sbt-protoc and importing protos like <code class="highlighter-rouge">scalapb/scalapb.proto</code>,
-or common protocol buffers like <code class="highlighter-rouge">google/protobuf/wrappers.proto</code>:</p>
+<p>If you are using sbt-protoc and importing protos like <code class="language-plaintext highlighter-rouge">scalapb/scalapb.proto</code>,
+or common protocol buffers like <code class="language-plaintext highlighter-rouge">google/protobuf/wrappers.proto</code>:</p>
 
-<p>Add the following to your <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>Add the following to your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
 </code></pre></div></div>
 
-<p>This tells <code class="highlighter-rouge">sbt-protoc</code> to extract protos from this jar (and all its
+<p>This tells <code class="language-plaintext highlighter-rouge">sbt-protoc</code> to extract protos from this jar (and all its
 dependencies, which includes Google’s common protos), and make them available
 in the include path that is passed to protoc.</p>
 
@@ -70,48 +70,48 @@ files available on the file system.</p>
  If what you are looking for is not there, consider adding it by following the
  instructions on the project’s page.</p>
 
-<p>To build it yourself using SBT: include the jar as a <code class="highlighter-rouge">protobuf</code> dependency in your libraryDependencies:</p>
+<p>To build it yourself using SBT: include the jar as a <code class="language-plaintext highlighter-rouge">protobuf</code> dependency in your libraryDependencies:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.somepackage"</span> <span class="o">%%</span> <span class="s">"that-has-jar"</span> <span class="o">%</span> <span class="s">"1.0"</span> <span class="o">%</span> <span class="s">"protobuf-src"</span> <span class="nf">transitive</span><span class="o">()</span>
 </code></pre></div></div>
 
 <p>This will tell sbt-protoc to extract the protos from that jar into
-<code class="highlighter-rouge">target/scala-2.vv/protobuf_external_src</code> and add them both to the import
-search path and the set of sources to generate code for (<code class="highlighter-rouge">PB.protoSources</code>).</p>
+<code class="language-plaintext highlighter-rouge">target/scala-2.vv/protobuf_external_src</code> and add them both to the import
+search path and the set of sources to generate code for (<code class="language-plaintext highlighter-rouge">PB.protoSources</code>).</p>
 
-<p>The <code class="highlighter-rouge">intransitive</code> modifier makes it not unpack the dependencies of this
+<p>The <code class="language-plaintext highlighter-rouge">intransitive</code> modifier makes it not unpack the dependencies of this
 library to the same directory since you may not want to generate classes for them
-as well. Many common libraries depend on <code class="highlighter-rouge">protobuf-java</code>, and generated
-classes for them are already shipped with ScalaPB’s <code class="highlighter-rouge">scalapb-runtime</code>. When
-using <code class="highlighter-rouge">intransitive()</code>, you should ensure all the dependencies are provided,
-either as <code class="highlighter-rouge">protobuf-src</code> or <code class="highlighter-rouge">protobuf</code> (depending if you want to compile them
+as well. Many common libraries depend on <code class="language-plaintext highlighter-rouge">protobuf-java</code>, and generated
+classes for them are already shipped with ScalaPB’s <code class="language-plaintext highlighter-rouge">scalapb-runtime</code>. When
+using <code class="language-plaintext highlighter-rouge">intransitive()</code>, you should ensure all the dependencies are provided,
+either as <code class="language-plaintext highlighter-rouge">protobuf-src</code> or <code class="language-plaintext highlighter-rouge">protobuf</code> (depending if you want to compile them
 or just import them).</p>
 
-<p>You may find other protos under <code class="highlighter-rouge">protobuf_external_src</code> that you do not wish to
-compile. You can exclude them by adding an <code class="highlighter-rouge">includeFilter</code>:</p>
+<p>You may find other protos under <code class="language-plaintext highlighter-rouge">protobuf_external_src</code> that you do not wish to
+compile. You can exclude them by adding an <code class="language-plaintext highlighter-rouge">includeFilter</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>includeFilter in PB.generate := new SimpleFileFilter(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>includeFilter in PB.generate := new SimpleFileFilter(
   (f: File) =&gt;  f.getParent.endsWith("com/thesamet/protos"))
 </code></pre></div></div>
 
 <p>See <a href="https://github.com/thesamet/sbt-protoc/tree/master/examples/multi-with-external-jar">full example here</a>.</p>
 
-<h2 id="how-do-i-represent-optiont-in-proto3-for-scalar-fields">How do I represent <code class="highlighter-rouge">Option[T]</code> in proto3 for scalar fields?</h2>
+<h2 id="how-do-i-represent-optiont-in-proto3-for-scalar-fields">How do I represent <code class="language-plaintext highlighter-rouge">Option[T]</code> in proto3 for scalar fields?</h2>
 
-<p>Scalar fields are the various numeric types, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">byte</code> and <code class="highlighter-rouge">enum</code> -
+<p>Scalar fields are the various numeric types, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">byte</code> and <code class="language-plaintext highlighter-rouge">enum</code> -
 everything except of messages. In the proto2 wire format, there is a distinction between
-not setting a value (<code class="highlighter-rouge">None</code>), or setting it to its default value (<code class="highlighter-rouge">Some(0)</code> or
-<code class="highlighter-rouge">Some("")</code>).</p>
+not setting a value (<code class="language-plaintext highlighter-rouge">None</code>), or setting it to its default value (<code class="language-plaintext highlighter-rouge">Some(0)</code> or
+<code class="language-plaintext highlighter-rouge">Some("")</code>).</p>
 
 <p>In proto3, this distinction has been removed in the wire format. Whenever the value
 of a scalar type is zero, it does not get serialized. Therefore, the parser is not
-able to distinguish between <code class="highlighter-rouge">Some(0)</code> or <code class="highlighter-rouge">None</code>. The semantics is that a <a href="https://developers.google.com/protocol-buffers/docs/proto3#default">zero
+able to distinguish between <code class="language-plaintext highlighter-rouge">Some(0)</code> or <code class="language-plaintext highlighter-rouge">None</code>. The semantics is that a <a href="https://developers.google.com/protocol-buffers/docs/proto3#default">zero
 has been received</a>.</p>
 
-<p>Optional message types are still wrapped in <code class="highlighter-rouge">Option[]</code> since there is a
+<p>Optional message types are still wrapped in <code class="language-plaintext highlighter-rouge">Option[]</code> since there is a
 distinction in the wire format between leaving out a message (which is
-represent by <code class="highlighter-rouge">None</code> or sending one, even if all its fields are unset (or
-assigned default values). If you wish to have <code class="highlighter-rouge">Option[]</code> around scalar
+represent by <code class="language-plaintext highlighter-rouge">None</code> or sending one, even if all its fields are unset (or
+assigned default values). If you wish to have <code class="language-plaintext highlighter-rouge">Option[]</code> around scalar
 types in proto3, you can use this fact to your advantage by using <a href="/customizations.html#primitive-wrappers">primitive wrappers</a></p>
 
 <h2 id="why-a-certain-customization-is-not-available-as-a-global-generator-parameter">Why a certain customization is not available as a global generator parameter?</h2>
@@ -148,7 +148,7 @@ types in proto3, you can use this fact to your advantage by using <a href="/cust
 
 <p>You can use ScalaPB with the official <a href="https://github.com/google/protobuf-gradle-plugin">Protobuf Plugin for Gradle</a>.</p>
 
-<p>In your <code class="highlighter-rouge">build.gradle</code> the <code class="highlighter-rouge">protobuf</code> section should look like this:</p>
+<p>In your <code class="language-plaintext highlighter-rouge">build.gradle</code> the <code class="language-plaintext highlighter-rouge">protobuf</code> section should look like this:</p>
 
 <div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ext</span> <span class="o">{</span>
   <span class="n">scalapbVersion</span> <span class="o">=</span> <span class="s1">'0.10.1'</span>

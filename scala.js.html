@@ -24,7 +24,7 @@ and Java descriptors do not work (though Scala descriptors in ScalaPB &gt;=
 
 <p>Add to your library dependencies:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
   "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion,
 
   // The following needed only if you include scalapb/scalapb.proto:
@@ -33,11 +33,11 @@ and Java descriptors do not work (though Scala descriptors in ScalaPB &gt;=
 </code></pre></div></div>
 
 <p>Since the Scala.js compiler depends on an old version of protobuf it is
-recommended to work with the <code class="highlighter-rouge">compilerplugin-shaded</code> artifact. This artifact contains a shaded version of protobuf-java and other dependencies. Have
-this in your <code class="highlighter-rouge">project/scalapb.sbt</code> file instead of what described in the
+recommended to work with the <code class="language-plaintext highlighter-rouge">compilerplugin-shaded</code> artifact. This artifact contains a shaded version of protobuf-java and other dependencies. Have
+this in your <code class="language-plaintext highlighter-rouge">project/scalapb.sbt</code> file instead of what described in the
 standard installation instructions:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.28" exclude ("com.thesamet.scalapb", "protoc-bridge_2.12"))
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.28" exclude ("com.thesamet.scalapb", "protoc-bridge_2.12"))
 
 libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin-shaded" % "0.10.1"
 </code></pre></div></div>

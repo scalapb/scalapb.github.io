@@ -16,8 +16,8 @@ ga('send', 'pageview');
 
 <p>Older versions can be found in the <a href="https://github.com/scalapb/ScalaPB/releases">releases page</a>.</p>
 
-<p>Unzip the file, and inside you will find two scripts: <code class="highlighter-rouge">bin/scalapbc</code> (and
-<code class="highlighter-rouge">bin/scalapbc.bat</code>) that can be used on Unix/Linux/Mac OS X (and Windows,
+<p>Unzip the file, and inside you will find two scripts: <code class="language-plaintext highlighter-rouge">bin/scalapbc</code> (and
+<code class="language-plaintext highlighter-rouge">bin/scalapbc.bat</code>) that can be used on Unix/Linux/Mac OS X (and Windows,
 respectively).</p>
 
 <h2 id="usage">Usage</h2>
@@ -43,24 +43,24 @@ first command line argument:</p>
 </code></pre></div></div>
 
 <blockquote>
-  <p>The generated code depends on <code class="highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
+  <p>The generated code depends on <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
 </blockquote>
 
 <h2 id="passing-generator-parameters">Passing generator parameters</h2>
 
-<p>If you would like to pass additional options, like <code class="highlighter-rouge">java_conversions</code>,
-<code class="highlighter-rouge">flat_package</code>, or <code class="highlighter-rouge">single_line_to_proto_string</code>, it can be done like this:</p>
+<p>If you would like to pass additional options, like <code class="language-plaintext highlighter-rouge">java_conversions</code>,
+<code class="language-plaintext highlighter-rouge">flat_package</code>, or <code class="language-plaintext highlighter-rouge">single_line_to_proto_string</code>, it can be done like this:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>OPT1,OPT2:path/to/output/dir/
 </code></pre></div></div>
 
 <p>where OPT1,OPT2 is a comma-separated list of options, followed by a colon
-(<code class="highlighter-rouge">:</code>) and then the output directory. For example:</p>
+(<code class="language-plaintext highlighter-rouge">:</code>) and then the output directory. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>flat_package,java_conversions:protos/src/scala/main/
 </code></pre></div></div>
 
-<p>The supported parameters are: <code class="highlighter-rouge">flat_package</code>, <code class="highlighter-rouge">java_conversions</code>, <code class="highlighter-rouge">grpc</code> and <code class="highlighter-rouge">single_line_to_proto_string</code>, <code class="highlighter-rouge">no_lenses</code>, <code class="highlighter-rouge">retain_source_code_info</code>.</p>
+<p>The supported parameters are: <code class="language-plaintext highlighter-rouge">flat_package</code>, <code class="language-plaintext highlighter-rouge">java_conversions</code>, <code class="language-plaintext highlighter-rouge">grpc</code> and <code class="language-plaintext highlighter-rouge">single_line_to_proto_string</code>, <code class="language-plaintext highlighter-rouge">no_lenses</code>, <code class="language-plaintext highlighter-rouge">retain_source_code_info</code>.</p>
 
 <p>Those parameters are described in <a href="/sbt-settings.html#additional-options-to-the-generator">SBT settings</a></p>
 
@@ -69,14 +69,14 @@ first command line argument:</p>
 <p>ScalaPBC (starting version 0.10.1) can fetch generators from Maven using
 Coursier:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=io.grpc:protoc-gen-grpc-java:1.27.2:default,classifier=linux-x86_64,ext=exe,type=jar -- e2e/src/main/protobuf/service.proto --grpc-java_out=/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=io.grpc:protoc-gen-grpc-java:1.27.2:default,classifier=linux-x86_64,ext=exe,type=jar -- e2e/src/main/protobuf/service.proto --grpc-java_out=/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
 </code></pre></div></div>
 
 <p>If you use zio-grpc, you can use the following command to generate services
 that use ZIO. This also generates ScalaPB case classes for messages and the
 GRPC descriptors that the generated ZIO code depends on.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=com.thesamet.scalapb.zio-grpc:protoc-gen-zio:0.1.0:default,classifier=unix,ext=sh,type=jar -- e2e/src/main/protobuf/service.proto --zio_out=/tmp/out --scala_out=grpc:/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=com.thesamet.scalapb.zio-grpc:protoc-gen-zio:0.1.0:default,classifier=unix,ext=sh,type=jar -- e2e/src/main/protobuf/service.proto --zio_out=/tmp/out --scala_out=grpc:/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
 </code></pre></div></div>
 
 <p>bin/scalapbc –plugin-artifact=io.grpc:grpc-java:</p>
@@ -92,26 +92,26 @@ than using scalapbc as a wrapper or through SBT).</p>
   <li>For OS X: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/protoc-gen-scala-0.10.1-osx-x86_64.zip">protoc-gen-scala-0.10.1-osx-x86_64.zip</a></li>
 </ul>
 
-<p>Those zip files contain native executables of the plugin for the respective operating system built using GraalVM. If you are using another operating system (such as Windows), or prefer to use a JVM based plugin implementation, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/scalapbc-0.10.1.zip">scalapbc-0.10.1.zip</a> an executable named <code class="highlighter-rouge">bin/protoc-gen-scala</code> which requires a JVM to run (a JVM needs to be available on the path, or through the <code class="highlighter-rouge">JAVA_HOME</code> environment variable)</p>
+<p>Those zip files contain native executables of the plugin for the respective operating system built using GraalVM. If you are using another operating system (such as Windows), or prefer to use a JVM based plugin implementation, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/scalapbc-0.10.1.zip">scalapbc-0.10.1.zip</a> an executable named <code class="language-plaintext highlighter-rouge">bin/protoc-gen-scala</code> which requires a JVM to run (a JVM needs to be available on the path, or through the <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable)</p>
 
 <p>To generate code:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=/path/to/bin/protoc-gen-scala --scala_out=scala
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=/path/to/bin/protoc-gen-scala --scala_out=scala
 </code></pre></div></div>
 
 <p>On Windows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=protoc-gen-scala=/path/to/bin/protoc-gen-scala.bat --scala_out=scala
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=protoc-gen-scala=/path/to/bin/protoc-gen-scala.bat --scala_out=scala
 </code></pre></div></div>
 
 <p>For passing parameters to the plugin, see the section above.</p>
 
 <blockquote>
-  <p>Note that the standalone plugin provided in <code class="highlighter-rouge">scalapbc</code> needs to be able to find a JVM in the path or through <code class="highlighter-rouge">JAVA_HOME</code> environment variable. If you encounter unexpected errors, try to execute the plugin directly from the command line, and the output printed may be useful for further debugging.</p>
+  <p>Note that the standalone plugin provided in <code class="language-plaintext highlighter-rouge">scalapbc</code> needs to be able to find a JVM in the path or through <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable. If you encounter unexpected errors, try to execute the plugin directly from the command line, and the output printed may be useful for further debugging.</p>
 </blockquote>
 
 <blockquote>
-  <p>The generated code depends on <code class="highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
+  <p>The generated code depends on <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
 </blockquote>
 </section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/protobuf.min.js"></script><script>
 // For all code blocks, copy the language from the containing div

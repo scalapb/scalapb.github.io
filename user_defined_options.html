@@ -15,7 +15,7 @@ element in a proto file, and access these annotations at run time.</p>
 
 <h2 id="define-your-options">Define your options</h2>
 
-<p>In <code class="highlighter-rouge">my_opts.proto</code>:</p>
+<p>In <code class="language-plaintext highlighter-rouge">my_opts.proto</code>:</p>
 
 <div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">syntax</span> <span class="o">=</span> <span class="s">"proto2"</span><span class="p">;</span>
 
@@ -69,7 +69,7 @@ element in a proto file, and access these annotations at run time.</p>
 </code></pre></div></div>
 
 <p>Extensions that are defined at file scope are generated under the descriptor
-proto (usually name <code class="highlighter-rouge">FileNameProto</code>). Otherwise, the extension is defined in
+proto (usually name <code class="language-plaintext highlighter-rouge">FileNameProto</code>). Otherwise, the extension is defined in
 the companion object of the containing class.</p>
 
 <p>To access the option value of an element, you need to obtain its descriptor:</p>
@@ -94,7 +94,7 @@ the companion object of the containing class.</p>
       <span class="nv">my_opts</span><span class="o">.</span><span class="py">Tag</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"tag2"</span><span class="o">))))</span>
 </code></pre></div></div>
 
-<p>If you prefer to start with the descriptor, you use can the <code class="highlighter-rouge">extension</code>
+<p>If you prefer to start with the descriptor, you use can the <code class="language-plaintext highlighter-rouge">extension</code>
 method:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">assert</span><span class="o">(</span><span class="nv">use_opts</span><span class="o">.</span><span class="py">CustomOptionsUseOptsProto</span><span class="o">.</span><span class="py">scalaDescriptor</span><span class="o">.</span><span class="py">getOptions</span><span class="o">.</span><span class="py">extension</span><span class="o">(</span>

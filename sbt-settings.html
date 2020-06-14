@@ -10,37 +10,37 @@ ga('send', 'pageview');
 
 <h2 id="basic-installation">Basic Installation</h2>
 
-<p>To automatically generate Scala case classes for your messages add ScalaPB’s sbt plugin to your project. Create a file named <code class="highlighter-rouge">project/plugins.sbt</code> containing the following line (or add the following lines if a file with this name already exists):</p>
+<p>To automatically generate Scala case classes for your messages add ScalaPB’s sbt plugin to your project. Create a file named <code class="language-plaintext highlighter-rouge">project/plugins.sbt</code> containing the following line (or add the following lines if a file with this name already exists):</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">addSbtPlugin</span><span class="o">(</span><span class="s">"com.thesamet"</span> <span class="o">%</span> <span class="s">"sbt-protoc"</span> <span class="o">%</span> <span class="s">"0.99.28"</span><span class="o">)</span>
 
 <span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"compilerplugin"</span> <span class="o">%</span> <span class="s">"0.10.1"</span>
 </code></pre></div></div>
 
-<p>Add the following line to your <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>Add the following line to your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="nv">scalapb</span><span class="o">.</span><span class="py">gen</span><span class="o">()</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span> <span class="o">/</span> <span class="s">"scalapb"</span>
 <span class="o">)</span>
 </code></pre></div></div>
 
-<p>Running the <code class="highlighter-rouge">compile</code> command in sbt will generate Scala sources from
-your protos and compile them. If you just want to generate Scala sources for your protocol buffers without compiling them, run <code class="highlighter-rouge">protoc-generate</code>.</p>
+<p>Running the <code class="language-plaintext highlighter-rouge">compile</code> command in sbt will generate Scala sources from
+your protos and compile them. If you just want to generate Scala sources for your protocol buffers without compiling them, run <code class="language-plaintext highlighter-rouge">protoc-generate</code>.</p>
 
 <p>Additionally, if you need <a href="/customizations.html">customizations</a> from
-scalapb/scalapb.proto or anything from <code class="highlighter-rouge">google/protobuf/*.proto</code>, add the
-following to your <code class="highlighter-rouge">build.sbt</code>:</p>
+scalapb/scalapb.proto or anything from <code class="language-plaintext highlighter-rouge">google/protobuf/*.proto</code>, add the
+following to your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-runtime"</span> <span class="o">%</span> <span class="nv">scalapb</span><span class="o">.</span><span class="py">compiler</span><span class="o">.</span><span class="py">Version</span><span class="o">.</span><span class="py">scalapbVersion</span> <span class="o">%</span> <span class="s">"protobuf"</span>
 </code></pre></div></div>
 
 <h2 id="defaults">Defaults</h2>
 
-<p>The plugin assumes your <code class="highlighter-rouge">proto</code> files are under <code class="highlighter-rouge">src/main/protobuf</code>,
-however this is configurable using the <code class="highlighter-rouge">PB.protoSources in Compile</code> setting.</p>
+<p>The plugin assumes your <code class="language-plaintext highlighter-rouge">proto</code> files are under <code class="language-plaintext highlighter-rouge">src/main/protobuf</code>,
+however this is configurable using the <code class="language-plaintext highlighter-rouge">PB.protoSources in Compile</code> setting.</p>
 
-<p>By default, <code class="highlighter-rouge">sbt-protoc</code> invokes <code class="highlighter-rouge">protoc</code> 3.x that is shipped with <code class="highlighter-rouge">protoc-jar</code>.
-If you would like to run a different version of <code class="highlighter-rouge">protoc</code>:</p>
+<p>By default, <code class="language-plaintext highlighter-rouge">sbt-protoc</code> invokes <code class="language-plaintext highlighter-rouge">protoc</code> 3.x that is shipped with <code class="language-plaintext highlighter-rouge">protoc-jar</code>.
+If you would like to run a different version of <code class="language-plaintext highlighter-rouge">protoc</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">protocVersion</span> <span class="o">:=</span> <span class="s">"-v3.11.4"</span>
 </code></pre></div></div>
@@ -89,39 +89,39 @@ If you would like to run a different version of <code class="highlighter-rouge">
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">flatPackage</code></td>
-      <td><code class="highlighter-rouge">flat_package</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flatPackage</code></td>
+      <td><code class="language-plaintext highlighter-rouge">flat_package</code></td>
       <td>When set, ScalaPB will not append the protofile base name to the package name.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">javaConversions</code></td>
-      <td><code class="highlighter-rouge">java_conversions</code></td>
-      <td>Generates in the companion object two functions, <code class="highlighter-rouge">toJavaProto</code> and <code class="highlighter-rouge">fromJavaProto</code> that convert between the Scala case class and the Java protobufs. For the generated code to compile, the Java protobuf code need to be also generated or available as a library dependency.</td>
+      <td><code class="language-plaintext highlighter-rouge">javaConversions</code></td>
+      <td><code class="language-plaintext highlighter-rouge">java_conversions</code></td>
+      <td>Generates in the companion object two functions, <code class="language-plaintext highlighter-rouge">toJavaProto</code> and <code class="language-plaintext highlighter-rouge">fromJavaProto</code> that convert between the Scala case class and the Java protobufs. For the generated code to compile, the Java protobuf code need to be also generated or available as a library dependency.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">grpc</code></td>
-      <td><code class="highlighter-rouge">grpc</code></td>
-      <td>Generates gRPC code for services. Default is <code class="highlighter-rouge">true</code> in <code class="highlighter-rouge">scalapb.gen</code>, and need to be explicitly specified in <code class="highlighter-rouge">scalapbc</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">grpc</code></td>
+      <td><code class="language-plaintext highlighter-rouge">grpc</code></td>
+      <td>Generates gRPC code for services. Default is <code class="language-plaintext highlighter-rouge">true</code> in <code class="language-plaintext highlighter-rouge">scalapb.gen</code>, and need to be explicitly specified in <code class="language-plaintext highlighter-rouge">scalapbc</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">singleLineToProtoString</code></td>
-      <td><code class="highlighter-rouge">single_line_to_proto_string</code></td>
-      <td>By default, ScalaPB generates a <code class="highlighter-rouge">toProtoString()</code> method that renders the message as a multi-line format (using <code class="highlighter-rouge">TextFormat.printToUnicodeString</code>). If set, ScalaPB generates <code class="highlighter-rouge">toString()</code> methods that use the single line format.</td>
+      <td><code class="language-plaintext highlighter-rouge">singleLineToProtoString</code></td>
+      <td><code class="language-plaintext highlighter-rouge">single_line_to_proto_string</code></td>
+      <td>By default, ScalaPB generates a <code class="language-plaintext highlighter-rouge">toProtoString()</code> method that renders the message as a multi-line format (using <code class="language-plaintext highlighter-rouge">TextFormat.printToUnicodeString</code>). If set, ScalaPB generates <code class="language-plaintext highlighter-rouge">toString()</code> methods that use the single line format.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">asciiFormatToString</code></td>
-      <td><code class="highlighter-rouge">ascii_format_to_string</code></td>
-      <td>Setting this to true, overrides <code class="highlighter-rouge">toString</code> to return a standard ASCII representation of the message by calling <code class="highlighter-rouge">toProtoString</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">asciiFormatToString</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ascii_format_to_string</code></td>
+      <td>Setting this to true, overrides <code class="language-plaintext highlighter-rouge">toString</code> to return a standard ASCII representation of the message by calling <code class="language-plaintext highlighter-rouge">toProtoString</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">lenses</code></td>
-      <td><code class="highlighter-rouge">no_lenses</code></td>
-      <td>By default, ScalaPB generates lenses for each message for easy updating. If you are not using this feature and would like to reduce code size or compilation time, you can set this to <code class="highlighter-rouge">false</code> and lenses will not be generated.</td>
+      <td><code class="language-plaintext highlighter-rouge">lenses</code></td>
+      <td><code class="language-plaintext highlighter-rouge">no_lenses</code></td>
+      <td>By default, ScalaPB generates lenses for each message for easy updating. If you are not using this feature and would like to reduce code size or compilation time, you can set this to <code class="language-plaintext highlighter-rouge">false</code> and lenses will not be generated.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">retainSourceCodeInfo</code></td>
-      <td><code class="highlighter-rouge">retain_source_code_info</code></td>
-      <td>Retain source code information (locations, comments) provided by protoc in the descriptors. Use the <code class="highlighter-rouge">location</code> accessor to get that information from a descriptor.</td>
+      <td><code class="language-plaintext highlighter-rouge">retainSourceCodeInfo</code></td>
+      <td><code class="language-plaintext highlighter-rouge">retain_source_code_info</code></td>
+      <td>Retain source code information (locations, comments) provided by protoc in the descriptors. Use the <code class="language-plaintext highlighter-rouge">location</code> accessor to get that information from a descriptor.</td>
     </tr>
   </tbody>
 </table>

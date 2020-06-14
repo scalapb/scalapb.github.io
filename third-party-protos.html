@@ -11,7 +11,7 @@ ga('send', 'pageview');
 <p>The protos you are trying to generate code may depend on other protos which are currently are not a part of your build. We need to solve two problems:</p>
 
 <ol>
-  <li>Making those proto files available to <code class="highlighter-rouge">protoc</code>’s import search path so the <code class="highlighter-rouge">import</code> statements in your protos don’t cause errors and code is generated.</li>
+  <li>Making those proto files available to <code class="language-plaintext highlighter-rouge">protoc</code>’s import search path so the <code class="language-plaintext highlighter-rouge">import</code> statements in your protos don’t cause errors and code is generated.</li>
   <li>Providing Scala classes for those third-party protos.</li>
 </ol>
 
@@ -21,28 +21,28 @@ ga('send', 'pageview');
 
 <p>Check whether a <a href="common-protos.html">ScalaPB Common Protos</a> package is already avaiable for the protos. If the proto library you are looking for, consider making a PR or file a feature request.</p>
 
-<p>You will add such libraries to your project twice: once with a <code class="highlighter-rouge">protobuf</code> suffix and once without:</p>
+<p>You will add such libraries to your project twice: once with a <code class="language-plaintext highlighter-rouge">protobuf</code> suffix and once without:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies ++= Seq(
   "com.thesamet.scalapb.common-protos" %% "proto-google-common-protos-scalapb_1.0" % "1.17.0-0" % "protobuf"
   "com.thesamet.scalapb.common-protos" %% "proto-google-common-protos-scalapb_1.0" % "1.17.0-0"
 )
 </code></pre></div></div>
 
-<p>The first one makes <code class="highlighter-rouge">sbt-protoc</code> unpack the protos from the jar and add them to the import search path so protoc can import them (Problem 1 above), and the second import adds the compiled Scala classes to your classpath (Problem 2 above). In this solution, protoc will not generate code for the third-party protos: the provided package already gives you compiled classes for the generated code.</p>
+<p>The first one makes <code class="language-plaintext highlighter-rouge">sbt-protoc</code> unpack the protos from the jar and add them to the import search path so protoc can import them (Problem 1 above), and the second import adds the compiled Scala classes to your classpath (Problem 2 above). In this solution, protoc will not generate code for the third-party protos: the provided package already gives you compiled classes for the generated code.</p>
 
 <h2 id="there-is-a-library-on-maven-with-the-protos-and-possibly-generated-java-code">There is a library on Maven with the protos (and possibly generated Java code)</h2>
 
-<p>Consider <a href="https://github.com/scalapb/common-protos">adding it to Common Protos</a>. If this is not possible (for example, maybe the package is on a repository internal to your company), then you can have your SBT project download the library and build it by using the <code class="highlighter-rouge">protobuf-src</code> config. For example:</p>
+<p>Consider <a href="https://github.com/scalapb/common-protos">adding it to Common Protos</a>. If this is not possible (for example, maybe the package is on a repository internal to your company), then you can have your SBT project download the library and build it by using the <code class="language-plaintext highlighter-rouge">protobuf-src</code> config. For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.somepackage" %% "with-protos" % "1.0" % "protobuf-src" intransitive()
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libraryDependencies += "com.somepackage" %% "with-protos" % "1.0" % "protobuf-src" intransitive()
 </code></pre></div></div>
 
-<p>This would make sbt-protoc download this JAR unpack it to <code class="highlighter-rouge">target/protobuf_external_src</code>, and make it both available for imports and generate code for it (which solves both problems above at once).</p>
+<p>This would make sbt-protoc download this JAR unpack it to <code class="language-plaintext highlighter-rouge">target/protobuf_external_src</code>, and make it both available for imports and generate code for it (which solves both problems above at once).</p>
 
-<p>Without the <code class="highlighter-rouge">intransitive()</code> modifier, sbt-protoc would generate code for all the dependencies of this package, and this is generally undesirable - since this is likely to lead to duplicate classes being generated.</p>
+<p>Without the <code class="language-plaintext highlighter-rouge">intransitive()</code> modifier, sbt-protoc would generate code for all the dependencies of this package, and this is generally undesirable - since this is likely to lead to duplicate classes being generated.</p>
 
-<p>If the given package has dependencies, you will need to manually add them. The dependencies should be added with <code class="highlighter-rouge">protobuf-src</code> scope if you want to build them too. If you already have compiled packages for these dependencies, add the package both with <code class="highlighter-rouge">protobuf</code> and without like in the “common protos” example above.</p>
+<p>If the given package has dependencies, you will need to manually add them. The dependencies should be added with <code class="language-plaintext highlighter-rouge">protobuf-src</code> scope if you want to build them too. If you already have compiled packages for these dependencies, add the package both with <code class="language-plaintext highlighter-rouge">protobuf</code> and without like in the “common protos” example above.</p>
 
 <p>It is recommended to create a separate SBT sub-project for the third-party protos. For example:</p>
 

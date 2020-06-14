@@ -12,9 +12,9 @@ ga('send', 'pageview');
 
 <p>By default, Spark uses reflection to derive schemas and encoders from case
 classes. This doesn’t work well when there are messages that contain types that
-Spark does not understand such as enums, <code class="highlighter-rouge">ByteString</code>s and <code class="highlighter-rouge">oneof</code>s. To get around this, sparksql-scalapb provides its own <code class="highlighter-rouge">Encoder</code>s for protocol buffers.</p>
+Spark does not understand such as enums, <code class="language-plaintext highlighter-rouge">ByteString</code>s and <code class="language-plaintext highlighter-rouge">oneof</code>s. To get around this, sparksql-scalapb provides its own <code class="language-plaintext highlighter-rouge">Encoder</code>s for protocol buffers.</p>
 
-<p>However, it turns out there is another obstacle. Spark does not provide any mechanism to compose user-provided encoders with its own reflection-derived Encoders. Therefore, merely providing an <code class="highlighter-rouge">Encoder</code> for protocol buffers is insufficient to derive an encoder for regular case-classes that contain a protobuf as a field. To solve this problem, ScalaPB uses <a href="https://github.com/typelevel/frameless">frameless</a> which relies on implicit search to derive encoders. This approach enables combining ScalaPB’s encoders with frameless encoders that takes care for all non-protobuf types.</p>
+<p>However, it turns out there is another obstacle. Spark does not provide any mechanism to compose user-provided encoders with its own reflection-derived Encoders. Therefore, merely providing an <code class="language-plaintext highlighter-rouge">Encoder</code> for protocol buffers is insufficient to derive an encoder for regular case-classes that contain a protobuf as a field. To solve this problem, ScalaPB uses <a href="https://github.com/typelevel/frameless">frameless</a> which relies on implicit search to derive encoders. This approach enables combining ScalaPB’s encoders with frameless encoders that takes care for all non-protobuf types.</p>
 
 <h2 id="setting-up-your-project">Setting up your project</h2>
 
@@ -27,7 +27,7 @@ that adds sbt-assembly:</p>
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">addSbtPlugin</span><span class="o">(</span><span class="s">"com.eed3si9n"</span> <span class="o">%</span> <span class="s">"sbt-assembly"</span> <span class="o">%</span> <span class="s">"0.14.10"</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>In <code class="highlighter-rouge">build.sbt</code> add a dependency on <code class="highlighter-rouge">sparksql-scalapb</code>:</p>
+<p>In <code class="language-plaintext highlighter-rouge">build.sbt</code> add a dependency on <code class="language-plaintext highlighter-rouge">sparksql-scalapb</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">libraryDepenencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"sparksql-scalapb"</span> <span class="o">%</span> <span class="s">"0.9.0"</span>
 </code></pre></div></div>
@@ -45,7 +45,7 @@ Add this to your build.sbt:</p>
 
 <h2 id="using-sparksql-scalapb">Using sparksql-scalapb</h2>
 
-<p>We assume you have a <code class="highlighter-rouge">SparkSession</code> assigned to the variable <code class="highlighter-rouge">spark</code>. In a standalone Scala program, this can be created with:</p>
+<p>We assume you have a <code class="language-plaintext highlighter-rouge">SparkSession</code> assigned to the variable <code class="language-plaintext highlighter-rouge">spark</code>. In a standalone Scala program, this can be created with:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">org.apache.spark.sql.SparkSession</span>
 
@@ -54,10 +54,10 @@ Add this to your build.sbt:</p>
   <span class="o">.</span><span class="py">appName</span><span class="o">(</span><span class="s">"ScalaPB Demo"</span><span class="o">)</span>
   <span class="o">.</span><span class="py">master</span><span class="o">(</span><span class="s">"local[2]"</span><span class="o">)</span>
   <span class="o">.</span><span class="py">getOrCreate</span><span class="o">()</span>
-<span class="c1">// spark: SparkSession = org.apache.spark.sql.SparkSession@6527e45a</span>
+<span class="c1">// spark: SparkSession = org.apache.spark.sql.SparkSession@34d3c5d1</span>
 </code></pre></div></div>
 
-<p><em>IMPORTANT</em>: Ensure you do not import <code class="highlighter-rouge">spark.implicits._</code> to avoid ambiguity between ScalaPB provided encoders and Spark’s default encoders. You may want to import <code class="highlighter-rouge">StringToColumn</code> to convert <code class="highlighter-rouge">$"col name"</code> into a <code class="highlighter-rouge">Column</code>. Add an import <code class="highlighter-rouge">scaslapb.spark.Implicits</code> to add ScalaPB’s encoders for protocol buffers into the implicit search scope:</p>
+<p><em>IMPORTANT</em>: Ensure you do not import <code class="language-plaintext highlighter-rouge">spark.implicits._</code> to avoid ambiguity between ScalaPB provided encoders and Spark’s default encoders. You may want to import <code class="language-plaintext highlighter-rouge">StringToColumn</code> to convert <code class="language-plaintext highlighter-rouge">$"col name"</code> into a <code class="language-plaintext highlighter-rouge">Column</code>. Add an import <code class="language-plaintext highlighter-rouge">scaslapb.spark.Implicits</code> to add ScalaPB’s encoders for protocol buffers into the implicit search scope:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">org.apache.spark.sql.</span><span class="o">{</span><span class="nc">Dataset</span><span class="o">,</span> <span class="nc">DataFrame</span><span class="o">,</span> <span class="n">functions</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">spark.implicits.StringToColumn</span>
@@ -66,7 +66,7 @@ Add this to your build.sbt:</p>
 <span class="k">import</span> <span class="nn">scalapb.spark.Implicits._</span>
 </code></pre></div></div>
 
-<p>The code snippets below use the <a href="https://github.com/scalapb/ScalaPB/blob/master/docs/src/main/protobuf/person.proto"><code class="highlighter-rouge">Person</code> message</a>.</p>
+<p>The code snippets below use the <a href="https://github.com/scalapb/ScalaPB/blob/master/docs/src/main/protobuf/person.proto"><code class="language-plaintext highlighter-rouge">Person</code> message</a>.</p>
 
 <p>We start by creating some test data:</p>
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scalapb.docs.person.Person</span>
@@ -84,7 +84,7 @@ Add this to your build.sbt:</p>
 <span class="o">)</span>
 </code></pre></div></div>
 
-<p>We can create a <code class="highlighter-rouge">DataFrame</code> from the test data:</p>
+<p>We can create a <code class="language-plaintext highlighter-rouge">DataFrame</code> from the test data:</p>
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">df</span> <span class="k">=</span> <span class="nv">ProtoSQL</span><span class="o">.</span><span class="py">createDataFrame</span><span class="o">(</span><span class="n">spark</span><span class="o">,</span> <span class="n">testData</span><span class="o">)</span>
 <span class="c1">// df: DataFrame = [name: string, age: int ... 1 more field]</span>
 <span class="nv">df</span><span class="o">.</span><span class="py">printSchema</span><span class="o">()</span>
@@ -148,9 +148,9 @@ Add this to your build.sbt:</p>
 
 <h2 id="from-binary-to-protos-and-back">From Binary to protos and back</h2>
 
-<p>In some situations, you may need to deal with datasets that contain serialized protocol buffers. This can be handled by mapping the datasets through ScalaPB’s <code class="highlighter-rouge">parseFrom</code> and <code class="highlighter-rouge">toByteArray</code> functions.</p>
+<p>In some situations, you may need to deal with datasets that contain serialized protocol buffers. This can be handled by mapping the datasets through ScalaPB’s <code class="language-plaintext highlighter-rouge">parseFrom</code> and <code class="language-plaintext highlighter-rouge">toByteArray</code> functions.</p>
 
-<p>Let’s start by preparing a dataset with test binary data by mapping our <code class="highlighter-rouge">testData</code>:</p>
+<p>Let’s start by preparing a dataset with test binary data by mapping our <code class="language-plaintext highlighter-rouge">testData</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">binaryDS</span><span class="k">:</span> <span class="kt">Dataset</span><span class="o">[</span><span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]]</span> <span class="k">=</span> <span class="nv">spark</span><span class="o">.</span><span class="py">createDataset</span><span class="o">(</span><span class="nv">testData</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">toByteArray</span><span class="o">))</span>
 <span class="c1">// binaryDS: Dataset[Array[Byte]] = [_1: binary]</span>
@@ -166,13 +166,13 @@ Add this to your build.sbt:</p>
 <span class="c1">//</span>
 </code></pre></div></div>
 
-<p>To turn this dataset into a <code class="highlighter-rouge">Dataset[Person]</code>, we map it through <code class="highlighter-rouge">parseFrom</code>:</p>
+<p>To turn this dataset into a <code class="language-plaintext highlighter-rouge">Dataset[Person]</code>, we map it through <code class="language-plaintext highlighter-rouge">parseFrom</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">protosDS</span><span class="k">:</span> <span class="kt">Dataset</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="k">=</span> <span class="nv">binaryDS</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nv">Person</span><span class="o">.</span><span class="py">parseFrom</span><span class="o">(</span><span class="k">_</span><span class="o">))</span>
 <span class="c1">// protosDS: Dataset[Person] = [name: string, age: int ... 1 more field]</span>
 </code></pre></div></div>
 
-<p>to turn a dataset of protos into <code class="highlighter-rouge">Dataset[Array[Byte]]</code>:</p>
+<p>to turn a dataset of protos into <code class="language-plaintext highlighter-rouge">Dataset[Array[Byte]]</code>:</p>
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">protosBinary</span><span class="k">:</span> <span class="kt">Dataset</span><span class="o">[</span><span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]]</span> <span class="k">=</span> <span class="nv">protosDS</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">toByteArray</span><span class="o">)</span>
 <span class="c1">// protosBinary: Dataset[Array[Byte]] = [_1: binary]</span>
 </code></pre></div></div>
@@ -194,13 +194,13 @@ Add this to your build.sbt:</p>
 
 <h2 id="udfs">UDFs</h2>
 
-<p>If you need to write a UDF that returns a message, it would not pick up our encoder and you may get a runtime failure.  To work around this, sparksql-scalapb provides <code class="highlighter-rouge">ProtoSQL.udf</code> to create UDFs. For example, if you need to parse a binary column into a proto:</p>
+<p>If you need to write a UDF that returns a message, it would not pick up our encoder and you may get a runtime failure.  To work around this, sparksql-scalapb provides <code class="language-plaintext highlighter-rouge">ProtoSQL.udf</code> to create UDFs. For example, if you need to parse a binary column into a proto:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">binaryDF</span> <span class="k">=</span> <span class="nv">protosBinary</span><span class="o">.</span><span class="py">toDF</span><span class="o">(</span><span class="s">"value"</span><span class="o">)</span>
 <span class="c1">// binaryDF: DataFrame = [value: binary]</span>
 
 <span class="k">val</span> <span class="nv">parsePersons</span> <span class="k">=</span> <span class="nv">ProtoSQL</span><span class="o">.</span><span class="py">udf</span> <span class="o">{</span> <span class="n">bytes</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nv">Person</span><span class="o">.</span><span class="py">parseFrom</span><span class="o">(</span><span class="n">bytes</span><span class="o">)</span> <span class="o">}</span>
-<span class="c1">// parsePersons: org.apache.spark.sql.Column =&gt; org.apache.spark.sql.Column = scalapb.spark.Udfs$$Lambda$13816/0x0000000804d51040@241b4b68</span>
+<span class="c1">// parsePersons: org.apache.spark.sql.Column =&gt; org.apache.spark.sql.Column = scalapb.spark.Udfs$$Lambda$13645/0x0000000804c11840@531a871d</span>
 
 <span class="nv">binaryDF</span><span class="o">.</span><span class="py">withColumn</span><span class="o">(</span><span class="s">"person"</span><span class="o">,</span> <span class="nf">parsePersons</span><span class="o">(</span><span class="n">$</span><span class="s">"value"</span><span class="o">))</span>
 <span class="c1">// res7: DataFrame = [value: binary, person: struct&lt;name: string, age: int ... 1 more field&gt;]</span>
@@ -209,19 +209,19 @@ Add this to your build.sbt:</p>
 <h2 id="primitive-wrappers">Primitive wrappers</h2>
 
 <p>In ProtoSQL 0.9.x and 0.10.x, primitive wrappers are represented in Spark as structs
-witha single field named <code class="highlighter-rouge">value</code>. A better representation in Spark would be a
+witha single field named <code class="language-plaintext highlighter-rouge">value</code>. A better representation in Spark would be a
 nullable field of the primitive type. The better representation will be the
 default in 0.11.x. To enable this representation today, replace the usages of
-<code class="highlighter-rouge">scalapb.spark.ProtoSQL</code> with <code class="highlighter-rouge">scalapb.spark.ProtoSQL.withPrimitiveWrappers</code>.
-Instead of importing <code class="highlighter-rouge">scalapb.spark.Implicits._</code>, import
-<code class="highlighter-rouge">scalapb.spark.ProtoSQL.implicits._</code></p>
+<code class="language-plaintext highlighter-rouge">scalapb.spark.ProtoSQL</code> with <code class="language-plaintext highlighter-rouge">scalapb.spark.ProtoSQL.withPrimitiveWrappers</code>.
+Instead of importing <code class="language-plaintext highlighter-rouge">scalapb.spark.Implicits._</code>, import
+<code class="language-plaintext highlighter-rouge">scalapb.spark.ProtoSQL.implicits._</code></p>
 
 <p>See example in <a href="https://github.com/scalapb/sparksql-scalapb/blob/80f3162b69313d57f95d3dcbfee865809873567a/sparksql-scalapb/src/test/scala/WrappersSpec.scala#L42-L59">WrappersSpec</a>.</p>
 
-<h2 id="datasets-and-none-is-not-a-term">Datasets and <code class="highlighter-rouge">&lt;none&gt; is not a term</code></h2>
+<h2 id="datasets-and-none-is-not-a-term">Datasets and <code class="language-plaintext highlighter-rouge">&lt;none&gt; is not a term</code></h2>
 
-<p>You will see this error if for some reason Spark’s <code class="highlighter-rouge">Encoder</code>s are being picked up
-instead of the ones provided by sparksql-scalapb. Please ensure you are not importing <code class="highlighter-rouge">spark.implicits._</code>. See instructions above for imports.</p>
+<p>You will see this error if for some reason Spark’s <code class="language-plaintext highlighter-rouge">Encoder</code>s are being picked up
+instead of the ones provided by sparksql-scalapb. Please ensure you are not importing <code class="language-plaintext highlighter-rouge">spark.implicits._</code>. See instructions above for imports.</p>
 
 <h2 id="example">Example</h2>
 

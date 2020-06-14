@@ -15,7 +15,7 @@ ga('send', 'pageview');
 
 <p>Make sure that you are using ScalaPB 0.5.x or later.</p>
 
-<p>In <code class="highlighter-rouge">build.sbt</code> add a dependency on <code class="highlighter-rouge">scalapb-json4s</code>:</p>
+<p>In <code class="language-plaintext highlighter-rouge">build.sbt</code> add a dependency on <code class="language-plaintext highlighter-rouge">scalapb-json4s</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// For ScalaPB 0.10.x:</span>
 <span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.thesamet.scalapb"</span> <span class="o">%%</span> <span class="s">"scalapb-json4s"</span> <span class="o">%</span> <span class="s">"0.10.1"</span>
@@ -51,8 +51,8 @@ ga('send', 'pageview');
     <span class="s">"""{"x": "17"}"""</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>There are lower-level functions <code class="highlighter-rouge">toJson()</code> and <code class="highlighter-rouge">fromJson()</code> that convert from
-protos to json4s’s <code class="highlighter-rouge">JValue</code>:</p>
+<p>There are lower-level functions <code class="language-plaintext highlighter-rouge">toJson()</code> and <code class="language-plaintext highlighter-rouge">fromJson()</code> that convert from
+protos to json4s’s <code class="language-plaintext highlighter-rouge">JValue</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">toJson</span><span class="o">(</span><span class="n">m</span><span class="k">:</span> <span class="kt">GeneratedMessage</span><span class="o">)</span><span class="k">:</span> <span class="kt">JObject</span>
 
@@ -60,13 +60,13 @@ protos to json4s’s <code class="highlighter-rouge">JValue</code>:</p>
 </code></pre></div></div>
 
 <p>Finally, in JsonFormat there are two implicit methods that instantiate
-<code class="highlighter-rouge">Reader[Proto]</code> and <code class="highlighter-rouge">Writer[Proto]</code>.</p>
+<code class="language-plaintext highlighter-rouge">Reader[Proto]</code> and <code class="language-plaintext highlighter-rouge">Writer[Proto]</code>.</p>
 
 <h2 id="more-printing-and-parsing-options">More printing and parsing options</h2>
 
 <p>There are a few more options available to customize the format used to print
-and parse JSON. To take advantage of that, instantiate <code class="highlighter-rouge">Printer</code> and <code class="highlighter-rouge">Parser</code> and
-call <code class="highlighter-rouge">toJson()</code> / <code class="highlighter-rouge">fromJson()</code> as usual.</p>
+and parse JSON. To take advantage of that, instantiate <code class="language-plaintext highlighter-rouge">Printer</code> and <code class="language-plaintext highlighter-rouge">Parser</code> and
+call <code class="language-plaintext highlighter-rouge">toJson()</code> / <code class="language-plaintext highlighter-rouge">fromJson()</code> as usual.</p>
 
 <p>For example:</p>
 
@@ -80,13 +80,13 @@ call <code class="highlighter-rouge">toJson()</code> / <code class="highlighter-
 <p>Options:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">includingDefaultValueFields</code> (default: <code class="highlighter-rouge">false</code>): should fields
+  <li><code class="language-plaintext highlighter-rouge">includingDefaultValueFields</code> (default: <code class="language-plaintext highlighter-rouge">false</code>): should fields
 that are set to their default value be included in the output.</li>
-  <li><code class="highlighter-rouge">preservingProtoFieldNames</code> (default: <code class="highlighter-rouge">false</code>): by default, field names are mapped to
-lowerCamelCase and become JSON object keys. Setting this option to <code class="highlighter-rouge">true</code> would
+  <li><code class="language-plaintext highlighter-rouge">preservingProtoFieldNames</code> (default: <code class="language-plaintext highlighter-rouge">false</code>): by default, field names are mapped to
+lowerCamelCase and become JSON object keys. Setting this option to <code class="language-plaintext highlighter-rouge">true</code> would
 make the parser and the printer use the original field names as specified in the proto
 file (normally, in snake_case)</li>
-  <li><code class="highlighter-rouge">formatLongAsNumber</code> (default: <code class="highlighter-rouge">false</code>): by default, longs are serialized as
+  <li><code class="language-plaintext highlighter-rouge">formatLongAsNumber</code> (default: <code class="language-plaintext highlighter-rouge">false</code>): by default, longs are serialized as
 strings. To use the numeric representation, set this option to true. Note that
 due to the way Javascript represents numbers, there is a possibility to lose
 precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger">more details here</a>).</li>
@@ -96,7 +96,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 <h1 id="printing-and-parsing-anys">Printing and parsing Anys</h1>
 
-<p>In Protocol Buffers, <code class="highlighter-rouge">google.protobuf.Any</code> is a type that embeds an arbitrary protobuf message. An <code class="highlighter-rouge">Any</code> is represented as a message that contains a <code class="highlighter-rouge">typeUrl</code> field that identifies the type, and a bytes field <code class="highlighter-rouge">value</code> which contains the serialized contents of a message. In JSON, the message embedded in the <code class="highlighter-rouge">Any</code> is serialized as usual, and there is a <code class="highlighter-rouge">@type</code> key added to it to identify which message it is. The parser expects this <code class="highlighter-rouge">@type</code> key to know which message it is. To accomplish this, all the expected embedded types need to be registered with a <code class="highlighter-rouge">TypeRegistry</code> so the printer and parser know how to process the embedded message.</p>
+<p>In Protocol Buffers, <code class="language-plaintext highlighter-rouge">google.protobuf.Any</code> is a type that embeds an arbitrary protobuf message. An <code class="language-plaintext highlighter-rouge">Any</code> is represented as a message that contains a <code class="language-plaintext highlighter-rouge">typeUrl</code> field that identifies the type, and a bytes field <code class="language-plaintext highlighter-rouge">value</code> which contains the serialized contents of a message. In JSON, the message embedded in the <code class="language-plaintext highlighter-rouge">Any</code> is serialized as usual, and there is a <code class="language-plaintext highlighter-rouge">@type</code> key added to it to identify which message it is. The parser expects this <code class="language-plaintext highlighter-rouge">@type</code> key to know which message it is. To accomplish this, all the expected embedded types need to be registered with a <code class="language-plaintext highlighter-rouge">TypeRegistry</code> so the printer and parser know how to process the embedded message.</p>
 
 <p>The following example is based <a href="https://github.com/scalapb/ScalaPB/blob/master/docs/src/main/protobuf/json.proto">on this proto</a>.</p>
 
@@ -114,7 +114,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="c1">//   Some(</span>
 <span class="c1">//     Any(</span>
 <span class="c1">//       "type.googleapis.com/com.thesamet.docs.MyMessage",</span>
-<span class="c1">//       &lt;ByteString@4c7a7b79 size=2 contents="\b\021"&gt;,</span>
+<span class="c1">//       &lt;ByteString@54c5e3c8 size=2 contents="\b\021"&gt;,</span>
 <span class="c1">//       UnknownFieldSet(Map())</span>
 <span class="c1">//     )</span>
 <span class="c1">//   ),</span>
@@ -124,22 +124,22 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="k">val</span> <span class="nv">typeRegistry</span> <span class="k">=</span> <span class="nc">TypeRegistry</span><span class="o">().</span><span class="py">addMessage</span><span class="o">[</span><span class="kt">MyMessage</span><span class="o">]</span>
 <span class="c1">// typeRegistry: TypeRegistry = TypeRegistry(</span>
 <span class="c1">//   Map(</span>
-<span class="c1">//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@2639fbb3</span>
+<span class="c1">//     "type.googleapis.com/com.thesamet.docs.MyMessage" -&gt; com.thesamet.docs.json.MyMessage$@2ac43bcd</span>
 <span class="c1">//   ),</span>
 <span class="c1">//   Set()</span>
 <span class="c1">// )</span>
 
 <span class="k">val</span> <span class="nv">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Printer</span><span class="o">().</span><span class="py">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// printer: Printer = scalapb.json4s.Printer@2effb05d</span>
+<span class="c1">// printer: Printer = scalapb.json4s.Printer@7f0ec792</span>
 
 <span class="nv">printer</span><span class="o">.</span><span class="py">print</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
 <span class="c1">// res0: String = "{\"myAny\":{\"@type\":\"type.googleapis.com/com.thesamet.docs.MyMessage\",\"x\":17}}"</span>
 </code></pre></div></div>
 
-<p>Conversely, you can start from a JSON and parse it back to a <code class="highlighter-rouge">MyContainer</code> that contains an <code class="highlighter-rouge">Any</code> field:</p>
+<p>Conversely, you can start from a JSON and parse it back to a <code class="language-plaintext highlighter-rouge">MyContainer</code> that contains an <code class="language-plaintext highlighter-rouge">Any</code> field:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">parser</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Parser</span><span class="o">().</span><span class="py">withTypeRegistry</span><span class="o">(</span><span class="n">typeRegistry</span><span class="o">)</span>
-<span class="c1">// parser: Parser = scalapb.json4s.Parser@4e1df3db</span>
+<span class="c1">// parser: Parser = scalapb.json4s.Parser@4552a04b</span>
 
 <span class="nv">parser</span><span class="o">.</span><span class="py">fromJsonString</span><span class="o">[</span><span class="kt">MyContainer</span><span class="o">](</span><span class="s">"""
   {
@@ -152,7 +152,7 @@ precision (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 <span class="c1">//   Some(</span>
 <span class="c1">//     Any(</span>
 <span class="c1">//       "type.googleapis.com/com.thesamet.docs.MyMessage",</span>
-<span class="c1">//       &lt;ByteString@27107dc8 size=2 contents="\b\021"&gt;,</span>
+<span class="c1">//       &lt;ByteString@4ec3e17f size=2 contents="\b\021"&gt;,</span>
 <span class="c1">//       UnknownFieldSet(Map())</span>
 <span class="c1">//     )</span>
 <span class="c1">//   ),</span>
