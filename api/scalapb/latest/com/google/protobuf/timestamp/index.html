@@ -429,13 +429,11 @@ is required. A proto3 JSON serializer should always use UTC (as indicated by
 &quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be
 able to accept both UTC and other timezones (as indicated by an offset).</p><p>For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past
 01:30 UTC on January 15, 2017.</p><p>In JavaScript, one can convert a Date object to this format using the
-standard
-[toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
+standard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
 method. In Python, a standard <code>datetime.datetime</code> object can be converted
-to this format using
-[<code>strftime</code>](https://docs.python.org/2/library/time.html#time.strftime) with
-the time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one can use
-the Joda Time's [<code>ISODateTimeFormat.dateTime()</code>](
+to this format using [<code>strftime</code>](https://docs.python.org/2/library/time.html#time.strftime)
+with the time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one
+can use the Joda Time's [<code>ISODateTimeFormat.dateTime()</code>](
 http://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D
 ) to obtain a formatter capable of generating timestamps in this format.
 </p></div><dl class="paramcmts block"><dt class="param">seconds</dt><dd class="cmt"><p>

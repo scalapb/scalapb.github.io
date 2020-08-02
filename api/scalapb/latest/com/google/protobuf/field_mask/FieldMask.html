@@ -274,7 +274,7 @@ following message:</p><p>    message SampleMessage {
     }</p><p>Note that oneof type names (&quot;test_oneof&quot; in this case) cannot be used in
 paths.</p><p>## Field Mask Verification</p><p>The implementation of any API method which has a FieldMask type field in the
 request should verify the included field paths, and return an
-<code>INVALID_ARGUMENT</code> error if any path is unmappable.
+<code>INVALID_ARGUMENT</code> error if any path is duplicated or unmappable.
 </p></div><dl class="paramcmts block"><dt class="param">paths</dt><dd class="cmt"><p>
   The set of field mask paths.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
