@@ -190,7 +190,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -203,7 +203,9 @@
   code generator from generating correct code.  Errors which indicate a
   problem in protoc itself -- such as the input CodeGeneratorRequest being
   unparseable -- should be reported by writing a message to stderr and
-  exiting with a non-zero status code.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  exiting with a non-zero status code.</p></dd><dt class="param">supportedFeatures</dt><dd class="cmt"><p>
+  A bitmask of supported features that the code generator supports.
+  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -257,9 +259,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(error:Option[String],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="&lt;init&gt;:CodeGeneratorResponse"></a>
+      <a id="&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="&lt;init&gt;:CodeGeneratorResponse"></a>
       <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#&lt;init&gt;(error:Option[String],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -268,7 +270,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">error</dt><dd class="cmt"><p>
@@ -278,7 +280,9 @@
   code generator from generating correct code.  Errors which indicate a
   problem in protoc itself -- such as the input CodeGeneratorRequest being
   unparseable -- should be reported by writing a message to stderr and
-  exiting with a non-zero status code.</p></dd></dl></div>
+  exiting with a non-zero status code.</p></dd><dt class="param">supportedFeatures</dt><dd class="cmt"><p>
+  A bitmask of supported features that the code generator supports.
+  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -414,6 +418,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearFile</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#clearSupportedFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearSupportedFeatures:com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="clearSupportedFeatures:CodeGeneratorResponse"></a>
+      <span class="permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#clearSupportedFeatures:com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearSupportedFeatures</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
       </span>
       
       
@@ -592,6 +612,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a> → <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></dd></dl></div>
+    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#getSupportedFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getSupportedFeatures:Long"></a>
+      <span class="permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#getSupportedFeatures:Long" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getSupportedFeatures</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -682,6 +718,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a> → <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></dd></dl></div>
+    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#supportedFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="supportedFeatures:Option[Long]"></a><a id="supportedFeatures:scala.Option[Long]"></a>
+      <span class="permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#supportedFeatures:Option[Long]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">supportedFeatures</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -893,6 +945,22 @@ the companion object.
       </span>
       <span class="symbol">
         <span class="name">withFile</span><span class="params">(<span name="__v">__v: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#withSupportedFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSupportedFeatures(__v:Long):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="withSupportedFeatures(Long):CodeGeneratorResponse"></a>
+      <span class="permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#withSupportedFeatures(__v:Long):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSupportedFeatures</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
       </span>
       
       
