@@ -1,95 +1,19 @@
-<!DOCTYPE html><html><head><title>ScalaPB: Migrating</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: Migrating" /><meta name="title" property="og:title" content="ScalaPB: Migrating" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: Migrating" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/pattern-style.css" /><link rel="stylesheet" href="/css/custom.css" /><script async="async">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-346180-20' , 'auto');
-ga('send', 'pageview');
-      </script></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class="">Generated code</a></li> <li><a href="/customizations.html" class="">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class="">ScalaPBC</a></li> <li><a href="/third-party-protos.html" class="">Using third-party protos</a></li> <li><a href="/common-protos.html" class="">Common protos</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class=" active ">Migrating</a></li> <li><a href="/contact.html" class="">Contact us</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye"></i><span>Watchers<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-star-o"></i><span>Stars<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="migrating-to-scalapb-07x">Migrating to ScalaPB 0.7.x</h1>
-
-<p>From version 0.7.0 and onwards, ScalaPB artifacts are published under the <code class="language-plaintext highlighter-rouge">com.thesamet.scalapb</code> group id instead of the com.trueaccord.scalapb group id.</p>
-
-<p>In addition, all classes in the <code class="language-plaintext highlighter-rouge">com.trueaccord.scalapb</code> are moved to the <code class="language-plaintext highlighter-rouge">scalapb</code> top-level
-package. During 0.7.x, we will keep type aliases and references in the original <code class="language-plaintext highlighter-rouge">com.trueaccord.scalapb</code>
-location so you may get deprecation warnings, but your code is unlikely to break.</p>
-
-<p>You will need to “sbt clean” and “sbt compile” again, to make sure the old generated classes
-are removed and new ones are generated. The generated code should not yield any deprecation warnings.</p>
-
-<p>Since the artifact name has changed, you will need to make sure all your other ScalaPB
-dependencies, such as <code class="language-plaintext highlighter-rouge">scalapb-json4s</code> and <code class="language-plaintext highlighter-rouge">sparksql-scalapb</code>, are updated to 0.7.x. Otherwise,
-they will pull an additional copy of ScalaPB from the old group id name.</p>
-
-<h1 id="migrating-from-sbt-scalapb-to-sbt-protoc">Migrating from sbt-scalapb to sbt-protoc</h1>
-
-<p>In <code class="language-plaintext highlighter-rouge">project/scalapb.proto</code> or <code class="language-plaintext highlighter-rouge">project/plugins.proto</code>, remove the library
-dependency on <code class="language-plaintext highlighter-rouge">sbt-scalapb</code>.</p>
-
-<p><strong>Add</strong> <code class="language-plaintext highlighter-rouge">sbt-protoc</code> plugin:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.34")
-</code></pre></div></div>
-
-<p>If you had a dependency on <code class="language-plaintext highlighter-rouge">protoc-jar</code> it can be removed, since it is now
-provided through <code class="language-plaintext highlighter-rouge">sbt-protoc</code>.</p>
-
-<p>In <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
-
-<p><strong>Remove</strong> this line:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import com.trueaccord.scalapb.{ScalaPbPlugin =&gt; PB}
-</code></pre></div></div>
-
-<p><strong>Remove</strong> this line:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PB.protobufSettings
-</code></pre></div></div>
-
-<p>If you set up <code class="language-plaintext highlighter-rouge">protoc-jar</code>, you can also <strong>remove</strong> this setting, since this
-is the default:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PB.runProtoc in PB.protobufConfig := (args =&gt;
-  com.github.os72.protocjar.Protoc.runProtoc("-v300" +: args.toArray))
-</code></pre></div></div>
-
-<p><strong>Add</strong> a value to <code class="language-plaintext highlighter-rouge">gen.targets</code>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PB.targets in Compile := Seq(
-  scalapb.gen() -&gt; (sourceManaged in Compile).value
-)
-</code></pre></div></div>
-
-<p>If you need Java Conversions, flat packages, etc see 
-<a href="/sbt-settings.html">ScalaPB SBT Settings</a>.</p>
-
-<p>If you are using files like <code class="language-plaintext highlighter-rouge">scalapb.proto</code> and Google’s well-known proto
-change the library dependency from:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"com.trueaccord.scalapb" %% "scalapb-runtime" % "0.10.7" % PB.protobufConfig
-</code></pre></div></div>
-
-<p>to:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
-</code></pre></div></div>
-
-</section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/protobuf.min.js"></script><script>
-// For all code blocks, copy the language from the containing div
-// to the inner code tag (where hljs expects it to be)
-const langPrefix = 'language-';
-document.querySelectorAll(`div[class^='${langPrefix}']`).forEach(function(div) {
-  div.classList.forEach(function(cssClass) {
-    if (cssClass.startsWith(langPrefix)) {
-      const lang = cssClass.substring(langPrefix.length);
-      div.querySelectorAll('pre code').forEach(function(code) {
-        code.classList.add(lang);
-      });
-    }
-  });
-});
-
-hljs.configure({languages:['scala','java','bash','protobuf']});
-hljs.initHighlightingOnLoad();
-      </script><script>console.info('\x57\x65\x62\x73\x69\x74\x65\x20\x62\x75\x69\x6c\x74\x20\x77\x69\x74\x68\x3a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x5f\x5f\x0a\x20\x20\x20\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x5f\x20\x20\x2f\x20\x2f\x5f\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x5f\x5f\x5f\x20\x20\x28\x5f\x29\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x28\x5f\x29\x20\x2f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x0a\x20\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x60\x5f\x5f\x20\x5c\x2f\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x20\x2f\x20\x5f\x5f\x2f\x20\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x0a\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x5f\x2f\x20\x2f\x20\x2f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x5f\x5f\x2f\x20\x2f\x20\x20\x2f\x20\x2f\x5f\x2f\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x20\x2f\x5f\x2f\x20\x20\x5f\x5f\x28\x5f\x5f\x20\x20\x29\x0a\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2e\x5f\x5f\x5f\x2f\x5c\x5f\x5f\x2f\x20\x20\x20\x20\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x2f\x20\x20\x20\x5c\x5f\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x0a\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f\x34\x37\x64\x65\x67\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f\x73\x62\x74\x2d\x6d\x69\x63\x72\x6f\x73\x69\x74\x65\x73')</script><script>((window.gitter = {}).chat = {}).options = {
-room: 'ScalaPB/community'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="refresh"
+            content="0;
+                       url=docs/upgrading.html"
+            />
+        <script type="text/javascript">
+            window.location.href = 'docs/upgrading';
+        </script>
+        <title>Your Site Title Here</title>
+    </head>
+    <body>
+        If you are not redirected automatically, follow this
+        <a href="docs/upgrading">link</a>.
+    </body>
+</html>
