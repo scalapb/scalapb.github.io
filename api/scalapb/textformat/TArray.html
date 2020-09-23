@@ -103,16 +103,20 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="scalapb">scalapb</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="object" href="Basics$.html" title=""></a>
-                        <a href="Basics$.html" title="">Basics</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
                         <a class="object" href="Constants$.html" title=""></a>
                         <a href="Constants$.html" title="">Constants</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
+                        <a class="class" href="Parser.html" title=""></a>
+                        <a href="Parser.html" title="">Parser</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
                         <a class="trait" href="ParserCompat.html" title=""></a>
                         <a href="ParserCompat.html" title="">ParserCompat</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="Position.html" title=""></a>
+                        <a href="Position.html" title="">Position</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
                         <a class="object" href="Printer$.html" title=""></a>
@@ -157,6 +161,10 @@
                         <span class="separator"></span>
                         <a class="class" href="TextGenerator.html" title=""></a>
                         <a href="TextGenerator.html" title="">TextGenerator</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="Tokenizer$.html" title=""></a>
+                        <a class="class" href="Tokenizer.html" title=""></a>
+                        <a href="Tokenizer.html" title="">Tokenizer</a>
                       </li>
               </ul>
             </div>
@@ -180,7 +188,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">TArray</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">TArray</span><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -236,9 +244,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalapb.textformat.TArray#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(index:Int,values:Seq[scalapb.textformat.TValue]):scalapb.textformat.TArray"></a><a id="&lt;init&gt;:TArray"></a>
+      <a id="&lt;init&gt;(position:scalapb.textformat.Position,values:Seq[scalapb.textformat.TValue]):scalapb.textformat.TArray"></a><a id="&lt;init&gt;:TArray"></a>
       <span class="permalink">
-      <a href="../../scalapb/textformat/TArray.html#&lt;init&gt;(index:Int,values:Seq[scalapb.textformat.TValue]):scalapb.textformat.TArray" title="Permalink">
+      <a href="../../scalapb/textformat/TArray.html#&lt;init&gt;(position:scalapb.textformat.Position,values:Seq[scalapb.textformat.TValue]):scalapb.textformat.TArray" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -247,7 +255,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">TArray</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span>
+        <span class="name">TArray</span><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span>
       </span>
       
       
@@ -388,22 +396,6 @@
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="scalapb.textformat.TArray#index" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="index:Int"></a>
-      <span class="permalink">
-      <a href="../../scalapb/textformat/TArray.html#index:Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">index</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.textformat.TArray">TArray</a> → <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -478,6 +470,22 @@
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.textformat.TArray#position" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="position:scalapb.textformat.Position"></a><a id="position:Position"></a>
+      <span class="permalink">
+      <a href="../../scalapb/textformat/TArray.html#position:scalapb.textformat.Position" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">position</span><span class="result">: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.textformat.TArray">TArray</a> → <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

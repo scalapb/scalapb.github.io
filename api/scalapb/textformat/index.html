@@ -183,16 +183,20 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="scalapb">scalapb</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="object" href="Basics$.html" title=""></a>
-                        <a href="Basics$.html" title="">Basics</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
                         <a class="object" href="Constants$.html" title=""></a>
                         <a href="Constants$.html" title="">Constants</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
+                        <a class="class" href="Parser.html" title=""></a>
+                        <a href="Parser.html" title="">Parser</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
                         <a class="trait" href="ParserCompat.html" title=""></a>
                         <a href="ParserCompat.html" title="">ParserCompat</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="Position.html" title=""></a>
+                        <a href="Position.html" title="">Position</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
                         <a class="object" href="Printer$.html" title=""></a>
@@ -237,6 +241,10 @@
                         <span class="separator"></span>
                         <a class="class" href="TextGenerator.html" title=""></a>
                         <a href="TextGenerator.html" title="">TextGenerator</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="Tokenizer$.html" title=""></a>
+                        <a class="class" href="Tokenizer.html" title=""></a>
+                        <a href="Tokenizer.html" title="">Tokenizer</a>
                       </li>
               </ul>
             </div>
@@ -300,7 +308,23 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="scalapb.textformat.ParserCompat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="scalapb.textformat.Parser" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParserextendsAnyRef"></a><a id="Parser:Parser"></a>
+      <span class="permalink">
+      <a href="../../scalapb/textformat/Parser.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Parser.html"><span class="name">Parser</span></a><span class="result"> extends <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.textformat.ParserCompat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="ParserCompatextendsAnyRef"></a><a id="ParserCompat:ParserCompat"></a>
       <span class="permalink">
       <a href="../../scalapb/textformat/ParserCompat.html" title="Permalink">
@@ -313,6 +337,22 @@
       </span>
       <span class="symbol">
         <a title="" href="ParserCompat.html"><span class="name">ParserCompat</span></a><span class="result"> extends <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.textformat.Position" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PositionextendsProductwithSerializable"></a><a id="Position:Position"></a>
+      <span class="permalink">
+      <a href="../../scalapb/textformat/Position.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Position.html"><span class="name">Position</span></a><span class="params">(<span name="line">line: <span class="extype" name="scala.Int">Int</span></span>, <span name="col">col: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -344,7 +384,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TArray.html"><span class="name">TArray</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TArray.html"><span class="name">TArray</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="values">values: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -360,7 +400,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TBytes.html"><span class="name">TBytes</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TBytes.html"><span class="name">TBytes</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -376,7 +416,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TField.html"><span class="name">TField</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TField.html"><span class="name">TField</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -392,7 +432,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TIntLiteral.html"><span class="name">TIntLiteral</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <a href="../../scala/index.html#BigInt=scala.math.BigInt" class="extmbr" name="scala.BigInt">BigInt</a></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TIntLiteral.html"><span class="name">TIntLiteral</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="value">value: <a href="../../scala/index.html#BigInt=scala.math.BigInt" class="extmbr" name="scala.BigInt">BigInt</a></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -408,7 +448,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TLiteral.html"><span class="name">TLiteral</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TLiteral.html"><span class="name">TLiteral</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TPrimitive.html" class="extype" name="scalapb.textformat.TPrimitive">TPrimitive</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -424,7 +464,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="TMessage.html"><span class="name">TMessage</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="fields">fields: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TField.html" class="extype" name="scalapb.textformat.TField">TField</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="" href="TMessage.html"><span class="name">TMessage</span></a><span class="params">(<span name="position">position: <a href="Position.html" class="extype" name="scalapb.textformat.Position">Position</a></span>, <span name="fields">fields: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="TField.html" class="extype" name="scalapb.textformat.TField">TField</a>]</span>)</span><span class="result"> extends <a href="TValue.html" class="extype" name="scalapb.textformat.TValue">TValue</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       
@@ -476,6 +516,22 @@
       </span>
       
       
+    </li><li name="scalapb.textformat.Tokenizer" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TokenizerextendsAnyRef"></a><a id="Tokenizer:Tokenizer"></a>
+      <span class="permalink">
+      <a href="../../scalapb/textformat/Tokenizer.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Tokenizer.html"><span class="name">Tokenizer</span></a><span class="result"> extends <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
     </li></ol>
             </div>
 
@@ -484,23 +540,7 @@
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="scalapb.textformat.Basics" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Basics"></a><a id="Basics:Basics"></a>
-      <span class="permalink">
-      <a href="../../scalapb/textformat/Basics$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="Basics$.html"><span class="name">Basics</span></a><span class="result"> extends <a href="ParserCompat.html" class="extype" name="scalapb.textformat.ParserCompat">ParserCompat</a></span>
-      </span>
-      
-      
-    </li><li name="scalapb.textformat.Constants" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+                <li name="scalapb.textformat.Constants" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Constants"></a><a id="Constants:Constants"></a>
       <span class="permalink">
       <a href="../../scalapb/textformat/Constants$.html" title="Permalink">
@@ -529,6 +569,22 @@
       </span>
       <span class="symbol">
         <a title="" href="Printer$.html"><span class="name">Printer</span></a>
+      </span>
+      
+      
+    </li><li name="scalapb.textformat.Tokenizer" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tokenizer"></a><a id="Tokenizer:Tokenizer"></a>
+      <span class="permalink">
+      <a href="../../scalapb/textformat/Tokenizer$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Tokenizer$.html"><span class="name">Tokenizer</span></a>
       </span>
       
       
