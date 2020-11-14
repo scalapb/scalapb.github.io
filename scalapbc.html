@@ -1,134 +1,19 @@
-<!DOCTYPE html><html><head><title>ScalaPB: ScalaPBC</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: ScalaPBC" /><meta name="title" property="og:title" content="ScalaPB: ScalaPBC" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: ScalaPBC" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/pattern-style.css" /><link rel="stylesheet" href="/css/custom.css" /><script async="async">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-346180-20' , 'auto');
-ga('send', 'pageview');
-      </script></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class="">Generated code</a></li> <li><a href="/customizations.html" class="">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class=" active ">ScalaPBC</a></li> <li><a href="/third-party-protos.html" class="">Using third-party protos</a></li> <li><a href="/common-protos.html" class="">Common protos</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class="">Migrating</a></li> <li><a href="/contact.html" class="">Contact us</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye"></i><span>Watchers<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-star-o"></i><span>Stars<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="scalapbc-scalapb-standalone-compiler">ScalaPBC: ScalaPB standalone compiler</h1>
-
-<p>ScalaPBC is a tool that lets you generate Scala sources from the command line (or from a maven build).</p>
-
-<h2 id="installation">Installation</h2>
-
-<p>You can download the current release here: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/scalapbc-0.10.1.zip">scalapbc-0.10.1.zip</a>.</p>
-
-<p>Older versions can be found in the <a href="https://github.com/scalapb/ScalaPB/releases">releases page</a>.</p>
-
-<p>Unzip the file, and inside you will find two scripts: <code class="language-plaintext highlighter-rouge">bin/scalapbc</code> (and
-<code class="language-plaintext highlighter-rouge">bin/scalapbc.bat</code>) that can be used on Unix/Linux/Mac OS X (and Windows,
-respectively).</p>
-
-<h2 id="usage">Usage</h2>
-
-<p>ScalaPBC is used exactly like protoc. In fact, scalapbc calls protoc.
-It ships with <a href="https://github.com/os72/protoc-jar">multiple versions</a> of protoc embedded in the jar and you can pick the one you want to use by passing the desired version as the
-first command line argument:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.11.1 <span class="o">[</span>options]
-</code></pre></div></div>
-
-<p>To generate Scala code, invoke ScalaPBC like this:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.5.1 <span class="nt">--scala_out</span><span class="o">=</span>some/output/directory myproto.proto
-</code></pre></div></div>
-
-<p>To generate both Scala code and Java code along with Java conversions:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/scalapbc <span class="nt">-v3</span>.5.1 <span class="se">\</span>
-    <span class="nt">--scala_out</span><span class="o">=</span>java_conversions:some/output/directory <span class="se">\</span>
-    <span class="nt">--java_out</span><span class="o">=</span>some/output/directory <span class="se">\</span>
-    myproto.proto
-</code></pre></div></div>
-
-<blockquote>
-  <p>The generated code depends on <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
-</blockquote>
-
-<h2 id="passing-generator-parameters">Passing generator parameters</h2>
-
-<p>If you would like to pass additional options, like <code class="language-plaintext highlighter-rouge">java_conversions</code>,
-<code class="language-plaintext highlighter-rouge">flat_package</code>, or <code class="language-plaintext highlighter-rouge">single_line_to_proto_string</code>, it can be done like this:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>OPT1,OPT2:path/to/output/dir/
-</code></pre></div></div>
-
-<p>where OPT1,OPT2 is a comma-separated list of options, followed by a colon
-(<code class="language-plaintext highlighter-rouge">:</code>) and then the output directory. For example:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc my.proto <span class="nt">--scala_out</span><span class="o">=</span>flat_package,java_conversions:protos/src/scala/main/
-</code></pre></div></div>
-
-<p>The supported parameters are: <code class="language-plaintext highlighter-rouge">flat_package</code>, <code class="language-plaintext highlighter-rouge">java_conversions</code>, <code class="language-plaintext highlighter-rouge">grpc</code> and <code class="language-plaintext highlighter-rouge">single_line_to_proto_string</code>, <code class="language-plaintext highlighter-rouge">no_lenses</code>, <code class="language-plaintext highlighter-rouge">retain_source_code_info</code>.</p>
-
-<p>Those parameters are described in <a href="/sbt-settings.html#additional-options-to-the-generator">SBT settings</a></p>
-
-<h2 id="loading-additional-generators-from-maven">Loading additional generators from Maven</h2>
-
-<p>ScalaPBC (starting version 0.10.1) can fetch generators from Maven using
-Coursier:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=io.grpc:protoc-gen-grpc-java:1.27.2:default,classifier=linux-x86_64,ext=exe,type=jar -- e2e/src/main/protobuf/service.proto --grpc-java_out=/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
-</code></pre></div></div>
-
-<p>If you use zio-grpc, you can use the following command to generate services
-that use ZIO. This also generates ScalaPB case classes for messages and the
-GRPC descriptors that the generated ZIO code depends on.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/scalapbc --plugin-artifact=com.thesamet.scalapb.zio-grpc:protoc-gen-zio:0.1.0:default,classifier=unix,ext=sh,type=jar -- e2e/src/main/protobuf/service.proto --zio_out=/tmp/out --scala_out=grpc:/tmp/out -Ie2e/src/main/protobuf -Ithird_party -Iprotobuf
-</code></pre></div></div>
-
-<p>bin/scalapbc –plugin-artifact=io.grpc:grpc-java:</p>
-<h2 id="using-scalapb-as-a-proper-protoc-plugin">Using ScalaPB as a proper protoc plugin</h2>
-
-<p>You may want to use ScalaPB code generator as a standard protoc plugin (rather
-than using scalapbc as a wrapper or through SBT).</p>
-
-<p>For Linux and Mac OS X, you can download a native executable version of the plugin for Scala from our <a href="https://github.com/scalapb/ScalaPB/releases">release page</a>:</p>
-
-<ul>
-  <li>For Linux: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/protoc-gen-scala-0.10.1-linux-x86_64.zip">protoc-gen-scala-0.10.1-linux-x86_64.zip</a></li>
-  <li>For OS X: <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/protoc-gen-scala-0.10.1-osx-x86_64.zip">protoc-gen-scala-0.10.1-osx-x86_64.zip</a></li>
-</ul>
-
-<p>Those zip files contain native executables of the plugin for the respective operating system built using GraalVM. If you are using another operating system (such as Windows), or prefer to use a JVM based plugin implementation, you will find in <a href="https://github.com/scalapb/ScalaPB/releases/download/v0.10.1/scalapbc-0.10.1.zip">scalapbc-0.10.1.zip</a> an executable named <code class="language-plaintext highlighter-rouge">bin/protoc-gen-scala</code> which requires a JVM to run (a JVM needs to be available on the path, or through the <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable)</p>
-
-<p>To generate code:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=/path/to/bin/protoc-gen-scala --scala_out=scala
-</code></pre></div></div>
-
-<p>On Windows:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>protoc my.protos --plugin=protoc-gen-scala=/path/to/bin/protoc-gen-scala.bat --scala_out=scala
-</code></pre></div></div>
-
-<p>For passing parameters to the plugin, see the section above.</p>
-
-<blockquote>
-  <p>Note that the standalone plugin provided in <code class="language-plaintext highlighter-rouge">scalapbc</code> needs to be able to find a JVM in the path or through <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable. If you encounter unexpected errors, try to execute the plugin directly from the command line, and the output printed may be useful for further debugging.</p>
-</blockquote>
-
-<blockquote>
-  <p>The generated code depends on <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> to compile. You will To get the code to work, add a dependency on [https://mvnrepository.com/artifact/com.thesamet.scalapb/scalapb-runtime] to your project. The version of <code class="language-plaintext highlighter-rouge">scalapb-runtime</code> needs to match or be newer than the version of the plugin.</p>
-</blockquote>
-</section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/protobuf.min.js"></script><script>
-// For all code blocks, copy the language from the containing div
-// to the inner code tag (where hljs expects it to be)
-const langPrefix = 'language-';
-document.querySelectorAll(`div[class^='${langPrefix}']`).forEach(function(div) {
-  div.classList.forEach(function(cssClass) {
-    if (cssClass.startsWith(langPrefix)) {
-      const lang = cssClass.substring(langPrefix.length);
-      div.querySelectorAll('pre code').forEach(function(code) {
-        code.classList.add(lang);
-      });
-    }
-  });
-});
-
-hljs.configure({languages:['scala','java','bash','protobuf']});
-hljs.initHighlightingOnLoad();
-      </script><script>console.info('\x57\x65\x62\x73\x69\x74\x65\x20\x62\x75\x69\x6c\x74\x20\x77\x69\x74\x68\x3a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x5f\x5f\x0a\x20\x20\x20\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x5f\x20\x20\x2f\x20\x2f\x5f\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x5f\x5f\x5f\x20\x20\x28\x5f\x29\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x28\x5f\x29\x20\x2f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x0a\x20\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x60\x5f\x5f\x20\x5c\x2f\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x20\x2f\x20\x5f\x5f\x2f\x20\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x0a\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x5f\x2f\x20\x2f\x20\x2f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x5f\x5f\x2f\x20\x2f\x20\x20\x2f\x20\x2f\x5f\x2f\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x20\x2f\x5f\x2f\x20\x20\x5f\x5f\x28\x5f\x5f\x20\x20\x29\x0a\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2e\x5f\x5f\x5f\x2f\x5c\x5f\x5f\x2f\x20\x20\x20\x20\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x2f\x20\x20\x20\x5c\x5f\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x0a\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f\x34\x37\x64\x65\x67\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f\x73\x62\x74\x2d\x6d\x69\x63\x72\x6f\x73\x69\x74\x65\x73')</script><script>((window.gitter = {}).chat = {}).options = {
-room: 'ScalaPB/community'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="refresh"
+            content="0;
+                       url=docs/scalapbc.html"
+            />
+        <script type="text/javascript">
+            window.location.href = 'docs/scalapbc';
+        </script>
+        <title>Your Site Title Here</title>
+    </head>
+    <body>
+        If you are not redirected automatically, follow this
+        <a href="docs/scalapbc">link</a>.
+    </body>
+</html>
