@@ -1,19 +1,443 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            http-equiv="refresh"
-            content="0;
-                       url=docs/generated-code.html"
-            />
-        <script type="text/javascript">
-            window.location.href = 'docs/generated-code';
-        </script>
-        <title>Your Site Title Here</title>
-    </head>
-    <body>
-        If you are not redirected automatically, follow this
-        <a href="docs/generated-code">link</a>.
-    </body>
-</html>
+<!DOCTYPE html><html><head><title>ScalaPB: Generated Code</title><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nadav Samet" /><meta name="description" content="Protocol buffer compiler for Scala" /><meta name="og:image" content="/img/poster.png" /><meta name="image" property="og:image" content="/img/poster.png" /><meta name="og:title" content="ScalaPB: Generated Code" /><meta name="title" property="og:title" content="ScalaPB: Generated Code" /><meta name="og:site_name" content="ScalaPB" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Protocol buffer compiler for Scala" /><link rel="icon" type="image/png" href="/img/favicon.png" /><meta name="twitter:title" content="ScalaPB: Generated Code" /><meta name="twitter:image" content="/img/poster.png" /><meta name="twitter:description" content="Protocol buffer compiler for Scala" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" type="image/png" sizes="16x16" href="/img/favicon16x16.png" /><link rel="icon" type="image/png" sizes="24x24" href="/img/favicon24x24.png" /><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon48x48.png" /><link rel="icon" type="image/png" sizes="57x57" href="/img/favicon57x57.png" /><link rel="icon" type="image/png" sizes="60x60" href="/img/favicon60x60.png" /><link rel="icon" type="image/png" sizes="64x64" href="/img/favicon64x64.png" /><link rel="icon" type="image/png" sizes="70x70" href="/img/favicon70x70.png" /><link rel="icon" type="image/png" sizes="72x72" href="/img/favicon72x72.png" /><link rel="icon" type="image/png" sizes="76x76" href="/img/favicon76x76.png" /><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon96x96.png" /><link rel="icon" type="image/png" sizes="114x114" href="/img/favicon114x114.png" /><link rel="icon" type="image/png" sizes="120x120" href="/img/favicon120x120.png" /><link rel="icon" type="image/png" sizes="128x128" href="/img/favicon128x128.png" /><link rel="icon" type="image/png" sizes="144x144" href="/img/favicon144x144.png" /><link rel="icon" type="image/png" sizes="150x150" href="/img/favicon150x150.png" /><link rel="icon" type="image/png" sizes="152x152" href="/img/favicon152x152.png" /><link rel="icon" type="image/png" sizes="196x196" href="/img/favicon196x196.png" /><link rel="icon" type="image/png" sizes="310x310" href="/img/favicon310x310.png" /><link rel="icon" type="image/png" sizes="310x150" href="/img/favicon310x150.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/highlight/styles/atom-one-light.css" /><link rel="stylesheet" href="/css/pattern-style.css" /><link rel="stylesheet" href="/css/custom.css" /><script async="async">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-346180-20' , 'auto');
+ga('send', 'pageview');
+      </script></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/" class="brand"><div class="brand-wrapper"><span>ScalaPB</span></div></a></li> <li><a href="/" class="">About</a></li> <li><a href="/sbt-settings.html" class="">SBT Settings</a></li> <li><a href="/generated-code.html" class=" active ">Generated code</a></li> <li><a href="/customizations.html" class="">Customizations</a></li> <li><a href="/sealed-oneofs.html" class="">Sealed oneofs</a></li> <li><a href="/user_defined_options.html" class="">User-defined options</a></li> <li><a href="/grpc.html" class="">gRPC</a></li> <li><a href="/scala.js.html" class="">Scala.js</a></li> <li><a href="/sparksql.html" class="">SparkSQL</a></li> <li><a href="/json.html" class="">JSON</a></li> <li><a href="/scalapbc.html" class="">ScalaPBC</a></li> <li><a href="/third-party-protos.html" class="">Using third-party protos</a></li> <li><a href="/common-protos.html" class="">Common protos</a></li> <li><a href="/api/scalapb/latest/" class="">API Docs</a></li> <li><a href="/faq.html" class="">FAQ</a></li> <li><a href="/migrating.html" class="">Migrating</a></li> <li><a href="/contact.html" class="">Contact us</a></li></ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li id="gh-eyes-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye"></i><span>Watchers<span id="eyes" class="label label-default">--</span></span></a></li><li id="gh-stars-item" class="hidden-xs"><a href="https://github.com/scalapb/ScalaPB" target="_blank" rel="noopener noreferrer"><i class="fa fa-star-o"></i><span>Stars<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('ScalaPB Protocol buffer compiler for Scala');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="scalapb" data-github-repo="ScalaPB"><div class="content-wrapper"><section><h1 id="generated-code">Generated Code</h1>
+
+<p>This page describes the code generated by ScalaPB and how to use it.</p>
+
+<h2 id="default-package-structure">Default Package Structure</h2>
+
+<p>The generator will create a Scala file for each top-level message and enum
+in your proto file. Using multiple files results in a better incremental
+compilation performance.</p>
+
+<p>The Scala package of the generated files will be determined as follows:</p>
+
+<ul>
+  <li>If the <code class="language-plaintext highlighter-rouge">java_package</code> option is defined, then the Scala package will be
+<code class="language-plaintext highlighter-rouge">java_package.base_name</code> where <code class="language-plaintext highlighter-rouge">base_name</code> is the name of the proto file
+without the <code class="language-plaintext highlighter-rouge">.proto</code> extension.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">java_package</code> is undefined, but the file specifies a package name
+via the <code class="language-plaintext highlighter-rouge">package</code> keyword then the Scala package will be
+<code class="language-plaintext highlighter-rouge">package.base_name</code>.</li>
+  <li>If neither <code class="language-plaintext highlighter-rouge">java_package</code> nor <code class="language-plaintext highlighter-rouge">package</code> are specified, the Scala package
+will be just <code class="language-plaintext highlighter-rouge">base_name</code>.</li>
+</ul>
+
+<p>From version 0.4.2, there is a way to customize the package name by using
+<a href="/customizations.html">file-level options</a>.</p>
+
+<h2 id="messages">Messages</h2>
+
+<p>Each message corresponds to a final case class and a companion object.
+Optional fields are wrapped in an <code class="language-plaintext highlighter-rouge">Option[]</code>, repeated fields are given as
+<code class="language-plaintext highlighter-rouge">Seq[]</code>, and required fields (which you should not use, see “Required is
+forever” in the <a href="https://developers.google.com/protocol-buffers/docs/proto#simple">Language
+Guide</a> are
+normal members.</p>
+
+<p>Note that in proto3, scalar (non-message) fields are not wrapped in <code class="language-plaintext highlighter-rouge">Option</code>,</p>
+
+<p>For example, if your protocol buffer looks like this:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">message</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">int32</span> <span class="na">age</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="k">repeated</span> <span class="n">Address</span> <span class="na">addresses</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Address</span> <span class="p">{</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">street</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">optional</span> <span class="kt">string</span> <span class="na">city</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>…then the compiler will generate code that looks like this:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span>
+    <span class="n">name</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
+    <span class="n">age</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
+    <span class="n">addresses</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Address</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Nil</span><span class="o">,</span> <span class="o">...)</span> <span class="k">extends</span> <span class="nc">GeneratedMessage</span> <span class="o">{</span>
+
+    <span class="k">def</span> <span class="nf">toByteArray</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+    <span class="c1">// more stuff...</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Person</span> <span class="k">extends</span> <span class="nc">GeneratedMessageCompanion</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">parseFrom</span><span class="o">(</span><span class="n">bytes</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">])</span><span class="k">:</span> <span class="kt">Person</span> <span class="o">=</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+    <span class="c1">// more stuff...</span>
+<span class="o">}</span>
+
+<span class="c1">// similar stuff for Address...</span>
+</code></pre></div></div>
+
+<p>The case class contains various methods for serialization, and the companion
+object contains method for parsing. <a href="https://github.com/scalapb/ScalaPB/blob/master/scalapb-runtime/shared/src/main/scala/scalapb/GeneratedMessageCompanion.scala">See the source code for
+<code class="language-plaintext highlighter-rouge">GeneratedMessage</code> and
+<code class="language-plaintext highlighter-rouge">GeneratedMessageCompanion</code></a>
+to see what methods are available</p>
+
+<h3 id="building-new-messages">Building New Messages</h3>
+
+<p>Create a new instance of a message by calling the constructor (as you normally
+would for a case class):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p1</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">()</span>
+
+<span class="k">val</span> <span class="nv">p2</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"John"</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>When constructing messages, it is advised to use named arguments
+Person(<strong>name</strong> = x, <strong>age</strong> = y) to ensure your code does not rely on the
+order of the fields in the protocol buffer definition.</p>
+
+<h3 id="updating-messages">Updating Messages</h3>
+
+<p>Messages are immutables: once you created a message instance it can not be
+changed. Messages are thread-safe: you can access the same message instance
+from multiple threads.</p>
+
+<p>When you want to modify a message, simply create a new one based on the
+original. You can use the <code class="language-plaintext highlighter-rouge">copy()</code> method Scala provides for all case classes,
+however ScalaPB provides additional methods to make it even easier.</p>
+
+<p>The first method is using a <code class="language-plaintext highlighter-rouge">withX()</code> method, where <code class="language-plaintext highlighter-rouge">X</code> is a name of a field.
+For example</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">withName</span><span class="o">(</span><span class="s">"John"</span><span class="o">).</span><span class="py">withAge</span><span class="o">(</span><span class="mi">29</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Note that when using the <code class="language-plaintext highlighter-rouge">withX()</code> method on an optional field, you do not
+need to provide the <code class="language-plaintext highlighter-rouge">Some()</code>.</p>
+
+<p>Another way to update a message is using the <code class="language-plaintext highlighter-rouge">update()</code> method:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">name</span> <span class="o">:=</span> <span class="s">"John"</span><span class="o">,</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">age</span> <span class="o">:=</span> <span class="mi">29</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">update()</code> method takes “mutations” (like the assignments above), and
+applies them on the object.  Using the <code class="language-plaintext highlighter-rouge">update()</code> method, as we will see
+below, usually results in a more concise code, especially when your fields are
+message types.</p>
+
+<h2 id="optional-fields">Optional Fields</h2>
+
+<p>Optional fields are wrapped inside an <code class="language-plaintext highlighter-rouge">Option</code>.  The compiler will generate a
+<code class="language-plaintext highlighter-rouge">getX()</code> method that will return the option’s value if it is set, or a
+default value for the field if it is unset (that is, if it is <code class="language-plaintext highlighter-rouge">None</code>)</p>
+
+<p>There are two ways to update an optional field using the <code class="language-plaintext highlighter-rouge">update()</code> method:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
+  <span class="c1">// Pass the value directly:</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">name</span> <span class="o">:=</span> <span class="s">"John"</span><span class="o">,</span>
+
+  <span class="c1">// Use the optionalX prefix and pass an Option:</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">optionalAge</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="mi">37</span><span class="o">)</span>  <span class="c1">// ...or None</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>The first way sets the field with a value, the second way lets you pass an
+<code class="language-plaintext highlighter-rouge">Option[]</code> so it is possible to set the field to <code class="language-plaintext highlighter-rouge">None</code>.</p>
+
+<p>For each optional field <code class="language-plaintext highlighter-rouge">X</code>, the compiler also generates a <code class="language-plaintext highlighter-rouge">clearX()</code> method
+that returns a new instance of the message which is identical to the original
+one except that the field is assigned the value <code class="language-plaintext highlighter-rouge">None</code>.</p>
+
+<h2 id="required-fields">Required Fields</h2>
+
+<p>Required fields have no default value in the generated constructor, so you
+must specify them when you instantiate a new message. Differences from
+optional fields:</p>
+
+<ul>
+  <li>The value of the field is not wrapped inside an <code class="language-plaintext highlighter-rouge">Option</code>.</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">getX</code> method (you can always use <code class="language-plaintext highlighter-rouge">.x</code>)</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">clearX</code> method (since that will result in an invalid message)</li>
+  <li>There is no <code class="language-plaintext highlighter-rouge">_.optionalX</code> lens for the <code class="language-plaintext highlighter-rouge">update()</code> method.</li>
+</ul>
+
+<h2 id="repeated-fields">Repeated Fields</h2>
+
+<p>Repeated fields are provided as a <code class="language-plaintext highlighter-rouge">Seq[T]</code>. The compiler will generate the
+following methods:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">addFoo(f1, [f2, f3, ...]: Foo)</code>: returns a copy with the given elements added to the
+original list.</li>
+  <li><code class="language-plaintext highlighter-rouge">addAllFoo(fs: Seq[Foo])</code>: returns a copy with the given sequence of
+elements added to the original list.</li>
+  <li><code class="language-plaintext highlighter-rouge">withX(otherList)</code>: replace the sequence with another.</li>
+  <li><code class="language-plaintext highlighter-rouge">clearX</code>: replace with the sequence with an empty one.</li>
+</ul>
+
+<p>Using <code class="language-plaintext highlighter-rouge">update()</code> is especially fun with repeated fields:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
+  <span class="c1">// Override the addresses</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span> <span class="o">:=</span> <span class="n">newListOfAddress</span><span class="o">,</span>
+
+  <span class="c1">// Add one address:</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span> <span class="o">:+=</span> <span class="n">address1</span><span class="o">,</span>
+
+  <span class="c1">// Add a list of addresses:</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span> <span class="o">:++=</span> <span class="nc">Seq</span><span class="o">(</span><span class="n">address1</span><span class="o">,</span> <span class="n">address2</span><span class="o">),</span>
+
+  <span class="c1">// Modify an address in the list by index!</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="py">street</span> <span class="o">:=</span> <span class="s">"Townsend St."</span><span class="o">,</span>
+
+  <span class="c1">// Modify all addresses:</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">city</span> <span class="o">:=</span> <span class="s">"San Francisco"</span><span class="o">),</span>
+
+  <span class="c1">// Apply a transformation to all addresses (this is</span>
+  <span class="c1">// just for showing off, it is not specific for</span>
+  <span class="c1">// repeatables - it happens in the nested mutations)</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">addresses</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">city</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">trim</span><span class="o">))</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="oneof-fields">Oneof Fields</h2>
+
+<p>Oneofs are great when you model a message that has multiple disjoint cases. An
+example use case would be:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Represent a payment by credit card</span>
+<span class="kd">message</span> <span class="nc">CreditCardPayment</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">last4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">int32</span> <span class="na">expiration_month</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">int32</span> <span class="na">expiration_year</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Represent a payment by credit card</span>
+<span class="kd">message</span> <span class="nc">BankTransferPayment</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">routing_number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">account_number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Represents an order placed by a customer:</span>
+<span class="kd">message</span> <span class="nc">Order</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="kt">int32</span> <span class="na">amount</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">optional</span> <span class="kt">string</span> <span class="na">customer_id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="c1">// How did we get paid? At most one option must be set.</span>
+    <span class="k">oneof</span> <span class="n">payment_type</span> <span class="p">{</span>
+        <span class="n">CreditCardPayment</span> <span class="na">credit_card</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">BankTransferPayment</span> <span class="na">bank</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>The compiler will generate code that looks like this:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">CreditCardPayment</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">BankTransfer</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Order</span><span class="o">(...,</span> <span class="n">paymentType</span><span class="k">:</span> <span class="kt">Payment.PaymentType</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Set the payment type to a specific case:</span>
+    <span class="k">def</span> <span class="nf">withCreditCard</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">CreditCardPayment</span><span class="o">)</span><span class="k">:</span> <span class="kt">Order</span>
+    <span class="k">def</span> <span class="nf">withBank</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">BankTransferPayment</span><span class="o">)</span><span class="k">:</span> <span class="kt">Order</span>
+
+    <span class="c1">// Sets the entire payment type to a new value:</span>
+    <span class="k">def</span> <span class="nf">withPaymentType</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">PaymentType</span><span class="o">)</span><span class="k">:</span> <span class="kt">Order</span>
+
+    <span class="c1">// Sets the PaymentType to Empty</span>
+    <span class="k">def</span> <span class="nf">clearPaymentType</span><span class="k">:</span> <span class="kt">Order</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Order</span> <span class="o">{</span>
+    <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">PaymentType</span> <span class="o">{</span>
+        <span class="k">def</span> <span class="nf">isEmpty</span><span class="k">:</span> <span class="kt">Boolean</span>
+        <span class="k">def</span> <span class="nf">isDefined</span><span class="k">:</span> <span class="kt">Boolean</span>
+        <span class="k">def</span> <span class="nf">isCreditCard</span><span class="k">:</span> <span class="kt">Boolean</span>
+        <span class="k">def</span> <span class="nf">isBank</span><span class="k">:</span> <span class="kt">Boolean</span>
+        <span class="k">def</span> <span class="nf">creditCard</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">CreditCardPayment</span><span class="o">]</span>
+        <span class="k">def</span> <span class="nf">bank</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">BankTransferPayment</span><span class="o">]</span>
+    <span class="o">}</span>
+
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">Empty</span> <span class="k">extends</span> <span class="nc">PaymentType</span>
+
+    <span class="k">case</span> <span class="k">class</span> <span class="nc">CreditCard</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">CreditCardPayment</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">PaymentType</span>
+
+    <span class="k">case</span> <span class="k">class</span> <span class="nc">Bank</span><span class="o">(</span><span class="n">v</span><span class="k">:</span> <span class="kt">CreditCardPayment</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">PaymentType</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>This enables writing coding like this:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">o1</span> <span class="k">=</span> <span class="nc">Order</span><span class="o">()</span>
+  <span class="o">.</span><span class="py">withCreditCard</span><span class="o">(</span><span class="nc">CreditCardPayment</span><span class="o">(</span><span class="n">last4</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"4848"</span><span class="o">)))</span>
+
+<span class="c1">// which is equivalent to:</span>
+<span class="k">val</span> <span class="nv">o2</span> <span class="k">=</span> <span class="nc">Order</span><span class="o">().</span><span class="py">update</span><span class="o">(</span>
+  <span class="nv">_</span><span class="o">.</span><span class="py">creditCard</span><span class="o">.</span><span class="py">last4</span> <span class="o">:=</span> <span class="s">"4848"</span><span class="o">)</span>
+
+<span class="c1">// This changes the payment type to a bank, so the credit card data is</span>
+<span class="c1">// not reachable any more through o3.</span>
+<span class="k">val</span> <span class="nv">o3</span> <span class="k">=</span> <span class="nv">o1</span><span class="o">.</span><span class="py">update</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">bank</span><span class="o">.</span><span class="py">routingNumber</span> <span class="o">:=</span> <span class="s">"333"</span><span class="o">)</span>
+
+<span class="nf">if</span> <span class="o">(</span><span class="nv">o3</span><span class="o">.</span><span class="py">paymentType</span><span class="o">.</span><span class="py">isBank</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Do something useful.</span>
+<span class="o">}</span>
+
+<span class="c1">// Pattern matching:</span>
+<span class="k">import</span> <span class="nn">Order.PaymentType</span>
+<span class="nv">o3</span><span class="o">.</span><span class="py">paymentType</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nv">PaymentType</span><span class="o">.</span><span class="py">CreditCard</span><span class="o">(</span><span class="n">cc</span><span class="o">)</span> <span class="k">=&gt;</span>  <span class="c1">// handle cc</span>
+    <span class="k">case</span> <span class="nv">PaymentType</span><span class="o">.</span><span class="py">Bank</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="k">=&gt;</span>  <span class="c1">// handle b</span>
+    <span class="k">case</span> <span class="nv">PaymentType</span><span class="o">.</span><span class="py">Empty</span> <span class="k">=&gt;</span>  <span class="c1">// handle exceptional case...</span>
+<span class="o">}</span>
+
+<span class="c1">// The one of values are available as Option too:</span>
+<span class="k">val</span> <span class="nv">maybeRoutingNumber</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nv">o3</span><span class="o">.</span><span class="py">paymentType</span><span class="o">.</span><span class="py">bank</span><span class="o">.</span><span class="py">map</span> <span class="o">{</span>
+    <span class="n">b</span> <span class="k">=&gt;</span> <span class="nv">b</span><span class="o">.</span><span class="py">routingNumber</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="enumerations">Enumerations</h2>
+
+<p>Enumerations are implemented using sealed traits that extend <code class="language-plaintext highlighter-rouge">GeneratedEnum</code>.
+This approach, rather than using Scala’s standard Enumeration type, allows
+getting a warning from the Scala compiler when a pattern match is incomplete.</p>
+
+<p>For a definition like:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">enum</span> <span class="n">Weather</span> <span class="p">{</span>
+    <span class="na">SUNNY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">PARTLY_CLOUDY</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="na">RAIN</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Forecast</span> <span class="p">{</span>
+    <span class="k">optional</span> <span class="n">Weather</span> <span class="na">weather</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The compiler will generate:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Weather</span> <span class="k">extends</span> <span class="nc">GeneratedEnum</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">isSunny</span><span class="k">:</span> <span class="kt">Boolean</span>
+    <span class="k">def</span> <span class="nf">isPartlyCloudy</span><span class="k">:</span> <span class="kt">Boolean</span>
+    <span class="k">def</span> <span class="nf">isRain</span><span class="k">:</span> <span class="kt">Boolean</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Weather</span> <span class="k">extends</span> <span class="nc">GeneratedEnumCompanion</span><span class="o">[</span><span class="kt">Weather</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">SUNNY</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">value</span> <span class="k">=</span> <span class="mi">1</span>
+        <span class="k">val</span> <span class="nv">name</span> <span class="k">=</span> <span class="s">"SUNNY"</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Similarly for the other enum values...</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">PARTLY_CLOUDY</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="k">case</span> <span class="k">object</span> <span class="nc">RAIN</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+    <span class="c1">// In ScalaPB &gt;= 0.5.x, this captures unknown value that are received</span>
+    <span class="c1">// from the wire format.  Earlier versions throw a MatchError when</span>
+    <span class="c1">// this happens.</span>
+    <span class="k">case</span> <span class="k">class</span> <span class="nc">Unrecognized</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Weather</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+    <span class="c1">// And a list of all possible values:</span>
+    <span class="k">lazy</span> <span class="k">val</span> <span class="nv">values</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span><span class="nc">SUNNY</span><span class="o">,</span> <span class="nc">PARTLY_CLOUDY</span><span class="o">,</span> <span class="nc">RAIN</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Forecast</span><span class="o">(</span><span class="n">weather</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Weather</span><span class="o">])</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</code></pre></div></div>
+
+<p>And we can write:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">f</span> <span class="k">=</span> <span class="nc">Forecast</span><span class="o">().</span><span class="py">update</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">weather</span> <span class="o">:=</span> <span class="nv">Weather</span><span class="o">.</span><span class="py">PARTLY_CLOUDY</span><span class="o">)</span>
+
+<span class="nf">assert</span><span class="o">(</span><span class="nv">f</span><span class="o">.</span><span class="py">weather</span> <span class="o">==</span> <span class="nc">Some</span><span class="o">(</span><span class="nv">Weather</span><span class="o">.</span><span class="py">PARTLY_CLOUDY</span><span class="o">)</span>
+
+<span class="nf">if</span> <span class="o">(</span><span class="nv">f</span><span class="o">.</span><span class="py">getWeather</span><span class="o">.</span><span class="py">isRain</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// take an umbrella</span>
+<span class="o">}</span>
+
+<span class="c1">// Pattern matching:</span>
+<span class="nv">f</span><span class="o">.</span><span class="py">getWeather</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nv">Weather</span><span class="o">.</span><span class="py">RAIN</span> <span class="k">=&gt;</span>
+    <span class="k">case</span> <span class="nv">Weather</span><span class="o">.</span><span class="py">SUNNY</span> <span class="k">=&gt;</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h2 id="ascii-representation">ASCII Representation</h2>
+
+<p>Each message case-class has <code class="language-plaintext highlighter-rouge">toProtoString</code> method that returns a string
+representation of the message in an ASCII format. The ASCII format can be
+parsed back by the <code class="language-plaintext highlighter-rouge">fromAscii()</code> method available on the companion object.</p>
+
+<p>That format is not officially documented, but at least the standard Python,
+Java and C++ implementations of protobuf attempt to generate (and be able to parse)
+compatible ASCII representations. ScalaPB’s <code class="language-plaintext highlighter-rouge">toString()</code> and <code class="language-plaintext highlighter-rouge">fromAscii</code>
+follow the Java implementation.</p>
+
+<p>The format looks like this:</p>
+
+<div class="language-protobuf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">int_field</span><span class="o">:</span> <span class="mi">17</span>
+<span class="n">string_field</span><span class="o">:</span> <span class="s">"foo"</span>
+<span class="n">repeated_string_field</span><span class="o">:</span> <span class="s">"foo"</span>
+<span class="n">repeated_string_field</span><span class="o">:</span> <span class="s">"bar"</span>
+<span class="n">message_field</span> <span class="p">{</span>
+  <span class="n">field1</span><span class="o">:</span> <span class="s">"value1"</span>
+  <span class="n">color_enum</span><span class="o">:</span> <span class="n">BLUE</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This format can be useful for debugging or for transient data processing, but
+beware of persisting these ASCII representations: unknown fields throw an
+exception, and unlike the binary format, the ASCII format is senstitive to
+renames.</p>
+
+<h2 id="java-conversions">Java Conversions</h2>
+
+<p>If you are dealing with legacy Java protocol buffer code, while still wanting
+to write new code using ScalaPB, it can be useful to generate converters
+to/from the Java protocol buffers. To do this, set <code class="language-plaintext highlighter-rouge">PB.targets in Compile</code>
+like this in your <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PB</span><span class="o">.</span><span class="py">targets</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="nv">PB</span><span class="o">.</span><span class="py">gens</span><span class="o">.</span><span class="py">java</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span><span class="o">,</span>
+  <span class="nv">scalapb</span><span class="o">.</span><span class="py">gen</span><span class="o">(</span><span class="n">javaConversions</span><span class="k">=</span><span class="kc">true</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">sourceManaged</span> <span class="n">in</span> <span class="nc">Compile</span><span class="o">).</span><span class="py">value</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>This will result in the following changes:</p>
+
+<ul>
+  <li>The companion object for each message will have <code class="language-plaintext highlighter-rouge">fromJavaProto</code> and
+<code class="language-plaintext highlighter-rouge">toJavaProto</code> methods.</li>
+  <li>The companion object for enums will have <code class="language-plaintext highlighter-rouge">fromJavaValue</code> and
+<code class="language-plaintext highlighter-rouge">toJavaValue</code> methods.</li>
+</ul>
+</section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="/highlight/highlight.pack.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/protobuf.min.js"></script><script>
+// For all code blocks, copy the language from the containing div
+// to the inner code tag (where hljs expects it to be)
+const langPrefix = 'language-';
+document.querySelectorAll(`div[class^='${langPrefix}']`).forEach(function(div) {
+  div.classList.forEach(function(cssClass) {
+    if (cssClass.startsWith(langPrefix)) {
+      const lang = cssClass.substring(langPrefix.length);
+      div.querySelectorAll('pre code').forEach(function(code) {
+        code.classList.add(lang);
+      });
+    }
+  });
+});
+
+hljs.configure({languages:['scala','java','bash','protobuf']});
+hljs.initHighlightingOnLoad();
+      </script><script>console.info('\x57\x65\x62\x73\x69\x74\x65\x20\x62\x75\x69\x6c\x74\x20\x77\x69\x74\x68\x3a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x5f\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x5f\x20\x5f\x5f\x0a\x20\x20\x20\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x5f\x20\x20\x2f\x20\x2f\x5f\x20\x20\x20\x20\x20\x20\x5f\x5f\x5f\x5f\x20\x5f\x5f\x5f\x20\x20\x28\x5f\x29\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x28\x5f\x29\x20\x2f\x5f\x5f\x5f\x5f\x20\x20\x5f\x5f\x5f\x5f\x5f\x0a\x20\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x60\x5f\x5f\x20\x5c\x2f\x20\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x5f\x2f\x20\x5f\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x20\x2f\x20\x5f\x5f\x2f\x20\x5f\x20\x5c\x2f\x20\x5f\x5f\x5f\x2f\x0a\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x5f\x2f\x20\x2f\x20\x2f\x5f\x2f\x5f\x5f\x5f\x5f\x5f\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x20\x2f\x5f\x5f\x2f\x20\x2f\x20\x20\x2f\x20\x2f\x5f\x2f\x20\x28\x5f\x5f\x20\x20\x29\x20\x2f\x20\x2f\x5f\x2f\x20\x20\x5f\x5f\x28\x5f\x5f\x20\x20\x29\x0a\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2e\x5f\x5f\x5f\x2f\x5c\x5f\x5f\x2f\x20\x20\x20\x20\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x20\x2f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x2f\x20\x20\x20\x5c\x5f\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x5f\x2f\x5c\x5f\x5f\x2f\x5c\x5f\x5f\x5f\x2f\x5f\x5f\x5f\x5f\x2f\x0a\x0a\x68\x74\x74\x70\x73\x3a\x2f\x2f\x34\x37\x64\x65\x67\x2e\x67\x69\x74\x68\x75\x62\x2e\x69\x6f\x2f\x73\x62\x74\x2d\x6d\x69\x63\x72\x6f\x73\x69\x74\x65\x73')</script><script>((window.gitter = {}).chat = {}).options = {
+room: 'ScalaPB/community'};</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script><script src="/js/main.js"></script></body></html>
