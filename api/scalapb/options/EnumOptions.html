@@ -174,7 +174,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumOptions</span><span class="params">(<span name="extends">extends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="companionExtends">companionExtends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a>] with <a href="../ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a>[<a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">EnumOptions</span><span class="params">(<span name="extends">extends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="companionExtends">companionExtends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="baseAnnotations">baseAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="recognizedAnnotations">recognizedAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unrecognizedAnnotations">unrecognizedAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a> with <a href="../lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a>] with <a href="../ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a>[<a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -183,7 +183,10 @@
   Additional classes and traits to mix in to the base trait</p></dd><dt class="param">companionExtends</dt><dd class="cmt"><p>
   Additional classes and traits to mix in to the companion object.</p></dd><dt class="param">type</dt><dd class="cmt"><p>
   All instances of this enum will be converted to this type. An implicit TypeMapper
-  must be present.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  must be present.</p></dd><dt class="param">baseAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated enum's base class.</p></dd><dt class="param">recognizedAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated trait.</p></dd><dt class="param">unrecognizedAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated Unrecognized case class.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -237,9 +240,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalapb.options.EnumOptions#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],type:Option[String],unknownFields:scalapb.UnknownFieldSet):scalapb.options.EnumOptions"></a><a id="&lt;init&gt;:EnumOptions"></a>
+      <a id="&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],type:Option[String],baseAnnotations:Seq[String],recognizedAnnotations:Seq[String],unrecognizedAnnotations:Seq[String],unknownFields:scalapb.UnknownFieldSet):scalapb.options.EnumOptions"></a><a id="&lt;init&gt;:EnumOptions"></a>
       <span class="permalink">
-      <a href="../../scalapb/options/EnumOptions.html#&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],type:Option[String],unknownFields:scalapb.UnknownFieldSet):scalapb.options.EnumOptions" title="Permalink">
+      <a href="../../scalapb/options/EnumOptions.html#&lt;init&gt;(extends:Seq[String],companionExtends:Seq[String],type:Option[String],baseAnnotations:Seq[String],recognizedAnnotations:Seq[String],unrecognizedAnnotations:Seq[String],unknownFields:scalapb.UnknownFieldSet):scalapb.options.EnumOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -248,14 +251,17 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumOptions</span><span class="params">(<span name="extends">extends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="companionExtends">companionExtends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">EnumOptions</span><span class="params">(<span name="extends">extends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="companionExtends">companionExtends: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="type">type: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="baseAnnotations">baseAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="recognizedAnnotations">recognizedAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unrecognizedAnnotations">unrecognizedAnnotations: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extends</dt><dd class="cmt"><p>
   Additional classes and traits to mix in to the base trait</p></dd><dt class="param">companionExtends</dt><dd class="cmt"><p>
   Additional classes and traits to mix in to the companion object.</p></dd><dt class="param">type</dt><dd class="cmt"><p>
   All instances of this enum will be converted to this type. An implicit TypeMapper
-  must be present.</p></dd></dl></div>
+  must be present.</p></dd><dt class="param">baseAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated enum's base class.</p></dd><dt class="param">recognizedAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated trait.</p></dd><dt class="param">unrecognizedAnnotations</dt><dd class="cmt"><p>
+  Custom annotations to add to the generated Unrecognized case class.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -314,6 +320,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#addAllBaseAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllBaseAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions"></a><a id="addAllBaseAnnotations(Iterable[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addAllBaseAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllBaseAnnotations</span><span class="params">(<span name="__vs">__vs: <a href="../../scala/index.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">Iterable</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#addAllCompanionExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="addAllCompanionExtends(__vs:Iterable[String]):scalapb.options.EnumOptions"></a><a id="addAllCompanionExtends(Iterable[String]):EnumOptions"></a>
       <span class="permalink">
@@ -343,6 +365,54 @@
       </span>
       <span class="symbol">
         <span class="name">addAllExtends</span><span class="params">(<span name="__vs">__vs: <a href="../../scala/index.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">Iterable</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#addAllRecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllRecognizedAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions"></a><a id="addAllRecognizedAnnotations(Iterable[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addAllRecognizedAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllRecognizedAnnotations</span><span class="params">(<span name="__vs">__vs: <a href="../../scala/index.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">Iterable</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#addAllUnrecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addAllUnrecognizedAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions"></a><a id="addAllUnrecognizedAnnotations(Iterable[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addAllUnrecognizedAnnotations(__vs:Iterable[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addAllUnrecognizedAnnotations</span><span class="params">(<span name="__vs">__vs: <a href="../../scala/index.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">Iterable</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#addBaseAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addBaseAnnotations(__vs:String*):scalapb.options.EnumOptions"></a><a id="addBaseAnnotations(String*):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addBaseAnnotations(__vs:String*):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addBaseAnnotations</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
       </span>
       
       
@@ -378,6 +448,38 @@
       </span>
       
       
+    </li><li name="scalapb.options.EnumOptions#addRecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addRecognizedAnnotations(__vs:String*):scalapb.options.EnumOptions"></a><a id="addRecognizedAnnotations(String*):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addRecognizedAnnotations(__vs:String*):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addRecognizedAnnotations</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#addUnrecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addUnrecognizedAnnotations(__vs:String*):scalapb.options.EnumOptions"></a><a id="addUnrecognizedAnnotations(String*):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#addUnrecognizedAnnotations(__vs:String*):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addUnrecognizedAnnotations</span><span class="params">(<span name="__vs">__vs: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -394,6 +496,38 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#baseAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="baseAnnotations:Seq[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#baseAnnotations:Seq[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">baseAnnotations</span><span class="result">: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#clearBaseAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearBaseAnnotations:scalapb.options.EnumOptions"></a><a id="clearBaseAnnotations:EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#clearBaseAnnotations:scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearBaseAnnotations</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#clearCompanionExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="clearCompanionExtends:scalapb.options.EnumOptions"></a><a id="clearCompanionExtends:EnumOptions"></a>
       <span class="permalink">
@@ -426,6 +560,22 @@
       </span>
       
       
+    </li><li name="scalapb.options.EnumOptions#clearRecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearRecognizedAnnotations:scalapb.options.EnumOptions"></a><a id="clearRecognizedAnnotations:EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#clearRecognizedAnnotations:scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearRecognizedAnnotations</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#clearType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="clearType:scalapb.options.EnumOptions"></a><a id="clearType:EnumOptions"></a>
       <span class="permalink">
@@ -439,6 +589,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearType</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.options.EnumOptions#clearUnrecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearUnrecognizedAnnotations:scalapb.options.EnumOptions"></a><a id="clearUnrecognizedAnnotations:EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#clearUnrecognizedAnnotations:scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearUnrecognizedAnnotations</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
       </span>
       
       
@@ -721,6 +887,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#recognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="recognizedAnnotations:Seq[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#recognizedAnnotations:Seq[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">recognizedAnnotations</span><span class="result">: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#serializedSize" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="serializedSize:Int"></a>
       <span class="permalink">
@@ -851,6 +1033,22 @@ the companion object.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a> → <a href="../ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a></dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#unrecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="unrecognizedAnnotations:Seq[String]"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#unrecognizedAnnotations:Seq[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unrecognizedAnnotations</span><span class="result">: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
     </li><li name="scalapb.lenses.Updatable#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="update(ms:scalapb.lenses.Lens[A,A]=&gt;scalapb.lenses.Mutation[A]*):A"></a><a id="update((Lens[EnumOptions,EnumOptions])⇒Mutation[EnumOptions]*):EnumOptions"></a>
       <span class="permalink">
@@ -935,6 +1133,22 @@ the companion object.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#withBaseAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withBaseAnnotations(__v:Seq[String]):scalapb.options.EnumOptions"></a><a id="withBaseAnnotations(Seq[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#withBaseAnnotations(__v:Seq[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withBaseAnnotations</span><span class="params">(<span name="__v">__v: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#withCompanionExtends" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withCompanionExtends(__v:Seq[String]):scalapb.options.EnumOptions"></a><a id="withCompanionExtends(Seq[String]):EnumOptions"></a>
       <span class="permalink">
@@ -983,6 +1197,22 @@ the companion object.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a></dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#withRecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withRecognizedAnnotations(__v:Seq[String]):scalapb.options.EnumOptions"></a><a id="withRecognizedAnnotations(Seq[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#withRecognizedAnnotations(__v:Seq[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withRecognizedAnnotations</span><span class="params">(<span name="__v">__v: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.options.EnumOptions#withType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withType(__v:String):scalapb.options.EnumOptions"></a><a id="withType(String):EnumOptions"></a>
       <span class="permalink">
@@ -1015,6 +1245,22 @@ the companion object.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a> → <a href="../ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a></dd></dl></div>
+    </li><li name="scalapb.options.EnumOptions#withUnrecognizedAnnotations" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withUnrecognizedAnnotations(__v:Seq[String]):scalapb.options.EnumOptions"></a><a id="withUnrecognizedAnnotations(Seq[String]):EnumOptions"></a>
+      <span class="permalink">
+      <a href="../../scalapb/options/EnumOptions.html#withUnrecognizedAnnotations(__v:Seq[String]):scalapb.options.EnumOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withUnrecognizedAnnotations</span><span class="params">(<span name="__v">__v: <a href="../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.options.EnumOptions">EnumOptions</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.GeneratedMessage#writeDelimitedTo" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="writeDelimitedTo(output:java.io.OutputStream):Unit"></a><a id="writeDelimitedTo(OutputStream):Unit"></a>
       <span class="permalink">
