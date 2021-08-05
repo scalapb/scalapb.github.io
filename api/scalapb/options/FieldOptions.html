@@ -189,7 +189,9 @@
   Can be specified only if this field is a map. If unspecified,
   it falls back to the file option named <code>map_type</code> which defaults to
   <code>scala.collection.immutable.Map</code></p></dd><dt class="param">noDefaultValueInConstructor</dt><dd class="cmt"><p>
-  If true, no default value will be generated in message constructors.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
+  If true, no default value will be generated for this field in the message
+  constructor. If this field is set, it has the highest precedence and overrides the
+  values at the message-level and file-level.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
   Do not box this value in Option[T]. If set, this overrides MessageOptions.no_box</p></dd><dt class="param">required</dt><dd class="cmt"><p>
   Like no_box it does not box a value in Option[T], but also fails parsing when a value
   is not provided. This enables to emulate required fields in proto3.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
@@ -270,7 +272,9 @@
   Can be specified only if this field is a map. If unspecified,
   it falls back to the file option named <code>map_type</code> which defaults to
   <code>scala.collection.immutable.Map</code></p></dd><dt class="param">noDefaultValueInConstructor</dt><dd class="cmt"><p>
-  If true, no default value will be generated in message constructors.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
+  If true, no default value will be generated for this field in the message
+  constructor. If this field is set, it has the highest precedence and overrides the
+  values at the message-level and file-level.</p></dd><dt class="param">noBox</dt><dd class="cmt"><p>
   Do not box this value in Option[T]. If set, this overrides MessageOptions.no_box</p></dd><dt class="param">required</dt><dd class="cmt"><p>
   Like no_box it does not box a value in Option[T], but also fails parsing when a value
   is not provided. This enables to emulate required fields in proto3.</p></dd></dl></div>
