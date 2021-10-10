@@ -376,8 +376,8 @@
         <span class="name">compose</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="other">other: <a href="../../../../scalapb/lenses/Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a>[<a href="Type.html" class="extype" name="com.google.protobuf.type.Type">Type</a>, <span class="extype" name="scalapb.lenses.Lens.compose.B">B</span>]</span>)</span><span class="result">: <a href="../../../../scalapb/lenses/Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a>[<span class="extype" name="com.google.protobuf.type.Type.TypeLens.UpperPB">UpperPB</span>, <span class="extype" name="scalapb.lenses.Lens.compose.B">B</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Composes two lenses, this enables nesting.</p><div class="fullcomment"><div class="comment cmt"><p>Composes two lenses, this enables nesting.</p><p>If our field of type A has a sub-field of type B, then given a lens for it
-(other: Lens[A, B]) we can create a single lens from Container to B.
+      <p class="shortcomment cmt">Composes two lenses, this enables nesting.</p><div class="fullcomment"><div class="comment cmt"><p>Composes two lenses, this enables nesting.</p><p>If our field of type A has a sub-field of type B, then given a lens for it (other: Lens[A, B])
+we can create a single lens from Container to B.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/lenses/Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
@@ -700,8 +700,8 @@
         <span class="name">set</span><span class="params">(<span name="c">c: <a href="Type.html" class="extype" name="com.google.protobuf.type.Type">Type</a></span>)</span><span class="result">: <a href="../../../../scalapb/lenses/index.html#Mutation[C]=C=&gt;C" class="extmbr" name="scalapb.lenses.Mutation">Mutation</a>[<span class="extype" name="com.google.protobuf.type.Type.TypeLens.UpperPB">UpperPB</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Represents an assignment operator.</p><div class="fullcomment"><div class="comment cmt"><p>Represents an assignment operator.</p><p>Given a value of type A, sets knows how to transform a container such that <code>a</code> is
-assigned to the field.</p><p>We must have get(set(a)(c)) == a
+      <p class="shortcomment cmt">Represents an assignment operator.</p><div class="fullcomment"><div class="comment cmt"><p>Represents an assignment operator.</p><p>Given a value of type A, sets knows how to transform a container such that <code>a</code> is assigned to
+the field.</p><p>We must have get(set(a)(c)) == a
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/lenses/ObjectLens.html" class="extype" name="scalapb.lenses.ObjectLens">ObjectLens</a> → <a href="../../../../scalapb/lenses/Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a></dd></dl></div>
     </li><li name="scalapb.lenses.Lens#setIfDefined" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="setIfDefined(aOpt:Option[A]):scalapb.lenses.Mutation[Container]"></a><a id="setIfDefined(scala.Option[Type]):Mutation[UpperPB]"></a>
@@ -718,8 +718,8 @@ assigned to the field.</p><p>We must have get(set(a)(c)) == a
         <span class="name">setIfDefined</span><span class="params">(<span name="aOpt">aOpt: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Type.html" class="extype" name="com.google.protobuf.type.Type">Type</a>]</span>)</span><span class="result">: <a href="../../../../scalapb/lenses/index.html#Mutation[C]=C=&gt;C" class="extmbr" name="scalapb.lenses.Mutation">Mutation</a>[<span class="extype" name="com.google.protobuf.type.Type.TypeLens.UpperPB">UpperPB</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Optional assignment.</p><div class="fullcomment"><div class="comment cmt"><p>Optional assignment.</p><p>Given a <code>Some[A]</code>, assign the <code>Some</code>'s value to the field. Given <code>None</code>, the
-container is unchanged.
+      <p class="shortcomment cmt">Optional assignment.</p><div class="fullcomment"><div class="comment cmt"><p>Optional assignment.</p><p>Given a <code>Some[A]</code>, assign the <code>Some</code>'s value to the field. Given <code>None</code>, the container is
+unchanged.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/lenses/Lens.html" class="extype" name="scalapb.lenses.Lens">Lens</a></dd></dl></div>
     </li><li name="com.google.protobuf.type.Type.TypeLens#sourceContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="sourceContext:scalapb.lenses.Lens[UpperPB,com.google.protobuf.source_context.SourceContext]"></a><a id="sourceContext:Lens[UpperPB,source_context.SourceContext]"></a>

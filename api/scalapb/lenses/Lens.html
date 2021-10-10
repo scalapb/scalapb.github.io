@@ -253,8 +253,8 @@
         <span class="name">set</span><span class="params">(<span name="a">a: <span class="extype" name="scalapb.lenses.Lens.A">A</span></span>)</span><span class="result">: <a href="index.html#Mutation[C]=C=&gt;C" class="extmbr" name="scalapb.lenses.Mutation">Mutation</a>[<span class="extype" name="scalapb.lenses.Lens.Container">Container</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Represents an assignment operator.</p><div class="fullcomment"><div class="comment cmt"><p>Represents an assignment operator.</p><p>Given a value of type A, sets knows how to transform a container such that <code>a</code> is
-assigned to the field.</p><p>We must have get(set(a)(c)) == a
+      <p class="shortcomment cmt">Represents an assignment operator.</p><div class="fullcomment"><div class="comment cmt"><p>Represents an assignment operator.</p><p>Given a value of type A, sets knows how to transform a container such that <code>a</code> is assigned to
+the field.</p><p>We must have get(set(a)(c)) == a
 </p></div></div>
     </li></ol>
             </div>
@@ -357,8 +357,8 @@ assigned to the field.</p><p>We must have get(set(a)(c)) == a
         <span class="name">compose</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="other">other: <a href="" class="extype" name="scalapb.lenses.Lens">Lens</a>[<span class="extype" name="scalapb.lenses.Lens.A">A</span>, <span class="extype" name="scalapb.lenses.Lens.compose.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.lenses.Lens">Lens</a>[<span class="extype" name="scalapb.lenses.Lens.Container">Container</span>, <span class="extype" name="scalapb.lenses.Lens.compose.B">B</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Composes two lenses, this enables nesting.</p><div class="fullcomment"><div class="comment cmt"><p>Composes two lenses, this enables nesting.</p><p>If our field of type A has a sub-field of type B, then given a lens for it
-(other: Lens[A, B]) we can create a single lens from Container to B.
+      <p class="shortcomment cmt">Composes two lenses, this enables nesting.</p><div class="fullcomment"><div class="comment cmt"><p>Composes two lenses, this enables nesting.</p><p>If our field of type A has a sub-field of type B, then given a lens for it (other: Lens[A, B])
+we can create a single lens from Container to B.
 </p></div></div>
     </li><li name="scala.Any#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
@@ -439,8 +439,8 @@ assigned to the field.</p><p>We must have get(set(a)(c)) == a
         <span class="name">setIfDefined</span><span class="params">(<span name="aOpt">aOpt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scalapb.lenses.Lens.A">A</span>]</span>)</span><span class="result">: <a href="index.html#Mutation[C]=C=&gt;C" class="extmbr" name="scalapb.lenses.Mutation">Mutation</a>[<span class="extype" name="scalapb.lenses.Lens.Container">Container</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Optional assignment.</p><div class="fullcomment"><div class="comment cmt"><p>Optional assignment.</p><p>Given a <code>Some[A]</code>, assign the <code>Some</code>'s value to the field. Given <code>None</code>, the
-container is unchanged.
+      <p class="shortcomment cmt">Optional assignment.</p><div class="fullcomment"><div class="comment cmt"><p>Optional assignment.</p><p>Given a <code>Some[A]</code>, assign the <code>Some</code>'s value to the field. Given <code>None</code>, the container is
+unchanged.
 </p></div></div>
     </li><li name="scala.Any#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>

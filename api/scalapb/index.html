@@ -700,8 +700,8 @@
         <a title="Allows building an instance of a message A" href="MessageBuilder.html"><span class="name">MessageBuilder</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
       </span>
       
-      <p class="shortcomment cmt">Allows building an instance of a message A</p><div class="fullcomment"><div class="comment cmt"><p>Allows building an instance of a message A</p><p>The code generator will create a class that extends MessageBuilder for each message.
-It generally contains a <code>var</code> for each optional and required field, and a
+      <p class="shortcomment cmt">Allows building an instance of a message A</p><div class="fullcomment"><div class="comment cmt"><p>Allows building an instance of a message A</p><p>The code generator will create a class that extends MessageBuilder for each message. It
+generally contains a <code>var</code> for each optional and required field, and a
 [scala.collection.mutable.Builder] for each repeated field.
 </p></div></div>
     </li><li name="scalapb.MessageBuilderCompanion" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
@@ -928,8 +928,7 @@ It generally contains a <code>var</code> for each optional and required field, a
         <a title="Utility functions to encode/decode byte arrays as Base64 strings." href="Encoding$.html"><span class="name">Encoding</span></a>
       </span>
       
-      <p class="shortcomment cmt">Utility functions to encode/decode byte arrays as Base64 strings.</p><div class="fullcomment"><div class="comment cmt"><p>Utility functions to encode/decode byte arrays as Base64 strings.</p><p>Used internally between the protocol buffer compiler and the runtime to encode
-messages.</p><p>We could have used Apache Commons, but we would like to avoid an additional dependency.
+      <p class="shortcomment cmt">Utility functions to encode/decode byte arrays as Base64 strings.</p><div class="fullcomment"><div class="comment cmt"><p>Utility functions to encode/decode byte arrays as Base64 strings.</p><p>Used internally between the protocol buffer compiler and the runtime to encode messages.</p><p>We could have used Apache Commons, but we would like to avoid an additional dependency.
 java.xml.bind.DataTypeConverter.parseBase64Binary is not available on Android. And the Java
 native java.util.Base64 is only available for Java 8...
 </p></div></div>
