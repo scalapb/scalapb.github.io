@@ -250,7 +250,8 @@
 This is useful when you can't add a dependency on scalapb.proto from the proto file that
 defines the enum.
 </p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
-  The fully-qualified name of the enum in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  The fully-qualified name of the enum in the proto name space. Set to <code>*</code> to apply to
+  all enums in scope.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
   Options to apply to the enum. If there are any options defined on the target enum
   they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -276,7 +277,8 @@ options.</p><div class="fullcomment"><div class="comment cmt"><p>AuxEnumValueOpt
 options.  This is useful when you can't add a dependency on scalapb.proto from the proto
 file that defines the enum.
 </p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
-  The fully-qualified name of the enum value in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  The fully-qualified name of the enum value in the proto name space. Set to <code>*</code> to apply
+  to all enum values in scope.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
   Options to apply to the enum value. If there are any options defined on
   the target enum value they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -301,7 +303,8 @@ file that defines the enum.
 This is useful when you can't add a dependency on scalapb.proto from the proto file that
 defines the field.
 </p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
-  The fully-qualified name of the field in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  The fully-qualified name of the field in the proto name space. Set to <code>*</code> to apply to all
+  fields in scope.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
   Options to apply to the field. If there are any options defined on the target message
   they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -326,7 +329,8 @@ defines the field.
 This is useful when you can't add a dependency on scalapb.proto from the proto file that
 defines the message.
 </p></div><dl class="paramcmts block"><dt class="param">target</dt><dd class="cmt"><p>
-  The fully-qualified name of the message in the proto name space.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
+  The fully-qualified name of the message in the proto name space. Set to <code>*</code> to apply to all
+  messages in scope.</p></dd><dt class="param">options</dt><dd class="cmt"><p>
   Options to apply to the message. If there are any options defined on the target message
   they take precedence over the options.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
