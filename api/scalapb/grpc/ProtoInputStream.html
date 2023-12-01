@@ -115,8 +115,8 @@
                         <a href="ConcreteProtoFileDescriptorSupplier.html" title="">ConcreteProtoFileDescriptorSupplier</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="ConcreteProtoMethodDescriptorSupplier$.html" title=""></a>
-                        <a class="class" href="" title=""></a>
-                        <a href="" title="">ConcreteProtoMethodDescriptorSupplier</a>
+                        <a class="class" href="ConcreteProtoMethodDescriptorSupplier.html" title=""></a>
+                        <a href="ConcreteProtoMethodDescriptorSupplier.html" title="">ConcreteProtoMethodDescriptorSupplier</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
                         <a class="object" href="Grpc$.html" title=""></a>
@@ -127,8 +127,8 @@
                         <a href="Marshaller.html" title="">Marshaller</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="ProtoInputStream.html" title="Allows skipping serialization completely when the io.grpc.inprocess.InProcessTransport is used."></a>
-                        <a href="ProtoInputStream.html" title="Allows skipping serialization completely when the io.grpc.inprocess.InProcessTransport is used.">ProtoInputStream</a>
+                        <a class="class" href="" title="Allows skipping serialization completely when the io.grpc.inprocess.InProcessTransport is used."></a>
+                        <a href="" title="Allows skipping serialization completely when the io.grpc.inprocess.InProcessTransport is used.">ProtoInputStream</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
                         <a class="object" href="ProtoUtils$.html" title=""></a>
@@ -148,16 +148,14 @@
           <div id="content">
             <body class="class type">
       <div id="definition">
-        <a href="ConcreteProtoMethodDescriptorSupplier$.html" title="See companion object"><div class="big-circle class-companion-object">c</div></a>
+        <div class="big-circle class">c</div>
         <p id="owner"><a href="../index.html" class="extype" name="scalapb">scalapb</a>.<a href="index.html" class="extype" name="scalapb.grpc">grpc</a></p>
-        <h1><a href="ConcreteProtoMethodDescriptorSupplier$.html" title="See companion object">ConcreteProtoMethodDescriptorSupplier</a><span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html" title="Permalink">
+        <h1>ProtoInputStream<span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"><div>
-            Companion <a href="ConcreteProtoMethodDescriptorSupplier$.html" title="See companion object">object ConcreteProtoMethodDescriptorSupplier</a>
-          </div></span></h3>
+        <h3><span class="morelinks"></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -166,16 +164,19 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">ConcreteProtoMethodDescriptorSupplier</span><span class="result"> extends <span class="extype" name="io.grpc.protobuf.ProtoMethodDescriptorSupplier">ProtoMethodDescriptorSupplier</span> with <span class="extype" name="io.grpc.protobuf.ProtoServiceDescriptorSupplier">ProtoServiceDescriptorSupplier</span></span>
+        <span class="name">ProtoInputStream</span><span class="tparams">[<span name="T">T &lt;: <a href="../GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></span>]</span><span class="result"> extends <span class="extype" name="java.io.InputStream">InputStream</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Allows skipping serialization completely when the io.grpc.inprocess.InProcessTransport is used.
+Inspired by
+https://github.com/grpc/grpc-java/blob/master/protobuf-lite/src/main/java/io/grpc/protobuf/lite/ProtoInputStream.java
+</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="io.grpc.protobuf.ProtoMethodDescriptorSupplier">ProtoMethodDescriptorSupplier</span>, <span class="extype" name="io.grpc.protobuf.ProtoServiceDescriptorSupplier">ProtoServiceDescriptorSupplier</span>, <span class="extype" name="io.grpc.protobuf.ProtoFileDescriptorSupplier">ProtoFileDescriptorSupplier</span>, <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="java.io.InputStream">InputStream</span>, <span class="extype" name="java.io.Closeable">Closeable</span>, <span class="extype" name="java.lang.AutoCloseable">AutoCloseable</span>, <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -201,7 +202,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier"><span>ConcreteProtoMethodDescriptorSupplier</span></li><li class="in" name="io.grpc.protobuf.ProtoMethodDescriptorSupplier"><span>ProtoMethodDescriptorSupplier</span></li><li class="in" name="io.grpc.protobuf.ProtoServiceDescriptorSupplier"><span>ProtoServiceDescriptorSupplier</span></li><li class="in" name="io.grpc.protobuf.ProtoFileDescriptorSupplier"><span>ProtoFileDescriptorSupplier</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="scalapb.grpc.ProtoInputStream"><span>ProtoInputStream</span></li><li class="in" name="java.io.InputStream"><span>InputStream</span></li><li class="in" name="java.io.Closeable"><span>Closeable</span></li><li class="in" name="java.lang.AutoCloseable"><span>AutoCloseable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -221,10 +222,10 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(methodDescriptor:com.google.protobuf.Descriptors.MethodDescriptor):scalapb.grpc.ConcreteProtoMethodDescriptorSupplier"></a><a id="&lt;init&gt;:ConcreteProtoMethodDescriptorSupplier"></a>
+              <ol><li name="scalapb.grpc.ProtoInputStream#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(msg:T):scalapb.grpc.ProtoInputStream[T]"></a><a id="&lt;init&gt;:ProtoInputStream[T]"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#&lt;init&gt;(methodDescriptor:com.google.protobuf.Descriptors.MethodDescriptor):scalapb.grpc.ConcreteProtoMethodDescriptorSupplier" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#&lt;init&gt;(msg:T):scalapb.grpc.ProtoInputStream[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -233,7 +234,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ConcreteProtoMethodDescriptorSupplier</span><span class="params">(<span name="methodDescriptor">methodDescriptor: <span class="extype" name="com.google.protobuf.Descriptors.MethodDescriptor">MethodDescriptor</span></span>)</span>
+        <span class="name">ProtoInputStream</span><span class="params">(<span name="msg">msg: <span class="extype" name="scalapb.grpc.ProtoInputStream.T">T</span></span>)</span>
       </span>
       
       
@@ -250,7 +251,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -266,7 +267,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html###():Int" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -282,7 +283,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -298,7 +299,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -311,10 +312,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scalapb.grpc.ProtoInputStream#available" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="available():Int"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#available():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">available</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ProtoInputStream">ProtoInputStream</a> → InputStream</dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#clone():Object" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -335,10 +352,32 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="java.io.InputStream#close" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="close():Unit"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#close():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">close</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream → Closeable → AutoCloseable</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.io.IOException]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -354,7 +393,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -370,7 +409,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#finalize():Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -392,7 +431,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#getClass():Class[_]" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -408,58 +447,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier#getFileDescriptor" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getFileDescriptor():com.google.protobuf.Descriptors.FileDescriptor"></a><a id="getFileDescriptor():FileDescriptor"></a>
-      <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#getFileDescriptor():com.google.protobuf.Descriptors.FileDescriptor" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getFileDescriptor</span><span class="params">()</span><span class="result">: <span class="extype" name="com.google.protobuf.Descriptors.FileDescriptor">FileDescriptor</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier">ConcreteProtoMethodDescriptorSupplier</a> → ProtoFileDescriptorSupplier</dd></dl></div>
-    </li><li name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier#getMethodDescriptor" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getMethodDescriptor():com.google.protobuf.Descriptors.MethodDescriptor"></a><a id="getMethodDescriptor():MethodDescriptor"></a>
-      <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#getMethodDescriptor():com.google.protobuf.Descriptors.MethodDescriptor" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getMethodDescriptor</span><span class="params">()</span><span class="result">: <span class="extype" name="com.google.protobuf.Descriptors.MethodDescriptor">MethodDescriptor</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier">ConcreteProtoMethodDescriptorSupplier</a> → ProtoMethodDescriptorSupplier</dd></dl></div>
-    </li><li name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier#getServiceDescriptor" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="getServiceDescriptor():com.google.protobuf.Descriptors.ServiceDescriptor"></a><a id="getServiceDescriptor():ServiceDescriptor"></a>
-      <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#getServiceDescriptor():com.google.protobuf.Descriptors.ServiceDescriptor" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getServiceDescriptor</span><span class="params">()</span><span class="result">: <span class="extype" name="com.google.protobuf.Descriptors.ServiceDescriptor">ServiceDescriptor</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ConcreteProtoMethodDescriptorSupplier">ConcreteProtoMethodDescriptorSupplier</a> → ProtoServiceDescriptorSupplier</dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#hashCode():Int" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -478,7 +469,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -491,10 +482,58 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="java.io.InputStream#mark" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mark(x$1:Int):Unit"></a><a id="mark(Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#mark(x$1:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mark</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream</dd></dl></div>
+    </li><li name="java.io.InputStream#markSupported" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="markSupported():Boolean"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#markSupported():Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">markSupported</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream</dd></dl></div>
+    </li><li name="scalapb.grpc.ProtoInputStream#message" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="message:T"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#message:T" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">message</span><span class="result">: <span class="extype" name="scalapb.grpc.ProtoInputStream.T">T</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -510,7 +549,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#notify():Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -529,7 +568,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#notifyAll():Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -545,10 +584,108 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.grpc.ProtoInputStream#read" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(b:Array[Byte],off:Int,len:Int):Int"></a><a id="read(Array[Byte],Int,Int):Int"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#read(b:Array[Byte],off:Int,len:Int):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>, <span name="off">off: <span class="extype" name="scala.Int">Int</span></span>, <span name="len">len: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ProtoInputStream">ProtoInputStream</a> → InputStream</dd></dl></div>
+    </li><li name="scalapb.grpc.ProtoInputStream#read" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read():Int"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#read():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalapb.grpc.ProtoInputStream">ProtoInputStream</a> → InputStream</dd></dl></div>
+    </li><li name="java.io.InputStream#read" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(x$1:Array[Byte]):Int"></a><a id="read(Array[Byte]):Int"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#read(x$1:Array[Byte]):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.io.IOException]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="java.io.InputStream#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reset():Unit"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#reset():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reset</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.io.IOException]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="java.io.InputStream#skip" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="skip(x$1:Long):Long"></a><a id="skip(Long):Long"></a>
+      <span class="permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#skip(x$1:Long):Long" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">skip</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>InputStream</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.io.IOException]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -564,7 +701,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#toString():String" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -580,7 +717,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#wait():Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -602,7 +739,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -624,7 +761,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../scalapb/grpc/ConcreteProtoMethodDescriptorSupplier.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../scalapb/grpc/ProtoInputStream.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -655,12 +792,12 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="io.grpc.protobuf.ProtoMethodDescriptorSupplier">
-              <h3>Inherited from <span class="extype" name="io.grpc.protobuf.ProtoMethodDescriptorSupplier">ProtoMethodDescriptorSupplier</span></h3>
-            </div><div class="parent" name="io.grpc.protobuf.ProtoServiceDescriptorSupplier">
-              <h3>Inherited from <span class="extype" name="io.grpc.protobuf.ProtoServiceDescriptorSupplier">ProtoServiceDescriptorSupplier</span></h3>
-            </div><div class="parent" name="io.grpc.protobuf.ProtoFileDescriptorSupplier">
-              <h3>Inherited from <span class="extype" name="io.grpc.protobuf.ProtoFileDescriptorSupplier">ProtoFileDescriptorSupplier</span></h3>
+        <div class="parent" name="java.io.InputStream">
+              <h3>Inherited from <span class="extype" name="java.io.InputStream">InputStream</span></h3>
+            </div><div class="parent" name="java.io.Closeable">
+              <h3>Inherited from <span class="extype" name="java.io.Closeable">Closeable</span></h3>
+            </div><div class="parent" name="java.lang.AutoCloseable">
+              <h3>Inherited from <span class="extype" name="java.lang.AutoCloseable">AutoCloseable</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="../../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
