@@ -142,6 +142,10 @@
                         <a class="object" href="DescriptorProtoCompanion$.html" title=""></a>
                         <a href="DescriptorProtoCompanion$.html" title="">DescriptorProtoCompanion</a>
                       </li><li class="current-entities indented4">
+                        <a class="object" href="Edition$.html" title=""></a>
+                        <a class="class" href="Edition.html" title="The full set of known editions."></a>
+                        <a href="Edition.html" title="The full set of known editions.">Edition</a>
+                      </li><li class="current-entities indented4">
                         <a class="object" href="EnumDescriptorProto$.html" title=""></a>
                         <a class="class" href="EnumDescriptorProto.html" title="Describes an enum type."></a>
                         <a href="EnumDescriptorProto.html" title="Describes an enum type.">EnumDescriptorProto</a>
@@ -161,6 +165,14 @@
                         <a class="object" href="ExtensionRangeOptions$.html" title=""></a>
                         <a class="class" href="ExtensionRangeOptions.html" title=""></a>
                         <a href="ExtensionRangeOptions.html" title="">ExtensionRangeOptions</a>
+                      </li><li class="current-entities indented4">
+                        <a class="object" href="FeatureSet$.html" title=""></a>
+                        <a class="class" href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped."></a>
+                        <a href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped.">FeatureSet</a>
+                      </li><li class="current-entities indented4">
+                        <a class="object" href="FeatureSetDefaults$.html" title=""></a>
+                        <a class="class" href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features."></a>
+                        <a href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features.">FeatureSetDefaults</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="FieldDescriptorProto$.html" title=""></a>
                         <a class="class" href="FieldDescriptorProto.html" title="Describes a field within a message."></a>
@@ -319,6 +331,26 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.EditionDefault" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="EditionDefaultextendsGeneratedMessagewithUpdatable[com.google.protobuf.descriptor.FieldOptions.EditionDefault]withProductwithSerializable"></a><a id="EditionDefault:EditionDefault"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$EditionDefault.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FieldOptions$$EditionDefault.html"><span class="name">EditionDefault</span></a><span class="params">(<span name="edition">edition: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="value">value: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>
+  Textproto value.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.FieldOptions.FieldOptionsLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FieldOptionsLens[UpperPB]extendsObjectLens[UpperPB,com.google.protobuf.descriptor.FieldOptions]"></a><a id="FieldOptionsLens[UpperPB]:FieldOptionsLens[UpperPB]"></a>
       <span class="permalink">
@@ -351,6 +383,46 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.OptionRetention" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OptionRetentionextendsGeneratedEnum"></a><a id="OptionRetention:OptionRetention"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$OptionRetention.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="If set to RETENTION_SOURCE, the option will be omitted from the binary." href="FieldOptions$$OptionRetention.html"><span class="name">OptionRetention</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnum.html" class="extype" name="scalapb.GeneratedEnum">GeneratedEnum</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">If set to RETENTION_SOURCE, the option will be omitted from the binary.</p><div class="fullcomment"><div class="comment cmt"><p>If set to RETENTION_SOURCE, the option will be omitted from the binary.
+Note: as of January 2023, support for this is in progress and does not yet
+have an effect (b/264593489).
+</p></div></div>
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OptionTargetTypeextendsGeneratedEnum"></a><a id="OptionTargetType:OptionTargetType"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$OptionTargetType.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="This indicates the types of entities that the field may apply to when used as an option." href="FieldOptions$$OptionTargetType.html"><span class="name">OptionTargetType</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnum.html" class="extype" name="scalapb.GeneratedEnum">GeneratedEnum</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">This indicates the types of entities that the field may apply to when used
+as an option.</p><div class="fullcomment"><div class="comment cmt"><p>This indicates the types of entities that the field may apply to when used
+as an option. If it is unset, then the field may be freely used as an
+option on any kind of entity. Note: as of January 2023, support for this is
+in progress and does not yet have an effect (b/264593489).
+</p></div></div>
     </li><li name="scalapb.GeneratedMessageCompanion.ValueType" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ValueType=A"></a><a id="ValueType:ValueType"></a>
       <span class="permalink">
@@ -439,6 +511,22 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#DEBUG_REDACT_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DEBUG_REDACT_FIELD_NUMBER:Int(16)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#DEBUG_REDACT_FIELD_NUMBER:Int(16)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DEBUG_REDACT_FIELD_NUMBER</span><span class="result">: Int(16)</span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.FieldOptions#DEPRECATED_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="DEPRECATED_FIELD_NUMBER:Int(3)"></a>
       <span class="permalink">
@@ -452,6 +540,38 @@
       </span>
       <span class="symbol">
         <span class="name">DEPRECATED_FIELD_NUMBER</span><span class="result">: Int(3)</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#EDITION_DEFAULTS_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EDITION_DEFAULTS_FIELD_NUMBER:Int(20)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#EDITION_DEFAULTS_FIELD_NUMBER:Int(20)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EDITION_DEFAULTS_FIELD_NUMBER</span><span class="result">: Int(20)</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#FEATURES_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FEATURES_FIELD_NUMBER:Int(21)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#FEATURES_FIELD_NUMBER:Int(21)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FEATURES_FIELD_NUMBER</span><span class="result">: Int(21)</span>
       </span>
       
       
@@ -503,6 +623,38 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#RETENTION_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RETENTION_FIELD_NUMBER:Int(17)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#RETENTION_FIELD_NUMBER:Int(17)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RETENTION_FIELD_NUMBER</span><span class="result">: Int(17)</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#TARGETS_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TARGETS_FIELD_NUMBER:Int(19)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#TARGETS_FIELD_NUMBER:Int(19)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TARGETS_FIELD_NUMBER</span><span class="result">: Int(19)</span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.FieldOptions#UNINTERPRETED_OPTION_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="UNINTERPRETED_OPTION_FIELD_NUMBER:Int(999)"></a>
       <span class="permalink">
@@ -516,6 +668,22 @@
       </span>
       <span class="symbol">
         <span class="name">UNINTERPRETED_OPTION_FIELD_NUMBER</span><span class="result">: Int(999)</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#UNVERIFIED_LAZY_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UNVERIFIED_LAZY_FIELD_NUMBER:Int(15)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#UNVERIFIED_LAZY_FIELD_NUMBER:Int(15)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">UNVERIFIED_LAZY_FIELD_NUMBER</span><span class="result">: Int(15)</span>
       </span>
       
       
@@ -933,9 +1101,9 @@ available in Scala.js or scala-native.
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.FieldOptions#of" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions"></a><a id="of(scala.Option[CType],scala.Option[Boolean],scala.Option[JSType],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],Seq[UninterpretedOption]):FieldOptions"></a>
+      <a id="of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions"></a><a id="of(scala.Option[CType],scala.Option[Boolean],scala.Option[JSType],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[OptionRetention],Seq[OptionTargetType],Seq[EditionDefault],scala.Option[FeatureSet],Seq[UninterpretedOption]):FieldOptions"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -944,7 +1112,7 @@ available in Scala.js or scala-native.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="ctype">ctype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$CType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.CType">CType</a>]</span>, <span name="packed">packed: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="jstype">jstype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$JSType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.JSType">JSType</a>]</span>, <span name="lazy">lazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="weak">weak: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>)</span><span class="result">: <a href="FieldOptions.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions">FieldOptions</a></span>
+        <span class="name">of</span><span class="params">(<span name="ctype">ctype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$CType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.CType">CType</a>]</span>, <span name="packed">packed: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="jstype">jstype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$JSType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.JSType">JSType</a>]</span>, <span name="lazy">lazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="unverifiedLazy">unverifiedLazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="weak">weak: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="retention">retention: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$OptionRetention.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionRetention">OptionRetention</a>]</span>, <span name="targets">targets: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$OptionTargetType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType">OptionTargetType</a>]</span>, <span name="editionDefaults">editionDefaults: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>]</span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>]</span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>)</span><span class="result">: <a href="FieldOptions.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions">FieldOptions</a></span>
       </span>
       
       
@@ -1243,6 +1411,22 @@ available in Scala.js or scala-native.
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.EditionDefault" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EditionDefault"></a><a id="EditionDefault:EditionDefault"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$EditionDefault$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FieldOptions$$EditionDefault$.html"><span class="name">EditionDefault</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>] with <a href="../../../../scalapb/JavaProtoSupport.html" class="extype" name="scalapb.JavaProtoSupport">JavaProtoSupport</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>, <span class="extype" name="com.google.protobuf.DescriptorProtos.FieldOptions.EditionDefault">DescriptorProtos.FieldOptions.EditionDefault</span>]</span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.FieldOptions.JSType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="JSType"></a><a id="JSType:JSType"></a>
       <span class="permalink">
@@ -1256,6 +1440,38 @@ available in Scala.js or scala-native.
       </span>
       <span class="symbol">
         <a title="" href="FieldOptions$$JSType$.html"><span class="name">JSType</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnumCompanion.html" class="extype" name="scalapb.GeneratedEnumCompanion">GeneratedEnumCompanion</a>[<a href="FieldOptions$$JSType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.JSType">JSType</a>]</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.OptionRetention" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionRetention"></a><a id="OptionRetention:OptionRetention"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$OptionRetention$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FieldOptions$$OptionRetention$.html"><span class="name">OptionRetention</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnumCompanion.html" class="extype" name="scalapb.GeneratedEnumCompanion">GeneratedEnumCompanion</a>[<a href="FieldOptions$$OptionRetention.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionRetention">OptionRetention</a>]</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionTargetType"></a><a id="OptionTargetType:OptionTargetType"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$OptionTargetType$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FieldOptions$$OptionTargetType$.html"><span class="name">OptionTargetType</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnumCompanion.html" class="extype" name="scalapb.GeneratedEnumCompanion">GeneratedEnumCompanion</a>[<a href="FieldOptions$$OptionTargetType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType">OptionTargetType</a>]</span>
       </span>
       
       
