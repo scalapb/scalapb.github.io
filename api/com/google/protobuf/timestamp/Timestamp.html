@@ -191,9 +191,7 @@ restricting to that range, we ensure that we can convert to and from [RFC
     Timestamp timestamp;
     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));</p><p>Example 4: Compute Timestamp from Java <code>System.currentTimeMillis()</code>.</p><p>    long millis = System.currentTimeMillis();</p><p>    Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)
-        .setNanos((int) ((millis % 1000) * 1000000)).build();</p><p>Example 5: Compute Timestamp from Java <code>Instant.now()</code>.</p><p>    Instant now = Instant.now();</p><p>    Timestamp timestamp =
-        Timestamp.newBuilder().setSeconds(now.getEpochSecond())
-            .setNanos(now.getNano()).build();</p><p>Example 6: Compute Timestamp from current time in Python.</p><p>    timestamp = Timestamp()
+        .setNanos((int) ((millis % 1000) * 1000000)).build();</p><p>Example 5: Compute Timestamp from current time in Python.</p><p>    timestamp = Timestamp()
     timestamp.GetCurrentTime()</p><p># JSON Mapping</p><p>In JSON format, the Timestamp type is encoded as a string in the
 [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the
 format is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot;
@@ -212,7 +210,7 @@ to this format using
 [<code>strftime</code>](https://docs.python.org/2/library/time.html#time.strftime) with
 the time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one can use
 the Joda Time's [<code>ISODateTimeFormat.dateTime()</code>](
-http://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime()
+http://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D
 ) to obtain a formatter capable of generating timestamps in this format.
 </p></div><dl class="paramcmts block"><dt class="param">seconds</dt><dd class="cmt"><p>
   Represents seconds of UTC time since Unix epoch
