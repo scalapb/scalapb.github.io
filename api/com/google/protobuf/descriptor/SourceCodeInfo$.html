@@ -142,10 +142,6 @@
                         <a class="object" href="DescriptorProtoCompanion$.html" title=""></a>
                         <a href="DescriptorProtoCompanion$.html" title="">DescriptorProtoCompanion</a>
                       </li><li class="current-entities indented4">
-                        <a class="object" href="Edition$.html" title=""></a>
-                        <a class="class" href="Edition.html" title="The full set of known editions."></a>
-                        <a href="Edition.html" title="The full set of known editions.">Edition</a>
-                      </li><li class="current-entities indented4">
                         <a class="object" href="EnumDescriptorProto$.html" title=""></a>
                         <a class="class" href="EnumDescriptorProto.html" title="Describes an enum type."></a>
                         <a href="EnumDescriptorProto.html" title="Describes an enum type.">EnumDescriptorProto</a>
@@ -165,14 +161,6 @@
                         <a class="object" href="ExtensionRangeOptions$.html" title=""></a>
                         <a class="class" href="ExtensionRangeOptions.html" title=""></a>
                         <a href="ExtensionRangeOptions.html" title="">ExtensionRangeOptions</a>
-                      </li><li class="current-entities indented4">
-                        <a class="object" href="FeatureSet$.html" title=""></a>
-                        <a class="class" href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped."></a>
-                        <a href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped.">FeatureSet</a>
-                      </li><li class="current-entities indented4">
-                        <a class="object" href="FeatureSetDefaults$.html" title=""></a>
-                        <a class="class" href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features."></a>
-                        <a href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features.">FeatureSetDefaults</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="FieldDescriptorProto$.html" title=""></a>
                         <a class="class" href="FieldDescriptorProto.html" title="Describes a field within a message."></a>
@@ -334,8 +322,8 @@
   Identifies which part of the FileDescriptorProto was defined at this
   location.
   Each element is a field number or an index.  They form a path from
-  the root FileDescriptorProto to the place where the definition appears.
-  For example, this path:
+  the root FileDescriptorProto to the place where the definition.  For
+  example, this path:
     [ 4, 3, 2, 7, 1 ]
   refers to:
     file.message_type(3)  // 4, 3
@@ -377,12 +365,12 @@
     optional string baz = 3;
     // Comment attached to baz.
     // Another line attached to baz.
-    // Comment attached to moo.
+    // Comment attached to qux.
     //
-    // Another line attached to moo.
-    optional double moo = 4;
+    // Another line attached to qux.
+    optional double qux = 4;
     // Detached comment for corge. This is not leading or trailing comments
-    // to moo or corge because there are blank lines separating it from
+    // to qux or corge because there are blank lines separating it from
     // both.
     // Detached comment for corge paragraph 2.
     optional string corge = 5;
