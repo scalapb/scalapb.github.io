@@ -351,6 +351,36 @@
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FeatureSupportextendsGeneratedMessagewithUpdatable[com.google.protobuf.descriptor.FieldOptions.FeatureSupport]withProductwithSerializable"></a><a id="FeatureSupport:FeatureSupport"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Information about the support window of a feature." href="FieldOptions$$FeatureSupport.html"><span class="name">FeatureSupport</span></a><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Information about the support window of a feature.</p><div class="fullcomment"><div class="comment cmt"><p>Information about the support window of a feature.
+</p></div><dl class="paramcmts block"><dt class="param">editionIntroduced</dt><dd class="cmt"><p>
+  The edition that this feature was first available in.  In editions
+  earlier than this one, the default assigned to EDITION_LEGACY will be
+  used, and proto files will not be able to override it.</p></dd><dt class="param">editionDeprecated</dt><dd class="cmt"><p>
+  The edition this feature becomes deprecated in.  Using this after this
+  edition may trigger warnings.</p></dd><dt class="param">deprecationWarning</dt><dd class="cmt"><p>
+  The deprecation warning text if this feature is used after the edition it
+  was marked deprecated in.</p></dd><dt class="param">editionRemoved</dt><dd class="cmt"><p>
+  The edition this feature is no longer available in.  In editions after
+  this one, the last default assigned will be used, and proto files will
+  not be able to override it.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.FieldOptions.FieldOptionsLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FieldOptionsLens[UpperPB]extendsObjectLens[UpperPB,com.google.protobuf.descriptor.FieldOptions]"></a><a id="FieldOptionsLens[UpperPB]:FieldOptionsLens[UpperPB]"></a>
       <span class="permalink">
@@ -572,6 +602,22 @@ in progress and does not yet have an effect (b/264593489).
       </span>
       <span class="symbol">
         <span class="name">FEATURES_FIELD_NUMBER</span><span class="result">: Int(21)</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions#FEATURE_SUPPORT_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FEATURE_SUPPORT_FIELD_NUMBER:Int(22)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#FEATURE_SUPPORT_FIELD_NUMBER:Int(22)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FEATURE_SUPPORT_FIELD_NUMBER</span><span class="result">: Int(22)</span>
       </span>
       
       
@@ -1101,9 +1147,9 @@ available in Scala.js or scala-native.
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.FieldOptions#of" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions"></a><a id="of(scala.Option[CType],scala.Option[Boolean],scala.Option[JSType],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[OptionRetention],Seq[OptionTargetType],Seq[EditionDefault],scala.Option[FeatureSet],Seq[UninterpretedOption]):FieldOptions"></a>
+      <a id="of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions"></a><a id="of(scala.Option[CType],scala.Option[Boolean],scala.Option[JSType],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[Boolean],scala.Option[OptionRetention],Seq[OptionTargetType],Seq[EditionDefault],scala.Option[FeatureSet],scala.Option[FeatureSupport],Seq[UninterpretedOption]):FieldOptions"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$.html#of(ctype:Option[com.google.protobuf.descriptor.FieldOptions.CType],packed:Option[Boolean],jstype:Option[com.google.protobuf.descriptor.FieldOptions.JSType],lazy:Option[Boolean],unverifiedLazy:Option[Boolean],deprecated:Option[Boolean],weak:Option[Boolean],debugRedact:Option[Boolean],retention:Option[com.google.protobuf.descriptor.FieldOptions.OptionRetention],targets:Seq[com.google.protobuf.descriptor.FieldOptions.OptionTargetType],editionDefaults:Seq[com.google.protobuf.descriptor.FieldOptions.EditionDefault],features:Option[com.google.protobuf.descriptor.FeatureSet],featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.FieldOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1112,7 +1158,7 @@ available in Scala.js or scala-native.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="ctype">ctype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$CType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.CType">CType</a>]</span>, <span name="packed">packed: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="jstype">jstype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$JSType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.JSType">JSType</a>]</span>, <span name="lazy">lazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="unverifiedLazy">unverifiedLazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="weak">weak: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="retention">retention: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$OptionRetention.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionRetention">OptionRetention</a>]</span>, <span name="targets">targets: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$OptionTargetType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType">OptionTargetType</a>]</span>, <span name="editionDefaults">editionDefaults: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>]</span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>]</span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>)</span><span class="result">: <a href="FieldOptions.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions">FieldOptions</a></span>
+        <span class="name">of</span><span class="params">(<span name="ctype">ctype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$CType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.CType">CType</a>]</span>, <span name="packed">packed: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="jstype">jstype: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$JSType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.JSType">JSType</a>]</span>, <span name="lazy">lazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="unverifiedLazy">unverifiedLazy: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="weak">weak: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>, <span name="retention">retention: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$OptionRetention.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionRetention">OptionRetention</a>]</span>, <span name="targets">targets: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$OptionTargetType.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.OptionTargetType">OptionTargetType</a>]</span>, <span name="editionDefaults">editionDefaults: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>]</span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>]</span>, <span name="featureSupport">featureSupport: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>]</span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>)</span><span class="result">: <a href="FieldOptions.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions">FieldOptions</a></span>
       </span>
       
       
@@ -1424,6 +1470,22 @@ available in Scala.js or scala-native.
       </span>
       <span class="symbol">
         <a title="" href="FieldOptions$$EditionDefault$.html"><span class="name">EditionDefault</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>] with <a href="../../../../scalapb/JavaProtoSupport.html" class="extype" name="scalapb.JavaProtoSupport">JavaProtoSupport</a>[<a href="FieldOptions$$EditionDefault.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.EditionDefault">EditionDefault</a>, <span class="extype" name="com.google.protobuf.DescriptorProtos.FieldOptions.EditionDefault">DescriptorProtos.FieldOptions.EditionDefault</span>]</span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FeatureSupport"></a><a id="FeatureSupport:FeatureSupport"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FieldOptions$$FeatureSupport$.html"><span class="name">FeatureSupport</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] with <a href="../../../../scalapb/JavaProtoSupport.html" class="extype" name="scalapb.JavaProtoSupport">JavaProtoSupport</a>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>, <span class="extype" name="com.google.protobuf.DescriptorProtos.FieldOptions.FeatureSupport">DescriptorProtos.FieldOptions.FeatureSupport</span>]</span>
       </span>
       
       

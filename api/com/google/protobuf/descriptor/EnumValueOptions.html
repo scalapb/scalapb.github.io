@@ -258,7 +258,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumValueOptions</span><span class="params">(<span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a>] with <a href="../../../../scalapb/ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">EnumValueOptions</span><span class="params">(<span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="featureSupport">featureSupport: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a>] with <a href="../../../../scalapb/ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -271,7 +271,8 @@
   Any features defined in the specific edition.</p></dd><dt class="param">debugRedact</dt><dd class="cmt"><p>
   Indicate that fields annotated with this enum value should not be printed
   out when using debug formats, e.g. when the field contains sensitive
-  credentials.</p></dd><dt class="param">uninterpretedOption</dt><dd class="cmt"><p>
+  credentials.</p></dd><dt class="param">featureSupport</dt><dd class="cmt"><p>
+  Information about the support window of a feature value.</p></dd><dt class="param">uninterpretedOption</dt><dd class="cmt"><p>
   The parser stores options it doesn't recognize here. See above.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
@@ -326,9 +327,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.google.protobuf.descriptor.EnumValueOptions#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(deprecated:Option[Boolean],features:Option[com.google.protobuf.descriptor.FeatureSet],debugRedact:Option[Boolean],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.EnumValueOptions"></a><a id="&lt;init&gt;:EnumValueOptions"></a>
+      <a id="&lt;init&gt;(deprecated:Option[Boolean],features:Option[com.google.protobuf.descriptor.FeatureSet],debugRedact:Option[Boolean],featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.EnumValueOptions"></a><a id="&lt;init&gt;:EnumValueOptions"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#&lt;init&gt;(deprecated:Option[Boolean],features:Option[com.google.protobuf.descriptor.FeatureSet],debugRedact:Option[Boolean],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.EnumValueOptions" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#&lt;init&gt;(deprecated:Option[Boolean],features:Option[com.google.protobuf.descriptor.FeatureSet],debugRedact:Option[Boolean],featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport],uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.EnumValueOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -337,7 +338,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">EnumValueOptions</span><span class="params">(<span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">EnumValueOptions</span><span class="params">(<span name="deprecated">deprecated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="debugRedact">debugRedact: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="featureSupport">featureSupport: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">deprecated</dt><dd class="cmt"><p>
@@ -348,7 +349,8 @@
   Any features defined in the specific edition.</p></dd><dt class="param">debugRedact</dt><dd class="cmt"><p>
   Indicate that fields annotated with this enum value should not be printed
   out when using debug formats, e.g. when the field contains sensitive
-  credentials.</p></dd><dt class="param">uninterpretedOption</dt><dd class="cmt"><p>
+  credentials.</p></dd><dt class="param">featureSupport</dt><dd class="cmt"><p>
+  Information about the support window of a feature value.</p></dd><dt class="param">uninterpretedOption</dt><dd class="cmt"><p>
   The parser stores options it doesn't recognize here. See above.</p></dd></dl></div>
     </li></ol>
             </div>
@@ -485,6 +487,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearDeprecated</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumValueOptions#clearFeatureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearFeatureSupport:com.google.protobuf.descriptor.EnumValueOptions"></a><a id="clearFeatureSupport:EnumValueOptions"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#clearFeatureSupport:com.google.protobuf.descriptor.EnumValueOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearFeatureSupport</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a></span>
       </span>
       
       
@@ -640,6 +658,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a></dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.EnumValueOptions#featureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport]"></a><a id="featureSupport:scala.Option[FeatureSupport]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#featureSupport:Option[com.google.protobuf.descriptor.FieldOptions.FeatureSupport]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">featureSupport</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>]</span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.EnumValueOptions#features" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="features:Option[com.google.protobuf.descriptor.FeatureSet]"></a><a id="features:scala.Option[FeatureSet]"></a>
       <span class="permalink">
@@ -726,6 +760,22 @@
       </span>
       <span class="symbol">
         <span class="name">getDeprecated</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.EnumValueOptions#getFeatureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getFeatureSupport:com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="getFeatureSupport:FeatureSupport"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#getFeatureSupport:com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFeatureSupport</span><span class="result">: <a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
       </span>
       
       
@@ -1110,6 +1160,22 @@ object.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/ExtendableMessage.html" class="extype" name="scalapb.ExtendableMessage">ExtendableMessage</a></dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.EnumValueOptions#withFeatureSupport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withFeatureSupport(__v:com.google.protobuf.descriptor.FieldOptions.FeatureSupport):com.google.protobuf.descriptor.EnumValueOptions"></a><a id="withFeatureSupport(FeatureSupport):EnumValueOptions"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/EnumValueOptions.html#withFeatureSupport(__v:com.google.protobuf.descriptor.FieldOptions.FeatureSupport):com.google.protobuf.descriptor.EnumValueOptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withFeatureSupport</span><span class="params">(<span name="__v">__v: <a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.EnumValueOptions">EnumValueOptions</a></span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.EnumValueOptions#withFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withFeatures(__v:com.google.protobuf.descriptor.FeatureSet):com.google.protobuf.descriptor.EnumValueOptions"></a><a id="withFeatures(FeatureSet):EnumValueOptions"></a>
       <span class="permalink">
