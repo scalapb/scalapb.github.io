@@ -190,7 +190,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="minimumEdition">minimumEdition: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="maximumEdition">maximumEdition: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -205,15 +205,7 @@
   unparseable -- should be reported by writing a message to stderr and
   exiting with a non-zero status code.</p></dd><dt class="param">supportedFeatures</dt><dd class="cmt"><p>
   A bitmask of supported features that the code generator supports.
-  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd><dt class="param">minimumEdition</dt><dd class="cmt"><p>
-  The minimum edition this plugin supports.  This will be treated as an
-  Edition enum, but we want to allow unknown values.  It should be specified
-  according the edition enum value, *not* the edition number.  Only takes
-  effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.</p></dd><dt class="param">maximumEdition</dt><dd class="cmt"><p>
-  The maximum edition this plugin supports.  This will be treated as an
-  Edition enum, but we want to allow unknown values.  It should be specified
-  according the edition enum value, *not* the edition number.  Only takes
-  effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -267,9 +259,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],minimumEdition:Option[Int],maximumEdition:Option[Int],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="&lt;init&gt;:CodeGeneratorResponse"></a>
+      <a id="&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="&lt;init&gt;:CodeGeneratorResponse"></a>
       <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],minimumEdition:Option[Int],maximumEdition:Option[Int],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
+      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#&lt;init&gt;(error:Option[String],supportedFeatures:Option[Long],file:Seq[com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -278,7 +270,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="minimumEdition">minimumEdition: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="maximumEdition">maximumEdition: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">CodeGeneratorResponse</span><span class="params">(<span name="error">error: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="supportedFeatures">supportedFeatures: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="file">file: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>] = <span class="symbol"><span class="name"><a href="../../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">error</dt><dd class="cmt"><p>
@@ -290,15 +282,7 @@
   unparseable -- should be reported by writing a message to stderr and
   exiting with a non-zero status code.</p></dd><dt class="param">supportedFeatures</dt><dd class="cmt"><p>
   A bitmask of supported features that the code generator supports.
-  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd><dt class="param">minimumEdition</dt><dd class="cmt"><p>
-  The minimum edition this plugin supports.  This will be treated as an
-  Edition enum, but we want to allow unknown values.  It should be specified
-  according the edition enum value, *not* the edition number.  Only takes
-  effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.</p></dd><dt class="param">maximumEdition</dt><dd class="cmt"><p>
-  The maximum edition this plugin supports.  This will be treated as an
-  Edition enum, but we want to allow unknown values.  It should be specified
-  according the edition enum value, *not* the edition number.  Only takes
-  effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.</p></dd></dl></div>
+  This is a bitwise &quot;or&quot; of values from the Feature enum.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -434,38 +418,6 @@
       </span>
       <span class="symbol">
         <span class="name">clearFile</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#clearMaximumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="clearMaximumEdition:com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="clearMaximumEdition:CodeGeneratorResponse"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#clearMaximumEdition:com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">clearMaximumEdition</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#clearMinimumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="clearMinimumEdition:com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="clearMinimumEdition:CodeGeneratorResponse"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#clearMinimumEdition:com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">clearMinimumEdition</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
       </span>
       
       
@@ -678,38 +630,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a> → <a href="../../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></dd></dl></div>
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#getMaximumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getMaximumEdition:Int"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#getMaximumEdition:Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getMaximumEdition</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#getMinimumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getMinimumEdition:Int"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#getMinimumEdition:Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getMinimumEdition</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      
-      
     </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#getSupportedFeatures" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="getSupportedFeatures:Long"></a>
       <span class="permalink">
@@ -742,38 +662,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#maximumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="maximumEdition:Option[Int]"></a><a id="maximumEdition:scala.Option[Int]"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#maximumEdition:Option[Int]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">maximumEdition</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#minimumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="minimumEdition:Option[Int]"></a><a id="minimumEdition:scala.Option[Int]"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#minimumEdition:Option[Int]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">minimumEdition</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -1072,38 +960,6 @@ object.
       </span>
       <span class="symbol">
         <span class="name">withFile</span><span class="params">(<span name="__v">__v: <a href="../../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="CodeGeneratorResponse$$File.html" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse.File">File</a>]</span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#withMaximumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withMaximumEdition(__v:Int):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="withMaximumEdition(Int):CodeGeneratorResponse"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#withMaximumEdition(__v:Int):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withMaximumEdition</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse#withMinimumEdition" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withMinimumEdition(__v:Int):com.google.protobuf.compiler.plugin.CodeGeneratorResponse"></a><a id="withMinimumEdition(Int):CodeGeneratorResponse"></a>
-      <span class="permalink">
-      <a href="../../../../../com/google/protobuf/compiler/plugin/CodeGeneratorResponse.html#withMinimumEdition(__v:Int):com.google.protobuf.compiler.plugin.CodeGeneratorResponse" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withMinimumEdition</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.compiler.plugin.CodeGeneratorResponse">CodeGeneratorResponse</a></span>
       </span>
       
       

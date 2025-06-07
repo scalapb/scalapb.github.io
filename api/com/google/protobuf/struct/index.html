@@ -404,7 +404,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="ListValue is a wrapper around a repeated field of values." href="ListValue.html"><span class="name">ListValue</span></a><span class="params">(<span name="values">values: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ListValue.html" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="ListValue is a wrapper around a repeated field of values." href="ListValue.html"><span class="name">ListValue</span></a><span class="params">(<span name="values">values: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ListValue.html" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
       <p class="shortcomment cmt"><code>ListValue</code> is a wrapper around a repeated field of values.</p><div class="fullcomment"><div class="comment cmt"><p><code>ListValue</code> is a wrapper around a repeated field of values.</p><p>The JSON representation for <code>ListValue</code> is JSON array.
@@ -430,7 +430,7 @@
       
       <p class="shortcomment cmt"><code>NullValue</code> is a singleton enumeration to represent the null value for the
 <code>Value</code> type union.</p><div class="fullcomment"><div class="comment cmt"><p><code>NullValue</code> is a singleton enumeration to represent the null value for the
-<code>Value</code> type union.</p><p>The JSON representation for <code>NullValue</code> is JSON <code>null</code>.
+<code>Value</code> type union.</p><p> The JSON representation for <code>NullValue</code> is JSON <code>null</code>.
 </p></div></div>
     </li><li name="com.google.protobuf.struct.Struct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="StructextendsGeneratedMessagewithUpdatable[com.google.protobuf.struct.Struct]withProductwithSerializable"></a><a id="Struct:Struct"></a>
@@ -478,8 +478,8 @@ with the proto support for the language.</p><p>The JSON representation for <code
 null, a number, a string, a boolean, a recursive struct value, or a
 list of values.</p><div class="fullcomment"><div class="comment cmt"><p><code>Value</code> represents a dynamically typed value which can be either
 null, a number, a string, a boolean, a recursive struct value, or a
-list of values. A producer of value is expected to set one of these
-variants. Absence of any variant indicates an error.</p><p>The JSON representation for <code>Value</code> is JSON value.
+list of values. A producer of value is expected to set one of that
+variants, absence of any variant indicates an error.</p><p>The JSON representation for <code>Value</code> is JSON value.
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               

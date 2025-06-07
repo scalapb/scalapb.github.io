@@ -142,10 +142,6 @@
                         <a class="object" href="DescriptorProtoCompanion$.html" title=""></a>
                         <a href="DescriptorProtoCompanion$.html" title="">DescriptorProtoCompanion</a>
                       </li><li class="current-entities indented4">
-                        <a class="object" href="Edition$.html" title=""></a>
-                        <a class="class" href="Edition.html" title="The full set of known editions."></a>
-                        <a href="Edition.html" title="The full set of known editions.">Edition</a>
-                      </li><li class="current-entities indented4">
                         <a class="object" href="EnumDescriptorProto$.html" title=""></a>
                         <a class="class" href="EnumDescriptorProto.html" title="Describes an enum type."></a>
                         <a href="EnumDescriptorProto.html" title="Describes an enum type.">EnumDescriptorProto</a>
@@ -165,14 +161,6 @@
                         <a class="object" href="" title=""></a>
                         <a class="class" href="ExtensionRangeOptions.html" title=""></a>
                         <a href="ExtensionRangeOptions.html" title="">ExtensionRangeOptions</a>
-                      </li><li class="current-entities indented4">
-                        <a class="object" href="FeatureSet$.html" title=""></a>
-                        <a class="class" href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped."></a>
-                        <a href="FeatureSet.html" title="TODO Enums in C++ gencode (and potentially other languages) are not well scoped.">FeatureSet</a>
-                      </li><li class="current-entities indented4">
-                        <a class="object" href="FeatureSetDefaults$.html" title=""></a>
-                        <a class="class" href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features."></a>
-                        <a href="FeatureSetDefaults.html" title="A compiled specification for the defaults of a set of features.">FeatureSetDefaults</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="FieldDescriptorProto$.html" title=""></a>
                         <a class="class" href="FieldDescriptorProto.html" title="Describes a field within a message."></a>
@@ -315,37 +303,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="DeclarationextendsGeneratedMessagewithUpdatable[com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration]withProductwithSerializable"></a><a id="Declaration:Declaration"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$$Declaration.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="ExtensionRangeOptions$$Declaration.html"><span class="name">Declaration</span></a><span class="params">(<span name="number">number: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="fullName">fullName: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="type">type: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="reserved">reserved: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="repeated">repeated: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ExtensionRangeOptions$$Declaration.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration">Declaration</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">number</dt><dd class="cmt"><p>
-  The extension number declared within the extension range.</p></dd><dt class="param">fullName</dt><dd class="cmt"><p>
-  The fully-qualified name of the extension field. There must be a leading
-  dot in front of the full name.</p></dd><dt class="param">type</dt><dd class="cmt"><p>
-  The fully-qualified type name of the extension field. Unlike
-  Metadata.type, Declaration.type must have a leading dot for messages
-  and enums.</p></dd><dt class="param">reserved</dt><dd class="cmt"><p>
-  If true, indicates that the number is reserved in the extension range,
-  and any extension field with the number will fail to compile. Set this
-  when a declared extension field is deleted.</p></dd><dt class="param">repeated</dt><dd class="cmt"><p>
-  If true, indicates that the extension must be defined as repeated.
-  Otherwise the extension must be defined as optional.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@SerialVersionUID</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.ExtensionRangeOptionsLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.ExtensionRangeOptionsLens" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ExtensionRangeOptionsLens[UpperPB]extendsObjectLens[UpperPB,com.google.protobuf.descriptor.ExtensionRangeOptions]"></a><a id="ExtensionRangeOptionsLens[UpperPB]:ExtensionRangeOptionsLens[UpperPB]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$$ExtensionRangeOptionsLens.html" title="Permalink">
@@ -377,22 +335,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="VerificationStateextendsGeneratedEnum"></a><a id="VerificationState:VerificationState"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$$VerificationState.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">sealed abstract </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="The verification state of the extension range." href="ExtensionRangeOptions$$VerificationState.html"><span class="name">VerificationState</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnum.html" class="extype" name="scalapb.GeneratedEnum">GeneratedEnum</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">The verification state of the extension range.</p>
     </li></ol>
             </div>
 
@@ -449,38 +391,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions#DECLARATION_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DECLARATION_FIELD_NUMBER:Int(2)"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$.html#DECLARATION_FIELD_NUMBER:Int(2)" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">DECLARATION_FIELD_NUMBER</span><span class="result">: Int(2)</span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions#FEATURES_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="FEATURES_FIELD_NUMBER:Int(50)"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$.html#FEATURES_FIELD_NUMBER:Int(50)" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">FEATURES_FIELD_NUMBER</span><span class="result">: Int(50)</span>
-      </span>
-      
-      
     </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions#UNINTERPRETED_OPTION_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="UNINTERPRETED_OPTION_FIELD_NUMBER:Int(999)"></a>
       <span class="permalink">
@@ -494,22 +404,6 @@
       </span>
       <span class="symbol">
         <span class="name">UNINTERPRETED_OPTION_FIELD_NUMBER</span><span class="result">: Int(999)</span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions#VERIFICATION_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="VERIFICATION_FIELD_NUMBER:Int(3)"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$.html#VERIFICATION_FIELD_NUMBER:Int(3)" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">VERIFICATION_FIELD_NUMBER</span><span class="result">: Int(3)</span>
       </span>
       
       
@@ -911,9 +805,9 @@ available in Scala.js or scala-native.
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions#of" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="of(uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],declaration:Seq[com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration],features:Option[com.google.protobuf.descriptor.FeatureSet],verification:Option[com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState]):com.google.protobuf.descriptor.ExtensionRangeOptions"></a><a id="of(Seq[UninterpretedOption],Seq[Declaration],scala.Option[FeatureSet],scala.Option[VerificationState]):ExtensionRangeOptions"></a>
+      <a id="of(uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.ExtensionRangeOptions"></a><a id="of(Seq[UninterpretedOption]):ExtensionRangeOptions"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$.html#of(uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption],declaration:Seq[com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration],features:Option[com.google.protobuf.descriptor.FeatureSet],verification:Option[com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState]):com.google.protobuf.descriptor.ExtensionRangeOptions" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$.html#of(uninterpretedOption:Seq[com.google.protobuf.descriptor.UninterpretedOption]):com.google.protobuf.descriptor.ExtensionRangeOptions" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -922,7 +816,7 @@ available in Scala.js or scala-native.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>, <span name="declaration">declaration: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="ExtensionRangeOptions$$Declaration.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration">Declaration</a>]</span>, <span name="features">features: <span class="extype" name="scala.Option">scala.Option</span>[<a href="FeatureSet.html" class="extype" name="com.google.protobuf.descriptor.FeatureSet">FeatureSet</a>]</span>, <span name="verification">verification: <span class="extype" name="scala.Option">scala.Option</span>[<a href="ExtensionRangeOptions$$VerificationState.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState">VerificationState</a>]</span>)</span><span class="result">: <a href="ExtensionRangeOptions.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions">ExtensionRangeOptions</a></span>
+        <span class="name">of</span><span class="params">(<span name="uninterpretedOption">uninterpretedOption: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UninterpretedOption.html" class="extype" name="com.google.protobuf.descriptor.UninterpretedOption">UninterpretedOption</a>]</span>)</span><span class="result">: <a href="ExtensionRangeOptions.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions">ExtensionRangeOptions</a></span>
       </span>
       
       
@@ -1205,38 +1099,6 @@ available in Scala.js or scala-native.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Declaration"></a><a id="Declaration:Declaration"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$$Declaration$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="ExtensionRangeOptions$$Declaration$.html"><span class="name">Declaration</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a>[<a href="ExtensionRangeOptions$$Declaration.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration">Declaration</a>] with <a href="../../../../scalapb/JavaProtoSupport.html" class="extype" name="scalapb.JavaProtoSupport">JavaProtoSupport</a>[<a href="ExtensionRangeOptions$$Declaration.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.Declaration">Declaration</a>, <span class="extype" name="com.google.protobuf.DescriptorProtos.ExtensionRangeOptions.Declaration">DescriptorProtos.ExtensionRangeOptions.Declaration</span>]</span>
-      </span>
-      
-      
-    </li><li name="com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="VerificationState"></a><a id="VerificationState:VerificationState"></a>
-      <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/ExtensionRangeOptions$$VerificationState$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="ExtensionRangeOptions$$VerificationState$.html"><span class="name">VerificationState</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnumCompanion.html" class="extype" name="scalapb.GeneratedEnumCompanion">GeneratedEnumCompanion</a>[<a href="ExtensionRangeOptions$$VerificationState.html" class="extype" name="com.google.protobuf.descriptor.ExtensionRangeOptions.VerificationState">VerificationState</a>]</span>
-      </span>
-      
-      
     </li>
               </ol>
             </div>
