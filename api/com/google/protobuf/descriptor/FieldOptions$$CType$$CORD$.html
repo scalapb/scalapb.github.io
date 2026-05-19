@@ -167,8 +167,8 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FieldOptions$.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions">FieldOptions</a></dd></dl></div>
     </li><li class="current-entities indented6">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">CORD</a>
+                        <a class="object" href="" title="The option [ctype=CORD] may be applied to a non-repeated field of type &quot;bytes&quot;."></a>
+                        <a href="" title="The option [ctype=CORD] may be applied to a non-repeated field of type &quot;bytes&quot;.">CORD</a>
                       </li><li class="current-entities indented6">
                         <span class="separator"></span>
                         <a class="trait" href="FieldOptions$$CType$$Recognized.html" title=""></a>
@@ -213,7 +213,13 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Annotations</dt><dd>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The option [ctype=CORD] may be applied to a non-repeated field of type
+&quot;bytes&quot;. It indicates that in C++, the data should be stored in a Cord
+instead of a string.  For very large strings, this may reduce memory
+fragmentation. It may also allow better performance when parsing from a
+Cord, or when parsing with aliasing enabled, as the parsed Cord may then
+alias the original buffer.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
