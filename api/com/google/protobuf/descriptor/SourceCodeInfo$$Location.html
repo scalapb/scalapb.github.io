@@ -182,7 +182,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Location</span><span class="params">(<span name="path">path: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="span">span: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="leadingComments">leadingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="trailingComments">trailingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="leadingDetachedComments">leadingDetachedComments: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.SourceCodeInfo.Location">Location</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Location</span><span class="params">(<span name="path">path: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="span">span: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="leadingComments">leadingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="trailingComments">trailingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="leadingDetachedComments">leadingDetachedComments: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.SourceCodeInfo.Location">Location</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -191,8 +191,8 @@
   Identifies which part of the FileDescriptorProto was defined at this
   location.
   Each element is a field number or an index.  They form a path from
-  the root FileDescriptorProto to the place where the definition appears.
-  For example, this path:
+  the root FileDescriptorProto to the place where the definition.  For
+  example, this path:
     [ 4, 3, 2, 7, 1 ]
   refers to:
     file.message_type(3)  // 4, 3
@@ -234,12 +234,12 @@
     optional string baz = 3;
     // Comment attached to baz.
     // Another line attached to baz.
-    // Comment attached to moo.
+    // Comment attached to qux.
     //
-    // Another line attached to moo.
-    optional double moo = 4;
+    // Another line attached to qux.
+    optional double qux = 4;
     // Detached comment for corge. This is not leading or trailing comments
-    // to moo or corge because there are blank lines separating it from
+    // to qux or corge because there are blank lines separating it from
     // both.
     // Detached comment for corge paragraph 2.
     optional string corge = 5;
@@ -314,15 +314,15 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Location</span><span class="params">(<span name="path">path: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="span">span: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="leadingComments">leadingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="trailingComments">trailingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="leadingDetachedComments">leadingDetachedComments: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">Location</span><span class="params">(<span name="path">path: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="span">span: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="leadingComments">leadingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="trailingComments">trailingComments: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="leadingDetachedComments">leadingDetachedComments: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Seq.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>
   Identifies which part of the FileDescriptorProto was defined at this
   location.
   Each element is a field number or an index.  They form a path from
-  the root FileDescriptorProto to the place where the definition appears.
-  For example, this path:
+  the root FileDescriptorProto to the place where the definition.  For
+  example, this path:
     [ 4, 3, 2, 7, 1 ]
   refers to:
     file.message_type(3)  // 4, 3
@@ -364,12 +364,12 @@
     optional string baz = 3;
     // Comment attached to baz.
     // Another line attached to baz.
-    // Comment attached to moo.
+    // Comment attached to qux.
     //
-    // Another line attached to moo.
-    optional double moo = 4;
+    // Another line attached to qux.
+    optional double qux = 4;
     // Detached comment for corge. This is not leading or trailing comments
-    // to moo or corge because there are blank lines separating it from
+    // to qux or corge because there are blank lines separating it from
     // both.
     // Detached comment for corge paragraph 2.
     optional string corge = 5;
