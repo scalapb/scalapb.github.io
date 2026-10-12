@@ -937,6 +937,42 @@ available in Scala.js or scala-native.
       
       
     </li><li name="scalapb.GeneratedMessageCompanion#parseDelimitedFrom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseDelimitedFrom(input:java.io.InputStream,maxFrameSize:Int):Option[A]"></a><a id="parseDelimitedFrom(InputStream,Int):scala.Option[Field]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/type/Field$.html#parseDelimitedFrom(input:java.io.InputStream,maxFrameSize:Int):Option[A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseDelimitedFrom</span><span class="params">(<span name="input">input: <span class="extype" name="java.io.InputStream">InputStream</span></span>, <span name="maxFrameSize">maxFrameSize: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Field.html" class="extype" name="com.google.protobuf.type.Field">Field</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Parses one length-delimited message with the same frame-size policy as the coded overload.</p><div class="fullcomment"><div class="comment cmt"><p>Parses one length-delimited message with the same frame-size policy as the coded overload.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
+    </li><li name="scalapb.GeneratedMessageCompanion#parseDelimitedFrom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseDelimitedFrom(input:com.google.protobuf.CodedInputStream,maxFrameSize:Int):Option[A]"></a><a id="parseDelimitedFrom(CodedInputStream,Int):scala.Option[Field]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/type/Field$.html#parseDelimitedFrom(input:com.google.protobuf.CodedInputStream,maxFrameSize:Int):Option[A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseDelimitedFrom</span><span class="params">(<span name="input">input: <span class="extype" name="com.google.protobuf.CodedInputStream">CodedInputStream</span></span>, <span name="maxFrameSize">maxFrameSize: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Field.html" class="extype" name="com.google.protobuf.type.Field">Field</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Parses one length-delimited message with a non-negative maximum frame size in bytes.</p><div class="fullcomment"><div class="comment cmt"><p>Parses one length-delimited message with a non-negative maximum frame size in bytes. Returns
+None only at EOF before a frame starts. Invalid lengths, incomplete frames and frames
+exceeding maxFrameSize throw InvalidProtocolBufferException. The input position is not rolled
+back on failure. Existing overloads use Int.MaxValue as the maximum.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
+    </li><li name="scalapb.GeneratedMessageCompanion#parseDelimitedFrom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parseDelimitedFrom(input:java.io.InputStream):Option[A]"></a><a id="parseDelimitedFrom(InputStream):scala.Option[Field]"></a>
       <span class="permalink">
       <a href="../../../../com/google/protobuf/type/Field$.html#parseDelimitedFrom(input:java.io.InputStream):Option[A]" title="Permalink">
