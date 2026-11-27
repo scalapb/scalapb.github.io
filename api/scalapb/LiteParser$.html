@@ -258,6 +258,22 @@
                         <a class="trait" href="JavaProtoSupport.html" title=""></a>
                         <a href="JavaProtoSupport.html" title="">JavaProtoSupport</a>
                       </li><li class="current-entities indented1">
+                        <a class="object" href="LazyDecoder$.html" title=""></a>
+                        <a class="trait" href="LazyDecoder.html" title=""></a>
+                        <a href="LazyDecoder.html" title="">LazyDecoder</a>
+                      </li><li class="current-entities indented1">
+                        <a class="object" href="LazyEncoder$.html" title=""></a>
+                        <a class="trait" href="LazyEncoder.html" title=""></a>
+                        <a href="LazyEncoder.html" title="">LazyEncoder</a>
+                      </li><li class="current-entities indented1">
+                        <a class="object" href="LazyField$.html" title=""></a>
+                        <a class="class" href="LazyField.html" title="A value backed by bytes, with decoding deferred until value is first used and then cached."></a>
+                        <a href="LazyField.html" title="A value backed by bytes, with decoding deferred until value is first used and then cached.">LazyField</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="trait" href="LazyFieldCompat.html" title=""></a>
+                        <a href="LazyFieldCompat.html" title="">LazyFieldCompat</a>
+                      </li><li class="current-entities indented1">
                         <span class="separator"></span>
                         <a class="class" href="LimitedInputStream.html" title="Based on com.google.protobuf.AbstractMessageLite.Builder#LimitedInputStream."></a>
                         <a href="LimitedInputStream.html" title="Based on com.google.protobuf.AbstractMessageLite.Builder#LimitedInputStream.">LimitedInputStream</a>
@@ -771,6 +787,24 @@ EOF before the length prefix returns None; incomplete frames throw.
       </span>
       
       
+    </li><li name="scalapb.LiteParser#readUtf8Bytes" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readUtf8Bytes(input:com.google.protobuf.CodedInputStream):com.google.protobuf.ByteString"></a><a id="readUtf8Bytes(CodedInputStream):ByteString"></a>
+      <span class="permalink">
+      <a href="../scalapb/LiteParser$.html#readUtf8Bytes(input:com.google.protobuf.CodedInputStream):com.google.protobuf.ByteString" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readUtf8Bytes</span><span class="params">(<span name="input">input: <span class="extype" name="com.google.protobuf.CodedInputStream">CodedInputStream</span></span>)</span><span class="result">: <span class="extype" name="com.google.protobuf.ByteString">ByteString</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Reads a length-delimited string field as raw bytes, rejecting malformed UTF-8.</p><div class="fullcomment"><div class="comment cmt"><p>Reads a length-delimited string field as raw bytes, rejecting malformed UTF-8. Used by
+generated parsers for lazy string fields.
+</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

@@ -258,6 +258,22 @@
                         <a class="trait" href="JavaProtoSupport.html" title=""></a>
                         <a href="JavaProtoSupport.html" title="">JavaProtoSupport</a>
                       </li><li class="current-entities indented1">
+                        <a class="object" href="LazyDecoder$.html" title=""></a>
+                        <a class="trait" href="LazyDecoder.html" title=""></a>
+                        <a href="LazyDecoder.html" title="">LazyDecoder</a>
+                      </li><li class="current-entities indented1">
+                        <a class="object" href="LazyEncoder$.html" title=""></a>
+                        <a class="trait" href="LazyEncoder.html" title=""></a>
+                        <a href="LazyEncoder.html" title="">LazyEncoder</a>
+                      </li><li class="current-entities indented1">
+                        <a class="object" href="LazyField$.html" title=""></a>
+                        <a class="class" href="LazyField.html" title="A value backed by bytes, with decoding deferred until value is first used and then cached."></a>
+                        <a href="LazyField.html" title="A value backed by bytes, with decoding deferred until value is first used and then cached.">LazyField</a>
+                      </li><li class="current-entities indented1">
+                        <span class="separator"></span>
+                        <a class="trait" href="LazyFieldCompat.html" title=""></a>
+                        <a href="LazyFieldCompat.html" title="">LazyFieldCompat</a>
+                      </li><li class="current-entities indented1">
                         <span class="separator"></span>
                         <a class="class" href="LimitedInputStream.html" title="Based on com.google.protobuf.AbstractMessageLite.Builder#LimitedInputStream."></a>
                         <a href="LimitedInputStream.html" title="Based on com.google.protobuf.AbstractMessageLite.Builder#LimitedInputStream.">LimitedInputStream</a>
@@ -669,6 +685,83 @@
       </span>
       
       
+    </li><li name="scalapb.LazyDecoder" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LazyDecoder[T]extendsAnyRef"></a><a id="LazyDecoder[T]:LazyDecoder[T]"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyDecoder.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyDecoder.html"><span class="name">LazyDecoder</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.LazyEncoder" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LazyEncoder[T]extendsAnyRef"></a><a id="LazyEncoder[T]:LazyEncoder[T]"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyEncoder.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyEncoder.html"><span class="name">LazyEncoder</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.LazyField" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LazyField[T]extendsAnyRef"></a><a id="LazyField[T]:LazyField[T]"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyField.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="A value backed by bytes, with decoding deferred until value is first used and then cached." href="LazyField.html"><span class="name">LazyField</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">A value backed by bytes, with decoding deferred until <code>value</code> is first used and then cached.</p><div class="fullcomment"><div class="comment cmt"><p>A value backed by bytes, with decoding deferred until <code>value</code> is first used and then cached.</p><p>Reading this wrapper or calling <code>toByteString</code> does not decode it. String conversions,
+<code>toString</code>, <code>hashCode</code>, and equality between wrappers can trigger decoding. Decoding does not
+discard the stored bytes: generated binary serializers continue to write them unchanged. A
+decoded field can therefore retain both its bytes and its decoded value.</p><p>A <code>LazyField</code> is equal only to another <code>LazyField</code> with an equal decoded value. Compare
+<code>field.value</code> with a plain String explicitly. For example:</p><pre><span class="kw">val</span> name = LazyField.from(<span class="lit">"Alice"</span>)
+name.value == <span class="lit">"Alice"</span>           <span class="cmt">// true</span>
+name.equals(<span class="lit">"Alice"</span>)            <span class="cmt">// false</span>
+<span class="std">Set</span>[Any](name, <span class="lit">"Alice"</span>).size     <span class="cmt">// 2, regardless of insertion order</span>
+<span class="std">Set</span>[<span class="std">String</span>](name, <span class="lit">"Alice"</span>).size  <span class="cmt">// 1, after implicit conversion to String</span></pre><p>Generated binary parsers apply the configured UTF-8 validation policy before constructing lazy
+string fields. <code>LazyField.apply</code> itself does not validate its bytes; the default String decoder
+replaces malformed UTF-8 with U+FFFD while preserving the stored bytes. <code>LazyField.from</code> encodes
+its argument immediately and retains the supplied value.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>
+  the decoded value type.</p></dd></dl></div>
+    </li><li name="scalapb.LazyFieldCompat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LazyFieldCompatextendsAnyRef"></a><a id="LazyFieldCompat:LazyFieldCompat"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyFieldCompat.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyFieldCompat.html"><span class="name">LazyFieldCompat</span></a><span class="result"> extends <a href="../scala/index.html#AnyRef=Object" class="extmbr" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
     </li><li name="scalapb.LimitedInputStream" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LimitedInputStreamextendsFilterInputStream"></a><a id="LimitedInputStream:LimitedInputStream"></a>
       <span class="permalink">
@@ -993,6 +1086,54 @@ native java.util.Base64 is only available for Java 8...
       </span>
       <span class="symbol">
         <a title="" href="GeneratedExtension$.html"><span class="name">GeneratedExtension</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="scalapb.LazyDecoder" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LazyDecoder"></a><a id="LazyDecoder:LazyDecoder"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyDecoder$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyDecoder$.html"><span class="name">LazyDecoder</span></a>
+      </span>
+      
+      
+    </li><li name="scalapb.LazyEncoder" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LazyEncoder"></a><a id="LazyEncoder:LazyEncoder"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyEncoder$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyEncoder$.html"><span class="name">LazyEncoder</span></a>
+      </span>
+      
+      
+    </li><li name="scalapb.LazyField" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LazyField"></a><a id="LazyField:LazyField"></a>
+      <span class="permalink">
+      <a href="../scalapb/LazyField$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="LazyField$.html"><span class="name">LazyField</span></a><span class="result"> extends <a href="LazyFieldCompat.html" class="extype" name="scalapb.LazyFieldCompat">LazyFieldCompat</a></span>
       </span>
       
       
