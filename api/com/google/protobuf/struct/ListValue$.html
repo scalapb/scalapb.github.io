@@ -135,24 +135,24 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.google.protobuf">protobuf</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="" title=""></a>
-                        <a class="class" href="ListValue.html" title="ListValue is a wrapper around a repeated field of values."></a>
-                        <a href="ListValue.html" title="ListValue is a wrapper around a repeated field of values.">ListValue</a>
+                        <a class="class" href="ListValue.html" title="Represents a JSON array."></a>
+                        <a href="ListValue.html" title="Represents a JSON array.">ListValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="NullValue$.html" title=""></a>
-                        <a class="class" href="NullValue.html" title="NullValue is a singleton enumeration to represent the null value for the Value type union."></a>
-                        <a href="NullValue.html" title="NullValue is a singleton enumeration to represent the null value for the Value type union.">NullValue</a>
+                        <a class="class" href="NullValue.html" title="Represents a JSON null."></a>
+                        <a href="NullValue.html" title="Represents a JSON null.">NullValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Struct$.html" title=""></a>
-                        <a class="class" href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values."></a>
-                        <a href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values.">Struct</a>
+                        <a class="class" href="Struct.html" title="Represents a JSON object."></a>
+                        <a href="Struct.html" title="Represents a JSON object.">Struct</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="StructProto$.html" title=""></a>
                         <a href="StructProto$.html" title="">StructProto</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Value$.html" title=""></a>
-                        <a class="class" href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values."></a>
-                        <a href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values.">Value</a>
+                        <a class="class" href="Value.html" title="Represents a JSON value."></a>
+                        <a href="Value.html" title="Represents a JSON value.">Value</a>
                       </li>
               </ul>
             </div>
@@ -835,7 +835,9 @@ back on failure. Existing overloads use Int.MaxValue as the maximum.
         <span class="name">parseFrom</span><span class="params">(<span name="_input__">_input__: <span class="extype" name="com.google.protobuf.CodedInputStream">CodedInputStream</span></span>)</span><span class="result">: <a href="ListValue.html" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a></span>
       </span>
       
-      <p class="shortcomment cmt">Parses a message from a CodedInputStream.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a message from a CodedInputStream.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a> → <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
+      <p class="shortcomment cmt">Parses fields until EOF, the current input limit, or an end-group tag.</p><div class="fullcomment"><div class="comment cmt"><p>Parses fields until EOF, the current input limit, or an end-group tag. The caller must
+validate the last tag: zero for an ordinary message, or the matching end tag for a group.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a> → <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
     </li><li name="scalapb.GeneratedMessageCompanion#parseFrom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parseFrom(s:Array[Byte]):A"></a><a id="parseFrom(Array[Byte]):ListValue"></a>
       <span class="permalink">

@@ -263,24 +263,24 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.google.protobuf">protobuf</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="ListValue$.html" title=""></a>
-                        <a class="class" href="ListValue.html" title="ListValue is a wrapper around a repeated field of values."></a>
-                        <a href="ListValue.html" title="ListValue is a wrapper around a repeated field of values.">ListValue</a>
+                        <a class="class" href="ListValue.html" title="Represents a JSON array."></a>
+                        <a href="ListValue.html" title="Represents a JSON array.">ListValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="NullValue$.html" title=""></a>
-                        <a class="class" href="NullValue.html" title="NullValue is a singleton enumeration to represent the null value for the Value type union."></a>
-                        <a href="NullValue.html" title="NullValue is a singleton enumeration to represent the null value for the Value type union.">NullValue</a>
+                        <a class="class" href="NullValue.html" title="Represents a JSON null."></a>
+                        <a href="NullValue.html" title="Represents a JSON null.">NullValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Struct$.html" title=""></a>
-                        <a class="class" href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values."></a>
-                        <a href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values.">Struct</a>
+                        <a class="class" href="Struct.html" title="Represents a JSON object."></a>
+                        <a href="Struct.html" title="Represents a JSON object.">Struct</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="StructProto$.html" title=""></a>
                         <a href="StructProto$.html" title="">StructProto</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Value$.html" title=""></a>
-                        <a class="class" href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values."></a>
-                        <a href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values.">Value</a>
+                        <a class="class" href="Value.html" title="Represents a JSON value."></a>
+                        <a href="Value.html" title="Represents a JSON value.">Value</a>
                       </li><li name="com.google.protobuf.timestamp" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="timestamp"></a><a id="timestamp:timestamp"></a>
       <span class="permalink">
@@ -404,10 +404,10 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="ListValue is a wrapper around a repeated field of values." href="ListValue.html"><span class="name">ListValue</span></a><span class="params">(<span name="values">values: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ListValue.html" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Represents a JSON array." href="ListValue.html"><span class="name">ListValue</span></a><span class="params">(<span name="values">values: <a href="../../../../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.Vector.empty</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="ListValue.html" class="extype" name="com.google.protobuf.struct.ListValue">ListValue</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <p class="shortcomment cmt"><code>ListValue</code> is a wrapper around a repeated field of values.</p><div class="fullcomment"><div class="comment cmt"><p><code>ListValue</code> is a wrapper around a repeated field of values.</p><p>The JSON representation for <code>ListValue</code> is JSON array.
+      <p class="shortcomment cmt">Represents a JSON array.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a JSON array.
 </p></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>
   Repeated field of dynamically typed values.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -425,12 +425,14 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="NullValue is a singleton enumeration to represent the null value for the Value type union." href="NullValue.html"><span class="name">NullValue</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnum.html" class="extype" name="scalapb.GeneratedEnum">GeneratedEnum</a></span>
+        <a title="Represents a JSON null." href="NullValue.html"><span class="name">NullValue</span></a><span class="result"> extends <a href="../../../../scalapb/GeneratedEnum.html" class="extype" name="scalapb.GeneratedEnum">GeneratedEnum</a></span>
       </span>
       
-      <p class="shortcomment cmt"><code>NullValue</code> is a singleton enumeration to represent the null value for the
-<code>Value</code> type union.</p><div class="fullcomment"><div class="comment cmt"><p><code>NullValue</code> is a singleton enumeration to represent the null value for the
-<code>Value</code> type union.</p><p>The JSON representation for <code>NullValue</code> is JSON <code>null</code>.
+      <p class="shortcomment cmt">Represents a JSON <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a JSON <code>null</code>.</p><p><code>NullValue</code> is a sentinel, using an enum with only one value to represent
+the null value for the <code>Value</code> type union.</p><p>A field of type <code>NullValue</code> with any value other than <code>0</code> is considered
+invalid. Most ProtoJSON serializers will emit a <code>Value</code> with a <code>null_value</code>
+set as a JSON <code>null</code> regardless of the integer value, and so will round trip
+to a <code>0</code> value.
 </p></div></div>
     </li><li name="com.google.protobuf.struct.Struct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="StructextendsGeneratedMessagewithUpdatable[com.google.protobuf.struct.Struct]withProductwithSerializable"></a><a id="Struct:Struct"></a>
@@ -444,16 +446,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="Struct represents a structured data value, consisting of fields which map to dynamically typed values." href="Struct.html"><span class="name">Struct</span></a><span class="params">(<span name="fields">fields: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="defval" name='<span class="name"><a href="../../../../scala/index.html">_root_.scala.collection.immutable.Map.empty</a></span>'>...</span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="Struct.html" class="extype" name="com.google.protobuf.struct.Struct">Struct</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Represents a JSON object." href="Struct.html"><span class="name">Struct</span></a><span class="params">(<span name="fields">fields: <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] = <span class="defval" name='<span class="name"><a href="../../../../scala/index.html">_root_.scala.collection.immutable.Map.empty</a></span>'>...</span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="Struct.html" class="extype" name="com.google.protobuf.struct.Struct">Struct</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <p class="shortcomment cmt"><code>Struct</code> represents a structured data value, consisting of fields
-which map to dynamically typed values.</p><div class="fullcomment"><div class="comment cmt"><p><code>Struct</code> represents a structured data value, consisting of fields
-which map to dynamically typed values. In some languages, <code>Struct</code>
-might be supported by a native representation. For example, in
-scripting languages like JS a struct is represented as an
-object. The details of that representation are described together
-with the proto support for the language.</p><p>The JSON representation for <code>Struct</code> is JSON object.
+      <p class="shortcomment cmt">Represents a JSON object.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a JSON object.</p><p>An unordered key-value map, intending to perfectly capture the semantics of a
+JSON object. This enables parsing any arbitrary JSON payload as a message
+field in ProtoJSON format.</p><p>This follows RFC 8259 guidelines for interoperable JSON: notably this type
+cannot represent large Int64 values or <code>NaN</code>/<code>Infinity</code> numbers,
+since the JSON format generally does not support those values in its number
+type.</p><p>If you do not intend to parse arbitrary JSON into your message, a custom
+typed message should be preferred instead of using this type.
 </p></div><dl class="paramcmts block"><dt class="param">fields</dt><dd class="cmt"><p>
   Unordered map of dynamically typed values.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
@@ -471,15 +473,13 @@ with the proto support for the language.</p><p>The JSON representation for <code
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values." href="Value.html"><span class="name">Value</span></a><span class="params">(<span name="kind">kind: <a href="Value$$Kind.html" class="extype" name="com.google.protobuf.struct.Value.Kind">Kind</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">_root_.com.google.protobuf.struct.Value.Kind.Empty</a></span>'>...</span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a title="Represents a JSON value." href="Value.html"><span class="name">Value</span></a><span class="params">(<span name="kind">kind: <a href="Value$$Kind.html" class="extype" name="com.google.protobuf.struct.Value.Kind">Kind</a> = <span class="defval" name='<span class="name"><a href="../../../index.html">_root_.com.google.protobuf.struct.Value.Kind.Empty</a></span>'>...</span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="Value.html" class="extype" name="com.google.protobuf.struct.Value">Value</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       
-      <p class="shortcomment cmt"><code>Value</code> represents a dynamically typed value which can be either
-null, a number, a string, a boolean, a recursive struct value, or a
-list of values.</p><div class="fullcomment"><div class="comment cmt"><p><code>Value</code> represents a dynamically typed value which can be either
+      <p class="shortcomment cmt">Represents a JSON value.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a JSON value.</p><p><code>Value</code> represents a dynamically typed value which can be either
 null, a number, a string, a boolean, a recursive struct value, or a
 list of values. A producer of value is expected to set one of these
-variants. Absence of any variant indicates an error.</p><p>The JSON representation for <code>Value</code> is JSON value.
+variants. Absence of any variant is an invalid state.
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               

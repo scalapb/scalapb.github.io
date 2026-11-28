@@ -208,7 +208,22 @@
   the last element:
     [ 4, 3, 2, 7 ]
   this path refers to the whole field declaration (from the beginning
-  of the label to the terminating semicolon).</p></dd><dt class="param">span</dt><dd class="cmt"><p>
+  of the label to the terminating semicolon).
+  For options, the path refers to the interpreted option in the descriptor.
+  E.g., for a custom option <code>(my_opt) = &quot;foo&quot;</code> on a message using extension
+  number 10101, the path is:
+    [ 4, 3, 7, 10101 ]
+  refers to:
+    file.message_type(3)     // 4, 3
+        .options()           // 7
+        .my_opt()            // 10101
+  Sub-locations corresponding to the interpreted option's corresponding
+  <code>UninterpretedOption</code> are also appended to the interpreted option, which
+  deviates from the actual FileDescriptorProto path. E.g.:
+    [ 4, 3, 7, 10101, 2 ]
+  refers to the option name <code>(my_opt)</code>, and:
+    [ 4, 3, 7, 10101, 7 ]
+  refers to the &quot;foo&quot; string value of the option.</p></dd><dt class="param">span</dt><dd class="cmt"><p>
   Always has exactly three or four elements: start line, start column,
   end line (optional, otherwise assumed same as start line), end column.
   These are packed into a single field for efficiency.  Note that line
@@ -338,7 +353,22 @@
   the last element:
     [ 4, 3, 2, 7 ]
   this path refers to the whole field declaration (from the beginning
-  of the label to the terminating semicolon).</p></dd><dt class="param">span</dt><dd class="cmt"><p>
+  of the label to the terminating semicolon).
+  For options, the path refers to the interpreted option in the descriptor.
+  E.g., for a custom option <code>(my_opt) = &quot;foo&quot;</code> on a message using extension
+  number 10101, the path is:
+    [ 4, 3, 7, 10101 ]
+  refers to:
+    file.message_type(3)     // 4, 3
+        .options()           // 7
+        .my_opt()            // 10101
+  Sub-locations corresponding to the interpreted option's corresponding
+  <code>UninterpretedOption</code> are also appended to the interpreted option, which
+  deviates from the actual FileDescriptorProto path. E.g.:
+    [ 4, 3, 7, 10101, 2 ]
+  refers to the option name <code>(my_opt)</code>, and:
+    [ 4, 3, 7, 10101, 7 ]
+  refers to the &quot;foo&quot; string value of the option.</p></dd><dt class="param">span</dt><dd class="cmt"><p>
   Always has exactly three or four elements: start line, start column,
   end line (optional, otherwise assumed same as start line), end column.
   These are packed into a single field for efficiency.  Note that line

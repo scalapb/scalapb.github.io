@@ -202,7 +202,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">FeatureSupport</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">FeatureSupport</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="removalError">removalError: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">scalapb.GeneratedMessage</a> with <a href="../../../../scalapb/lenses/Updatable.html" class="extype" name="scalapb.lenses.Updatable">Updatable</a>[<a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -218,7 +218,9 @@
   was marked deprecated in.</p></dd><dt class="param">editionRemoved</dt><dd class="cmt"><p>
   The edition this feature is no longer available in.  In editions after
   this one, the last default assigned will be used, and proto files will
-  not be able to override it.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+  not be able to override it.</p></dd><dt class="param">removalError</dt><dd class="cmt"><p>
+  The removal error text if this feature is used after the edition it was
+  removed in.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">()</span>
               
         </dd></dl><div class="toggleContainer block">
@@ -272,9 +274,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="&lt;init&gt;:FeatureSupport"></a>
+      <a id="&lt;init&gt;(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],removalError:Option[String],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="&lt;init&gt;:FeatureSupport"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#&lt;init&gt;(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#&lt;init&gt;(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],removalError:Option[String],unknownFields:scalapb.UnknownFieldSet):com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -283,7 +285,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">FeatureSupport</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
+        <span class="name">FeatureSupport</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="removalError">removalError: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol"><span class="name"><a href="../../../../scala/index.html">_root_.scala.None</a></span></span></span>, <span name="unknownFields">unknownFields: <a href="../../../../scalapb/UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">scalapb.UnknownFieldSet</a> = <span class="defval" name='<span class="name"><a href="../../../../scalapb/index.html">_root_.scalapb.UnknownFieldSet.empty</a></span>'>...</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">editionIntroduced</dt><dd class="cmt"><p>
@@ -296,7 +298,9 @@
   was marked deprecated in.</p></dd><dt class="param">editionRemoved</dt><dd class="cmt"><p>
   The edition this feature is no longer available in.  In editions after
   this one, the last default assigned will be used, and proto files will
-  not be able to override it.</p></dd></dl></div>
+  not be able to override it.</p></dd><dt class="param">removalError</dt><dd class="cmt"><p>
+  The removal error text if this feature is used after the edition it was
+  removed in.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -432,6 +436,22 @@
       </span>
       <span class="symbol">
         <span class="name">clearEditionRemoved</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#clearRemovalError" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="clearRemovalError:com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="clearRemovalError:FeatureSupport"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#clearRemovalError:com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearRemovalError</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
       </span>
       
       
@@ -708,6 +728,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a> → <a href="../../../../scalapb/GeneratedMessage.html" class="extype" name="scalapb.GeneratedMessage">GeneratedMessage</a></dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#getRemovalError" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getRemovalError:String"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#getRemovalError:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getRemovalError</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -778,6 +814,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#removalError" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="removalError:Option[String]"></a><a id="removalError:scala.Option[String]"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#removalError:Option[String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removalError</span><span class="result">: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      
     </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#serializedSize" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="serializedSize:Int"></a>
       <span class="permalink">
@@ -1038,6 +1090,22 @@ object.
       </span>
       <span class="symbol">
         <span class="name">withEditionRemoved</span><span class="params">(<span name="__v">__v: <a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
+      </span>
+      
+      
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#withRemovalError" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withRemovalError(__v:String):com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="withRemovalError(String):FeatureSupport"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport.html#withRemovalError(__v:String):com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withRemovalError</span><span class="params">(<span name="__v">__v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
       </span>
       
       

@@ -135,24 +135,24 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.google.protobuf">protobuf</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="ListValue$.html" title=""></a>
-                        <a class="class" href="ListValue.html" title="ListValue is a wrapper around a repeated field of values."></a>
-                        <a href="ListValue.html" title="ListValue is a wrapper around a repeated field of values.">ListValue</a>
+                        <a class="class" href="ListValue.html" title="Represents a JSON array."></a>
+                        <a href="ListValue.html" title="Represents a JSON array.">ListValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="NullValue$.html" title=""></a>
-                        <a class="class" href="" title="NullValue is a singleton enumeration to represent the null value for the Value type union."></a>
-                        <a href="" title="NullValue is a singleton enumeration to represent the null value for the Value type union.">NullValue</a>
+                        <a class="class" href="" title="Represents a JSON null."></a>
+                        <a href="" title="Represents a JSON null.">NullValue</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Struct$.html" title=""></a>
-                        <a class="class" href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values."></a>
-                        <a href="Struct.html" title="Struct represents a structured data value, consisting of fields which map to dynamically typed values.">Struct</a>
+                        <a class="class" href="Struct.html" title="Represents a JSON object."></a>
+                        <a href="Struct.html" title="Represents a JSON object.">Struct</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="StructProto$.html" title=""></a>
                         <a href="StructProto$.html" title="">StructProto</a>
                       </li><li class="current-entities indented4">
                         <a class="object" href="Value$.html" title=""></a>
-                        <a class="class" href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values."></a>
-                        <a href="Value.html" title="Value represents a dynamically typed value which can be either null, a number, a string, a boolean, a recursive struct value, or a list of values.">Value</a>
+                        <a class="class" href="Value.html" title="Represents a JSON value."></a>
+                        <a href="Value.html" title="Represents a JSON value.">Value</a>
                       </li>
               </ul>
             </div>
@@ -183,8 +183,11 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><code>NullValue</code> is a singleton enumeration to represent the null value for the
-<code>Value</code> type union.</p><p>The JSON representation for <code>NullValue</code> is JSON <code>null</code>.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a JSON <code>null</code>.</p><p><code>NullValue</code> is a sentinel, using an enum with only one value to represent
+the null value for the <code>Value</code> type union.</p><p>A field of type <code>NullValue</code> with any value other than <code>0</code> is considered
+invalid. Most ProtoJSON serializers will emit a <code>Value</code> with a <code>null_value</code>
+set as a JSON <code>null</code> regardless of the integer value, and so will round trip
+to a <code>0</code> value.
 </p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes

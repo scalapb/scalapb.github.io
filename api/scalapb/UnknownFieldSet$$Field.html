@@ -138,7 +138,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Field</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Field</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="group">group: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -205,7 +205,23 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Field</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>)</span>
+        <span class="name">Field</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]</span>)</span>
+      </span>
+      
+      
+    </li><li name="scalapb.UnknownFieldSet.Field#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString],group:Seq[scalapb.UnknownFieldSet]):scalapb.UnknownFieldSet.Field"></a><a id="&lt;init&gt;:Field"></a>
+      <span class="permalink">
+      <a href="../scalapb/UnknownFieldSet$$Field.html#&lt;init&gt;(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString],group:Seq[scalapb.UnknownFieldSet]):scalapb.UnknownFieldSet.Field" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Field</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>, <span name="group">group: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a>] = <span class="symbol"><span class="name"><a href="../scala/index.html">Vector.empty</a></span></span></span>)</span>
       </span>
       
       
@@ -307,6 +323,38 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.UnknownFieldSet.Field#copy" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="copy(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString]):scalapb.UnknownFieldSet.Field"></a><a id="copy(Seq[Long],Seq[Long],Seq[Int],Seq[ByteString]):Field"></a>
+      <span class="permalink">
+      <a href="../scalapb/UnknownFieldSet$$Field.html#copy(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString]):scalapb.UnknownFieldSet.Field" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalapb.UnknownFieldSet.Field">Field</a></span>
+      </span>
+      
+      
+    </li><li name="scalapb.UnknownFieldSet.Field#copy" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="copy(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString],group:Seq[scalapb.UnknownFieldSet]):scalapb.UnknownFieldSet.Field"></a><a id="copy(Seq[Long],Seq[Long],Seq[Int],Seq[ByteString],Seq[UnknownFieldSet]):Field"></a>
+      <span class="permalink">
+      <a href="../scalapb/UnknownFieldSet$$Field.html#copy(varint:Seq[Long],fixed64:Seq[Long],fixed32:Seq[Int],lengthDelimited:Seq[com.google.protobuf.ByteString],group:Seq[scalapb.UnknownFieldSet]):scalapb.UnknownFieldSet.Field" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="params">(<span name="varint">varint: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="#varint:Seq[Long]">this.varint</a></span></span></span>, <span name="fixed64">fixed64: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol"><span class="name"><a href="#fixed64:Seq[Long]">this.fixed64</a></span></span></span>, <span name="fixed32">fixed32: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol"><span class="name"><a href="#fixed32:Seq[Int]">this.fixed32</a></span></span></span>, <span name="lengthDelimited">lengthDelimited: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>] = <span class="symbol"><span class="name"><a href="#lengthDelimited:Seq[com.google.protobuf.ByteString]">this.lengthDelimited</a></span></span></span>, <span name="group">group: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a>] = <span class="symbol"><span class="name"><a href="#group:Seq[scalapb.UnknownFieldSet]">this.group</a></span></span></span>)</span><span class="result">: <a href="" class="extype" name="scalapb.UnknownFieldSet.Field">Field</a></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -396,6 +444,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scalapb.UnknownFieldSet.Field#group" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="group:Seq[scalapb.UnknownFieldSet]"></a><a id="group:Seq[UnknownFieldSet]"></a>
+      <span class="permalink">
+      <a href="../scalapb/UnknownFieldSet$$Field.html#group:Seq[scalapb.UnknownFieldSet]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">group</span><span class="result">: <a href="../scala/index.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="UnknownFieldSet.html" class="extype" name="scalapb.UnknownFieldSet">UnknownFieldSet</a>]</span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">

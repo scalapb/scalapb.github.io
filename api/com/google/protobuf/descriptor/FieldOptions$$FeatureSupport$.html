@@ -411,6 +411,22 @@
       </span>
       
       
+    </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#REMOVAL_ERROR_FIELD_NUMBER" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="REMOVAL_ERROR_FIELD_NUMBER:Int(5)"></a>
+      <span class="permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport$.html#REMOVAL_ERROR_FIELD_NUMBER:Int(5)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">REMOVAL_ERROR_FIELD_NUMBER</span><span class="result">: Int(5)</span>
+      </span>
+      
+      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -809,9 +825,9 @@ available in Scala.js or scala-native.
               
         </dd></dl></div>
     </li><li name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport#of" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="of(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition]):com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="of(scala.Option[Edition],scala.Option[Edition],scala.Option[String],scala.Option[Edition]):FeatureSupport"></a>
+      <a id="of(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],removalError:Option[String]):com.google.protobuf.descriptor.FieldOptions.FeatureSupport"></a><a id="of(scala.Option[Edition],scala.Option[Edition],scala.Option[String],scala.Option[Edition],scala.Option[String]):FeatureSupport"></a>
       <span class="permalink">
-      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport$.html#of(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition]):com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
+      <a href="../../../../com/google/protobuf/descriptor/FieldOptions$$FeatureSupport$.html#of(editionIntroduced:Option[com.google.protobuf.descriptor.Edition],editionDeprecated:Option[com.google.protobuf.descriptor.Edition],deprecationWarning:Option[String],editionRemoved:Option[com.google.protobuf.descriptor.Edition],removalError:Option[String]):com.google.protobuf.descriptor.FieldOptions.FeatureSupport" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -820,7 +836,7 @@ available in Scala.js or scala-native.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">of</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>)</span><span class="result">: <a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
+        <span class="name">of</span><span class="params">(<span name="editionIntroduced">editionIntroduced: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>, <span name="editionDeprecated">editionDeprecated: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>, <span name="deprecationWarning">deprecationWarning: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="editionRemoved">editionRemoved: <span class="extype" name="scala.Option">scala.Option</span>[<a href="Edition.html" class="extype" name="com.google.protobuf.descriptor.Edition">Edition</a>]</span>, <span name="removalError">removalError: <span class="extype" name="scala.Option">scala.Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
       </span>
       
       
@@ -907,7 +923,9 @@ back on failure. Existing overloads use Int.MaxValue as the maximum.
         <span class="name">parseFrom</span><span class="params">(<span name="_input__">_input__: <span class="extype" name="com.google.protobuf.CodedInputStream">CodedInputStream</span></span>)</span><span class="result">: <a href="FieldOptions$$FeatureSupport.html" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a></span>
       </span>
       
-      <p class="shortcomment cmt">Parses a message from a CodedInputStream.</p><div class="fullcomment"><div class="comment cmt"><p>Parses a message from a CodedInputStream.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a> → <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
+      <p class="shortcomment cmt">Parses fields until EOF, the current input limit, or an end-group tag.</p><div class="fullcomment"><div class="comment cmt"><p>Parses fields until EOF, the current input limit, or an end-group tag. The caller must
+validate the last tag: zero for an ordinary message, or the matching end tag for a group.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.google.protobuf.descriptor.FieldOptions.FeatureSupport">FeatureSupport</a> → <a href="../../../../scalapb/GeneratedMessageCompanion.html" class="extype" name="scalapb.GeneratedMessageCompanion">GeneratedMessageCompanion</a></dd></dl></div>
     </li><li name="scalapb.GeneratedMessageCompanion#parseFrom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parseFrom(s:Array[Byte]):A"></a><a id="parseFrom(Array[Byte]):FeatureSupport"></a>
       <span class="permalink">

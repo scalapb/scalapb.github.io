@@ -232,20 +232,18 @@ in the target resource.</p><p>For example, given the target message:</p><p>    f
       }
       c: [1, 2]
     }</p><p>An implementation may provide options to override this default behavior for
-repeated and message fields.</p><p>In order to reset a field's value to the default, the field must
-be in the mask and set to the default value in the provided resource.
-Hence, in order to reset all fields of a resource, provide a default
-instance of the resource and set all fields in the mask, or do
-not provide a mask as described below.</p><p>If a field mask is not present on update, the operation applies to
-all fields (as if a field mask of all fields has been specified).
-Note that in the presence of schema evolution, this may mean that
-fields the client does not know and has therefore not filled into
-the request will be reset to their default. If this is unwanted
-behavior, a specific service may require a client to always specify
-a field mask, producing an error if not.</p><p>As with get operations, the location of the resource which
-describes the updated values in the request message depends on the
-operation kind. In any case, the effect of the field mask is
-required to be honored by the API.</p><p>## Considerations for HTTP REST</p><p>The HTTP kind of an update operation which uses a field mask must
+repeated and message fields.</p><p>Note that libraries which implement FieldMask resolution have various
+different behaviors in the face of empty masks or the special &quot;*&quot; mask.
+When implementing a service you should confirm these cases have the
+appropriate behavior in the underlying FieldMask library that you desire,
+and you may need to special case those cases in your application code if
+the underlying field mask library behavior differs from your intended
+service semantics.</p><p>Update methods implementing https://google.aip.dev/134
+- MUST support the special value * meaning &quot;full replace&quot;
+- MUST treat an omitted field mask as &quot;replace fields which are present&quot;.</p><p>Other methods implementing https://google.aip.dev/157
+- SHOULD support the special value &quot;*&quot; to mean &quot;get all&quot;.
+- MUST treat an omitted field mask to mean &quot;get all&quot;, unless otherwise
+documented.</p><p>## Considerations for HTTP REST</p><p>The HTTP kind of an update operation which uses a field mask must
 be set to PATCH instead of PUT in order to satisfy HTTP semantics
 (PUT must only be used for full updates).</p><p># JSON Encoding of Field Masks</p><p>In JSON, a field mask is encoded as a single string where paths are
 separated by a comma. Fields name in each path are converted
